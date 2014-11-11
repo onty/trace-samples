@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MTSMSRecord>
+        <recordType>7</recordType>        
+        <recordingEntity>ff10</recordingEntity>
+        <servedMSISDN>ffffffffffffffffff</servedMSISDN>
+        <servedIMSI>ffffab</servedIMSI>
+        <location>
+            <locationAreaCode>50aa</locationAreaCode>
+            <cellId>0ff0</cellId>
+            <mCC-MNC>bcadef</mCC-MNC>
+        </location>
+        <msClassmark>abcd</msClassmark>
+        <serviceCentre>ffff</serviceCentre>
+        <deliveryTime>ffacadafef551798ad</deliveryTime>
+</MTSMSRecord>

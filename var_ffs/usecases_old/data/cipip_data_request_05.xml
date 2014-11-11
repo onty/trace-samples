@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- AVP Code: 263 Session-Id -->
+	<!--AVP code="263" value="c1-10-99-243-34-ggsn03.ericsson.se;1302790467;86" vendor-id="0" /-->
+	<AVP code="263" value="${Global.sessionID}" vendor-id="0" />
+	<!-- AVP Code: 30 Called-Station-Id -->
+	<AVP code="30" value="67:79:74:73:70:36:30:30:36:2e:6b:61:2e:73:77:2e:65:72:69:63:73:73:6f:6e:2e:73:65" vendor-id="0" />
+	<!-- AVP Code: 260 Vendor-Specific-Application-Id -->
+	<!-- Grouped data: 000001024000000c01000010 -->
+	<AVP code="260" value="" vendor-id="0">
+		<!-- AVP Code: 258 Auth-Application-Id -->
+		<AVP code="258" value="16777232" vendor-id="0" />
+		<!-- AVP Code: 266 Vendor-Id -->
+		<AVP code="266" value="193" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 283 Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" vendor-id="0" />
+	<!-- AVP Code: 295 Termination-Cause -->
+	<AVP code="295" value="1" vendor-id="0" />
+	<!-- AVP Code: 415 CC-Request-Number -->
+	<AVP code="415" value="4" vendor-id="0" />
+	<!-- AVP Code: 416 CC-Request-Type -->
+	<AVP code="416" value="3" vendor-id="0" />
+	<!-- AVP Code: 443 Subscription-Id -->
+	<!-- Grouped data: 000001bc4000001234393437313132323435 -->
+	<AVP code="443" value="" vendor-id="0">
+		<!-- AVP Code: 444 Subscription-Id-Data -->
+		<AVP code="444" value="${Global.A-Number}" vendor-id="0" />
+		<!-- AVP Code: 450 Subscription-Id-Type -->
+		<AVP code="450" value="0" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 443 Subscription-Id -->
+	<!-- Grouped data: 000001bc40000017323632343731313030303030303435 -->
+	<AVP code="443" value="" vendor-id="0">
+		<!-- AVP Code: 444 Subscription-Id-Data -->
+		<AVP code="444" value="262471100000045" vendor-id="0" />
+		<!-- AVP Code: 450 Subscription-Id-Type -->
+		<AVP code="450" value="1" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 456 Multiple-Services-Credit-Control -->
+	<!-- Grouped data: 000001b04000000c000017d4 -->
+	<AVP code="456" value="" vendor-id="0">
+		<!-- AVP Code: 432 Rating-Group -->
+		<AVP code="432" value="6100" vendor-id="0" />
+		<!-- AVP Code: 446 Used-Service-Unit -->
+		<!-- Grouped data: 0000019c400000100000000000000c26 -->
+		<AVP code="446" value="" vendor-id="0">
+			<!-- AVP Code: 412 CC-Input-Octets -->
+			<AVP code="412" value="0" vendor-id="0" />
+			<!-- AVP Code: 414 CC-Output-Octets -->
+			<AVP code="414" value="0" vendor-id="0" />
+			<!-- AVP Code: 421 CC-Total-Octets -->
+			<AVP code="421" value="${Global.CC-Total-Octets}" vendor-id="0" />
+		</AVP>
+		<!-- AVP Code: 1066 Charging-State-Information -->
+		<AVP code="1066" value="0x${Local.CDRData}" vendor-id="193" />
+		<!-- AVP Code: 1068 Service-Session-Id -->
+		<AVP code="1068" value="6100:-:1" vendor-id="193" />
+	</AVP>
+	<!-- AVP Code: 1065 Charging-Context-Id -->
+	<AVP code="1065" value="Ericsson_OCS_V1_0.0.0.7.32251@3gpp.org" vendor-id="193" />
+	<!-- AVP Code: 1083 CIP-IP-Version -->
+	<AVP code="1083" value="R1A" vendor-id="193" />
+	<!-- AVP Code: 23 3GPP-MSTimeZone -->
+	<AVP code="23" value="0x8001" vendor-id="10415" />
+	<!-- AVP Code: 55 Event-Timestamp -->
+	<AVP code="55" value="${Local.nowunix}" vendor-id="0" />
+</RequestData>

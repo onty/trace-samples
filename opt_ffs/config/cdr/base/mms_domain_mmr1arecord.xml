@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MMR1ARecord>
+		<recordType>42</recordType>
+
+        <recipientMmsRSAddress>
+            <domainName>ffaaccdd</domainName>
+            <iPAddress>
+                <iPTextRepresentedAddress>
+                    <iPTextV4Address>127.0.0.1</iPTextV4Address>
+                </iPTextRepresentedAddress>
+            </iPAddress>
+        </recipientMmsRSAddress>
+
+        <messageID>123456789</messageID>
+       <!--
+        <recipientAddress>
+        <mMSAgentAddressData>
+            <MMSAgentAddress>
+                <mMSAgentAddressData>
+                    <eMail_address>ddccbbaa</eMail_address>
+                </mMSAgentAddressData>
+                <mMSRecipientType>tO</mMSRecipientType>
+            </MMSAgentAddress>
+        </recipientAddress>
+         -->
+
+         <recipientAddress>
+             <mMSAgentAddressData>
+                    <eMail_address>ddccbbaa</eMail_address>
+             </mMSAgentAddressData>
+             <mMSRecipientType>tO</mMSRecipientType>
+        </recipientAddress>
+
+
+        <mSTimeZone>aabb</mSTimeZone>
+
+        <localSequenceNumber>123456789</localSequenceNumber>
+</MMR1ARecord>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/parlayChargingParameter.xsd">
+	<ChargingParameter id="0" value="Test" valueType="P_CHS_PARAMETER_STRING" />
+	<ChargingParameter id="0" value="2" valueType="P_CHS_PARAMETER_INT32" />
+</RequestData>

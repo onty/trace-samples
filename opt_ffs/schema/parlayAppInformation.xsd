@@ -1,0 +1,21 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--ROOT element-->
+	<xsd:element name="RequestData">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AppInformation" type="AppInformation_Type" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!--Types-->
+	<xsd:complexType name="AppInformation_Type">
+		<xsd:attribute name="value" type="Date_Type" use="required"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="Date_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value='[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}[Z]?'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="5000" snapshotInConsole="true" statistics="true" logDataInOut="false" debugLogging="false" />
+
+	<!-- Repository section -->
+	<Repository>
+	</Repository>
+
+	<!--Report plug-in  -->
+	<Plugin class="cmg.tools.ffs.plugins.report.Report" name="Report plugin"> 
+		<!-- Mandatory plugin arguments -->
+		<Argument name="report.settings" value="report_settings.xml" />
+		<!--Optional -->
+		<Argument name="report.label" value="12h_performance" />
+	</Plugin>
+	
+		
+	<!-- Default simulator plug-in, which send the request defined in the Model and TrafficModel section -->
+	<Plugin class="">
+		<!-- Mandatory plugin arguments -->
+		<Argument name="" value="" />
+	</Plugin>
+	
+	
+	<!-- Models section -->
+	<Models>
+	</Models>
+	 
+	<TrafficModel>	
+	</TrafficModel>
+	
+</FFS>

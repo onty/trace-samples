@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RequestData  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="schema/netflowFlowset.xsd">
+<TemplateFlowset>
+	<Template id="1" templateId="256">
+		<Field id="1" length="4" />
+		<Field id="2" length="4" />
+		<Field id="3" length="4"/>
+		<Field id="4"/>
+		<Field id="5"/>
+		<Field id="12"/>
+		<Field id="15"/>
+		<Field id="34"/>
+	</Template>
+	<Template id="2" templateId="257">
+		<Field id="1" length="4" />
+		<Field id="2" length="4" />
+		<Field id="3" length="4"/>
+		<Field id="4"/>
+		<Field id="6"/>
+		<Field id="27"/>
+		<Field id="28"/>
+		<Field id="62"/>
+	</Template>
+	<Template id="3" templateId="258">
+		<Field id="70"  />
+		<Field id="71"  />
+		<Field id="56" />
+		<Field id="57"/>
+		<Field id="7"/>
+		<Field id="8"/>
+		<Field id="32"/>
+		<Field id="33"/>
+	</Template>
+	<Template id="4" templateId="259">
+		<Field id="14" length="2" />
+		<Field id="16" length="4" />
+	</Template>
+</TemplateFlowset>
+</RequestData>

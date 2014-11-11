@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="false" debugLogging="false" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="aIncreasingValue" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="tjo" type="Fixed" value="tjo" datatype="String" />
+			<Variable name="requestIdCounter" type="Step" start="100" stepsize="1" datatype="Integer" />
+			<Variable name="globalSessionCounter" type="Step" start="10000" stepsize="1" datatype="Integer" />
+		</Global>
+		<Local>
+			<Variable name="recordNumber" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="sessionID" type="Fixed" value="not set" datatype="String" />
+			<Variable name="hej" type="Fixed" value="hej" datatype="String" />
+			<Variable name="local" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="step" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="localSessionCounter" type="Step" start="0" stepsize="1" datatype="Integer" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.dummyplugin.DummyPlugin">
+		<Argument name="arg1" value="Value_1_On_Argument" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000000" type="out_sync">
+				<Data name="print" value="m1.1: session: ${Local.sessionID}.set(${Global.aIncreasingValue})" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000000" type="out_sync">
+				<Data name="print" value="m1.2: session: ${Local.sessionID}, local1: ${Local.local} | ${Global.tjo} ${Local.hej}" datatype="String" />
+			</Item>
+		</Model>
+		<Model name="M2">
+			<Item repeat="1" delay="0" timeout="30000000" type="out_sync">
+				<Data name="print" value="m2.1: session: ${Local.sessionID}.set(${Global.aIncreasingValue}), local2: ${Local.local}" datatype="String" />
+			</Item>
+			<Item repeat="9" delay="0" timeout="30000000" type="out_sync">
+				<Data name="print" value="m2.1: session: ${Local.sessionID}, local2: ${Local.local}" datatype="String" />
+			</Item>
+		</Model>
+		<Model name="M3">
+			<Item repeat="1" delay="0" timeout="30000000" type="out_sync">
+				<Data name="noop1" value="${Local.sessionID}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="print" value="m3.1: session: ${Local.sessionID}" datatype="String" />
+			</Item>
+		</Model>
+		<Model name="M4-xmltest">
+			<Item repeat="1" delay="0" timeout="30000000" type="out_sync">
+				<Data name="print" value="localstep: ${Local.step}" datatype="String" />
+				<Data name="dumpxml" value="config/test/repostest-externalxml.xml" datatype="XMLDocument" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000000" type="out_sync">
+				<Data name="print" value="localstep: ${Local.step}" datatype="String" />
+				<Data name="dumpxml" value="config/test/repostest-externalxml-dontstep.xml" datatype="XMLDocument" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section 86400000 24h, 10800000 3h -->
+	<TrafficModel>
+		<Slot times="5" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M2" weight="100" />
+		</Slot>
+		<Slot times="5" duration="0" tps="0" activeModels="0">
+			<Model name="M3" weight="100" />
+		</Slot>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M4-xmltest" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>
+<!--
+The output should look close to this:
+
+Dummy (1) print: m1.1: session: 0
+Dummy (2) print: m1.1: session: 1
+Dummy (3) print: m1.1: session: 2
+Dummy (4) print: m1.1: session: 3
+Dummy (5) print: m1.1: session: 4
+Dummy (6) print: m2.1: session: 5, local2: 0
+Dummy (7) print: m3.1: session: 6
+Dummy (8) print: m3.1: session: 7
+Dummy (9) print: m3.1: session: 8
+Dummy (10) print: m3.1: session: 9
+Dummy (11) print: m3.1: session: 10
+Dummy (12) print: localstep: 0
+Dummy (12) dumpxml: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-16&quot;?&gt;
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/iaccParameters.xsd">
+	<Subscriber requestId="100">	
+ 	   	<Parameter level="0" name="localStep" value="1" valueType="PARAMETER_STRING"/>
+  		<Parameter level="0" name="sessionStep" value="10000" valueType="PARAMETER_STRING"/>
+	</Subscriber>	
+</RequestData>&lt;!- - Stepping external repos - -&gt;
+Dummy (1) print: m1.2: session: 0, local1: 0 | tjo hej
+Dummy (2) print: m1.2: session: 1, local1: 0 | tjo hej
+Dummy (3) print: m1.2: session: 2, local1: 0 | tjo hej
+Dummy (4) print: m1.2: session: 3, local1: 0 | tjo hej
+Dummy (5) print: m1.2: session: 4, local1: 0 | tjo hej
+Dummy (6) print: m2.1: session: 5, local2: 1
+Dummy (12) print: localstep: 2
+Dummy (12) dumpxml: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-16&quot;?&gt;
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/iaccParameters.xsd">
+	<Subscriber requestId="101">	
+ 	   	<Parameter level="0" name="localStep" value="3" valueType="PARAMETER_STRING"/>
+  		<Parameter level="0" name="session" value="10001" valueType="PARAMETER_STRING"/>
+ 	   	<Parameter level="0" name="hej" value="hej" valueType="PARAMETER_STRING"/>
+	</Subscriber>	
+</RequestData>&lt;!- - None Stepping external repos - -&gt;
+Dummy (6) print: m2.1: session: 5, local2: 2
+Dummy (6) print: m2.1: session: 5, local2: 3
+Dummy (6) print: m2.1: session: 5, local2: 4
+Dummy (6) print: m2.1: session: 5, local2: 5
+Dummy (6) print: m2.1: session: 5, local2: 6
+Dummy (6) print: m2.1: session: 5, local2: 7
+Dummy (6) print: m2.1: session: 5, local2: 8
+Dummy (6) print: m2.1: session: 5, local2: 9
+-->

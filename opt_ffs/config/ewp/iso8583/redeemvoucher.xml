@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<operation msgtype="0200">
+	<field3 name="Processing Code" value="030000" />
+	<field7 name="Transmission Date and Time" value="DEFAULT" />
+	<field11 name="Systems Trace Audit Number" value="DEFAULT" />
+	<field12 name="Local Transaction Time" value="DEFAULT" />
+	<field13 name="Local Transaction Date" value="DEFAULT" />
+	<field15 name="Settlement Date" value="DEFAULT" />
+	<field32 name="Acquiring Institution Identification Code" value="50613152000" />
+	<field35 name="Track 2 Data" value="100100000${Local.token}" />
+	<field37 name="Retrievel Reference Number" value="DEFAULT" />
+	<field41 name="Card Acceptor Terminal Identification" value="90000011" />
+	<field42 name="Card Acceptor Identification Code" value="900000110000000" />
+	<field43 name="Card Acceptor Name and Location" value="0000000000000000Nordea000KarlskronaKNASE" />
+	<field49 name="Transaction Currency Code" value="${Global.currency}" />
+	<field52 name="Pin data" value="${Global.secret}" />
+	<field100 name="Receiving Institute ID code" value="${Local.rid}" />
+</operation>

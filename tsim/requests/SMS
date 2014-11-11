@@ -1,0 +1,5 @@
+description,Simulate one SMS.<br/>
+description,Originating protocol is SCAPv2
+H,trafficcase,SMS
+M,A-Number
+M,B-Number

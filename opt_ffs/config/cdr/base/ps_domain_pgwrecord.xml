@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PGWRecord>
+		<recordType>85</recordType>        
+        <servedIMSI>abcdff</servedIMSI>
+        <servedMSISDN>${servedMSISDN}</servedMSISDN>
+        <userLocationInformation>ffaa</userLocationInformation>
+        <chargingID>1971</chargingID>
+        <servingNodeAddress>
+            <GSNAddress>
+                <iPTextRepresentedAddress>
+                    <iPTextV4Address>127.0.0.1</iPTextV4Address>
+                </iPTextRepresentedAddress>
+            </GSNAddress>
+            <GSNAddress>
+                <iPTextRepresentedAddress>
+                    <iPTextV4Address>127.0.0.2</iPTextV4Address>
+                </iPTextRepresentedAddress>
+            </GSNAddress>
+        </servingNodeAddress>
+        <recordOpeningTime>aabbccddffaabbcccc</recordOpeningTime>
+        <duration>10</duration>
+        <causeForRecClosing>0</causeForRecClosing>
+        <chargingCharacteristics>ddcc</chargingCharacteristics>
+        <servingNodeType>sGSN</servingNodeType>
+        <accessPointNameNI>karlskrona_sweden</accessPointNameNI>
+        <threeGPP2UserLocationInformation>aabbccddeeff</threeGPP2UserLocationInformation>
+        <pdpPDNType>aabb</pdpPDNType>
+        <mSTimeZone>aabb</mSTimeZone>
+         <listOfServiceData>
+             <ChangeOfServiceCondition>
+                <ratingGroup>5</ratingGroup>
+                <serviceConditionChange>tariffTimeSwitch</serviceConditionChange> 
+                <timeOfReport>aabbccddffaabbcccc</timeOfReport>
+             </ChangeOfServiceCondition>  
+        </listOfServiceData>
+        <p_GWAddress>
+            <iPTextRepresentedAddress>
+                <iPTextV4Address>127.0.0.1</iPTextV4Address>
+            </iPTextRepresentedAddress>
+        </p_GWAddress> 
+</PGWRecord>

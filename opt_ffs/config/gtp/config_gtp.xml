@@ -1,0 +1,273 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="Poolsize" type="Fixed" value="15" datatype="String" />
+			<Variable name="ProtocolClass" type="Fixed" value="ericsson.services.mms.gtp.quota.QMPPayloadHandler" datatype="String" />
+			<Variable name="ResponseTimeout" type="Fixed" value="30000" datatype="String" />
+			<Variable name="UDPBUFSIZE" type="Fixed" value="50000" datatype="String" />
+			<Variable name="aIncreasingValue" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="destIP" type="Fixed" value="150.236.120.81" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="3898" datatype="String" />
+			<Variable name="ownIP" type="Fixed" value="150.236.120.81" datatype="String" />
+			<Variable name="ownPort" type="Fixed" value="3850" datatype="String" />
+		</Global>
+		<Local>
+			<Variable name="sequenceNumber" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="sessionID" type="Step" start="0" stepsize="1" datatype="Integer" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.gtp.GTP">
+		<Argument name="ResponseTimeout" value="${Global.ResponseTimeout}" />
+		<Argument name="ownIP" value="${Global.ownIP}" />
+		<Argument name="destIP" value="${Global.destIP}" />
+		<Argument name="destPort" value="${Global.destPort}" />
+		<Argument name="ownPort" value="${Global.ownPort}" />
+		<Argument name="ProtocolClass" value="${Global.ProtocolClass}" />
+		<Argument name="UDPBUFSIZE" value="${Global.UDPBUFSIZE}" />
+		<Argument name="Poolsize" value="${Global.Poolsize}" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="EchoRequest" datatype="String" />
+				<Data name="GTPHeaderFirstByte" value="15" datatype="String" />
+				<Data name="GTPHeaderMessageType" value="1" datatype="String" />
+				<Data name="GTPHeaderLength" value="0" datatype="String" />
+				<Data name="GTPHeaderSequenceNumber" value="${Local.sequenceNumber}.set(${Global.aIncreasingValue})" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="NodeAliveRequest" datatype="String" />
+				<Data name="GTPHeaderFirstByte" value="15" datatype="String" />
+				<Data name="GTPHeaderMessageType" value="4" datatype="String" />
+				<Data name="GTPHeaderLength" value="7" datatype="String" />
+				<Data name="GTPHeaderSequenceNumber" value="${Local.sequenceNumber}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="GTPNodeAddressIE" value="251" datatype="String" />
+				<Data name="GTPIPADDRESSLENGTH" value="4" datatype="String" />
+				<Data name="GTPIPV4Address" value="127.0.0.1" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="DataTransferRequest" datatype="String" />
+				<Data name="GTPHeaderFirstByte" value="15" datatype="String" />
+				<Data name="GTPHeaderMessageType" value="240" datatype="String" />
+				<Data name="GTPHeaderLength" value="23" datatype="String" />
+				<Data name="GTPHeaderSequenceNumber" value="${Local.sequenceNumber}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="GTPPacketTransferCommandIE" value="126" datatype="String" />
+				<Data name="GTPPacketTransferCommand" value="1" datatype="String" />
+				<Data name="GTPPacketTransferDataRecordIE" value="252" datatype="String" />
+				<Data name="GTPPacketTransferLength" value="17" datatype="String" />
+				<Data name="GTPPacketTransferNumberofRecords" value="1" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormat" value="49" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormatVersion" value="0" datatype="String" />
+				<Data name="GTPPacketTransferRecordSecondLength" value="13" datatype="String" />
+				<Data name="MessageType" value="32" datatype="String" />
+				<Data name="Length" value="11" datatype="String" />
+				<Data name="UserIndex_IPAddress" value="127.0.0.1" datatype="String" />
+				<Data name="UserIndex_UserID" value="abcd" datatype="String" />
+				<Data name="TimeStamp_StartTime" value="123456789" datatype="String" />
+				<Data name="TimeStamp_Duration" value="12" datatype="String" />
+				<Data name="ExtendedUserIndex_Reserved" value="12345" datatype="String" />
+				<Data name="ExtendedUserIndex_TableName" value="12345" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="DataTransferRequest" datatype="String" />
+				<Data name="GTPHeaderFirstByte" value="15" datatype="String" />
+				<Data name="GTPHeaderMessageType" value="240" datatype="String" />
+				<Data name="GTPHeaderLength" value="23" datatype="String" />
+				<Data name="GTPHeaderSequenceNumber" value="${Local.sequenceNumber}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="GTPPacketTransferCommandIE" value="126" datatype="String" />
+				<Data name="GTPPacketTransferCommand" value="1" datatype="String" />
+				<Data name="GTPPacketTransferDataRecordIE" value="252" datatype="String" />
+				<Data name="GTPPacketTransferLength" value="17" datatype="String" />
+				<Data name="GTPPacketTransferNumberofRecords" value="1" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormat" value="49" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormatVersion" value="0" datatype="String" />
+				<Data name="GTPPacketTransferRecordSecondLength" value="13" datatype="String" />
+				<Data name="MessageType" value="34" datatype="String" />
+				<Data name="Length" value="11" datatype="String" />
+				<Data name="UserIndex_IPAddress" value="127.0.0.1" datatype="String" />
+				<Data name="UserIndex_UserID" value="abcd" datatype="String" />
+				<Data name="SessionID" value="${Local.sessionID}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="ServiceID" value="112345" datatype="String" />
+				<Data name="Quadrans" value="12345" datatype="String" />
+				<Data name="QualifiedQuadrans_QualifiedQuadransChild" value="12345678" datatype="String" />
+				<Data name="QualifiedQuadrans_Units" value="1" datatype="String" />
+				<Data name="TimeStamp_StartTime" value="123456789" datatype="String" />
+				<Data name="TimeStamp_Duration" value="12" datatype="String" />
+				<Data name="SessionType" value="1" datatype="String" />
+				<Data name="BillingPlanID" value="12345" datatype="String" />
+				<Data name="ExtendedUserIndex_Reserved" value="12345" datatype="String" />
+				<Data name="ExtendedUserIndex_TableName" value="12345" datatype="String" />
+				<Data name="Cause" value="0" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="DataTransferRequest" datatype="String" />
+				<Data name="GTPHeaderFirstByte" value="15" datatype="String" />
+				<Data name="GTPHeaderMessageType" value="240" datatype="String" />
+				<Data name="GTPHeaderLength" value="23" datatype="String" />
+				<Data name="GTPHeaderSequenceNumber" value="${Local.sequenceNumber}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="GTPPacketTransferCommandIE" value="126" datatype="String" />
+				<Data name="GTPPacketTransferCommand" value="1" datatype="String" />
+				<Data name="GTPPacketTransferDataRecordIE" value="252" datatype="String" />
+				<Data name="GTPPacketTransferLength" value="17" datatype="String" />
+				<Data name="GTPPacketTransferNumberofRecords" value="1" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormat" value="49" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormatVersion" value="0" datatype="String" />
+				<Data name="GTPPacketTransferRecordSecondLength" value="13" datatype="String" />
+				<Data name="MessageType" value="36" datatype="String" />
+				<Data name="Length" value="11" datatype="String" />
+				<Data name="UserIndex_IPAddress" value="127.0.0.1" datatype="String" />
+				<Data name="UserIndex_UserID" value="abcd" datatype="String" />
+				<Data name="SessionID" value="${Local.sessionID}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="ServiceID" value="112345" datatype="String" />
+				<Data name="Usage" value="12345" datatype="String" />
+				<Data name="Quadrans" value="12345" datatype="String" />
+				<Data name="QualifiedQuadrans_QualifiedQuadransChild" value="12345678" datatype="String" />
+				<Data name="QualifiedQuadrans_Units" value="1" datatype="String" />
+				<Data name="QualifiedUsage_Usage" value="55" datatype="String" />
+				<Data name="QualifiedUsage_Units" value="5435" datatype="String" />
+				<Data name="QualifiedQuotaRemaining_QualifiedQuadransChild" value="12345678" datatype="String" />
+				<Data name="QualifiedQuotaRemaining_Units" value="5435" datatype="String" />
+				<Data name="RemainingQuota" value="154" datatype="String" />
+				<Data name="TimeStamp_StartTime" value="123456789" datatype="String" />
+				<Data name="TimeStamp_Duration" value="12" datatype="String" />
+				<Data name="SessionType" value="1" datatype="String" />
+				<Data name="BillingPlanID" value="12345" datatype="String" />
+				<Data name="ServiceStartTimeStamp" value="423346" datatype="String" />
+				<Data name="QuotaServerFlags" value="1" datatype="String" />
+				<Data name="ExtendedUserIndex_Reserved" value="12345" datatype="String" />
+				<Data name="ExtendedUserIndex_TableName" value="12345" datatype="String" />
+				<Data name="IntervalUsageIpBytes_UploadedBytes" value="12345678" datatype="String" />
+				<Data name="IntervalUsageIpBytes_DownloadedBytes" value="12345678" datatype="String" />
+				<Data name="IntervalUsageSeconds" value="1234567" datatype="String" />
+				<Data name="IntervalUsageTimeStamp_TimeStampFirstUsage" value="1234" datatype="String" />
+				<Data name="IntervalUsageTimeStamp_TimeStampLastUsage" value="1234" datatype="String" />
+				<Data name="TariffSwitchTime" value="1234" datatype="String" />
+				<Data name="TariffSwitchQualifiedUsage_Usage" value="12345678" datatype="String" />
+				<Data name="TariffSwitchQualifiedUsage_Units" value="1" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageIPBytes_UploadedBytes" value="12345" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageIPBytes_DownloadedBytes" value="54321" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageSeconds" value="54321" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageTimeStamp_TimeStampFirstBillable" value="432165" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageTimeStamp_TimeStampLastBillable" value="432165" datatype="String" />
+				<Data name="Cause" value="0" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="DataTransferRequest" datatype="String" />
+				<Data name="GTPHeaderFirstByte" value="15" datatype="String" />
+				<Data name="GTPHeaderMessageType" value="240" datatype="String" />
+				<Data name="GTPHeaderLength" value="23" datatype="String" />
+				<Data name="GTPHeaderSequenceNumber" value="${Local.sequenceNumber}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="GTPPacketTransferCommandIE" value="126" datatype="String" />
+				<Data name="GTPPacketTransferCommand" value="1" datatype="String" />
+				<Data name="GTPPacketTransferDataRecordIE" value="252" datatype="String" />
+				<Data name="GTPPacketTransferLength" value="17" datatype="String" />
+				<Data name="GTPPacketTransferNumberofRecords" value="1" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormat" value="49" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormatVersion" value="0" datatype="String" />
+				<Data name="GTPPacketTransferRecordSecondLength" value="13" datatype="String" />
+				<Data name="MessageType" value="37" datatype="String" />
+				<Data name="Length" value="11" datatype="String" />
+				<Data name="UserIndex_IPAddress" value="127.0.0.1" datatype="String" />
+				<Data name="UserIndex_UserID" value="abcd" datatype="String" />
+				<Data name="SessionID" value="${Local.sessionID}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="ServiceID" value="112345" datatype="String" />
+				<Data name="Usage" value="12345" datatype="String" />
+				<Data name="RemainingQuota" value="154" datatype="String" />
+				<Data name="TimeStamp_StartTime" value="123456789" datatype="String" />
+				<Data name="TimeStamp_Duration" value="12" datatype="String" />
+				<Data name="Cause" value="0" datatype="String" />
+				<Data name="BillingPlanID" value="12345" datatype="String" />
+				<Data name="ServiceStartTimeStamp" value="423346" datatype="String" />
+				<Data name="QualifiedUsage_Usage" value="55" datatype="String" />
+				<Data name="QualifiedUsage_Units" value="5435" datatype="String" />
+				<Data name="QualifiedQuotaRemaining_QualifiedQuadransChild" value="12345678" datatype="String" />
+				<Data name="QualifiedQuotaRemaining_Units" value="5435" datatype="String" />
+				<Data name="QuotaServerFlags" value="1" datatype="String" />
+				<Data name="ExtendedUserIndex_Reserved" value="12345" datatype="String" />
+				<Data name="ExtendedUserIndex_TableName" value="12345" datatype="String" />
+				<Data name="Quadrans" value="12345" datatype="String" />
+				<Data name="QualifiedQuadrans_QualifiedQuadransChild" value="12345678" datatype="String" />
+				<Data name="QualifiedQuadrans_Units" value="1" datatype="String" />
+				<Data name="IntervalUsageIpBytes_UploadedBytes" value="12345678" datatype="String" />
+				<Data name="IntervalUsageIpBytes_DownloadedBytes" value="12345678" datatype="String" />
+				<Data name="IntervalUsageSeconds" value="1234567" datatype="String" />
+				<Data name="IntervalUsageTimeStamp_TimeStampFirstUsage" value="1234" datatype="String" />
+				<Data name="IntervalUsageTimeStamp_TimeStampLastUsage" value="1234" datatype="String" />
+				<Data name="TariffSwitchTime" value="1234" datatype="String" />
+				<Data name="TariffSwitchQualifiedUsage_Usage" value="12345678" datatype="String" />
+				<Data name="TariffSwitchQualifiedUsage_Units" value="1" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageIPBytes_UploadedBytes" value="12345" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageIPBytes_DownloadedBytes" value="54321" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageSeconds" value="54321" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageTimeStamp_TimeStampFirstBillable" value="432165" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageTimeStamp_TimeStampLastBillable" value="432165" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="DataTransferRequest" datatype="String" />
+				<Data name="GTPHeaderFirstByte" value="15" datatype="String" />
+				<Data name="GTPHeaderMessageType" value="240" datatype="String" />
+				<Data name="GTPHeaderLength" value="23" datatype="String" />
+				<Data name="GTPHeaderSequenceNumber" value="${Local.sequenceNumber}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="GTPPacketTransferCommandIE" value="126" datatype="String" />
+				<Data name="GTPPacketTransferCommand" value="1" datatype="String" />
+				<Data name="GTPPacketTransferDataRecordIE" value="252" datatype="String" />
+				<Data name="GTPPacketTransferLength" value="17" datatype="String" />
+				<Data name="GTPPacketTransferNumberofRecords" value="1" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormat" value="49" datatype="String" />
+				<Data name="GTPPacketTransferRecordFormatVersion" value="0" datatype="String" />
+				<Data name="GTPPacketTransferRecordSecondLength" value="13" datatype="String" />
+				<Data name="MessageType" value="38" datatype="String" />
+				<Data name="Length" value="11" datatype="String" />
+				<Data name="UserIndex_IPAddress" value="127.0.0.1" datatype="String" />
+				<Data name="UserIndex_UserID" value="abcd" datatype="String" />
+				<Data name="SessionID" value="${Local.sessionID}.set(${Global.aIncreasingValue})" datatype="String" />
+				<Data name="ServiceID" value="112345" datatype="String" />
+				<Data name="Usage" value="12345" datatype="String" />
+				<Data name="RemainingQuota" value="154" datatype="String" />
+				<Data name="Quadrans" value="12345" datatype="String" />
+				<Data name="QualifiedQuadrans_QualifiedQuadransChild" value="12345678" datatype="String" />
+				<Data name="QualifiedQuadrans_Units" value="1" datatype="String" />
+				<Data name="QualifiedUsage_Usage" value="55" datatype="String" />
+				<Data name="QualifiedUsage_Units" value="5435" datatype="String" />
+				<Data name="QualifiedQuotaRemaining_QualifiedQuadransChild" value="12345678" datatype="String" />
+				<Data name="QualifiedQuotaRemaining_Units" value="5435" datatype="String" />
+				<Data name="TimeStamp_StartTime" value="123456789" datatype="String" />
+				<Data name="TimeStamp_Duration" value="12" datatype="String" />
+				<Data name="ExtendedUserIndex_Reserved" value="12345" datatype="String" />
+				<Data name="ExtendedUserIndex_TableName" value="12345" datatype="String" />
+				<Data name="BillingPlanID" value="12345" datatype="String" />
+				<Data name="ServiceStartTimeStamp" value="423346" datatype="String" />
+				<Data name="IntervalUsageIpBytes_UploadedBytes" value="12345678" datatype="String" />
+				<Data name="IntervalUsageIpBytes_DownloadedBytes" value="12345678" datatype="String" />
+				<Data name="IntervalUsageSeconds" value="1234567" datatype="String" />
+				<Data name="IntervalUsageTimeStamp_TimeStampFirstUsage" value="1234" datatype="String" />
+				<Data name="IntervalUsageTimeStamp_TimeStampLastUsage" value="1234" datatype="String" />
+				<Data name="TariffSwitchTime" value="1234" datatype="String" />
+				<Data name="TariffSwitchQualifiedUsage_Usage" value="12345678" datatype="String" />
+				<Data name="TariffSwitchQualifiedUsage_Units" value="1" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageIPBytes_UploadedBytes" value="12345" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageIPBytes_DownloadedBytes" value="54321" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageSeconds" value="54321" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageTimeStamp_TimeStampFirstBillable" value="432165" datatype="String" />
+				<Data name="TariffSwitchIntervalUsageTimeStamp_TimeStampLastBillable" value="432165" datatype="String" />
+				<Data name="Cause" value="0" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+            <Variable name="additionalAppIDs" type="Fixed" value="193,0,16777232" datatype="String" />
+			<Variable name="AcctAppID" type="Fixed" value="0" datatype="Integer" />
+			<Variable name="AuthAppID" type="Fixed" value="16777232" datatype="Integer" />
+			<Variable name="aIncreasingValue" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="destIP" type="Fixed" value="136.225.202.94" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="4869" datatype="String" />
+			<Variable name="destRealm" type="Fixed" value="server.com" datatype="String" />
+			<Variable name="destVendorID" type="Fixed" value="0" datatype="Integer" />
+			<Variable name="ownIP" type="Fixed" value="136.225.202.94" datatype="String" />
+			<Variable name="ownPort" type="Fixed" value="3869" datatype="String" />
+			<Variable name="ownRealm" type="Fixed" value="client.com" datatype="String" />
+			<Variable name="ownVendorID" type="Fixed" value="0" datatype="Integer" />
+		</Global>
+		<Local>
+			<Variable name="recordNumber" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="sessionID" type="Fixed" value="nothing" datatype="String" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.diameter.Diameter">
+        <Argument name="additionalAppIDs" value="${Global.additionalAppIDs}" />
+		<Argument name="ownRealm" value="${Global.ownRealm}" />
+		<Argument name="destURI" value="aaa://${Global.destIP}:${Global.destPort};transport=tcp" />
+		<Argument name="dictionaryPath" value="config/diameter/dictionary.xml" />
+		<Argument name="destRealm" value="${Global.destRealm}" />
+		<Argument name="ownProductID" value="MultiMediation" />
+		<Argument name="waitForCEATimeout" value="15000" />
+		<Argument name="ownVendorID" value="${Global.ownVendorID}" />
+		<Argument name="destVendorID" value="${Global.destVendorID}" />
+		<Argument name="AcctAppID" value="${Global.AcctAppID}" />
+		<Argument name="ownURI" value="aaa://${Global.ownIP};transport=tcp" />
+		<Argument name="AuthAppID" value="${Global.AuthAppID}" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="CIR" datatype="String" />
+				<Data name="DiameterRequest" value="./balance_enquiry.xml" datatype="XMLDocument" />
+				<Data name="PBit" value="true" datatype="String" />
+			</Item>
+ 		</Model>        
+        <Model name="M2">
+            <Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+                <Data name="RequestType" value="CIR" datatype="String" />
+                <Data name="DiameterRequest" value="./cdr_processing.xml" datatype="XMLDocument" />
+                <Data name="PBit" value="true" datatype="String" />
+            </Item>
+        </Model>        
+        <Model name="M3">
+            <Item repeat="1" delay="0" timeout="300000" type="out_sync">
+                <Data name="RequestType" value="CIR" datatype="String" />
+                <Data name="DiameterRequest" value="./account_adjustment.xml" datatype="XMLDocument" />
+                <Data name="PBit" value="true" datatype="String" />
+            </Item>
+        </Model>
+        <Model name="M4">
+            <Item repeat="1" delay="0" timeout="300000" type="out_sync">
+                <Data name="RequestType" value="CIR" datatype="String" />
+                <Data name="DiameterRequest" value="./create_event_cache.xml" datatype="XMLDocument" />
+                <Data name="PBit" value="true" datatype="String" />
+            </Item>
+        </Model>
+            <Model name="M5">
+            <Item repeat="1" delay="0" timeout="300000" type="out_sync">
+                <Data name="RequestType" value="CIR" datatype="String" />
+                <Data name="DiameterRequest" value="./create_shadow_account.xml" datatype="XMLDocument" />
+                <Data name="PBit" value="true" datatype="String" />
+            </Item>
+        </Model>        
+    </Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M2" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

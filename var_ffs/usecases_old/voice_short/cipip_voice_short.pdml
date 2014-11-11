@@ -1,0 +1,1244 @@
+<?xml version="1.0"?>
+<pdml version="0" creator="wireshark/1.4.2">
+<packet>
+  <proto name="geninfo" pos="0" showname="General information" size="618">
+    <field name="num" pos="0" show="1" showname="Number" value="1" size="618"/>
+    <field name="len" pos="0" show="618" showname="Frame Length" value="26a" size="618"/>
+    <field name="caplen" pos="0" show="618" showname="Captured Length" value="26a" size="618"/>
+    <field name="timestamp" pos="0" show="Apr 29, 2011 11:22:45.291500000 W. Europe Daylight Time" showname="Captured Time" value="1304068965.291500000" size="618"/>
+  </proto>
+  <proto name="frame" showname="Frame 1: 618 bytes on wire (4944 bits), 618 bytes captured (4944 bits)" size="618" pos="0">
+    <field name="frame.time" showname="Arrival Time: Apr 29, 2011 11:22:45.291500000 W. Europe Daylight Time" size="0" pos="0" show="Apr 29, 2011 11:22:45.291500000"/>
+    <field name="frame.time_epoch" showname="Epoch Time: 1304068965.291500000 seconds" size="0" pos="0" show="1304068965.291500000"/>
+    <field name="frame.time_delta" showname="Time delta from previous captured frame: 0.000000000 seconds" size="0" pos="0" show="0.000000000"/>
+    <field name="frame.time_delta_displayed" showname="Time delta from previous displayed frame: 0.000000000 seconds" size="0" pos="0" show="0.000000000"/>
+    <field name="frame.time_relative" showname="Time since reference or first frame: 0.000000000 seconds" size="0" pos="0" show="0.000000000"/>
+    <field name="frame.number" showname="Frame Number: 1" size="0" pos="0" show="1"/>
+    <field name="frame.len" showname="Frame Length: 618 bytes (4944 bits)" size="0" pos="0" show="618"/>
+    <field name="frame.cap_len" showname="Capture Length: 618 bytes (4944 bits)" size="0" pos="0" show="618"/>
+    <field name="frame.marked" showname="Frame is marked: True" size="0" pos="0" show="1"/>
+    <field name="frame.ignored" showname="Frame is ignored: False" size="0" pos="0" show="0"/>
+    <field name="frame.protocols" showname="Protocols in frame: eth:ip:sctp:diameter:diameter" size="0" pos="0" show="eth:ip:sctp:diameter:diameter"/>
+  </proto>
+  <proto name="eth" showname="Ethernet II, Src: JuniperN_64:44:ad (00:1b:c0:64:44:ad), Dst: IntelCor_eb:d7:43 (00:15:17:eb:d7:43)" size="14" pos="0">
+    <field name="eth.dst" showname="Destination: IntelCor_eb:d7:43 (00:15:17:eb:d7:43)" size="6" pos="0" show="00:15:17:eb:d7:43" value="001517ebd743">
+      <field name="eth.addr" showname="Address: IntelCor_eb:d7:43 (00:15:17:eb:d7:43)" size="6" pos="0" show="00:15:17:eb:d7:43" value="001517ebd743"/>
+      <field name="eth.ig" showname=".... ...0 .... .... .... .... = IG bit: Individual address (unicast)" size="3" pos="0" show="0" value="0" unmaskedvalue="001517"/>
+      <field name="eth.lg" showname=".... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)" size="3" pos="0" show="0" value="0" unmaskedvalue="001517"/>
+    </field>
+    <field name="eth.src" showname="Source: JuniperN_64:44:ad (00:1b:c0:64:44:ad)" size="6" pos="6" show="00:1b:c0:64:44:ad" value="001bc06444ad">
+      <field name="eth.addr" showname="Address: JuniperN_64:44:ad (00:1b:c0:64:44:ad)" size="6" pos="6" show="00:1b:c0:64:44:ad" value="001bc06444ad"/>
+      <field name="eth.ig" showname=".... ...0 .... .... .... .... = IG bit: Individual address (unicast)" size="3" pos="6" show="0" value="0" unmaskedvalue="001bc0"/>
+      <field name="eth.lg" showname=".... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)" size="3" pos="6" show="0" value="0" unmaskedvalue="001bc0"/>
+    </field>
+    <field name="eth.type" showname="Type: IP (0x0800)" size="2" pos="12" show="0x0800" value="0800"/>
+  </proto>
+  <proto name="ip" showname="Internet Protocol, Src: 10.64.19.72 (10.64.19.72), Dst: 10.64.19.223 (10.64.19.223)" size="20" pos="14">
+    <field name="ip.version" showname="Version: 4" size="1" pos="14" show="4" value="45"/>
+    <field name="ip.hdr_len" showname="Header length: 20 bytes" size="1" pos="14" show="20" value="45"/>
+    <field name="ip.dsfield" showname="Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00)" size="1" pos="15" show="0" value="00">
+      <field name="ip.dsfield.dscp" showname="0000 00.. = Differentiated Services Codepoint: Default (0x00)" size="1" pos="15" show="0x00" value="0" unmaskedvalue="00"/>
+      <field name="ip.dsfield.ect" showname=".... ..0. = ECN-Capable Transport (ECT): 0" size="1" pos="15" show="0" value="0" unmaskedvalue="00"/>
+      <field name="ip.dsfield.ce" showname=".... ...0 = ECN-CE: 0" size="1" pos="15" show="0" value="0" unmaskedvalue="00"/>
+    </field>
+    <field name="ip.len" showname="Total Length: 604" size="2" pos="16" show="604" value="025c"/>
+    <field name="ip.id" showname="Identification: 0x2c0a (11274)" size="2" pos="18" show="0x2c0a" value="2c0a"/>
+    <field name="ip.flags" showname="Flags: 0x00" size="1" pos="20" show="0x00" value="00">
+      <field name="ip.flags.rb" showname="0... .... = Reserved bit: Not set" size="1" pos="20" show="0" value="00"/>
+      <field name="ip.flags.df" showname=".0.. .... = Don&apos;t fragment: Not set" size="1" pos="20" show="0" value="00"/>
+      <field name="ip.flags.mf" showname="..0. .... = More fragments: Not set" size="1" pos="20" show="0" value="00"/>
+    </field>
+    <field name="ip.frag_offset" showname="Fragment offset: 0" size="2" pos="20" show="0" value="0000"/>
+    <field name="ip.ttl" showname="Time to live: 253" size="1" pos="22" show="253" value="fd"/>
+    <field name="ip.proto" showname="Protocol: SCTP (132)" size="1" pos="23" show="132" value="84"/>
+    <field name="ip.checksum" showname="Header checksum: 0x536d [correct]" size="2" pos="24" show="0x536d" value="536d">
+      <field name="ip.checksum_good" showname="Good: True" size="2" pos="24" show="1" value="536d"/>
+      <field name="ip.checksum_bad" showname="Bad: False" size="2" pos="24" show="0" value="536d"/>
+    </field>
+    <field name="ip.src" showname="Source: 10.64.19.72 (10.64.19.72)" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.addr" showname="Source or Destination Address: 10.64.19.72 (10.64.19.72)" hide="yes" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.src_host" showname="Source Host: 10.64.19.72" hide="yes" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.host" showname="Source or Destination Host: 10.64.19.72" hide="yes" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.dst" showname="Destination: 10.64.19.223 (10.64.19.223)" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+    <field name="ip.addr" showname="Source or Destination Address: 10.64.19.223 (10.64.19.223)" hide="yes" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+    <field name="ip.dst_host" showname="Destination Host: 10.64.19.223" hide="yes" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+    <field name="ip.host" showname="Source or Destination Host: 10.64.19.223" hide="yes" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+  </proto>
+  <proto name="sctp" showname="Stream Control Transmission Protocol, Src Port: 8732 (8732), Dst Port: 32874 (32874)" size="28" pos="34">
+    <field name="sctp.srcport" showname="Source port: 8732" size="2" pos="34" show="8732" value="221c"/>
+    <field name="sctp.dstport" showname="Destination port: 32874" size="2" pos="36" show="32874" value="806a"/>
+    <field name="sctp.verification_tag" showname="Verification tag: 0x27af5c7f" size="4" pos="38" show="0x27af5c7f" value="27af5c7f"/>
+    <field name="sctp.port" showname="Port: 8732" hide="yes" size="2" pos="34" show="8732" value="221c"/>
+    <field name="sctp.port" showname="Port: 32874" hide="yes" size="2" pos="36" show="32874" value="806a"/>
+    <field name="sctp.checksum" showname="Checksum: 0x2990c94e (not verified)" size="4" pos="42" show="0x2990c94e" value="2990c94e"/>
+    <field name="" show="DATA chunk(ordered, complete segment, TSN: 23521205, SID: 0, SSN: 9152, PPID: 0, payload length: 556 bytes)" size="16" pos="46" value="0003023c0166e7b5000023c000000000">
+      <field name="sctp.chunk_type" showname="Chunk type: DATA (0)" size="1" pos="46" show="0" value="00">
+        <field name="sctp.chunk_bit_1" showname="0... .... = Bit: Stop processing of the packet" size="1" pos="46" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sctp.chunk_bit_2" showname=".0.. .... = Bit: Do not report" size="1" pos="46" show="0" value="0" unmaskedvalue="00"/>
+      </field>
+      <field name="sctp.chunk_flags" showname="Chunk flags: 0x03" size="1" pos="47" show="0x03" value="03">
+        <field name="sctp.data_e_bit" showname=".... ...1 = E-Bit: Last segment" size="1" pos="47" show="1" value="1" unmaskedvalue="03"/>
+        <field name="sctp.data_b_bit" showname=".... ..1. = B-Bit: First segment" size="1" pos="47" show="1" value="1" unmaskedvalue="03"/>
+        <field name="sctp.data_u_bit" showname=".... .0.. = U-Bit: Ordered delivery" size="1" pos="47" show="0" value="0" unmaskedvalue="03"/>
+        <field name="sctp.data_i_bit" showname=".... 0... = I-Bit: Possibly delay SACK" size="1" pos="47" show="0" value="0" unmaskedvalue="03"/>
+      </field>
+      <field name="sctp.chunk_length" showname="Chunk length: 572" size="2" pos="48" show="572" value="023c"/>
+      <field name="sctp.data_tsn" showname="TSN: 23521205" size="4" pos="50" show="23521205" value="0166e7b5"/>
+      <field name="sctp.data_sid" showname="Stream Identifier: 0x0000" size="2" pos="54" show="0x0000" value="0000"/>
+      <field name="sctp.data_ssn" showname="Stream sequence number: 9152" size="2" pos="56" show="9152" value="23c0"/>
+      <field name="sctp.data_payload_proto_id" showname="Payload protocol identifier: not specified (0)" size="4" pos="58" show="0" value="00000000"/>
+    </field>
+  </proto>
+  <proto name="diameter" showname="Diameter Protocol" size="556" pos="62">
+    <field name="diameter.version" showname="Version: 0x01" size="1" pos="62" show="0x01" value="01"/>
+    <field name="diameter.length" showname="Length: 556" size="3" pos="63" show="556" value="00022c"/>
+    <field name="diameter.flags" showname="Flags: 0xc0" size="1" pos="66" show="0xc0" value="c0">
+      <field name="diameter.flags.request" showname="1... .... = Request: Set" size="1" pos="66" show="1" value="1" unmaskedvalue="c0"/>
+      <field name="diameter.flags.proxyable" showname=".1.. .... = Proxyable: Set" size="1" pos="66" show="1" value="1" unmaskedvalue="c0"/>
+      <field name="diameter.flags.error" showname="..0. .... = Error: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.T" showname="...0 .... = T(Potentially re-transmitted message): Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+    </field>
+    <field name="diameter.cmd.code" showname="Command Code: 16777214 Charging-Interrogation" size="3" pos="67" show="16777214" value="fffffe"/>
+    <field name="diameter.applicationId" showname="ApplicationId: 16777232" size="4" pos="70" show="16777232" value="01000010"/>
+    <field name="diameter.hopbyhopid" showname="Hop-by-Hop Identifier: 0x164f1c2c" size="4" pos="74" show="0x164f1c2c" value="164f1c2c"/>
+    <field name="diameter.endtoendid" showname="End-to-End Identifier: 0x164f1c2c" size="4" pos="78" show="0x164f1c2c" value="164f1c2c"/>
+    <field name="diameter.answer_in" showname="Answer In: 3" size="0" pos="62" show="3"/>
+    <field name="diameter.avp" showname="AVP: Session-Id(263) l=29 f=-M- val=8-1950224902-06123e74" size="29" pos="82" show="00:00:01:07:40:00:00:1d:38:2d:31:39:35:30:32:32:34:39:30:32:2d:30:36:31:32:33:65:37:34" value="000001074000001d382d313935303232343930322d3036313233653734">
+      <field name="diameter.avp.code" showname="AVP Code: 263 Session-Id" size="4" pos="82" show="263" value="00000107"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="86" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="86" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 29" size="3" pos="87" show="29" value="00001d"/>
+      <field name="diameter.Session-Id" showname="Session-Id: 8-1950224902-06123e74" size="21" pos="90" show="8-1950224902-06123e74" value="382d313935303232343930322d3036313233653734"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Vendor-Specific-Application-Id(260) l=32 f=-M-" size="32" pos="114" show="00:00:01:04:40:00:00:20:00:00:01:02:40:00:00:0c:01:00:00:10:00:00:01:0a:40:00:00:0c:00:00:00:c1" value="0000010440000020000001024000000c010000100000010a4000000c000000c1">
+      <field name="diameter.avp.code" showname="AVP Code: 260 Vendor-Specific-Application-Id" size="4" pos="114" show="260" value="00000104"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="118" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="118" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 32" size="3" pos="119" show="32" value="000020"/>
+      <field name="diameter.Vendor-Specific-Application-Id" showname="Vendor-Specific-Application-Id: 000001024000000c010000100000010a4000000c000000c1" size="24" pos="122" show="00:00:01:02:40:00:00:0c:01:00:00:10:00:00:01:0a:40:00:00:0c:00:00:00:c1" value="000001024000000c010000100000010a4000000c000000c1">
+        <field name="diameter.avp" showname="AVP: Auth-Application-Id(258) l=12 f=-M- val=Ericsson Charging-CIP (16777232)" size="12" pos="122" show="00:00:01:02:40:00:00:0c:01:00:00:10" value="000001024000000c01000010">
+          <field name="diameter.avp.code" showname="AVP Code: 258 Auth-Application-Id" size="4" pos="122" show="258" value="00000102"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="126" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="126" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="127" show="12" value="00000c"/>
+          <field name="diameter.Auth-Application-Id" showname="Auth-Application-Id: Ericsson Charging-CIP (16777232)" size="4" pos="130" show="16777232" value="01000010"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Vendor-Id(266) l=12 f=-M- val=193" size="12" pos="134" show="00:00:01:0a:40:00:00:0c:00:00:00:c1" value="0000010a4000000c000000c1">
+          <field name="diameter.avp.code" showname="AVP Code: 266 Vendor-Id" size="4" pos="134" show="266" value="0000010a"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="138" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="138" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="139" show="12" value="00000c"/>
+          <field name="diameter.Vendor-Id" showname="Vendor-Id: 193" size="4" pos="142" show="193" value="000000c1"/>
+          <field name="diameter.vendorId" showname="VendorId: Ericsson AB (193)" size="4" pos="142" show="193" value="000000c1"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Origin-Host(264) l=27 f=-M- val=tsp6006.ericsson.se" size="27" pos="146" show="00:00:01:08:40:00:00:1b:74:73:70:36:30:30:36:2e:65:72:69:63:73:73:6f:6e:2e:73:65" value="000001084000001b747370363030362e6572696373736f6e2e7365">
+      <field name="diameter.avp.code" showname="AVP Code: 264 Origin-Host" size="4" pos="146" show="264" value="00000108"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="150" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="150" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 27" size="3" pos="151" show="27" value="00001b"/>
+      <field name="diameter.Origin-Host" showname="Origin-Host: tsp6006.ericsson.se" size="19" pos="154" show="tsp6006.ericsson.se" value="747370363030362e6572696373736f6e2e7365"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Origin-Realm(296) l=27 f=-M- val=tsp6006.ericsson.se" size="27" pos="174" show="00:00:01:28:40:00:00:1b:74:73:70:36:30:30:36:2e:65:72:69:63:73:73:6f:6e:2e:73:65" value="000001284000001b747370363030362e6572696373736f6e2e7365">
+      <field name="diameter.avp.code" showname="AVP Code: 296 Origin-Realm" size="4" pos="174" show="296" value="00000128"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="178" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="178" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 27" size="3" pos="179" show="27" value="00001b"/>
+      <field name="diameter.Origin-Realm" showname="Origin-Realm: tsp6006.ericsson.se" size="19" pos="182" show="tsp6006.ericsson.se" value="747370363030362e6572696373736f6e2e7365"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Destination-Realm(283) l=38 f=-M- val=vip17x57.ete.ka.sw.ericsson.se" size="38" pos="202" show="00:00:01:1b:40:00:00:26:76:69:70:31:37:78:35:37:2e:65:74:65:2e:6b:61:2e:73:77:2e:65:72:69:63:73:73:6f:6e:2e:73:65" value="0000011b4000002676697031377835372e6574652e6b612e73772e6572696373736f6e2e7365">
+      <field name="diameter.avp.code" showname="AVP Code: 283 Destination-Realm" size="4" pos="202" show="283" value="0000011b"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="206" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="206" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 38" size="3" pos="207" show="38" value="000026"/>
+      <field name="diameter.Destination-Realm" showname="Destination-Realm: vip17x57.ete.ka.sw.ericsson.se" size="30" pos="210" show="vip17x57.ete.ka.sw.ericsson.se" value="76697031377835372e6574652e6b612e73772e6572696373736f6e2e7365"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: CC-Request-Number(415) l=12 f=-M- val=0" size="12" pos="242" show="00:00:01:9f:40:00:00:0c:00:00:00:00" value="0000019f4000000c00000000">
+      <field name="diameter.avp.code" showname="AVP Code: 415 CC-Request-Number" size="4" pos="242" show="415" value="0000019f"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="246" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="246" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="247" show="12" value="00000c"/>
+      <field name="diameter.CC-Request-Number" showname="CC-Request-Number: 0" size="4" pos="250" show="0" value="00000000"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: CC-Request-Type(416) l=12 f=-M- val=INITIAL_REQUEST (1)" size="12" pos="254" show="00:00:01:a0:40:00:00:0c:00:00:00:01" value="000001a04000000c00000001">
+      <field name="diameter.avp.code" showname="AVP Code: 416 CC-Request-Type" size="4" pos="254" show="416" value="000001a0"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="258" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="258" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="259" show="12" value="00000c"/>
+      <field name="diameter.CC-Request-Type" showname="CC-Request-Type: INITIAL_REQUEST (1)" size="4" pos="262" show="1" value="00000001"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Subscription-Id(443) l=40 f=-M-" size="40" pos="266" show="00:00:01:bb:40:00:00:28:00:00:01:bc:40:00:00:12:34:39:34:37:31:31:32:32:31:34:00:00:00:00:01:c2:40:00:00:0c:00:00:00:00" value="000001bb40000028000001bc40000012343934373131323231340000000001c24000000c00000000">
+      <field name="diameter.avp.code" showname="AVP Code: 443 Subscription-Id" size="4" pos="266" show="443" value="000001bb"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="270" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="270" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 40" size="3" pos="271" show="40" value="000028"/>
+      <field name="diameter.Subscription-Id" showname="Subscription-Id: 000001bc40000012343934373131323231340000000001c2..." size="32" pos="274" show="00:00:01:bc:40:00:00:12:34:39:34:37:31:31:32:32:31:34:00:00:00:00:01:c2:40:00:00:0c:00:00:00:00" value="000001bc40000012343934373131323231340000000001c24000000c00000000">
+        <field name="diameter.avp" showname="AVP: Subscription-Id-Data(444) l=18 f=-M- val=4947112214" size="18" pos="274" show="00:00:01:bc:40:00:00:12:34:39:34:37:31:31:32:32:31:34" value="000001bc4000001234393437313132323134">
+          <field name="diameter.avp.code" showname="AVP Code: 444 Subscription-Id-Data" size="4" pos="274" show="444" value="000001bc"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="278" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="278" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="278" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="278" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="278" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="278" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="278" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="278" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="278" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 18" size="3" pos="279" show="18" value="000012"/>
+          <field name="diameter.Subscription-Id-Data" showname="Subscription-Id-Data: 4947112214" size="10" pos="282" show="4947112214" value="34393437313132323134"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Subscription-Id-Type(450) l=12 f=-M- val=END_USER_E164 (0)" size="12" pos="294" show="00:00:01:c2:40:00:00:0c:00:00:00:00" value="000001c24000000c00000000">
+          <field name="diameter.avp.code" showname="AVP Code: 450 Subscription-Id-Type" size="4" pos="294" show="450" value="000001c2"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="298" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="298" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="298" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="298" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="298" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="298" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="298" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="298" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="298" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="299" show="12" value="00000c"/>
+          <field name="diameter.Subscription-Id-Type" showname="Subscription-Id-Type: END_USER_E164 (0)" size="4" pos="302" show="0" value="00000000"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Multiple-Services-Credit-Control(456) l=140 f=-M-" size="140" pos="306" show="00:00:01:c8:40:00:00:8c:00:00:01:b5:40:00:00:08:00:00:01:b7:40:00:00:0c:00:00:00:00:00:00:04:2c:c0:00:00:0d:00:00:00:c1:31:00:00:00:00:00:04:33:c0:00:00:40:00:00:00:c1:00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:61:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:62:c0:00:00:10:00:00:00:c1:00:00:00:00" value="000001c84000008c000001b540000008000001b74000000c000000000000042cc000000d000000c13100000000000433c0000040000000c100000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c10000000000000461c0000010000000c10000000000000462c0000010000000c100000000">
+      <field name="diameter.avp.code" showname="AVP Code: 456 Multiple-Services-Credit-Control" size="4" pos="306" show="456" value="000001c8"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="310" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="310" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 140" size="3" pos="311" show="140" value="00008c"/>
+      <field name="diameter.Multiple-Services-Credit-Control" showname="Multiple-Services-Credit-Control: 000001b540000008000001b74000000c000000000000042c..." size="132" pos="314" show="00:00:01:b5:40:00:00:08:00:00:01:b7:40:00:00:0c:00:00:00:00:00:00:04:2c:c0:00:00:0d:00:00:00:c1:31:00:00:00:00:00:04:33:c0:00:00:40:00:00:00:c1:00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:61:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:62:c0:00:00:10:00:00:00:c1:00:00:00:00" value="000001b540000008000001b74000000c000000000000042cc000000d000000c13100000000000433c0000040000000c100000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c10000000000000461c0000010000000c10000000000000462c0000010000000c100000000">
+        <field name="diameter.avp" showname="AVP: Requested-Service-Unit(437) l=8 f=-M-" size="8" pos="314" show="00:00:01:b5:40:00:00:08" value="000001b540000008">
+          <field name="diameter.avp.code" showname="AVP Code: 437 Requested-Service-Unit" size="4" pos="314" show="437" value="000001b5"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="318" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="318" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="318" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="318" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="318" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="318" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="318" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="318" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="318" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 8" size="3" pos="319" show="8" value="000008"/>
+          <field name="" show="No data" size="0" pos="322" value="">
+            <proto name="expert" showname="Expert Info (Warn/Undecoded): Data is empty" size="0" pos="0">
+              <field name="expert.message" showname="Message: Data is empty" size="0" pos="0" show="Data is empty"/>
+              <field name="expert.severity" showname="Severity level: Warn" size="0" pos="0" show="Warn"/>
+              <field name="expert.group" showname="Group: Undecoded" size="0" pos="0" show="Undecoded"/>
+            </proto>
+          </field>
+        </field>
+        <field name="diameter.avp" showname="AVP: Service-Identifier(439) l=12 f=-M- val=Voice (0)" size="12" pos="322" show="00:00:01:b7:40:00:00:0c:00:00:00:00" value="000001b74000000c00000000">
+          <field name="diameter.avp.code" showname="AVP Code: 439 Service-Identifier" size="4" pos="322" show="439" value="000001b7"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="326" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="326" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="326" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="326" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="326" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="326" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="326" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="326" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="326" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="327" show="12" value="00000c"/>
+          <field name="diameter.Service-Identifier" showname="Service-Identifier: Voice (0)" size="4" pos="330" show="0" value="00000000"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Service-Session-Id(1068) l=13 f=VM- vnd=Ericsson val=1" size="13" pos="334" show="00:00:04:2c:c0:00:00:0d:00:00:00:c1:31" value="0000042cc000000d000000c131">
+          <field name="diameter.avp.code" showname="AVP Code: 1068 Service-Session-Id" size="4" pos="334" show="1068" value="0000042c"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="338" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="338" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="338" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="338" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="338" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="338" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="338" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="338" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="338" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 13" size="3" pos="339" show="13" value="00000d"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="342" show="193" value="000000c1"/>
+          <field name="diameter.Service-Session-Id" showname="Service-Session-Id: 1" size="1" pos="346" show="1" value="31"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Other-Party-Id(1075) l=64 f=VM- vnd=Ericsson" size="64" pos="350" show="00:00:04:33:c0:00:00:40:00:00:00:c1:00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000433c0000040000000c100000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c100000000">
+          <field name="diameter.avp.code" showname="AVP Code: 1075 Other-Party-Id" size="4" pos="350" show="1075" value="00000433"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="354" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="354" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="354" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="354" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="354" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="354" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="354" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="354" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="354" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 64" size="3" pos="355" show="64" value="000040"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="358" show="193" value="000000c1"/>
+          <field name="diameter.Other-Party-Id" showname="Other-Party-Id: 00000434c0000010000000c10000000000000435c0000014..." size="52" pos="362" show="00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c100000000">
+            <field name="diameter.avp" showname="AVP: Other-Party-Id-Nature(1076) l=16 f=VM- vnd=Ericsson val=Unknown (0)" size="16" pos="362" show="00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000434c0000010000000c100000000">
+              <field name="diameter.avp.code" showname="AVP Code: 1076 Other-Party-Id-Nature" size="4" pos="362" show="1076" value="00000434"/>
+              <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="366" show="0xc0" value="c0">
+                <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="366" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="366" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="366" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="366" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="366" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="366" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="366" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="366" show="0" value="0" unmaskedvalue="c0"/>
+              </field>
+              <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="367" show="16" value="000010"/>
+              <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="370" show="193" value="000000c1"/>
+              <field name="diameter.Other-Party-Id-Nature" showname="Other-Party-Id-Nature: Unknown (0)" size="4" pos="374" show="0" value="00000000"/>
+            </field>
+            <field name="diameter.avp" showname="AVP: Other-Party-Id-Data(1077) l=20 f=VM- vnd=Ericsson val=47112215" size="20" pos="378" show="00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35" value="00000435c0000014000000c13437313132323135">
+              <field name="diameter.avp.code" showname="AVP Code: 1077 Other-Party-Id-Data" size="4" pos="378" show="1077" value="00000435"/>
+              <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="382" show="0xc0" value="c0">
+                <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="382" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="382" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="382" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="382" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="382" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="382" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="382" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="382" show="0" value="0" unmaskedvalue="c0"/>
+              </field>
+              <field name="diameter.avp.len" showname="AVP Length: 20" size="3" pos="383" show="20" value="000014"/>
+              <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="386" show="193" value="000000c1"/>
+              <field name="diameter.Other-Party-Id-Data" showname="Other-Party-Id-Data: 47112215" size="8" pos="390" show="47112215" value="3437313132323135"/>
+            </field>
+            <field name="diameter.avp" showname="AVP: Other-Party-Id-Type(1078) l=16 f=VM- vnd=Ericsson val=END_USER_E164 (0)" size="16" pos="398" show="00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000436c0000010000000c100000000">
+              <field name="diameter.avp.code" showname="AVP Code: 1078 Other-Party-Id-Type" size="4" pos="398" show="1078" value="00000436"/>
+              <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="402" show="0xc0" value="c0">
+                <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="402" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="402" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="402" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="402" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="402" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="402" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="402" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="402" show="0" value="0" unmaskedvalue="c0"/>
+              </field>
+              <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="403" show="16" value="000010"/>
+              <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="406" show="193" value="000000c1"/>
+              <field name="diameter.Other-Party-Id-Type" showname="Other-Party-Id-Type: END_USER_E164 (0)" size="4" pos="410" show="0" value="00000000"/>
+            </field>
+          </field>
+        </field>
+        <field name="diameter.avp" showname="AVP: Roaming-Position(1121) l=16 f=VM- vnd=Ericsson val=inside HPLMN (0)" size="16" pos="414" show="00:00:04:61:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000461c0000010000000c100000000">
+          <field name="diameter.avp.code" showname="AVP Code: 1121 Roaming-Position" size="4" pos="414" show="1121" value="00000461"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="418" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="418" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="418" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="418" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="418" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="418" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="418" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="418" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="418" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="419" show="16" value="000010"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="422" show="193" value="000000c1"/>
+          <field name="diameter.Roaming-Position" showname="Roaming-Position: inside HPLMN (0)" size="4" pos="426" show="0" value="00000000"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Service-Scenario(1122) l=16 f=VM- vnd=Ericsson val=Mobile Originating (0)" size="16" pos="430" show="00:00:04:62:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000462c0000010000000c100000000">
+          <field name="diameter.avp.code" showname="AVP Code: 1122 Service-Scenario" size="4" pos="430" show="1122" value="00000462"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="434" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="434" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="434" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="434" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="434" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="434" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="434" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="434" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="434" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="435" show="16" value="000010"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="438" show="193" value="000000c1"/>
+          <field name="diameter.Service-Scenario" showname="Service-Scenario: Mobile Originating (0)" size="4" pos="442" show="0" value="00000000"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Service-Context-Id(461) l=37 f=-M- val=Core_Context_R1A@ericsson.com" size="37" pos="446" show="00:00:01:cd:40:00:00:25:43:6f:72:65:5f:43:6f:6e:74:65:78:74:5f:52:31:41:40:65:72:69:63:73:73:6f:6e:2e:63:6f:6d" value="000001cd40000025436f72655f436f6e746578745f523141406572696373736f6e2e636f6d">
+      <field name="diameter.avp.code" showname="AVP Code: 461 Service-Context-Id" size="4" pos="446" show="461" value="000001cd"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="450" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="450" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="450" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="450" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="450" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="450" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="450" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="450" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="450" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 37" size="3" pos="451" show="37" value="000025"/>
+      <field name="diameter.Service-Context-Id" showname="Service-Context-Id: Core_Context_R1A@ericsson.com" size="29" pos="454" show="Core_Context_R1A@ericsson.com" value="436f72655f436f6e746578745f523141406572696373736f6e2e636f6d"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Access-Information(1063) l=24 f=VM- vnd=Ericsson" size="24" pos="486" show="00:00:04:27:c0:00:00:18:00:00:00:c1:00:00:00:37:40:00:00:0c:d1:65:01:e5" value="00000427c0000018000000c1000000374000000cd16501e5">
+      <field name="diameter.avp.code" showname="AVP Code: 1063 Access-Information" size="4" pos="486" show="1063" value="00000427"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="490" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="490" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="490" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="490" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="490" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="490" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="490" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="490" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="490" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 24" size="3" pos="491" show="24" value="000018"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="494" show="193" value="000000c1"/>
+      <field name="diameter.Access-Information" showname="Access-Information: 000000374000000cd16501e5" size="12" pos="498" show="00:00:00:37:40:00:00:0c:d1:65:01:e5" value="000000374000000cd16501e5">
+        <field name="diameter.avp" showname="AVP: Event-Timestamp(55) l=12 f=-M- val=Apr 29, 2011 09:22:45,000000 UTC" size="12" pos="498" show="00:00:00:37:40:00:00:0c:d1:65:01:e5" value="000000374000000cd16501e5">
+          <field name="diameter.avp.code" showname="AVP Code: 55 Event-Timestamp" size="4" pos="498" show="55" value="00000037"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="502" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="502" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="502" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="502" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="502" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="502" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="502" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="502" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="502" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="503" show="12" value="00000c"/>
+          <field name="diameter.Event-Timestamp" showname="Event-Timestamp: 3513057765  Apr 29, 2011 09:22:45,000000 UTC" size="4" pos="506" show="3513057765" value="d16501e5"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Charging-Context-Id(1065) l=38 f=VM- vnd=Ericsson val=CS1plus_V.1.0@ericsson.com" size="38" pos="510" show="00:00:04:29:c0:00:00:26:00:00:00:c1:43:53:31:70:6c:75:73:5f:56:2e:31:2e:30:40:65:72:69:63:73:73:6f:6e:2e:63:6f:6d" value="00000429c0000026000000c1435331706c75735f562e312e30406572696373736f6e2e636f6d">
+      <field name="diameter.avp.code" showname="AVP Code: 1065 Charging-Context-Id" size="4" pos="510" show="1065" value="00000429"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="514" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="514" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="514" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="514" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="514" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="514" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="514" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="514" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="514" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 38" size="3" pos="515" show="38" value="000026"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="518" show="193" value="000000c1"/>
+      <field name="diameter.Charging-Context-Id" showname="Charging-Context-Id: CS1plus_V.1.0@ericsson.com" size="26" pos="522" show="CS1plus_V.1.0@ericsson.com" value="435331706c75735f562e312e30406572696373736f6e2e636f6d"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Subscription-Id-Location(1074) l=22 f=VM- vnd=Ericsson val=4947101055" size="22" pos="550" show="00:00:04:32:c0:00:00:16:00:00:00:c1:34:39:34:37:31:30:31:30:35:35" value="00000432c0000016000000c134393437313031303535">
+      <field name="diameter.avp.code" showname="AVP Code: 1074 Subscription-Id-Location" size="4" pos="550" show="1074" value="00000432"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="554" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="554" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="554" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="554" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="554" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="554" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="554" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="554" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="554" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 22" size="3" pos="555" show="22" value="000016"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="558" show="193" value="000000c1"/>
+      <field name="diameter.Subscription-Id-Location" showname="Subscription-Id-Location: 4947101055" size="10" pos="562" show="4947101055" value="34393437313031303535"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: CIP-IP-Version(1083) l=15 f=VM- vnd=Ericsson val=R1A" size="15" pos="574" show="00:00:04:3b:c0:00:00:0f:00:00:00:c1:52:31:41" value="0000043bc000000f000000c1523141">
+      <field name="diameter.avp.code" showname="AVP Code: 1083 CIP-IP-Version" size="4" pos="574" show="1083" value="0000043b"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="578" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="578" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="578" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="578" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="578" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="578" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="578" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="578" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="578" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 15" size="3" pos="579" show="15" value="00000f"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="582" show="193" value="000000c1"/>
+      <field name="diameter.CIP-IP-Version" showname="CIP-IP-Version: R1A" size="3" pos="586" show="R1A" value="523141"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: 3GPP-MSTimeZone(23) l=14 f=VM- vnd=TGPP val=8000" size="14" pos="590" show="00:00:00:17:c0:00:00:0e:00:00:28:af:80:00" value="00000017c000000e000028af8000">
+      <field name="diameter.avp.code" showname="AVP Code: 23 3GPP-MSTimeZone" size="4" pos="590" show="23" value="00000017"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="594" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="594" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="594" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="594" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="594" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="594" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="594" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="594" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="594" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 14" size="3" pos="595" show="14" value="00000e"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: 3GPP (10415)" size="4" pos="598" show="10415" value="000028af"/>
+      <field name="diameter.3GPP-MSTimeZone" showname="3GPP-MSTimeZone: 8000" size="2" pos="602" show="80:00" value="8000"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Event-Timestamp(55) l=12 f=-M- val=Apr 29, 2011 09:22:45,000000 UTC" size="12" pos="606" show="00:00:00:37:40:00:00:0c:d1:65:01:e5" value="000000374000000cd16501e5">
+      <field name="diameter.avp.code" showname="AVP Code: 55 Event-Timestamp" size="4" pos="606" show="55" value="00000037"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="610" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="610" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="610" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="610" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="610" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="610" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="610" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="610" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="610" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="611" show="12" value="00000c"/>
+      <field name="diameter.Event-Timestamp" showname="Event-Timestamp: 3513057765  Apr 29, 2011 09:22:45,000000 UTC" size="4" pos="614" show="3513057765" value="d16501e5"/>
+    </field>
+  </proto>
+</packet>
+
+<packet>
+  <proto name="geninfo" pos="0" showname="General information" size="1166">
+    <field name="num" pos="0" show="9" showname="Number" value="9" size="1166"/>
+    <field name="len" pos="0" show="1166" showname="Frame Length" value="48e" size="1166"/>
+    <field name="caplen" pos="0" show="1166" showname="Captured Length" value="48e" size="1166"/>
+    <field name="timestamp" pos="0" show="Apr 29, 2011 11:23:17.146225000 W. Europe Daylight Time" showname="Captured Time" value="1304068997.146225000" size="1166"/>
+  </proto>
+  <proto name="frame" showname="Frame 9: 1166 bytes on wire (9328 bits), 1166 bytes captured (9328 bits)" size="1166" pos="0">
+    <field name="frame.time" showname="Arrival Time: Apr 29, 2011 11:23:17.146225000 W. Europe Daylight Time" size="0" pos="0" show="Apr 29, 2011 11:23:17.146225000"/>
+    <field name="frame.time_epoch" showname="Epoch Time: 1304068997.146225000 seconds" size="0" pos="0" show="1304068997.146225000"/>
+    <field name="frame.time_delta" showname="Time delta from previous captured frame: 3.060766000 seconds" size="0" pos="0" show="3.060766000"/>
+    <field name="frame.time_delta_displayed" showname="Time delta from previous displayed frame: 3.060766000 seconds" size="0" pos="0" show="3.060766000"/>
+    <field name="frame.time_relative" showname="Time since reference or first frame: 31.854725000 seconds" size="0" pos="0" show="31.854725000"/>
+    <field name="frame.number" showname="Frame Number: 9" size="0" pos="0" show="9"/>
+    <field name="frame.len" showname="Frame Length: 1166 bytes (9328 bits)" size="0" pos="0" show="1166"/>
+    <field name="frame.cap_len" showname="Capture Length: 1166 bytes (9328 bits)" size="0" pos="0" show="1166"/>
+    <field name="frame.marked" showname="Frame is marked: True" size="0" pos="0" show="1"/>
+    <field name="frame.ignored" showname="Frame is ignored: False" size="0" pos="0" show="0"/>
+    <field name="frame.protocols" showname="Protocols in frame: eth:ip:sctp:diameter:diameter" size="0" pos="0" show="eth:ip:sctp:diameter:diameter"/>
+  </proto>
+  <proto name="eth" showname="Ethernet II, Src: JuniperN_64:44:ad (00:1b:c0:64:44:ad), Dst: IntelCor_eb:d7:43 (00:15:17:eb:d7:43)" size="14" pos="0">
+    <field name="eth.dst" showname="Destination: IntelCor_eb:d7:43 (00:15:17:eb:d7:43)" size="6" pos="0" show="00:15:17:eb:d7:43" value="001517ebd743">
+      <field name="eth.addr" showname="Address: IntelCor_eb:d7:43 (00:15:17:eb:d7:43)" size="6" pos="0" show="00:15:17:eb:d7:43" value="001517ebd743"/>
+      <field name="eth.ig" showname=".... ...0 .... .... .... .... = IG bit: Individual address (unicast)" size="3" pos="0" show="0" value="0" unmaskedvalue="001517"/>
+      <field name="eth.lg" showname=".... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)" size="3" pos="0" show="0" value="0" unmaskedvalue="001517"/>
+    </field>
+    <field name="eth.src" showname="Source: JuniperN_64:44:ad (00:1b:c0:64:44:ad)" size="6" pos="6" show="00:1b:c0:64:44:ad" value="001bc06444ad">
+      <field name="eth.addr" showname="Address: JuniperN_64:44:ad (00:1b:c0:64:44:ad)" size="6" pos="6" show="00:1b:c0:64:44:ad" value="001bc06444ad"/>
+      <field name="eth.ig" showname=".... ...0 .... .... .... .... = IG bit: Individual address (unicast)" size="3" pos="6" show="0" value="0" unmaskedvalue="001bc0"/>
+      <field name="eth.lg" showname=".... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)" size="3" pos="6" show="0" value="0" unmaskedvalue="001bc0"/>
+    </field>
+    <field name="eth.type" showname="Type: IP (0x0800)" size="2" pos="12" show="0x0800" value="0800"/>
+  </proto>
+  <proto name="ip" showname="Internet Protocol, Src: 10.64.19.72 (10.64.19.72), Dst: 10.64.19.223 (10.64.19.223)" size="20" pos="14">
+    <field name="ip.version" showname="Version: 4" size="1" pos="14" show="4" value="45"/>
+    <field name="ip.hdr_len" showname="Header length: 20 bytes" size="1" pos="14" show="20" value="45"/>
+    <field name="ip.dsfield" showname="Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00)" size="1" pos="15" show="0" value="00">
+      <field name="ip.dsfield.dscp" showname="0000 00.. = Differentiated Services Codepoint: Default (0x00)" size="1" pos="15" show="0x00" value="0" unmaskedvalue="00"/>
+      <field name="ip.dsfield.ect" showname=".... ..0. = ECN-Capable Transport (ECT): 0" size="1" pos="15" show="0" value="0" unmaskedvalue="00"/>
+      <field name="ip.dsfield.ce" showname=".... ...0 = ECN-CE: 0" size="1" pos="15" show="0" value="0" unmaskedvalue="00"/>
+    </field>
+    <field name="ip.len" showname="Total Length: 1152" size="2" pos="16" show="1152" value="0480"/>
+    <field name="ip.id" showname="Identification: 0x2c54 (11348)" size="2" pos="18" show="0x2c54" value="2c54"/>
+    <field name="ip.flags" showname="Flags: 0x00" size="1" pos="20" show="0x00" value="00">
+      <field name="ip.flags.rb" showname="0... .... = Reserved bit: Not set" size="1" pos="20" show="0" value="00"/>
+      <field name="ip.flags.df" showname=".0.. .... = Don&apos;t fragment: Not set" size="1" pos="20" show="0" value="00"/>
+      <field name="ip.flags.mf" showname="..0. .... = More fragments: Not set" size="1" pos="20" show="0" value="00"/>
+    </field>
+    <field name="ip.frag_offset" showname="Fragment offset: 0" size="2" pos="20" show="0" value="0000"/>
+    <field name="ip.ttl" showname="Time to live: 253" size="1" pos="22" show="253" value="fd"/>
+    <field name="ip.proto" showname="Protocol: SCTP (132)" size="1" pos="23" show="132" value="84"/>
+    <field name="ip.checksum" showname="Header checksum: 0x50ff [correct]" size="2" pos="24" show="0x50ff" value="50ff">
+      <field name="ip.checksum_good" showname="Good: True" size="2" pos="24" show="1" value="50ff"/>
+      <field name="ip.checksum_bad" showname="Bad: False" size="2" pos="24" show="0" value="50ff"/>
+    </field>
+    <field name="ip.src" showname="Source: 10.64.19.72 (10.64.19.72)" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.addr" showname="Source or Destination Address: 10.64.19.72 (10.64.19.72)" hide="yes" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.src_host" showname="Source Host: 10.64.19.72" hide="yes" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.host" showname="Source or Destination Host: 10.64.19.72" hide="yes" size="4" pos="26" show="10.64.19.72" value="0a401348"/>
+    <field name="ip.dst" showname="Destination: 10.64.19.223 (10.64.19.223)" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+    <field name="ip.addr" showname="Source or Destination Address: 10.64.19.223 (10.64.19.223)" hide="yes" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+    <field name="ip.dst_host" showname="Destination Host: 10.64.19.223" hide="yes" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+    <field name="ip.host" showname="Source or Destination Host: 10.64.19.223" hide="yes" size="4" pos="30" show="10.64.19.223" value="0a4013df"/>
+  </proto>
+  <proto name="sctp" showname="Stream Control Transmission Protocol, Src Port: 8732 (8732), Dst Port: 32874 (32874)" size="28" pos="34">
+    <field name="sctp.srcport" showname="Source port: 8732" size="2" pos="34" show="8732" value="221c"/>
+    <field name="sctp.dstport" showname="Destination port: 32874" size="2" pos="36" show="32874" value="806a"/>
+    <field name="sctp.verification_tag" showname="Verification tag: 0x27af5c7f" size="4" pos="38" show="0x27af5c7f" value="27af5c7f"/>
+    <field name="sctp.port" showname="Port: 8732" hide="yes" size="2" pos="34" show="8732" value="221c"/>
+    <field name="sctp.port" showname="Port: 32874" hide="yes" size="2" pos="36" show="32874" value="806a"/>
+    <field name="sctp.checksum" showname="Checksum: 0x935756df (not verified)" size="4" pos="42" show="0x935756df" value="935756df"/>
+    <field name="" show="DATA chunk(ordered, complete segment, TSN: 23521207, SID: 0, SSN: 9154, PPID: 0, payload length: 1104 bytes)" size="16" pos="46" value="000304600166e7b7000023c200000000">
+      <field name="sctp.chunk_type" showname="Chunk type: DATA (0)" size="1" pos="46" show="0" value="00">
+        <field name="sctp.chunk_bit_1" showname="0... .... = Bit: Stop processing of the packet" size="1" pos="46" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sctp.chunk_bit_2" showname=".0.. .... = Bit: Do not report" size="1" pos="46" show="0" value="0" unmaskedvalue="00"/>
+      </field>
+      <field name="sctp.chunk_flags" showname="Chunk flags: 0x03" size="1" pos="47" show="0x03" value="03">
+        <field name="sctp.data_e_bit" showname=".... ...1 = E-Bit: Last segment" size="1" pos="47" show="1" value="1" unmaskedvalue="03"/>
+        <field name="sctp.data_b_bit" showname=".... ..1. = B-Bit: First segment" size="1" pos="47" show="1" value="1" unmaskedvalue="03"/>
+        <field name="sctp.data_u_bit" showname=".... .0.. = U-Bit: Ordered delivery" size="1" pos="47" show="0" value="0" unmaskedvalue="03"/>
+        <field name="sctp.data_i_bit" showname=".... 0... = I-Bit: Possibly delay SACK" size="1" pos="47" show="0" value="0" unmaskedvalue="03"/>
+      </field>
+      <field name="sctp.chunk_length" showname="Chunk length: 1120" size="2" pos="48" show="1120" value="0460"/>
+      <field name="sctp.data_tsn" showname="TSN: 23521207" size="4" pos="50" show="23521207" value="0166e7b7"/>
+      <field name="sctp.data_sid" showname="Stream Identifier: 0x0000" size="2" pos="54" show="0x0000" value="0000"/>
+      <field name="sctp.data_ssn" showname="Stream sequence number: 9154" size="2" pos="56" show="9154" value="23c2"/>
+      <field name="sctp.data_payload_proto_id" showname="Payload protocol identifier: not specified (0)" size="4" pos="58" show="0" value="00000000"/>
+    </field>
+  </proto>
+  <proto name="diameter" showname="Diameter Protocol" size="1104" pos="62">
+    <field name="diameter.version" showname="Version: 0x01" size="1" pos="62" show="0x01" value="01"/>
+    <field name="diameter.length" showname="Length: 1104" size="3" pos="63" show="1104" value="000450"/>
+    <field name="diameter.flags" showname="Flags: 0xc0" size="1" pos="66" show="0xc0" value="c0">
+      <field name="diameter.flags.request" showname="1... .... = Request: Set" size="1" pos="66" show="1" value="1" unmaskedvalue="c0"/>
+      <field name="diameter.flags.proxyable" showname=".1.. .... = Proxyable: Set" size="1" pos="66" show="1" value="1" unmaskedvalue="c0"/>
+      <field name="diameter.flags.error" showname="..0. .... = Error: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.T" showname="...0 .... = T(Potentially re-transmitted message): Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+      <field name="diameter.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="66" show="0" value="0" unmaskedvalue="c0"/>
+    </field>
+    <field name="diameter.cmd.code" showname="Command Code: 16777214 Charging-Interrogation" size="3" pos="67" show="16777214" value="fffffe"/>
+    <field name="diameter.applicationId" showname="ApplicationId: 16777232" size="4" pos="70" show="16777232" value="01000010"/>
+    <field name="diameter.hopbyhopid" showname="Hop-by-Hop Identifier: 0x15bb8bb2" size="4" pos="74" show="0x15bb8bb2" value="15bb8bb2"/>
+    <field name="diameter.endtoendid" showname="End-to-End Identifier: 0x15bb8bb3" size="4" pos="78" show="0x15bb8bb3" value="15bb8bb3"/>
+    <field name="diameter.answer_in" showname="Answer In: 10" size="0" pos="62" show="10"/>
+    <field name="diameter.avp" showname="AVP: Session-Id(263) l=29 f=-M- val=8-1950224902-06123e74" size="29" pos="82" show="00:00:01:07:40:00:00:1d:38:2d:31:39:35:30:32:32:34:39:30:32:2d:30:36:31:32:33:65:37:34" value="000001074000001d382d313935303232343930322d3036313233653734">
+      <field name="diameter.avp.code" showname="AVP Code: 263 Session-Id" size="4" pos="82" show="263" value="00000107"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="86" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="86" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="86" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 29" size="3" pos="87" show="29" value="00001d"/>
+      <field name="diameter.Session-Id" showname="Session-Id: 8-1950224902-06123e74" size="21" pos="90" show="8-1950224902-06123e74" value="382d313935303232343930322d3036313233653734"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Vendor-Specific-Application-Id(260) l=32 f=-M-" size="32" pos="114" show="00:00:01:04:40:00:00:20:00:00:01:02:40:00:00:0c:01:00:00:10:00:00:01:0a:40:00:00:0c:00:00:00:c1" value="0000010440000020000001024000000c010000100000010a4000000c000000c1">
+      <field name="diameter.avp.code" showname="AVP Code: 260 Vendor-Specific-Application-Id" size="4" pos="114" show="260" value="00000104"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="118" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="118" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="118" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 32" size="3" pos="119" show="32" value="000020"/>
+      <field name="diameter.Vendor-Specific-Application-Id" showname="Vendor-Specific-Application-Id: 000001024000000c010000100000010a4000000c000000c1" size="24" pos="122" show="00:00:01:02:40:00:00:0c:01:00:00:10:00:00:01:0a:40:00:00:0c:00:00:00:c1" value="000001024000000c010000100000010a4000000c000000c1">
+        <field name="diameter.avp" showname="AVP: Auth-Application-Id(258) l=12 f=-M- val=Ericsson Charging-CIP (16777232)" size="12" pos="122" show="00:00:01:02:40:00:00:0c:01:00:00:10" value="000001024000000c01000010">
+          <field name="diameter.avp.code" showname="AVP Code: 258 Auth-Application-Id" size="4" pos="122" show="258" value="00000102"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="126" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="126" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="126" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="127" show="12" value="00000c"/>
+          <field name="diameter.Auth-Application-Id" showname="Auth-Application-Id: Ericsson Charging-CIP (16777232)" size="4" pos="130" show="16777232" value="01000010"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Vendor-Id(266) l=12 f=-M- val=193" size="12" pos="134" show="00:00:01:0a:40:00:00:0c:00:00:00:c1" value="0000010a4000000c000000c1">
+          <field name="diameter.avp.code" showname="AVP Code: 266 Vendor-Id" size="4" pos="134" show="266" value="0000010a"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="138" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="138" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="138" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="139" show="12" value="00000c"/>
+          <field name="diameter.Vendor-Id" showname="Vendor-Id: 193" size="4" pos="142" show="193" value="000000c1"/>
+          <field name="diameter.vendorId" showname="VendorId: Ericsson AB (193)" size="4" pos="142" show="193" value="000000c1"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Origin-Host(264) l=27 f=-M- val=tsp6006.ericsson.se" size="27" pos="146" show="00:00:01:08:40:00:00:1b:74:73:70:36:30:30:36:2e:65:72:69:63:73:73:6f:6e:2e:73:65" value="000001084000001b747370363030362e6572696373736f6e2e7365">
+      <field name="diameter.avp.code" showname="AVP Code: 264 Origin-Host" size="4" pos="146" show="264" value="00000108"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="150" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="150" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="150" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 27" size="3" pos="151" show="27" value="00001b"/>
+      <field name="diameter.Origin-Host" showname="Origin-Host: tsp6006.ericsson.se" size="19" pos="154" show="tsp6006.ericsson.se" value="747370363030362e6572696373736f6e2e7365"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Origin-Realm(296) l=27 f=-M- val=tsp6006.ericsson.se" size="27" pos="174" show="00:00:01:28:40:00:00:1b:74:73:70:36:30:30:36:2e:65:72:69:63:73:73:6f:6e:2e:73:65" value="000001284000001b747370363030362e6572696373736f6e2e7365">
+      <field name="diameter.avp.code" showname="AVP Code: 296 Origin-Realm" size="4" pos="174" show="296" value="00000128"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="178" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="178" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="178" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 27" size="3" pos="179" show="27" value="00001b"/>
+      <field name="diameter.Origin-Realm" showname="Origin-Realm: tsp6006.ericsson.se" size="19" pos="182" show="tsp6006.ericsson.se" value="747370363030362e6572696373736f6e2e7365"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Destination-Realm(283) l=38 f=-M- val=vip17x57.ete.ka.sw.ericsson.se" size="38" pos="202" show="00:00:01:1b:40:00:00:26:76:69:70:31:37:78:35:37:2e:65:74:65:2e:6b:61:2e:73:77:2e:65:72:69:63:73:73:6f:6e:2e:73:65" value="0000011b4000002676697031377835372e6574652e6b612e73772e6572696373736f6e2e7365">
+      <field name="diameter.avp.code" showname="AVP Code: 283 Destination-Realm" size="4" pos="202" show="283" value="0000011b"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="206" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="206" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="206" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 38" size="3" pos="207" show="38" value="000026"/>
+      <field name="diameter.Destination-Realm" showname="Destination-Realm: vip17x57.ete.ka.sw.ericsson.se" size="30" pos="210" show="vip17x57.ete.ka.sw.ericsson.se" value="76697031377835372e6574652e6b612e73772e6572696373736f6e2e7365"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Termination-Cause(295) l=12 f=-M- val=DIAMETER_LOGOUT (1)" size="12" pos="242" show="00:00:01:27:40:00:00:0c:00:00:00:01" value="000001274000000c00000001">
+      <field name="diameter.avp.code" showname="AVP Code: 295 Termination-Cause" size="4" pos="242" show="295" value="00000127"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="246" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="246" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="246" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="247" show="12" value="00000c"/>
+      <field name="diameter.Termination-Cause" showname="Termination-Cause: DIAMETER_LOGOUT (1)" size="4" pos="250" show="1" value="00000001"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: CC-Request-Number(415) l=12 f=-M- val=1" size="12" pos="254" show="00:00:01:9f:40:00:00:0c:00:00:00:01" value="0000019f4000000c00000001">
+      <field name="diameter.avp.code" showname="AVP Code: 415 CC-Request-Number" size="4" pos="254" show="415" value="0000019f"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="258" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="258" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="258" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="259" show="12" value="00000c"/>
+      <field name="diameter.CC-Request-Number" showname="CC-Request-Number: 1" size="4" pos="262" show="1" value="00000001"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: CC-Request-Type(416) l=12 f=-M- val=TERMINATION_REQUEST (3)" size="12" pos="266" show="00:00:01:a0:40:00:00:0c:00:00:00:03" value="000001a04000000c00000003">
+      <field name="diameter.avp.code" showname="AVP Code: 416 CC-Request-Type" size="4" pos="266" show="416" value="000001a0"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="270" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="270" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="270" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="271" show="12" value="00000c"/>
+      <field name="diameter.CC-Request-Type" showname="CC-Request-Type: TERMINATION_REQUEST (3)" size="4" pos="274" show="3" value="00000003"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Subscription-Id(443) l=40 f=-M-" size="40" pos="278" show="00:00:01:bb:40:00:00:28:00:00:01:bc:40:00:00:12:34:39:34:37:31:31:32:32:31:34:00:00:00:00:01:c2:40:00:00:0c:00:00:00:00" value="000001bb40000028000001bc40000012343934373131323231340000000001c24000000c00000000">
+      <field name="diameter.avp.code" showname="AVP Code: 443 Subscription-Id" size="4" pos="278" show="443" value="000001bb"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="282" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="282" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="282" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="282" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="282" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="282" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="282" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="282" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="282" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 40" size="3" pos="283" show="40" value="000028"/>
+      <field name="diameter.Subscription-Id" showname="Subscription-Id: 000001bc40000012343934373131323231340000000001c2..." size="32" pos="286" show="00:00:01:bc:40:00:00:12:34:39:34:37:31:31:32:32:31:34:00:00:00:00:01:c2:40:00:00:0c:00:00:00:00" value="000001bc40000012343934373131323231340000000001c24000000c00000000">
+        <field name="diameter.avp" showname="AVP: Subscription-Id-Data(444) l=18 f=-M- val=4947112214" size="18" pos="286" show="00:00:01:bc:40:00:00:12:34:39:34:37:31:31:32:32:31:34" value="000001bc4000001234393437313132323134">
+          <field name="diameter.avp.code" showname="AVP Code: 444 Subscription-Id-Data" size="4" pos="286" show="444" value="000001bc"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="290" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="290" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="290" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="290" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="290" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="290" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="290" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="290" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="290" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 18" size="3" pos="291" show="18" value="000012"/>
+          <field name="diameter.Subscription-Id-Data" showname="Subscription-Id-Data: 4947112214" size="10" pos="294" show="4947112214" value="34393437313132323134"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Subscription-Id-Type(450) l=12 f=-M- val=END_USER_E164 (0)" size="12" pos="306" show="00:00:01:c2:40:00:00:0c:00:00:00:00" value="000001c24000000c00000000">
+          <field name="diameter.avp.code" showname="AVP Code: 450 Subscription-Id-Type" size="4" pos="306" show="450" value="000001c2"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="310" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="310" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="310" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="311" show="12" value="00000c"/>
+          <field name="diameter.Subscription-Id-Type" showname="Subscription-Id-Type: END_USER_E164 (0)" size="4" pos="314" show="0" value="00000000"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Multiple-Services-Credit-Control(456) l=676 f=-M-" size="676" pos="318" show="00:00:01:c8:40:00:02:a4:00:00:01:b7:40:00:00:0c:00:00:00:00:00:00:01:be:40:00:00:14:00:00:01:a4:40:00:00:0c:00:00:00:19:00:00:04:2a:c0:00:01:e9:00:00:00:c1:01:01:81:02:81:03:01:02:01:03:00:04:01:ff:ff:82:13:01:00:00:00:00:ff:83:14:81:15:81:41:00:00:00:00:00:82:41:00:00:00:00:00:03:ff:ff:ff:ff:04:00:00:00:00:85:41:00:00:00:00:00:ff:02:01:03:01:04:00:ff:84:16:01:02:01:03:00:04:01:ff:85:18:01:00:00:00:00:82:19:81:1a:01:02:01:03:00:04:01:ff:82:1c:01:02:01:03:00:04:01:ff:83:1e:01:02:01:03:00:04:01:ff:84:20:01:02:01:03:00:04:01:ff:ff:ff:86:22:01:02:01:03:00:04:01:ff:87:24:81:1d:01:00:00:02:f0:02:00:00:00:00:05:ee:c2:15:03:ff:ff:ff:fa:ff:02:01:03:01:04:00:ff:88:25:81:26:01:04:20:d4:14:82:1d:01:00:00:02:f0:02:00:00:00:00:00:00:00:00:03:ff:ff:ff:fa:ff:03:00:00:00:00:00:00:00:00:ff:02:01:03:01:04:00:ff:89:27:81:34:00:00:00:00:00:02:01:03:01:04:00:ff:8a:28:81:29:81:35:00:00:00:00:11:01:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:01:82:2a:81:1b:01:00:00:00:00:00:00:00:00:ff:82:1d:01:ff:ff:ff:ff:02:00:00:00:00:00:00:00:00:03:00:00:00:00:ff:83:1f:01:00:00:00:00:00:00:00:00:02:00:00:00:00:00:00:00:00:03:00:00:00:00:00:00:00:00:ff:84:21:01:00:00:00:00:00:00:00:00:ff:ff:03:00:00:00:00:4d:ba:83:65:04:01:05:00:00:00:00:00:00:00:00:86:41:00:00:00:00:00:07:00:00:00:00:4d:ba:83:65:ff:02:01:03:01:04:00:ff:8b:2b:01:02:01:03:00:04:01:ff:8c:39:81:35:00:00:00:00:00:ff:8d:3a:01:02:01:03:00:04:01:ff:8e:3c:81:3d:01:00:00:02:00:01:03:00:00:01:2f:a0:91:42:88:ff:02:01:03:01:04:00:ff:8f:3e:01:02:01:03:00:04:01:ff:90:43:81:44:00:45:00:00:00:00:02:ff:ff:ff:ff:ff:91:47:01:02:01:03:00:04:01:ff:ff:00:00:00:00:00:04:2c:c0:00:00:0d:00:00:00:c1:31:00:00:00:00:00:04:33:c0:00:00:40:00:00:00:c1:00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:61:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:62:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:65:c0:00:00:10:00:00:00:c1:d1:65:01:ed:00:00:04:6f:c0:00:00:10:00:00:00:c1:00:00:00:02" value="000001c8400002a4000001b74000000c00000000000001be40000014000001a44000000c000000190000042ac00001e9000000c101018102810301020103000401ffff82130100000000ff83148115814100000000008241000000000003ffffffff040000000085410000000000ff020103010400ff841601020103000401ff851801000000008219811a01020103000401ff821c01020103000401ff831e01020103000401ff842001020103000401ffffff862201020103000401ff8724811d01000002f0020000000005eec21503fffffffaff020103010400ff88258126010420d414821d01000002f002000000000000000003fffffffaff030000000000000000ff020103010400ff892781340000000000020103010400ff8a288129813500000000110100000000000000000000000000000001822a811b010000000000000000ff821d01ffffffff0200000000000000000300000000ff831f010000000000000000020000000000000000030000000000000000ff8421010000000000000000ffff03000000004dba836504010500000000000000008641000000000007000000004dba8365ff020103010400ff8b2b01020103000401ff8c3981350000000000ff8d3a01020103000401ff8e3c813d010000020001030000012fa0914288ff020103010400ff8f3e01020103000401ff9043814400450000000002ffffffffff914701020103000401ffff0000000000042cc000000d000000c13100000000000433c0000040000000c100000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c10000000000000461c0000010000000c10000000000000462c0000010000000c10000000000000465c0000010000000c1d16501ed0000046fc0000010000000c100000002">
+      <field name="diameter.avp.code" showname="AVP Code: 456 Multiple-Services-Credit-Control" size="4" pos="318" show="456" value="000001c8"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="322" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="322" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="322" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="322" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="322" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="322" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="322" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="322" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="322" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 676" size="3" pos="323" show="676" value="0002a4"/>
+      <field name="diameter.Multiple-Services-Credit-Control" showname="Multiple-Services-Credit-Control: 000001b74000000c00000000000001be40000014000001a4..." size="668" pos="326" show="00:00:01:b7:40:00:00:0c:00:00:00:00:00:00:01:be:40:00:00:14:00:00:01:a4:40:00:00:0c:00:00:00:19:00:00:04:2a:c0:00:01:e9:00:00:00:c1:01:01:81:02:81:03:01:02:01:03:00:04:01:ff:ff:82:13:01:00:00:00:00:ff:83:14:81:15:81:41:00:00:00:00:00:82:41:00:00:00:00:00:03:ff:ff:ff:ff:04:00:00:00:00:85:41:00:00:00:00:00:ff:02:01:03:01:04:00:ff:84:16:01:02:01:03:00:04:01:ff:85:18:01:00:00:00:00:82:19:81:1a:01:02:01:03:00:04:01:ff:82:1c:01:02:01:03:00:04:01:ff:83:1e:01:02:01:03:00:04:01:ff:84:20:01:02:01:03:00:04:01:ff:ff:ff:86:22:01:02:01:03:00:04:01:ff:87:24:81:1d:01:00:00:02:f0:02:00:00:00:00:05:ee:c2:15:03:ff:ff:ff:fa:ff:02:01:03:01:04:00:ff:88:25:81:26:01:04:20:d4:14:82:1d:01:00:00:02:f0:02:00:00:00:00:00:00:00:00:03:ff:ff:ff:fa:ff:03:00:00:00:00:00:00:00:00:ff:02:01:03:01:04:00:ff:89:27:81:34:00:00:00:00:00:02:01:03:01:04:00:ff:8a:28:81:29:81:35:00:00:00:00:11:01:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:01:82:2a:81:1b:01:00:00:00:00:00:00:00:00:ff:82:1d:01:ff:ff:ff:ff:02:00:00:00:00:00:00:00:00:03:00:00:00:00:ff:83:1f:01:00:00:00:00:00:00:00:00:02:00:00:00:00:00:00:00:00:03:00:00:00:00:00:00:00:00:ff:84:21:01:00:00:00:00:00:00:00:00:ff:ff:03:00:00:00:00:4d:ba:83:65:04:01:05:00:00:00:00:00:00:00:00:86:41:00:00:00:00:00:07:00:00:00:00:4d:ba:83:65:ff:02:01:03:01:04:00:ff:8b:2b:01:02:01:03:00:04:01:ff:8c:39:81:35:00:00:00:00:00:ff:8d:3a:01:02:01:03:00:04:01:ff:8e:3c:81:3d:01:00:00:02:00:01:03:00:00:01:2f:a0:91:42:88:ff:02:01:03:01:04:00:ff:8f:3e:01:02:01:03:00:04:01:ff:90:43:81:44:00:45:00:00:00:00:02:ff:ff:ff:ff:ff:91:47:01:02:01:03:00:04:01:ff:ff:00:00:00:00:00:04:2c:c0:00:00:0d:00:00:00:c1:31:00:00:00:00:00:04:33:c0:00:00:40:00:00:00:c1:00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:61:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:62:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:65:c0:00:00:10:00:00:00:c1:d1:65:01:ed:00:00:04:6f:c0:00:00:10:00:00:00:c1:00:00:00:02" value="000001b74000000c00000000000001be40000014000001a44000000c000000190000042ac00001e9000000c101018102810301020103000401ffff82130100000000ff83148115814100000000008241000000000003ffffffff040000000085410000000000ff020103010400ff841601020103000401ff851801000000008219811a01020103000401ff821c01020103000401ff831e01020103000401ff842001020103000401ffffff862201020103000401ff8724811d01000002f0020000000005eec21503fffffffaff020103010400ff88258126010420d414821d01000002f002000000000000000003fffffffaff030000000000000000ff020103010400ff892781340000000000020103010400ff8a288129813500000000110100000000000000000000000000000001822a811b010000000000000000ff821d01ffffffff0200000000000000000300000000ff831f010000000000000000020000000000000000030000000000000000ff8421010000000000000000ffff03000000004dba836504010500000000000000008641000000000007000000004dba8365ff020103010400ff8b2b01020103000401ff8c3981350000000000ff8d3a01020103000401ff8e3c813d010000020001030000012fa0914288ff020103010400ff8f3e01020103000401ff9043814400450000000002ffffffffff914701020103000401ffff0000000000042cc000000d000000c13100000000000433c0000040000000c100000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c10000000000000461c0000010000000c10000000000000462c0000010000000c10000000000000465c0000010000000c1d16501ed0000046fc0000010000000c100000002">
+        <field name="diameter.avp" showname="AVP: Service-Identifier(439) l=12 f=-M- val=Voice (0)" size="12" pos="326" show="00:00:01:b7:40:00:00:0c:00:00:00:00" value="000001b74000000c00000000">
+          <field name="diameter.avp.code" showname="AVP Code: 439 Service-Identifier" size="4" pos="326" show="439" value="000001b7"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="330" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="330" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="330" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="330" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="330" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="330" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="330" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="330" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="330" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="331" show="12" value="00000c"/>
+          <field name="diameter.Service-Identifier" showname="Service-Identifier: Voice (0)" size="4" pos="334" show="0" value="00000000"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Used-Service-Unit(446) l=20 f=-M-" size="20" pos="338" show="00:00:01:be:40:00:00:14:00:00:01:a4:40:00:00:0c:00:00:00:19" value="000001be40000014000001a44000000c00000019">
+          <field name="diameter.avp.code" showname="AVP Code: 446 Used-Service-Unit" size="4" pos="338" show="446" value="000001be"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="342" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="342" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="342" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="342" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="342" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="342" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="342" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="342" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="342" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 20" size="3" pos="343" show="20" value="000014"/>
+          <field name="diameter.Used-Service-Unit" showname="Used-Service-Unit: 000001a44000000c00000019" size="12" pos="346" show="00:00:01:a4:40:00:00:0c:00:00:00:19" value="000001a44000000c00000019">
+            <field name="diameter.avp" showname="AVP: CC-Time(420) l=12 f=-M- val=25" size="12" pos="346" show="00:00:01:a4:40:00:00:0c:00:00:00:19" value="000001a44000000c00000019">
+              <field name="diameter.avp.code" showname="AVP Code: 420 CC-Time" size="4" pos="346" show="420" value="000001a4"/>
+              <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="350" show="0x40" value="40">
+                <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="350" show="0" value="0" unmaskedvalue="40"/>
+                <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="350" show="1" value="1" unmaskedvalue="40"/>
+                <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="350" show="0" value="0" unmaskedvalue="40"/>
+                <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="350" show="0" value="0" unmaskedvalue="40"/>
+                <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="350" show="0" value="0" unmaskedvalue="40"/>
+                <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="350" show="0" value="0" unmaskedvalue="40"/>
+                <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="350" show="0" value="0" unmaskedvalue="40"/>
+                <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="350" show="0" value="0" unmaskedvalue="40"/>
+              </field>
+              <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="351" show="12" value="00000c"/>
+              <field name="diameter.CC-Time" showname="CC-Time: 25" size="4" pos="354" show="25" value="00000019"/>
+            </field>
+          </field>
+        </field>
+        <field name="diameter.avp" showname="AVP: Charging-State-Information(1066) l=489 f=VM- vnd=Ericsson val=01018102810301020103000401ffff82130100000000ff83..." size="489" pos="358" show="00:00:04:2a:c0:00:01:e9:00:00:00:c1:01:01:81:02:81:03:01:02:01:03:00:04:01:ff:ff:82:13:01:00:00:00:00:ff:83:14:81:15:81:41:00:00:00:00:00:82:41:00:00:00:00:00:03:ff:ff:ff:ff:04:00:00:00:00:85:41:00:00:00:00:00:ff:02:01:03:01:04:00:ff:84:16:01:02:01:03:00:04:01:ff:85:18:01:00:00:00:00:82:19:81:1a:01:02:01:03:00:04:01:ff:82:1c:01:02:01:03:00:04:01:ff:83:1e:01:02:01:03:00:04:01:ff:84:20:01:02:01:03:00:04:01:ff:ff:ff:86:22:01:02:01:03:00:04:01:ff:87:24:81:1d:01:00:00:02:f0:02:00:00:00:00:05:ee:c2:15:03:ff:ff:ff:fa:ff:02:01:03:01:04:00:ff:88:25:81:26:01:04:20:d4:14:82:1d:01:00:00:02:f0:02:00:00:00:00:00:00:00:00:03:ff:ff:ff:fa:ff:03:00:00:00:00:00:00:00:00:ff:02:01:03:01:04:00:ff:89:27:81:34:00:00:00:00:00:02:01:03:01:04:00:ff:8a:28:81:29:81:35:00:00:00:00:11:01:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:01:82:2a:81:1b:01:00:00:00:00:00:00:00:00:ff:82:1d:01:ff:ff:ff:ff:02:00:00:00:00:00:00:00:00:03:00:00:00:00:ff:83:1f:01:00:00:00:00:00:00:00:00:02:00:00:00:00:00:00:00:00:03:00:00:00:00:00:00:00:00:ff:84:21:01:00:00:00:00:00:00:00:00:ff:ff:03:00:00:00:00:4d:ba:83:65:04:01:05:00:00:00:00:00:00:00:00:86:41:00:00:00:00:00:07:00:00:00:00:4d:ba:83:65:ff:02:01:03:01:04:00:ff:8b:2b:01:02:01:03:00:04:01:ff:8c:39:81:35:00:00:00:00:00:ff:8d:3a:01:02:01:03:00:04:01:ff:8e:3c:81:3d:01:00:00:02:00:01:03:00:00:01:2f:a0:91:42:88:ff:02:01:03:01:04:00:ff:8f:3e:01:02:01:03:00:04:01:ff:90:43:81:44:00:45:00:00:00:00:02:ff:ff:ff:ff:ff:91:47:01:02:01:03:00:04:01:ff:ff" value="0000042ac00001e9000000c101018102810301020103000401ffff82130100000000ff83148115814100000000008241000000000003ffffffff040000000085410000000000ff020103010400ff841601020103000401ff851801000000008219811a01020103000401ff821c01020103000401ff831e01020103000401ff842001020103000401ffffff862201020103000401ff8724811d01000002f0020000000005eec21503fffffffaff020103010400ff88258126010420d414821d01000002f002000000000000000003fffffffaff030000000000000000ff020103010400ff892781340000000000020103010400ff8a288129813500000000110100000000000000000000000000000001822a811b010000000000000000ff821d01ffffffff0200000000000000000300000000ff831f010000000000000000020000000000000000030000000000000000ff8421010000000000000000ffff03000000004dba836504010500000000000000008641000000000007000000004dba8365ff020103010400ff8b2b01020103000401ff8c3981350000000000ff8d3a01020103000401ff8e3c813d010000020001030000012fa0914288ff020103010400ff8f3e01020103000401ff9043814400450000000002ffffffffff914701020103000401ffff">
+          <field name="diameter.avp.code" showname="AVP Code: 1066 Charging-State-Information" size="4" pos="358" show="1066" value="0000042a"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="362" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="362" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="362" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="362" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="362" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="362" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="362" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="362" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="362" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 489" size="3" pos="363" show="489" value="0001e9"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="366" show="193" value="000000c1"/>
+          <field name="diameter.Charging-State-Information" showname="Charging-State-Information: 01018102810301020103000401ffff82130100000000ff83..." size="477" pos="370" show="01:01:81:02:81:03:01:02:01:03:00:04:01:ff:ff:82:13:01:00:00:00:00:ff:83:14:81:15:81:41:00:00:00:00:00:82:41:00:00:00:00:00:03:ff:ff:ff:ff:04:00:00:00:00:85:41:00:00:00:00:00:ff:02:01:03:01:04:00:ff:84:16:01:02:01:03:00:04:01:ff:85:18:01:00:00:00:00:82:19:81:1a:01:02:01:03:00:04:01:ff:82:1c:01:02:01:03:00:04:01:ff:83:1e:01:02:01:03:00:04:01:ff:84:20:01:02:01:03:00:04:01:ff:ff:ff:86:22:01:02:01:03:00:04:01:ff:87:24:81:1d:01:00:00:02:f0:02:00:00:00:00:05:ee:c2:15:03:ff:ff:ff:fa:ff:02:01:03:01:04:00:ff:88:25:81:26:01:04:20:d4:14:82:1d:01:00:00:02:f0:02:00:00:00:00:00:00:00:00:03:ff:ff:ff:fa:ff:03:00:00:00:00:00:00:00:00:ff:02:01:03:01:04:00:ff:89:27:81:34:00:00:00:00:00:02:01:03:01:04:00:ff:8a:28:81:29:81:35:00:00:00:00:11:01:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:01:82:2a:81:1b:01:00:00:00:00:00:00:00:00:ff:82:1d:01:ff:ff:ff:ff:02:00:00:00:00:00:00:00:00:03:00:00:00:00:ff:83:1f:01:00:00:00:00:00:00:00:00:02:00:00:00:00:00:00:00:00:03:00:00:00:00:00:00:00:00:ff:84:21:01:00:00:00:00:00:00:00:00:ff:ff:03:00:00:00:00:4d:ba:83:65:04:01:05:00:00:00:00:00:00:00:00:86:41:00:00:00:00:00:07:00:00:00:00:4d:ba:83:65:ff:02:01:03:01:04:00:ff:8b:2b:01:02:01:03:00:04:01:ff:8c:39:81:35:00:00:00:00:00:ff:8d:3a:01:02:01:03:00:04:01:ff:8e:3c:81:3d:01:00:00:02:00:01:03:00:00:01:2f:a0:91:42:88:ff:02:01:03:01:04:00:ff:8f:3e:01:02:01:03:00:04:01:ff:90:43:81:44:00:45:00:00:00:00:02:ff:ff:ff:ff:ff:91:47:01:02:01:03:00:04:01:ff:ff" value="01018102810301020103000401ffff82130100000000ff83148115814100000000008241000000000003ffffffff040000000085410000000000ff020103010400ff841601020103000401ff851801000000008219811a01020103000401ff821c01020103000401ff831e01020103000401ff842001020103000401ffffff862201020103000401ff8724811d01000002f0020000000005eec21503fffffffaff020103010400ff88258126010420d414821d01000002f002000000000000000003fffffffaff030000000000000000ff020103010400ff892781340000000000020103010400ff8a288129813500000000110100000000000000000000000000000001822a811b010000000000000000ff821d01ffffffff0200000000000000000300000000ff831f010000000000000000020000000000000000030000000000000000ff8421010000000000000000ffff03000000004dba836504010500000000000000008641000000000007000000004dba8365ff020103010400ff8b2b01020103000401ff8c3981350000000000ff8d3a01020103000401ff8e3c813d010000020001030000012fa0914288ff020103010400ff8f3e01020103000401ff9043814400450000000002ffffffffff914701020103000401ffff"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Service-Session-Id(1068) l=13 f=VM- vnd=Ericsson val=1" size="13" pos="850" show="00:00:04:2c:c0:00:00:0d:00:00:00:c1:31" value="0000042cc000000d000000c131">
+          <field name="diameter.avp.code" showname="AVP Code: 1068 Service-Session-Id" size="4" pos="850" show="1068" value="0000042c"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="854" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="854" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="854" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="854" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="854" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="854" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="854" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="854" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="854" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 13" size="3" pos="855" show="13" value="00000d"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="858" show="193" value="000000c1"/>
+          <field name="diameter.Service-Session-Id" showname="Service-Session-Id: 1" size="1" pos="862" show="1" value="31"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Other-Party-Id(1075) l=64 f=VM- vnd=Ericsson" size="64" pos="866" show="00:00:04:33:c0:00:00:40:00:00:00:c1:00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000433c0000040000000c100000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c100000000">
+          <field name="diameter.avp.code" showname="AVP Code: 1075 Other-Party-Id" size="4" pos="866" show="1075" value="00000433"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="870" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="870" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="870" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="870" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="870" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="870" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="870" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="870" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="870" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 64" size="3" pos="871" show="64" value="000040"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="874" show="193" value="000000c1"/>
+          <field name="diameter.Other-Party-Id" showname="Other-Party-Id: 00000434c0000010000000c10000000000000435c0000014..." size="52" pos="878" show="00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00:00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35:00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000434c0000010000000c10000000000000435c0000014000000c1343731313232313500000436c0000010000000c100000000">
+            <field name="diameter.avp" showname="AVP: Other-Party-Id-Nature(1076) l=16 f=VM- vnd=Ericsson val=Unknown (0)" size="16" pos="878" show="00:00:04:34:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000434c0000010000000c100000000">
+              <field name="diameter.avp.code" showname="AVP Code: 1076 Other-Party-Id-Nature" size="4" pos="878" show="1076" value="00000434"/>
+              <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="882" show="0xc0" value="c0">
+                <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="882" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="882" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="882" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="882" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="882" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="882" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="882" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="882" show="0" value="0" unmaskedvalue="c0"/>
+              </field>
+              <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="883" show="16" value="000010"/>
+              <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="886" show="193" value="000000c1"/>
+              <field name="diameter.Other-Party-Id-Nature" showname="Other-Party-Id-Nature: Unknown (0)" size="4" pos="890" show="0" value="00000000"/>
+            </field>
+            <field name="diameter.avp" showname="AVP: Other-Party-Id-Data(1077) l=20 f=VM- vnd=Ericsson val=47112215" size="20" pos="894" show="00:00:04:35:c0:00:00:14:00:00:00:c1:34:37:31:31:32:32:31:35" value="00000435c0000014000000c13437313132323135">
+              <field name="diameter.avp.code" showname="AVP Code: 1077 Other-Party-Id-Data" size="4" pos="894" show="1077" value="00000435"/>
+              <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="898" show="0xc0" value="c0">
+                <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="898" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="898" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="898" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="898" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="898" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="898" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="898" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="898" show="0" value="0" unmaskedvalue="c0"/>
+              </field>
+              <field name="diameter.avp.len" showname="AVP Length: 20" size="3" pos="899" show="20" value="000014"/>
+              <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="902" show="193" value="000000c1"/>
+              <field name="diameter.Other-Party-Id-Data" showname="Other-Party-Id-Data: 47112215" size="8" pos="906" show="47112215" value="3437313132323135"/>
+            </field>
+            <field name="diameter.avp" showname="AVP: Other-Party-Id-Type(1078) l=16 f=VM- vnd=Ericsson val=END_USER_E164 (0)" size="16" pos="914" show="00:00:04:36:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000436c0000010000000c100000000">
+              <field name="diameter.avp.code" showname="AVP Code: 1078 Other-Party-Id-Type" size="4" pos="914" show="1078" value="00000436"/>
+              <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="918" show="0xc0" value="c0">
+                <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="918" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="918" show="1" value="1" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="918" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="918" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="918" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="918" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="918" show="0" value="0" unmaskedvalue="c0"/>
+                <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="918" show="0" value="0" unmaskedvalue="c0"/>
+              </field>
+              <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="919" show="16" value="000010"/>
+              <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="922" show="193" value="000000c1"/>
+              <field name="diameter.Other-Party-Id-Type" showname="Other-Party-Id-Type: END_USER_E164 (0)" size="4" pos="926" show="0" value="00000000"/>
+            </field>
+          </field>
+        </field>
+        <field name="diameter.avp" showname="AVP: Roaming-Position(1121) l=16 f=VM- vnd=Ericsson val=inside HPLMN (0)" size="16" pos="930" show="00:00:04:61:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000461c0000010000000c100000000">
+          <field name="diameter.avp.code" showname="AVP Code: 1121 Roaming-Position" size="4" pos="930" show="1121" value="00000461"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="934" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="934" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="934" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="934" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="934" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="934" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="934" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="934" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="934" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="935" show="16" value="000010"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="938" show="193" value="000000c1"/>
+          <field name="diameter.Roaming-Position" showname="Roaming-Position: inside HPLMN (0)" size="4" pos="942" show="0" value="00000000"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Service-Scenario(1122) l=16 f=VM- vnd=Ericsson val=Mobile Originating (0)" size="16" pos="946" show="00:00:04:62:c0:00:00:10:00:00:00:c1:00:00:00:00" value="00000462c0000010000000c100000000">
+          <field name="diameter.avp.code" showname="AVP Code: 1122 Service-Scenario" size="4" pos="946" show="1122" value="00000462"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="950" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="950" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="950" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="950" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="950" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="950" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="950" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="950" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="950" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="951" show="16" value="000010"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="954" show="193" value="000000c1"/>
+          <field name="diameter.Service-Scenario" showname="Service-Scenario: Mobile Originating (0)" size="4" pos="958" show="0" value="00000000"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Start-Of-Call(1125) l=16 f=VM- vnd=Ericsson val=Apr 29, 2011 09:22:53,000000 UTC" size="16" pos="962" show="00:00:04:65:c0:00:00:10:00:00:00:c1:d1:65:01:ed" value="00000465c0000010000000c1d16501ed">
+          <field name="diameter.avp.code" showname="AVP Code: 1125 Start-Of-Call" size="4" pos="962" show="1125" value="00000465"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="966" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="966" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="966" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="966" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="966" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="966" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="966" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="966" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="966" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="967" show="16" value="000010"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="970" show="193" value="000000c1"/>
+          <field name="diameter.Start-Of-Call" showname="Start-Of-Call: 3513057773  Apr 29, 2011 09:22:53,000000 UTC" size="4" pos="974" show="3513057773" value="d16501ed"/>
+        </field>
+        <field name="diameter.avp" showname="AVP: Service-Setup-Result(1135) l=16 f=VM- vnd=Ericsson val=Successful - Disconnect by called party (2)" size="16" pos="978" show="00:00:04:6f:c0:00:00:10:00:00:00:c1:00:00:00:02" value="0000046fc0000010000000c100000002">
+          <field name="diameter.avp.code" showname="AVP Code: 1135 Service-Setup-Result" size="4" pos="978" show="1135" value="0000046f"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="982" show="0xc0" value="c0">
+            <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="982" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="982" show="1" value="1" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="982" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="982" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="982" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="982" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="982" show="0" value="0" unmaskedvalue="c0"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="982" show="0" value="0" unmaskedvalue="c0"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 16" size="3" pos="983" show="16" value="000010"/>
+          <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="986" show="193" value="000000c1"/>
+          <field name="diameter.Service-Setup-Result" showname="Service-Setup-Result: Successful - Disconnect by called party (2)" size="4" pos="990" show="2" value="00000002"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Service-Context-Id(461) l=37 f=-M- val=Core_Context_R1A@ericsson.com" size="37" pos="994" show="00:00:01:cd:40:00:00:25:43:6f:72:65:5f:43:6f:6e:74:65:78:74:5f:52:31:41:40:65:72:69:63:73:73:6f:6e:2e:63:6f:6d" value="000001cd40000025436f72655f436f6e746578745f523141406572696373736f6e2e636f6d">
+      <field name="diameter.avp.code" showname="AVP Code: 461 Service-Context-Id" size="4" pos="994" show="461" value="000001cd"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="998" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="998" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="998" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="998" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="998" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="998" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="998" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="998" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="998" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 37" size="3" pos="999" show="37" value="000025"/>
+      <field name="diameter.Service-Context-Id" showname="Service-Context-Id: Core_Context_R1A@ericsson.com" size="29" pos="1002" show="Core_Context_R1A@ericsson.com" value="436f72655f436f6e746578745f523141406572696373736f6e2e636f6d"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Access-Information(1063) l=24 f=VM- vnd=Ericsson" size="24" pos="1034" show="00:00:04:27:c0:00:00:18:00:00:00:c1:00:00:00:37:40:00:00:0c:d1:65:01:e5" value="00000427c0000018000000c1000000374000000cd16501e5">
+      <field name="diameter.avp.code" showname="AVP Code: 1063 Access-Information" size="4" pos="1034" show="1063" value="00000427"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="1038" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="1038" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="1038" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="1038" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="1038" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="1038" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="1038" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="1038" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="1038" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 24" size="3" pos="1039" show="24" value="000018"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="1042" show="193" value="000000c1"/>
+      <field name="diameter.Access-Information" showname="Access-Information: 000000374000000cd16501e5" size="12" pos="1046" show="00:00:00:37:40:00:00:0c:d1:65:01:e5" value="000000374000000cd16501e5">
+        <field name="diameter.avp" showname="AVP: Event-Timestamp(55) l=12 f=-M- val=Apr 29, 2011 09:22:45,000000 UTC" size="12" pos="1046" show="00:00:00:37:40:00:00:0c:d1:65:01:e5" value="000000374000000cd16501e5">
+          <field name="diameter.avp.code" showname="AVP Code: 55 Event-Timestamp" size="4" pos="1046" show="55" value="00000037"/>
+          <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="1050" show="0x40" value="40">
+            <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="1050" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="1050" show="1" value="1" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="1050" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="1050" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="1050" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="1050" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="1050" show="0" value="0" unmaskedvalue="40"/>
+            <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="1050" show="0" value="0" unmaskedvalue="40"/>
+          </field>
+          <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="1051" show="12" value="00000c"/>
+          <field name="diameter.Event-Timestamp" showname="Event-Timestamp: 3513057765  Apr 29, 2011 09:22:45,000000 UTC" size="4" pos="1054" show="3513057765" value="d16501e5"/>
+        </field>
+      </field>
+    </field>
+    <field name="diameter.avp" showname="AVP: Charging-Context-Id(1065) l=38 f=VM- vnd=Ericsson val=CS1plus_V.1.0@ericsson.com" size="38" pos="1058" show="00:00:04:29:c0:00:00:26:00:00:00:c1:43:53:31:70:6c:75:73:5f:56:2e:31:2e:30:40:65:72:69:63:73:73:6f:6e:2e:63:6f:6d" value="00000429c0000026000000c1435331706c75735f562e312e30406572696373736f6e2e636f6d">
+      <field name="diameter.avp.code" showname="AVP Code: 1065 Charging-Context-Id" size="4" pos="1058" show="1065" value="00000429"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="1062" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="1062" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="1062" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="1062" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="1062" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="1062" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="1062" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="1062" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="1062" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 38" size="3" pos="1063" show="38" value="000026"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="1066" show="193" value="000000c1"/>
+      <field name="diameter.Charging-Context-Id" showname="Charging-Context-Id: CS1plus_V.1.0@ericsson.com" size="26" pos="1070" show="CS1plus_V.1.0@ericsson.com" value="435331706c75735f562e312e30406572696373736f6e2e636f6d"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Subscription-Id-Location(1074) l=22 f=VM- vnd=Ericsson val=4947101055" size="22" pos="1098" show="00:00:04:32:c0:00:00:16:00:00:00:c1:34:39:34:37:31:30:31:30:35:35" value="00000432c0000016000000c134393437313031303535">
+      <field name="diameter.avp.code" showname="AVP Code: 1074 Subscription-Id-Location" size="4" pos="1098" show="1074" value="00000432"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="1102" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="1102" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="1102" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="1102" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="1102" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="1102" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="1102" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="1102" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="1102" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 22" size="3" pos="1103" show="22" value="000016"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="1106" show="193" value="000000c1"/>
+      <field name="diameter.Subscription-Id-Location" showname="Subscription-Id-Location: 4947101055" size="10" pos="1110" show="4947101055" value="34393437313031303535"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: CIP-IP-Version(1083) l=15 f=VM- vnd=Ericsson val=R1A" size="15" pos="1122" show="00:00:04:3b:c0:00:00:0f:00:00:00:c1:52:31:41" value="0000043bc000000f000000c1523141">
+      <field name="diameter.avp.code" showname="AVP Code: 1083 CIP-IP-Version" size="4" pos="1122" show="1083" value="0000043b"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="1126" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="1126" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="1126" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="1126" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="1126" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="1126" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="1126" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="1126" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="1126" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 15" size="3" pos="1127" show="15" value="00000f"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: Ericsson AB (193)" size="4" pos="1130" show="193" value="000000c1"/>
+      <field name="diameter.CIP-IP-Version" showname="CIP-IP-Version: R1A" size="3" pos="1134" show="R1A" value="523141"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: 3GPP-MSTimeZone(23) l=14 f=VM- vnd=TGPP val=8000" size="14" pos="1138" show="00:00:00:17:c0:00:00:0e:00:00:28:af:80:00" value="00000017c000000e000028af8000">
+      <field name="diameter.avp.code" showname="AVP Code: 23 3GPP-MSTimeZone" size="4" pos="1138" show="23" value="00000017"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0xc0" size="1" pos="1142" show="0xc0" value="c0">
+        <field name="diameter.flags.vendorspecific" showname="1... .... = Vendor-Specific: Set" size="1" pos="1142" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="1142" show="1" value="1" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="1142" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="1142" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="1142" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="1142" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="1142" show="0" value="0" unmaskedvalue="c0"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="1142" show="0" value="0" unmaskedvalue="c0"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 14" size="3" pos="1143" show="14" value="00000e"/>
+      <field name="diameter.avp.vendorId" showname="AVP Vendor Id: 3GPP (10415)" size="4" pos="1146" show="10415" value="000028af"/>
+      <field name="diameter.3GPP-MSTimeZone" showname="3GPP-MSTimeZone: 8000" size="2" pos="1150" show="80:00" value="8000"/>
+    </field>
+    <field name="diameter.avp" showname="AVP: Event-Timestamp(55) l=12 f=-M- val=Apr 29, 2011 09:23:17,000000 UTC" size="12" pos="1154" show="00:00:00:37:40:00:00:0c:d1:65:02:05" value="000000374000000cd1650205">
+      <field name="diameter.avp.code" showname="AVP Code: 55 Event-Timestamp" size="4" pos="1154" show="55" value="00000037"/>
+      <field name="diameter.avp.flags" showname="AVP Flags: 0x40" size="1" pos="1158" show="0x40" value="40">
+        <field name="diameter.flags.vendorspecific" showname="0... .... = Vendor-Specific: Not set" size="1" pos="1158" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.flags.mandatory" showname=".1.. .... = Mandatory: Set" size="1" pos="1158" show="1" value="1" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.protected" showname="..0. .... = Protected: Not set" size="1" pos="1158" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved3" showname="...0 .... = Reserved: Not set" size="1" pos="1158" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved4" showname=".... 0... = Reserved: Not set" size="1" pos="1158" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved5" showname=".... .0.. = Reserved: Not set" size="1" pos="1158" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved6" showname=".... ..0. = Reserved: Not set" size="1" pos="1158" show="0" value="0" unmaskedvalue="40"/>
+        <field name="diameter.avp.flags.reserved7" showname=".... ...0 = Reserved: Not set" size="1" pos="1158" show="0" value="0" unmaskedvalue="40"/>
+      </field>
+      <field name="diameter.avp.len" showname="AVP Length: 12" size="3" pos="1159" show="12" value="00000c"/>
+      <field name="diameter.Event-Timestamp" showname="Event-Timestamp: 3513057797  Apr 29, 2011 09:23:17,000000 UTC" size="4" pos="1162" show="3513057797" value="d1650205"/>
+    </field>
+  </proto>
+</packet>
+
+</pdml>

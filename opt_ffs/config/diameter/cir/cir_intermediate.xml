@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- Session-Id -->
+	<AVP code="263" value="${Local.sessionID}" />
+	<!-- Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" />
+
+	<!-- CC Request Type -->
+	<AVP code="416" value="2" />
+
+	<!-- CC Request Number -->
+	<AVP code="415" value="${Local.recordNumber}" />
+
+	<!-- Vendor-Specific-Application-Id -->
+	<AVP code="260" value="">
+		<!-- Acct-Application-Id -->
+		<AVP code="259" value="${Global.AcctAppID}" />
+		<!-- Auth-Application-Id -->
+		<AVP code="258" value="${Global.AuthAppID}" />
+		<!-- Vendor-Id -->
+		<AVP code="266" value="${Global.destVendorID}" />
+	</AVP>
+	
+	<!-- Service Context Id ****** Optional ****** -->
+	<AVP code="461" value="abcdsci" />
+	
+	<!-- Charging Context Id -->
+	<AVP code="1065" value="abcd" />
+	
+	<!-- Subscription Id -->
+	<AVP code="443" value="">	
+		<!-- Subscription Id Type -->
+		<AVP code="450" value="0" />
+		
+		<!-- Subscription Id data -->
+		<AVP code="444" value="xyz" />
+	</AVP>
+	
+	<!-- Multiple Services Credit Control -->
+	<AVP code="456" value="">
+		<AVP code="1068" value="ssid"/>
+	</AVP>
+</RequestData>

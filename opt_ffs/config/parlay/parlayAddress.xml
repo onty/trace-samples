@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/parlayAddress.xsd">
+	<Address plan="P_ADDRESS_PLAN_E164" addrString="+46455112233" name="no_name" presentation="P_ADDRESS_PRESENTATION_UNDEFINED" screening="P_ADDRESS_SCREENING_UNDEFINED" subAddressString=""/>
+</RequestData>

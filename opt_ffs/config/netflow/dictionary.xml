@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Protocol version="1.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="schema/netflowDictionary.xsd">
+	
+<!-- Netflow 9 Fields -->
+	<Field_Def name="IN_BYTES" 					code="1" 	 />
+	<Field_Def name="IN_PKTS" 					code="2" 	 />
+	<Field_Def name="FLOWS" 					code="3" 	 />
+	<Field_Def name="PROTOCOL" 					code="4" 	length="1" />
+	<Field_Def name="TOS"	 					code="5" 	length="1" />
+	<Field_Def name="TCP_FLAGS" 				code="6" 	length="1" />
+	<Field_Def name="L4_SRC_PORT" 				code="7" 	length="2" />
+	<Field_Def name="IPV4_SRC_ADDR" 			code="8" 	length="4" />
+	<Field_Def name="SRC_MASK" 					code="9" 	length="1" />
+	<Field_Def name="INPUT_SNMP" 				code="10" 	 />
+	<Field_Def name="L4_DST_PORT" 				code="11" 	length="2" />
+	<Field_Def name="IPV4_DST_ADDR" 			code="12" 	length="4" />
+	<Field_Def name="DST_MASK" 					code="13" 	length="1" />
+	<Field_Def name="OUTPUT_SNMP" 				code="14" 	 />
+	<Field_Def name="IPV4_NEXT_HOP" 			code="15" 	length="4" />
+	<Field_Def name="SRC_AS" 					code="16" 	 />
+	<Field_Def name="DST_AS" 					code="17" 	/>
+	<Field_Def name="BGP_IPV4_NEXT_HOP" 		code="18" 	length="4" />
+	<Field_Def name="MUL_DST_PKTS" 				code="19" 	 />
+	<Field_Def name="MUL_DST_BYTES" 			code="20" 	 />
+	<Field_Def name="LAST_SWITCHED" 			code="21" 	length="4" />
+	<Field_Def name="FIRST_SWITCHED" 			code="22" 	length="4" />
+	<Field_Def name="OUT_BYTES" 				code="23" 	 />
+	<Field_Def name="OUT_PKTS" 					code="24" 	 />
+	<Field_Def name="IPV6_SRC_ADDR" 			code="27" 	length="16" />
+	<Field_Def name="IPV6_DST_ADDR" 			code="28" 	length="16" />
+	<Field_Def name="IPV6_SRC_MASK" 			code="29" 	length="1" />
+	<Field_Def name="IPV6_DST_MASK" 			code="30" 	length="1" />
+	<Field_Def name="IPV6_FLOW_LABEL" 			code="31" 	length="3" />
+	<Field_Def name="ICMP_TYPE" 				code="32" 	length="2" />
+	<Field_Def name="MUL_IGMP_TYPE" 			code="33" 	length="1" />
+	<Field_Def name="SAMPLING_INTERVAL" 		code="34" 	length="4" />
+	<Field_Def name="SAMPLING_ALGORITHM" 		code="35" 	length="1" />
+	<Field_Def name="FLOW_ACTIVE_TIMEOUT" 		code="36" 	length="2" />
+	<Field_Def name="FLOW_INACTIVE_TIMEOUT" 	code="37" 	length="2" />
+	<Field_Def name="ENGINE_TYPE" 				code="38" 	length="1" />
+	<Field_Def name="ENGINE_ID" 				code="39" 	length="1" />
+	<Field_Def name="TOTAL_BYTES_EXP" 			code="40" 	 />
+	<Field_Def name="TOTAL_PKTS_EXP" 			code="41" 	 />
+	<Field_Def name="TOTAL_FLOWS_EXP" 			code="42" 	 />
+	<Field_Def name="MPLS_TOP_LABEL_TYPE" 		code="46" 	length="1" />
+	<Field_Def name="MPLS_TOP_LABEL_IP_ADDR" 	code="47" 	length="4" />
+	<Field_Def name="FLOW_SAMPLER_ID" 			code="48" 	length="1" />
+	<Field_Def name="FLOW_SAMPLER_MODE" 		code="49" 	length="1" />
+	<Field_Def name="FLOW_SAMPLER_RANDOM_INTERVAL" 	code="50" 	length="4" />
+	<Field_Def name="DST_TOS" 					code="55" 	length="1" />
+	<Field_Def name="SRC_MAC" 					code="56" 	length="6" />
+	<Field_Def name="DST_MAC" 					code="57" 	length="6" />
+	<Field_Def name="SRC_VLAN" 					code="58" 	length="2" />
+	<Field_Def name="DST_VLAN" 					code="59" 	length="2" />
+	<Field_Def name="IP_PROTOCOL_VERSION" 		code="60" 	length="1" />
+	<Field_Def name="DIRECTION" 				code="61" 	length="1" />
+	<Field_Def name="IPV6_NEXT_HOP" 			code="62" 	length="16" />
+	<Field_Def name="BGP_IPV6_NEXT_HOP" 		code="63" 	length="16" />
+	<Field_Def name="IPV6_OPTION_HEADERS" 		code="64" 	length="4" />
+	<Field_Def name="MPLS_LABEL_1" 				code="70" 	length="3" />
+	<Field_Def name="MPLS_LABEL_2" 				code="71" 	length="3" />
+	<Field_Def name="MPLS_LABEL_3" 				code="72" 	length="3" />
+	<Field_Def name="MPLS_LABEL_4" 				code="73" 	length="3" />
+	<Field_Def name="MPLS_LABEL_5" 				code="74" 	length="3" />
+	<Field_Def name="MPLS_LABEL_6" 				code="75" 	length="3" />
+	<Field_Def name="MPLS_LABEL_7" 				code="76" 	length="3" />
+	<Field_Def name="MPLS_LABEL_8" 				code="77" 	length="3" />
+	<Field_Def name="MPLS_LABEL_9" 				code="78" 	length="3" />
+	<Field_Def name="MPLS_LABEL_10" 			code="79" 	length="3" />
+</Protocol>

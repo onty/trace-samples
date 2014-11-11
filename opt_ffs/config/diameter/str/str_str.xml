@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+    <!-- Session-Id -->
+	<AVP code="263" value="${Local.sessionID}"></AVP>
+    <!-- Destination-Realm -->
+    <AVP code="283" value="${Global.destRealm}"></AVP>
+    <!-- Destination-Host -->
+    <AVP code="293" value="${Global.destIP}"></AVP>
+   <!-- Auth-Application-Id -->
+      <AVP code="258" value="${Global.AuthAppID}"></AVP>     
+     <!-- Vendor-Specific-Application-Id -->
+	<AVP code="260" value="">
+		<!-- Acct-Application-Id -->
+		<AVP code="259" value="${Global.AcctAppID}"></AVP>
+		<!-- Auth-Application-Id -->
+		<AVP code="258" value="${Global.AuthAppID}"></AVP>
+		<!-- Vendor-Id -->
+		<AVP code="266" value="${Global.destVendorID}"></AVP>
+	</AVP>
+	
+    <!-- Termination-Cause (Optional) -->
+    <!-- <AVP code="295" value="4"/> -->
+
+    <!-- User-Name -->
+    <AVP code="1" value="MultiMediation"></AVP>
+    <!-- Origin-State-Id (Optional) -->
+    <AVP code="278" value="1"></AVP>
+    
+	<!-- Proxy-Info -->
+    <!--<AVP code="284" value="">-->
+        <!-- Proxy-State -->
+        <!--<AVP code="33" value="1" />-->
+        <!-- Proxy-Host -->
+        <!--<AVP code="280" value="aaa://127.0.0.1:3868;transport=tcp" />-->
+    <!--</AVP>-->
+
+
+    <!-- Route-Record (Optional) -->
+    <!-- <AVP code="282" value="aaa://127.0.0.1:3868;transport=tcp"/> -->
+
+
+</RequestData>

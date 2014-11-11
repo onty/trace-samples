@@ -1,0 +1,7 @@
+description,Short voice call, only first interrogation and final report.<br/>
+description,Originating protocol is CAPv2
+H,trafficcase,VOICE1
+M,A-Number
+M,B-Number
+M,Duration-FI
+M,MNP-ID

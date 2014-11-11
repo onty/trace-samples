@@ -1,0 +1,38 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--ROOT element-->
+	<xsd:element name="RequestData">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Subscriber" type="Subscriber_Type" minOccurs="1" maxOccurs="unbounded">					
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!--Types-->		
+	<xsd:complexType name="Parameter_Type">
+		<xsd:attribute name="level" type="String_Type" use="required"/>
+		<xsd:attribute name="name" type="String_Type" use="required"/>
+		<xsd:attribute name="value" type="String_Type" use="required"/>
+		<xsd:attribute name="valueType" type="valueType_type" use="optional" default="PARAMETER_STRING"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Subscriber_Type">
+		<xsd:sequence>
+			<xsd:element name="Parameter" type="Parameter_Type" minOccurs="1" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="requestId" type="String_Type" use="required"/>		
+	</xsd:complexType>
+	
+	<xsd:simpleType name="String_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="valueType_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="PARAMETER_INT32|PARAMETER_FLOAT|PARAMETER_STRING|PARAMETER_BOOLEAN|PARAMETER_OCTETSET"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

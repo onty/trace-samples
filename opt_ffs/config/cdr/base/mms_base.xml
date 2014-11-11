@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="5000" snapshotInConsole="true" statistics="false" logDataInOut="finest" debugLogging="finest" />
+
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="DestinationType" type="Fixed" value="File" datatype="String" />                                                            
+		</Global>
+		<Local>
+			<!--   <Variable name="recordNumber" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="sessionID" type="Fixed" value="${sessionConst};${rnd};${now};${step}" datatype="String" />
+            -->
+            <Variable name="servedMSISDN" type="Step" start="1414001000" stepsize="1" datatype="Integer" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.cdr.Cdr">
+        <Argument name="cdrFileNameNodeID" value="FFS1" />        
+        <Argument name="cdrFileNamePrivateInformation" value="cdrGeneratedByFFS" />
+        <Argument name="cdrFileNameExtension" value="bx" />
+        <Argument name="cdrMaxFileSize" value="1000000" />
+        <Argument name="cdrFileMaxNumberOfRecordsPerFile" value="10000" />
+        
+        <Argument name="submissionTime" value="20141203121314+0100"/>
+        <Argument name="recordTimeStamp" value="now" />            
+
+        
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="MMO1SRecord">
+			<Item repeat="1" delay="0" timeout="3000" type="out_sync">
+				<Data name="Asn1Choice" value="MMSRecordType" datatype="String" />
+                
+                <!-- "Values: MMO1SRECORD = 1, MMR1ARECORD = 2 -->
+                <Data name="Asn1ChoiceType" value="1" datatype="String" />  
+                
+                <Data name="Asn1Type" value="MMO1SRecord" datatype="String" />
+				<Data name="CDRRequest" value="./mms_domain_mmo1srecord.xml" datatype="FileContent" />
+			</Item>
+	   </Model>
+       <Model name="MMR1ARecord">
+            <Item repeat="1" delay="0" timeout="3000" type="out_sync">
+                <Data name="Asn1Choice" value="MMSRecordType" datatype="String" />
+                
+                <!-- "Values: MMO1SRECORD = 1, MMR1ARECORD = 2 -->
+                <Data name="Asn1ChoiceType" value="2" datatype="String" />  
+                
+                <Data name="Asn1Type" value="MMR1ARecord" datatype="String" />
+                <Data name="CDRRequest" value="./mms_domain_mmr1arecord.xml" datatype="FileContent" />
+            </Item>
+       </Model>
+    </Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+        <Slot times="1" duration="0" tps="0" activeModels="0">
+            <Model name="MMO1SRecord" weight="100" />
+        </Slot>
+        <Slot times="1" duration="0" tps="0" activeModels="0">
+            <Model name="MMR1ARecord" weight="100" />
+        </Slot>
+    </TrafficModel>
+</FFS>

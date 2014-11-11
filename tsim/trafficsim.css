@@ -1,0 +1,119 @@
+div#result {white-space:pre-wrap;}
+
+#ongoing_call {
+  display:none;
+}
+
+.param {
+  background-color:#CCCCCC;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: Courier New, monospaced;
+  background-color: #eee;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  padding: 1em;
+}
+
+table td {
+  vertical-align:top;
+}
+
+.ReqDescBox {
+  border:1px solid black;
+  padding:10px 10px 10px 10px;
+  position:relative;
+}
+
+.ReqDescHdr {
+  position:absolute;
+  top:-10px;
+  left:10px;
+  background:white;
+  display: inline-block;
+  padding:0px 5px 0px 5px;
+}
+
+.highslide-maincontent table {
+  border-collapse: collapse;
+  margin-top:20px;
+}
+
+.highslide-maincontent th {
+  text-align: left;
+  border:1px solid #C3C3C3;
+  white-space:nowrap;
+  padding-right:20px;
+  background-color:#EEEEEE;
+}
+
+.highslide-maincontent td {
+  border:1px solid #C3C3C3;
+}
+
+#sessList { 
+}
+
+#sessList span {
+  display: none;
+  visibility: hidden;
+}
+
+#sessList a {
+  FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none; Font-Size:10px; font-weight:normal;
+  display: block;
+  padding-right: 0.4em;
+  padding-left: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  text-decoration: none;
+  outline: none;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  COLOR: black;
+}
+
+#sessList a:link {
+  COLOR: black;
+}
+
+#sessList a:visited {
+  COLOR: black;
+}
+
+#sessList a:hover {
+  background-color: #54A4DE;
+  color: white;
+}
+
+#sessList a:active {
+  background-color: #54A4DE;
+  color: white;
+}
+
+.selected {
+  background-color: #77c7ff;
+}
+
+.filtered,.prefiltered {
+  display:none;
+}
+
+td.help_select {
+  cursor:pointer;
+}
+
+form table a {
+  cursor:help;
+}
+
+.hidden {
+  display:none;
+}

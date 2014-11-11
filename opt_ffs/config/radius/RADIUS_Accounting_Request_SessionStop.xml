@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/Radius.xsd">
+
+    <!--
+      This attribute indicates whether this Accounting-Request marks the
+      beginning of the user service (Start) or the end (Stop).
+       Type
+          40 for Acct-Status-Type.
+
+       Length
+          6
+
+       Value
+          The Value field is four octets.
+
+           1      Start
+           2      Stop
+           3      Interim-Update
+           7      Accounting-On
+           8      Accounting-Off
+           9-14   Reserved for Tunnel Accounting
+          15      Reserved for Failed
+    -->
+    <Attribute name="Acct-Status-Type" type="40" datatype="integer" value="2" />
+
+    <!--
+      This attribute is a unique Accounting ID to make it easy to match
+      start and stop records in a log file.  The start and stop records
+      for a given session MUST have the same Acct-Session-Id.  An
+      Accounting-Request packet MUST have an Acct-Session-Id.  An
+      Access-Request packet MAY have an Acct-Session-Id; if it does,
+      then the NAS MUST use the same Acct-Session-Id in the Accounting-
+      Request packets for that session.
+
+      The Acct-Session-Id SHOULD contain UTF-8 encoded 10646
+      characters.
+    -->
+    <Attribute name="Acct-Session-Id" type="44" datatype="string" value="${Local.sessionID}" />
+
+    <!--
+      This attribute contains a string identifying the NAS originating 
+      the access request. It is only used in Access-Request packets. 
+      Either NAS-IP-Address or NAS-Identifier should be present in 
+      an Access-Request packet.
+    -->
+    <Attribute name="NAS-Identifier" type="32" datatype="string" value="FFS" />
+
+<!--
+   The following table provides a guide to which attributes may be found
+   in Accounting-Request packets.  No attributes should be found in
+   Accounting-Response packets except Proxy-State and possibly Vendor-
+   Specific.
+                      #     Attribute
+                      0-1   User-Name
+                      0     User-Password
+                      0     CHAP-Password
+                      0-1   NAS-IP-Address [Note 1]
+                      0-1   NAS-Port
+                      0-1   Service-Type
+                      0-1   Framed-Protocol
+                      0-1   Framed-IP-Address
+                      0-1   Framed-IP-Netmask
+                      0-1   Framed-Routing
+                      0+    Filter-Id
+                      0-1   Framed-MTU
+                      0+    Framed-Compression
+                      0+    Login-IP-Host
+                      0-1   Login-Service
+                      0-1   Login-TCP-Port
+                      0     Reply-Message
+                      0-1   Callback-Number
+                      0-1   Callback-Id
+                      0+    Framed-Route
+                      0-1   Framed-IPX-Network
+                      0     State
+                      0+    Class
+                      0+    Vendor-Specific
+                      0-1   Session-Timeout
+                      0-1   Idle-Timeout
+                      0-1   Termination-Action
+                      0-1   Called-Station-Id
+                      0-1   Calling-Station-Id
+                      0-1   NAS-Identifier [Note 1]
+                      0+    Proxy-State
+                      0-1   Login-LAT-Service
+                      0-1   Login-LAT-Node
+                      0-1   Login-LAT-Group
+                      0-1   Framed-AppleTalk-Link
+                      0-1   Framed-AppleTalk-Network
+                      0-1   Framed-AppleTalk-Zone
+                      1     Acct-Status-Type
+                      0-1   Acct-Delay-Time
+                      0-1   Acct-Input-Octets
+                      0-1   Acct-Output-Octets
+                      1     Acct-Session-Id
+                      0-1   Acct-Authentic
+                      0-1   Acct-Session-Time
+                      0-1   Acct-Input-Packets
+                      0-1   Acct-Output-Packets
+                      0-1   Acct-Terminate-Cause
+                      0+    Acct-Multi-Session-Id
+                      0+    Acct-Link-Count
+                      0     CHAP-Challenge
+                      0-1   NAS-Port-Type
+                      0-1   Port-Limit
+                      0-1   Login-LAT-Port
+
+   [Note 1] An Accounting-Request MUST contain either a NAS-IP-Address
+   or a NAS-Identifier (or both).
+
+   The following table defines the above table entries.
+
+      0     This attribute MUST NOT be present
+      0+    Zero or more instances of this attribute MAY be present.
+      0-1   Zero or one instance of this attribute MAY be present.
+      1     Exactly one instance of this attribute MUST be present.
+
+-->
+
+</RequestData>

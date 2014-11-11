@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="destIP" type="Fixed" value="127.0.0.1" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="11000" datatype="String" />
+			<Variable name="serviceNameIACC" type="Fixed" value="Nokia_IACC_Server" datatype="String" />
+		</Global>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.iacc.Iacc">
+		<Argument name="port" value="${Global.destPort}" />
+		<Argument name="host" value="${Global.destIP}" />
+		<Argument name="serviceNameIACC" value="${Global.serviceNameIACC}" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="method" value="isServerUp" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="method" value="hasCredit2" datatype="String" />
+				<Data name="operation" value="0" datatype="Integer" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="method" value="commitReservation2" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="method" value="cancelReservation2" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

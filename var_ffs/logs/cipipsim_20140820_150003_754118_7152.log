@@ -1,0 +1,1701 @@
+-override A-Number=353850101129 B-Number=353877687281 ownIP=AIR1.ericsson.ie ownRealm=AIR1 ownPort=8732 destIP=occsdp1a.ericsson.ie destRealm=occsdp1.ericsson.ie destPort=3869
+Framework For Simulators (v3.0.356)
+Copyright 2005-2011 Ericsson AB, http://www.ericsson.com
+
+Creating manager
+Setting thread pool to: 8
+Setting task queue to: 64
+Checking configuration file '/var/opt/ffs/usecases/sms/cipip_sms.xml'...(v3.0.356)
+Loading configuration file...
+Loading REPOSITORY...
+REPOSITORY loaded!
+Loading MODELS...
+MODELS Loaded!
+Loading TRAFFIC MODELS...
+TRAFFIC MODELS Loaded!
+Loading PLUG-IN...
+Creating default plugin. (cmg.tools.ffs.plugins.diameter.Diameter)
+PLUG-IN loaded and initialized!
+Configuration file loaded!
+Executing...
+Initializing default plugin.
+> cmg.tools.ffs.plugins.diameter.Diameter > Loading dictionary file: config/diameter/dictionary.xml
+> cmg.tools.ffs.plugins.diameter.Diameter > Can not parse argument 'answerResultCode' using: 2002
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : tcTimer not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : requestTimeout not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > NOTE : If the timeout value in the request definitions are smaller than the DefaultMessageTimeout value, 
+       the FFS will time-out requests that may or may not be received by the stack later.
+       Another undesireable result of this may be that the FFS tries to send a new request in
+       the same session which will cause a session-aware receiver to reply with Session Busy.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : TITimer (Timeout for request) not found in config or is not a number. Defaulting it to 45 seconds.
+> cmg.tools.ffs.plugins.diameter.Diameter > Starting the stack...
+> cmg.tools.ffs.plugins.diameter.Diameter > The stack started successfully!
+> cmg.tools.ffs.plugins.diameter.Diameter > No secondary peer defined.
+> cmg.tools.ffs.plugins.diameter.Diameter > Waiting for CEA from primary peer... 15000 ms.
+> cmg.tools.ffs.plugins.diameter.Diameter > Primary peer added: aaa://occsdp1a.ericsson.ie:3869;transport=sctp isStatic=true
+> cmg.tools.ffs.plugins.diameter.Diameter > Primary peer connected: aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+*** Slot changing to: SLOT #1
+Aug 20, 2014 3:00:06 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:00.18
+Done in (~):   --:--:--.---
+Requests sent: 0/0        (0 %) (planned 0)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Exception in thread "SenderEngine" java.lang.Error: Maximum permit count exceeded
+	at java.util.concurrent.Semaphore$Sync.tryReleaseShared(Semaphore.java:197)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.releaseShared(AbstractQueuedSynchronizer.java:1340)
+	at java.util.concurrent.Semaphore.release(Semaphore.java:431)
+	at cmg.tools.ffs.engine.model.OutgoingQueueManager.workerIsDone(Unknown Source)
+	at cmg.tools.ffs.engine.model.OutgoingQueueManager.access$200(Unknown Source)
+	at cmg.tools.ffs.engine.model.OutgoingQueueManager$QueueWorker.createModelInfo(Unknown Source)
+	at cmg.tools.ffs.engine.model.OutgoingQueueManager.createWorker(Unknown Source)
+	at cmg.tools.ffs.engine.model.OutgoingQueueManager.syncCreateWorker(Unknown Source)
+	at cmg.tools.ffs.engine.model.OutgoingQueueManager.getFromQueue(Unknown Source)
+	at cmg.tools.ffs.engine.model.ModelHandler.getItemToExecute(Unknown Source)
+	at cmg.tools.ffs.engine.sender.SenderEngine.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:722)
+Aug 20, 2014 3:00:08 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:02.40
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:10 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:04.47
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:12 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:06.55
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:14 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:08.63
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:16 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:10.65
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:18 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:12.69
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:20 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:14.73
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:23 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:16.560
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:25 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:18.566
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:27 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:20.568
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:29 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:22.571
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:31 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:24.574
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:33 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:26.586
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:35 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:28.596
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:37 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:30.603
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:39 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:32.607
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:41 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:34.614
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:43 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:36.621
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:45 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:38.626
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:47 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:40.643
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:49 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:42.648
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:51 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:44.651
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:53 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:46.654
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:55 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:48.659
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:57 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:50.666
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:00:59 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:52.671
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:01 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:54.681
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:03 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:56.688
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+JVM should be warm now. Resetting overall TPS counter!
+Aug 20, 2014 3:01:05 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:00:58.707
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:07 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:00.713
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:09 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:02.718
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:11 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:04.725
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:13 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:06.730
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:15 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:08.734
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:17 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:10.739
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:19 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:12.745
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:21 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:14.753
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:23 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:16.759
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:25 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:18.765
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:27 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:20.770
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:29 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:22.776
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:31 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:24.780
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:33 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:26.784
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:35 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:28.789
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:37 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:30.796
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:39 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:32.800
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:41 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:34.803
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:43 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:36.807
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:45 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:38.812
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:47 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:40.825
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:49 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:42.844
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:51 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:44.851
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:53 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:46.856
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:55 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:48.862
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:57 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:50.873
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:01:59 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:52.876
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:01 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:54.878
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:03 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:56.883
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:05 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:01:58.893
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:07 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:02:00.898
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:09 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:02:02.903
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:11 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:02:04.909
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:13 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:02:06.922
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:15 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:02:08.925
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+
+Aug 20, 2014 3:02:17 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:  00:02:10.928
+Done in (~):   --:--:--.---
+Requests sent: 0/1        (0 %) (planned 2)
+TPS (SLS):     0.00/0     (0 %)
+TPS (O):       0.00
+Task pool q:   0
+Outgoing Qs:   (100) M1(1:0), 
+In analyz q:   0
+
+*** Response codes ***
+OK:            0          (0 %)
+Failed:        0          (0 %)
+Exception:     0          (0 %)
+Timeout:       0          (0 %)
+Other:         0          (0 %)
+None:          0          (0 %)
+
+*** Response times (SLS) ***
+min:           0 ms
+max:           0 ms
+average:       0 ms (last 1000)
+

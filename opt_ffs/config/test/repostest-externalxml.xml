@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Stepping external repos -->
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/iaccParameters.xsd">
+	<Subscriber requestId="${Global.requestIdCounter}">	
+ 	   	<Parameter level="0" name="localStep" value="${Local.step}" valueType="PARAMETER_STRING" />
+  		<Parameter level="0" name="sessionStep" value="${Local.localSessionCounter}.set(${Global.globalSessionCounter})" valueType="PARAMETER_STRING" />
+	</Subscriber>	
+</RequestData>

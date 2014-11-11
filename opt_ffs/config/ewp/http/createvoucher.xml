@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:createvoucherrequest xmlns:ns2="http://www.ericsson.com/em/emm/financial/v1_0">
+    <firstname>Olle</firstname>
+    <surname>Ollesson</surname>
+    <receivingexternalid>123456</receivingexternalid>
+    <amount>${Global.amount}</amount>
+    <secret>${Global.secret}</secret>
+</ns2:createvoucherrequest>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" > 	
+	<soapenv:Body>
+		<execute xmlns="http://webapps.online.ericsson.com">
+			<parameters>
+				<item>
+					<key>param1</key>
+					<value>string</value>
+				</item>
+				<item>
+					<key>param2</key>
+					<value>12345</value>
+				</item>
+				<item>
+					<key>param3</key>
+					<value>55.66</value>
+				</item>
+			</parameters>
+		</execute>
+	</soapenv:Body>
+</soapenv:Envelope>

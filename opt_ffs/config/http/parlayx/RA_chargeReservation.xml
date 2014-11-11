@@ -1,0 +1,10 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SOAP-ENV:Body>
+		<m:chargeReservation xmlns:m="http://www.csapi.org/wsdl/parlayx/payment" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+			<reservationIdentifier xsi:type="xsd:string">String1</reservationIdentifier>
+			<amount xsi:type="xsd:decimal">3.1415926535897932384626433832795</amount>
+			<billingText xsi:type="xsd:string">String2</billingText>
+			<referenceCode xsi:type="xsd:string">String3</referenceCode>
+		</m:chargeReservation>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

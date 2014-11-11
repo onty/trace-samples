@@ -1,0 +1,8 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "schema/repository.xsd">
+    <Variable name="aVariable">
+        <Item>
+            <Fixed value="nothing" datatype="String" />
+        </Item>
+    </Variable>
+</Repository>

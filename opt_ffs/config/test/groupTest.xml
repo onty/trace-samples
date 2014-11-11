@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="2000" snapshotInConsole="true" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="gCount" type="Step" start="0" stepsize="1" datatype="Integer" />
+		</Global>
+		<Local>
+			<Variable name="lCount" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="lFixed" type="Fixed" value="${gCount}" datatype="Integer" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.dummyplugin.DummyPlugin">
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M2">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="log" value="Item 0, f${lFixed} c${lCount}" datatype="String" />
+			</Item>
+			<Group repeat="2">
+				<Item repeat="3" delay="0" timeout="30000" type="out_sync">
+					<Data name="log" value="  Item 1, Grouped, f${lFixed} c${lCount}" datatype="String" />
+				</Item>
+				<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+					<Data name="log" value="  Item 2, Grouped, f${lFixed} c${lCount}" datatype="String" />
+				</Item>
+			</Group>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="log" value="Item 3, f${lFixed} c${lCount}" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M2" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

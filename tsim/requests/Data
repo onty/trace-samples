@@ -1,0 +1,5 @@
+description,Data session.<br/>
+description,Originating protocol is Gy
+H,trafficcase,DATA
+M,A-Number
+M,CC-Total-Octets

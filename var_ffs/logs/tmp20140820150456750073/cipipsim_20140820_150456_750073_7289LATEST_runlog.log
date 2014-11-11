@@ -1,0 +1,63 @@
+[2014-08-20 14:04:57.607] FINE : 1    : *** Created file: /var/opt/ffs/logs/tmp20140820150456750073/cipipsim_20140820_150456_750073_7289LATEST_runlog.log  (run log)
+[2014-08-20 14:04:57.645] FINE : 1    : *** Created file: /var/opt/ffs/logs/tmp20140820150456750073/cipipsim_20140820_150456_750073_7289LATEST_summary.log  (summary log)
+[2014-08-20 14:04:57.650] FINE : 1    : *** Created file: /var/opt/ffs/logs/tmp20140820150456750073/cipipsim_20140820_150456_750073_7289LATEST_data.log  (request/response data)
+[2014-08-20 14:04:57.651] INFO : 1    : Loading configuration file...
+[2014-08-20 14:04:57.651] INFO : 1    : Loading REPOSITORY...
+[2014-08-20 14:04:57.653] FINE : 1    : *** Loading GLOBAL repository...
+[2014-08-20 14:04:57.688] FINE : 1    : *** GLOBAL repository loaded!
+[2014-08-20 14:04:57.689] FINE : 1    : *** Loading LOCAL repository...
+[2014-08-20 14:04:57.731] FINE : 1    : *** LOCAL repository loaded!
+[2014-08-20 14:04:57.731] INFO : 1    : REPOSITORY loaded!
+[2014-08-20 14:04:57.732] INFO : 1    : Loading MODELS...
+[2014-08-20 14:04:57.745] FINE : 1    : *** Creating MODEL...
+[2014-08-20 14:04:57.748] FINEST : 1  : *** Linking Model with local repository...Repository (Local)@6a269856
+[2014-08-20 14:04:57.755] FINE : 1    : *** Loading file: /var/opt/ffs/usecases/sms/cipip_sms_request_01.xml
+[2014-08-20 14:04:57.808] FINE : 1    : *** Loading file: /var/opt/ffs/usecases/sms/cipip_sms_request_02.xml
+[2014-08-20 14:04:57.841] FINE : 1    : *** MODEL layout
+Name:                M1
+
+-~-~ ITEM begin -~-~
+ID:                  1
+Type:                OUT_SYNC
+Repeat (times):      1
+Delay (ms):          RepositoryData: [42]
+Timeout (ms):        30000
+Parent Request (ID): 0
+Parent Condition:    0
+-~-~ ITEM end -~-~
+
+-~-~ ITEM begin -~-~
+ID:                  2
+Type:                OUT_SYNC
+Repeat (times):      1
+Delay (ms):          RepositoryData: [42]
+Timeout (ms):        30000
+Parent Request (ID): 1
+Parent Condition:    1
+-~-~ ITEM end -~-~
+
+
+[2014-08-20 14:04:57.841] INFO : 1    : MODELS Loaded!
+[2014-08-20 14:04:57.847] INFO : 1    : Loading TRAFFIC MODELS...
+[2014-08-20 14:04:57.866] FINE : 1    : *** Creating SLOT...
+[2014-08-20 14:04:57.869] FINE : 1    : *** SLOT layout
+Name:                SLOT #1
+Times:               1
+Duration (ms):       0
+TPS:                 0
+
+-~-~ MODELS weight -~-~
+
+100% - M1
+
+[2014-08-20 14:04:57.870] INFO : 1    : TRAFFIC MODELS Loaded!
+[2014-08-20 14:04:57.870] INFO : 1    : Loading PLUG-IN...
+[2014-08-20 14:04:57.878] INFO : 1    : Creating default plugin. (cmg.tools.ffs.plugins.diameter.Diameter)
+[2014-08-20 14:04:57.921] INFO : 1    : PLUG-IN loaded and initialized!
+[2014-08-20 14:04:57.922] INFO : 1    : Configuration file loaded!
+[2014-08-20 14:04:57.922] INFO : 1    : Executing...
+[2014-08-20 14:04:57.924] INFO : 1    : Initializing default plugin.
+[2014-08-20 14:04:57.927] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Loading dictionary file: config/diameter/dictionary.xml
+[2014-08-20 14:04:57.928] FINE : 1    : *** Loading file: config/diameter/dictionary.xml
+[2014-08-20 14:04:59.113] FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > Loading <AVP_Def>...
+[2014-08-20 14:04:59.265] WARNING : 1 : > cmg.tools.ffs.plugins.diameter.Diameter > Can not parse argument 'answerResultCode' using: 2002

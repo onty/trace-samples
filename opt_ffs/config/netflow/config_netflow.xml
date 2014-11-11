@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="Version" type="Fixed" value="9" datatype="String" />
+			<Variable name="aIncreasingValue" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="destIP" type="Fixed" value="localhost" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="2100" datatype="String" />
+			<Variable name="SequenceNumber" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="ResponseTimeout" type="Fixed" value="30000" datatype="String" />
+		</Global>
+		<Local>
+			<Variable name="sessionID" type="Fixed" value="nothing" datatype="String" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.netflow.Netflow">
+		<Argument name="destIP" value="${Global.destIP}" />
+		<Argument name="destPort" value="${Global.destPort}" />	
+		<Argument name="Version" value="${Global.Version}" />
+		<Argument name="ResponseTimeout" value="${Global.ResponseTimeout}" />
+		<Argument name="SequenceNumber" value="${Global.SequenceNumber}" />		
+		<Argument name="dictionaryPath"  value="config/netflow/dictionary.xml" />
+		<Argument name="templatePath"   value="config/netflow/TemplateFlowset.xml"  />
+		<Argument name="dataFlowsetPath"   value="config/netflow/DataFlowset.xml"  />
+		<Argument name="optionsTemplateFlowsetPath"   value="config/netflow/OptionsTemplateFlowset.xml"  />
+		<Argument name="optionsDataFlowsetPath" value="config/netflow/OptionsDataFlowset.xml"  />
+		<Argument name="packetPath" value="config/netflow/Packet.xml"  />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Request" value="1" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Request" value="2" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Request" value="3" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Request" value="4" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Request" value="5" datatype="String"/>
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

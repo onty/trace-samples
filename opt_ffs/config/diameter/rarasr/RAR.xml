@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a sample request template for the ReAuth request. Some of the AVP values provided here are the dummy values.-->
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- Session-Id -->
+	<AVP code="263" value="${Local.sessionID}.set(${Global.aIncreasingValue})" /> 
+	 <!-- <AVP code="263" value="1" /> --> 
+	<!-- Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" />
+	<!-- Destination-Host -->
+	<AVP code="293" value="${Global.destIP}" />
+	<!-- Auth-Application-Id -->
+	<AVP code="258" value="${Global.AuthAppID}" />
+	<!-- Re-Auth Request Type -->
+	<AVP code="285" value="1" />
+	<!-- User-Name -->
+	<AVP code="1" value="Mediation" />
+ 	<!-- Proxy-Info -->
+	<AVP code="284" value="" >
+		<!-- Proxy-Host -->
+		<AVP code="280" value="berarlistener"/>
+		<!-- Proxy-State -->
+		<AVP code="33" value="running"/>
+	</AVP>
+	<!-- Route-Record -->
+	<AVP code="282" value="berarrouter"/>
+	<!-- GSU Pool reference -->
+	<AVP code="457" value="" >
+		<!-- GSU Pool Identifier -->
+		<AVP code="453" value="22" />
+		<!-- CC-Unit-Type -->
+		<AVP code="454" value="3" />
+		<!-- Unit Value -->
+		<AVP code="445" value="" >
+			<!-- Value Digits -->
+			<AVP code="447" value="5" />
+			<!-- Exponent -->
+			<AVP code="429" value="1" />
+		</AVP>
+	</AVP>
+	<!-- Service Identifier -->
+	<AVP code="439" value="berarserviceid"/>
+	<!-- Rating Group -->
+	<AVP code="432" value="10"/>
+
+</RequestData>

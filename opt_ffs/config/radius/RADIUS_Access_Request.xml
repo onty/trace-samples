@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/Radius.xsd">
+
+    <!-- An Access-Request SHOULD contain a User-Name attribute. -->
+    <Attribute name="User-Name" type="1" datatype="string" value="radiususer" />
+
+    <!-- It MUST contain either a NAS-IP-Address attribute or a NAS-Identifier attribute (or both).
+     -->
+    <Attribute name="NAS-IP-Address" type="4" datatype="address32" value="136.0.0.1" />
+    <Attribute name="NAS-Identifier" type="32" datatype="string" value="OWN_IP_ADDR" />
+
+
+    <!--
+      An Access-Request MUST contain either a User-Password or a CHAP-
+      Password or a State.  An Access-Request MUST NOT contain both a
+      User-Password and a CHAP-Password.  If future extensions allow
+      other kinds of authentication information to be conveyed, the
+      attribute for that can be used in an Access-Request instead of
+      User-Password or CHAP-Password.
+      <Attribute name="CHAP-Password" type="3" datatype="octets" value=" " />
+
+      When a User-Password is present, it is hidden using a method based
+      on the RSA Message Digest Algorithm MD5.
+    -->
+    <Attribute name="User-Password" type="2" datatype="string encrypt=1" value=" " />
+
+    <!--
+      An Access-Request SHOULD contain a NAS-Port or NAS-Port-Type
+      attribute or both unless the type of access being requested does
+      not involve a port or the NAS does not distinguish among its
+      ports.
+    -->
+    <Attribute name="NAS-Port" type="5" datatype="integer" value="1" />
+    <Attribute name="NAS-Port-Type" type="61" datatype="integer" value="1" />
+
+    <!--
+      An Access-Request MAY contain additional attributes as a hint to
+      the server, but the server is not required to honor the hint.
+     -->
+
+    <!--
+      This attribute is a unique Accounting ID to make it easy to match
+      start and stop records in a log file.  The start and stop records
+      for a given session MUST have the same Acct-Session-Id.  An
+      Accounting-Request packet MUST have an Acct-Session-Id.  An
+      Access-Request packet MAY have an Acct-Session-Id; if it does,
+      then the NAS MUST use the same Acct-Session-Id in the Accounting-
+      Request packets for that session.
+
+      The Acct-Session-Id SHOULD contain UTF-8 encoded 10646
+      characters.
+    -->
+    <Attribute name="Acct-Session-Id" type="44" datatype="string" value="${Local.sessionID}.set(${Global.aIncreasingValue})" />
+
+    <!--
+      This attribute contains a string identifying the NAS originating 
+      the access request. It is only used in Access-Request packets. 
+      Either NAS-IP-Address or NAS-Identifier should be present in 
+      an Access-Request packet.
+    -->
+    <Attribute name="NAS-Identifier" type="32" datatype="string" value="FFS" />
+
+    <!--
+   The following table provides a guide to which attributes may be found
+   in which kinds of packets, and in what quantity.
+
+   Request   Accept   Reject   Challenge   #    Attribute
+   0-1       0-1      0        0            1   User-Name
+   0-1       0        0        0            2   User-Password [Note 1]
+   0-1       0        0        0            3   CHAP-Password [Note 1]
+   0-1       0        0        0            4   NAS-IP-Address [Note 2]
+   0-1       0        0        0            5   NAS-Port
+   0-1       0-1      0        0            6   Service-Type
+   0-1       0-1      0        0            7   Framed-Protocol
+   0-1       0-1      0        0            8   Framed-IP-Address
+   0-1       0-1      0        0            9   Framed-IP-Netmask
+   0         0-1      0        0           10   Framed-Routing
+   0         0+       0        0           11   Filter-Id
+   0-1       0-1      0        0           12   Framed-MTU
+   0+        0+       0        0           13   Framed-Compression
+   0+        0+       0        0           14   Login-IP-Host
+   0         0-1      0        0           15   Login-Service
+   0         0-1      0        0           16   Login-TCP-Port
+   0         0+       0+       0+          18   Reply-Message
+   0-1       0-1      0        0           19   Callback-Number
+   0         0-1      0        0           20   Callback-Id
+   0         0+       0        0           22   Framed-Route
+   0         0-1      0        0           23   Framed-IPX-Network
+   0-1       0-1      0        0-1         24   State [Note 1]
+   0         0+       0        0           25   Class
+   0+        0+       0        0+          26   Vendor-Specific
+   0         0-1      0        0-1         27   Session-Timeout
+   0         0-1      0        0-1         28   Idle-Timeout
+   0         0-1      0        0           29   Termination-Action
+   0-1       0        0        0           30   Called-Station-Id
+   0-1       0        0        0           31   Calling-Station-Id
+   0-1       0        0        0           32   NAS-Identifier [Note 2]
+   0+        0+       0+       0+          33   Proxy-State
+   0-1       0-1      0        0           34   Login-LAT-Service
+   0-1       0-1      0        0           35   Login-LAT-Node
+   0-1       0-1      0        0           36   Login-LAT-Group
+   0         0-1      0        0           37   Framed-AppleTalk-Link
+   0         0+       0        0           38   Framed-AppleTalk-Network
+   0         0-1      0        0           39   Framed-AppleTalk-Zone
+   0-1       0        0        0           60   CHAP-Challenge
+   0-1       0        0        0           61   NAS-Port-Type
+   0-1       0-1      0        0           62   Port-Limit
+   0-1       0-1      0        0           63   Login-LAT-Port
+   Request   Accept   Reject   Challenge   #    Attribute
+
+   [Note 1] An Access-Request MUST contain either a User-Password or a
+   CHAP-Password or State.  An Access-Request MUST NOT contain both a
+   User-Password and a CHAP-Password.  If future extensions allow other
+   kinds of authentication information to be conveyed, the attribute for
+   that can be used in an Access-Request instead of User-Password or
+   CHAP-Password.
+
+   [Note 2] An Access-Request MUST contain either a NAS-IP-Address or a
+   NAS-Identifier (or both).
+
+   The following table defines the meaning of the above table entries.
+
+0     This attribute MUST NOT be present in packet.
+0+    Zero or more instances of this attribute MAY be present in packet.
+0-1   Zero or one instance of this attribute MAY be present in packet.
+1     Exactly one instance of this attribute MUST be present in packet.
+
+    -->
+
+</RequestData>

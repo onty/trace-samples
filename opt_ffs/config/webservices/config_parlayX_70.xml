@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="destIP" type="Fixed" value="136.225.18.12" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="1090" datatype="String" />
+		</Global>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.http.HTTP">
+		<Argument name="port" value="${Global.destPort}" />
+		<Argument name="maxTotalConnections" value="20" />
+		<Argument name="host" value="${Global.destIP}" />
+		<Argument name="maxConnectionsPerHost" value="2" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Method" value="POST" datatype="String" />
+				<Data name="Content-Type" value="text/xml;charset=utf-8" datatype="String" />
+				<Data name="URI" value="/services/VolumeChargingPort.ws" datatype="String" />
+				<Data name="SOAPAction" value="getAmount" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Method" value="POST" datatype="String" />
+				<Data name="Content-Type" value="text/xml;charset=utf-8" datatype="String" />
+				<Data name="URI" value="/services/VolumeChargingPort.ws" datatype="String" />
+				<Data name="SOAPAction" value="chargeVolume" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Method" value="POST" datatype="String" />
+				<Data name="Content-Type" value="text/xml;charset=utf-8" datatype="String" />
+				<Data name="URI" value="/services/VolumeChargingPort.ws" datatype="String" />
+				<Data name="SOAPAction" value="refundVolumet" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

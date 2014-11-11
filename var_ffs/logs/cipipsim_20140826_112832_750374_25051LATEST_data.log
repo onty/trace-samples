@@ -1,0 +1,273 @@
+2014-08-26 10:28:37.457;M1_G0_R0;R0;M1_G0_R0_0;M#0;OK;2001;850;;outgoingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RequestData datestamp="2014-08-26 10:28:36.833">
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x414952312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1409048916-3679" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x41495231" value-name="null" vendor-id="0"/>
+    <AVP code="30" code-name="Called-Station-Id" mandatory="true" protected="false" value="blackberry.net" value-name="null" vendor-id="0"/>
+    <AVP code="283" code-name="Destination-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    <AVP code="443" code-name="Subscription-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="444" code-name="Subscription-Id-Data" mandatory="true" protected="false" value="353850101129" value-name="null" vendor-id="0"/>
+        <AVP code="450" code-name="Subscription-Id-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="443" code-name="Subscription-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="444" code-name="Subscription-Id-Data" mandatory="true" protected="false" value="51010100023400" value-name="null" vendor-id="0"/>
+        <AVP code="450" code-name="Subscription-Id-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="461" code-name="Service-Context-Id" mandatory="true" protected="false" value="Ericsson_OCS_V1_0.0.0.7.32251@3gpp.org" value-name="null" vendor-id="0"/>
+    <AVP code="1063" code-name="Access-Information" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:36" value-name="null" vendor-id="0"/>
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="4" value-name="null" vendor-id="0"/>
+        <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x63312d31302d39392d3234332d33342d6767736e30332e6572696373736f6e2e7365" value-name="null" vendor-id="0"/>
+        <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x6767736e30332e6572696373736f6e2e7365" value-name="null" vendor-id="0"/>
+        <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+        <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="1065" code-name="Charging-Context-Id" mandatory="true" protected="false" value="Ericsson_OCS_V1_0.0.0.7.32251@3gpp.org" value-name="null" vendor-id="193"/>
+    <AVP code="1083" code-name="CIP-IP-Version" mandatory="true" protected="false" value="R1A" value-name="null" vendor-id="193"/>
+    <AVP code="1164" code-name="Ericsson-QoS-Profile" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="1165" code-name="Traffic-Class" mandatory="true" protected="false" value="3" value-name="null" vendor-id="193"/>
+        <AVP code="1166" code-name="Guaranteed-Bit-Rate-For-Uplink" mandatory="true" protected="false" value="512000" value-name="null" vendor-id="193"/>
+        <AVP code="1168" code-name="Guaranteed-Bit-Rate-For-Downlink" mandatory="true" protected="false" value="512000" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="1170" code-name="Ericsson-Geographical-Location" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="1171" code-name="Ericsson-Location-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="193"/>
+        <AVP code="1172" code-name="Ericsson-Location-Area-Code" mandatory="true" protected="false" value="0x30313a6438" value-name="null" vendor-id="193"/>
+        <AVP code="1174" code-name="Ericsson-Geo-Location-Cell-Identity" mandatory="true" protected="false" value="0x30303a3033" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="2" code-name="3GPP-Charging-Id" mandatory="true" protected="false" value="18400345" value-name="null" vendor-id="10415"/>
+    <AVP code="3" code-name="3GPP-PDP-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="10415"/>
+    <AVP code="8" code-name="3GPP-IMSI-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="10415"/>
+    <AVP code="10" code-name="3GPP-NSAPI" mandatory="true" protected="false" value="5" value-name="null" vendor-id="10415"/>
+    <AVP code="12" code-name="3GPP-Selection-Mode" mandatory="true" protected="false" value="1" value-name="null" vendor-id="10415"/>
+    <AVP code="13" code-name="3GPP-Charging-Characteristics" mandatory="true" protected="false" value="0000" value-name="null" vendor-id="10415"/>
+    <AVP code="18" code-name="3GPP-SGSN-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="10415"/>
+    <AVP code="21" code-name="3GPP-RAT-Type" mandatory="true" protected="false" value="0x01" value-name="null" vendor-id="10415"/>
+    <AVP code="23" code-name="3GPP-MS-TimeZone" mandatory="true" protected="false" value="0x2300" value-name="null" vendor-id="10415"/>
+    <AVP code="847" code-name="GGSN-Address" mandatory="true" protected="false" value="1.1.1.1" value-name="null" vendor-id="10415"/>
+    <AVP code="1227" code-name="PDP-Address" mandatory="true" protected="false" value="53.18.0.2" value-name="null" vendor-id="10415"/>
+    <AVP code="1228" code-name="SGSN-Address" mandatory="true" protected="false" value="10.99.1.129" value-name="null" vendor-id="10415"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:36" value-name="null" vendor-id="0"/>
+</RequestData>
+
+2014-08-26 10:28:37.464;M1_G0_R0;R0;M1_G0_R0_0;M#0;incommingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ResponseData datestamp="2014-08-26 10:28:37.414">
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1409048916-3679" value-name="null" vendor-id="0"/>
+    <AVP code="268" code-name="Result-Code" mandatory="true" protected="false" value="2001" value-name="null" vendor-id="0"/>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x6f636373647031612e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:36" value-name="null" vendor-id="0"/>
+</ResponseData>
+
+2014-08-26 10:28:39.193;M1_G0_R1;R1;M1_G0_R1_1;M#0;OK;2001;625;;outgoingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RequestData datestamp="2014-08-26 10:28:38.733">
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x414952312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1409048916-3679" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x41495231" value-name="null" vendor-id="0"/>
+    <AVP code="30" code-name="Called-Station-Id" mandatory="true" protected="false" value="indosat.gprs" value-name="null" vendor-id="0"/>
+    <AVP code="283" code-name="Destination-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    <AVP code="443" code-name="Subscription-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="444" code-name="Subscription-Id-Data" mandatory="true" protected="false" value="353850101129" value-name="null" vendor-id="0"/>
+        <AVP code="450" code-name="Subscription-Id-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="443" code-name="Subscription-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="444" code-name="Subscription-Id-Data" mandatory="true" protected="false" value="51010100023400" value-name="null" vendor-id="0"/>
+        <AVP code="450" code-name="Subscription-Id-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="456" code-name="Multiple-Services-Credit-Control" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="432" code-name="Rating-Group" mandatory="true" protected="false" value="22152" value-name="null" vendor-id="0"/>
+        <AVP code="437" code-name="Requested-Service-Unit" mandatory="true" protected="false" value="" vendor-id="0"/>
+        <AVP code="1068" code-name="Service-Session-Id" mandatory="true" protected="false" value="23110:-:1" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="461" code-name="Service-Context-Id" mandatory="true" protected="false" value="Ericsson_OCS_V1_0.0.0.7.32251@3gpp.org" value-name="null" vendor-id="0"/>
+    <AVP code="1063" code-name="Access-Information" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:36" value-name="null" vendor-id="0"/>
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="4" value-name="null" vendor-id="0"/>
+        <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x63312d31302d39392d3234332d33342d6767736e30332e6572696373736f6e2e7365" value-name="null" vendor-id="0"/>
+        <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x6767736e30332e6572696373736f6e2e7365" value-name="null" vendor-id="0"/>
+        <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+        <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="1065" code-name="Charging-Context-Id" mandatory="true" protected="false" value="Ericsson_OCS_V1_0.0.0.7.32251@3gpp.org" value-name="null" vendor-id="193"/>
+    <AVP code="1083" code-name="CIP-IP-Version" mandatory="true" protected="false" value="R1A" value-name="null" vendor-id="193"/>
+    <AVP code="1164" code-name="Ericsson-QoS-Profile" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="1165" code-name="Traffic-Class" mandatory="true" protected="false" value="3" value-name="null" vendor-id="193"/>
+        <AVP code="1166" code-name="Guaranteed-Bit-Rate-For-Uplink" mandatory="true" protected="false" value="512000" value-name="null" vendor-id="193"/>
+        <AVP code="1168" code-name="Guaranteed-Bit-Rate-For-Downlink" mandatory="true" protected="false" value="512000" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="1170" code-name="Ericsson-Geographical-Location" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="1171" code-name="Ericsson-Location-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="193"/>
+        <AVP code="1172" code-name="Ericsson-Location-Area-Code" mandatory="true" protected="false" value="0x30313a6438" value-name="null" vendor-id="193"/>
+        <AVP code="1174" code-name="Ericsson-Geo-Location-Cell-Identity" mandatory="true" protected="false" value="0x30303a3033" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="2" code-name="3GPP-Charging-Id" mandatory="true" protected="false" value="18400345" value-name="null" vendor-id="10415"/>
+    <AVP code="3" code-name="3GPP-PDP-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="10415"/>
+    <AVP code="8" code-name="3GPP-IMSI-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="10415"/>
+    <AVP code="10" code-name="3GPP-NSAPI" mandatory="true" protected="false" value="5" value-name="null" vendor-id="10415"/>
+    <AVP code="12" code-name="3GPP-Selection-Mode" mandatory="true" protected="false" value="1" value-name="null" vendor-id="10415"/>
+    <AVP code="13" code-name="3GPP-Charging-Characteristics" mandatory="true" protected="false" value="0000" value-name="null" vendor-id="10415"/>
+    <AVP code="18" code-name="3GPP-SGSN-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="10415"/>
+    <AVP code="21" code-name="3GPP-RAT-Type" mandatory="true" protected="false" value="0x01" value-name="null" vendor-id="10415"/>
+    <AVP code="23" code-name="3GPP-MS-TimeZone" mandatory="true" protected="false" value="0x2300" value-name="null" vendor-id="10415"/>
+    <AVP code="847" code-name="GGSN-Address" mandatory="true" protected="false" value="1.1.1.1" value-name="null" vendor-id="10415"/>
+    <AVP code="1227" code-name="PDP-Address" mandatory="true" protected="false" value="53.18.0.2" value-name="null" vendor-id="10415"/>
+    <AVP code="1228" code-name="SGSN-Address" mandatory="true" protected="false" value="10.99.1.129" value-name="null" vendor-id="10415"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:38" value-name="null" vendor-id="0"/>
+</RequestData>
+
+2014-08-26 10:28:39.193;M1_G0_R1;R1;M1_G0_R1_1;M#0;incommingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ResponseData datestamp="2014-08-26 10:28:39.173">
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1409048916-3679" value-name="null" vendor-id="0"/>
+    <AVP code="268" code-name="Result-Code" mandatory="true" protected="false" value="2001" value-name="null" vendor-id="0"/>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x6f636373647031612e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:36" value-name="null" vendor-id="0"/>
+    <AVP code="456" code-name="Multiple-Services-Credit-Control" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="1068" code-name="Service-Session-Id" mandatory="true" protected="false" value="23110:-:1" value-name="null" vendor-id="193"/>
+        <AVP code="268" code-name="Result-Code" mandatory="true" protected="false" value="4010" value-name="null" vendor-id="0"/>
+    </AVP>
+</ResponseData>
+
+2014-08-26 10:28:40.482;M1_G0_R2;R2;M1_G0_R2_2;M#0;OK;2001;244;;outgoingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RequestData datestamp="2014-08-26 10:28:40.303">
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x414952312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1409048916-3679" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x41495231" value-name="null" vendor-id="0"/>
+    <AVP code="30" code-name="Called-Station-Id" mandatory="true" protected="false" value="indosat.gprs" value-name="null" vendor-id="0"/>
+    <AVP code="283" code-name="Destination-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    <AVP code="443" code-name="Subscription-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="444" code-name="Subscription-Id-Data" mandatory="true" protected="false" value="353850101129" value-name="null" vendor-id="0"/>
+        <AVP code="450" code-name="Subscription-Id-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="443" code-name="Subscription-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="444" code-name="Subscription-Id-Data" mandatory="true" protected="false" value="51010100023400" value-name="null" vendor-id="0"/>
+        <AVP code="450" code-name="Subscription-Id-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="456" code-name="Multiple-Services-Credit-Control" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="432" code-name="Rating-Group" mandatory="true" protected="false" value="22152" value-name="null" vendor-id="0"/>
+        <AVP code="437" code-name="Requested-Service-Unit" mandatory="true" protected="false" value="" vendor-id="0"/>
+        <AVP code="1068" code-name="Service-Session-Id" mandatory="true" protected="false" value="23110:-:1" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="461" code-name="Service-Context-Id" mandatory="true" protected="false" value="Ericsson_OCS_V1_0.0.0.7.32251@3gpp.org" value-name="null" vendor-id="0"/>
+    <AVP code="1063" code-name="Access-Information" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:36" value-name="null" vendor-id="0"/>
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="4" value-name="null" vendor-id="0"/>
+        <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x63312d31302d39392d3234332d33342d6767736e30332e6572696373736f6e2e7365" value-name="null" vendor-id="0"/>
+        <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x6767736e30332e6572696373736f6e2e7365" value-name="null" vendor-id="0"/>
+        <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+        <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="1065" code-name="Charging-Context-Id" mandatory="true" protected="false" value="Ericsson_OCS_V1_0.0.0.7.32251@3gpp.org" value-name="null" vendor-id="193"/>
+    <AVP code="1083" code-name="CIP-IP-Version" mandatory="true" protected="false" value="R1A" value-name="null" vendor-id="193"/>
+    <AVP code="1164" code-name="Ericsson-QoS-Profile" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="1165" code-name="Traffic-Class" mandatory="true" protected="false" value="3" value-name="null" vendor-id="193"/>
+        <AVP code="1166" code-name="Guaranteed-Bit-Rate-For-Uplink" mandatory="true" protected="false" value="512000" value-name="null" vendor-id="193"/>
+        <AVP code="1168" code-name="Guaranteed-Bit-Rate-For-Downlink" mandatory="true" protected="false" value="512000" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="1170" code-name="Ericsson-Geographical-Location" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="1171" code-name="Ericsson-Location-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="193"/>
+        <AVP code="1172" code-name="Ericsson-Location-Area-Code" mandatory="true" protected="false" value="0x30313a6438" value-name="null" vendor-id="193"/>
+        <AVP code="1174" code-name="Ericsson-Geo-Location-Cell-Identity" mandatory="true" protected="false" value="0x30303a3033" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="2" code-name="3GPP-Charging-Id" mandatory="true" protected="false" value="18400345" value-name="null" vendor-id="10415"/>
+    <AVP code="3" code-name="3GPP-PDP-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="10415"/>
+    <AVP code="8" code-name="3GPP-IMSI-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="10415"/>
+    <AVP code="10" code-name="3GPP-NSAPI" mandatory="true" protected="false" value="5" value-name="null" vendor-id="10415"/>
+    <AVP code="12" code-name="3GPP-Selection-Mode" mandatory="true" protected="false" value="1" value-name="null" vendor-id="10415"/>
+    <AVP code="13" code-name="3GPP-Charging-Characteristics" mandatory="true" protected="false" value="0000" value-name="null" vendor-id="10415"/>
+    <AVP code="18" code-name="3GPP-SGSN-MCC-MNC" mandatory="true" protected="false" value="51001" value-name="null" vendor-id="10415"/>
+    <AVP code="21" code-name="3GPP-RAT-Type" mandatory="true" protected="false" value="0x01" value-name="null" vendor-id="10415"/>
+    <AVP code="23" code-name="3GPP-MS-TimeZone" mandatory="true" protected="false" value="0x2300" value-name="null" vendor-id="10415"/>
+    <AVP code="847" code-name="GGSN-Address" mandatory="true" protected="false" value="1.1.1.1" value-name="null" vendor-id="10415"/>
+    <AVP code="1227" code-name="PDP-Address" mandatory="true" protected="false" value="53.18.0.2" value-name="null" vendor-id="10415"/>
+    <AVP code="1228" code-name="SGSN-Address" mandatory="true" protected="false" value="10.99.1.129" value-name="null" vendor-id="10415"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:40" value-name="null" vendor-id="0"/>
+</RequestData>
+
+2014-08-26 10:28:40.483;M1_G0_R2;R2;M1_G0_R2_2;M#0;incommingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ResponseData datestamp="2014-08-26 10:28:40.443">
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1409048916-3679" value-name="null" vendor-id="0"/>
+    <AVP code="268" code-name="Result-Code" mandatory="true" protected="false" value="2001" value-name="null" vendor-id="0"/>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x6f636373647031612e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="2" value-name="null" vendor-id="0"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-26 11:28:36" value-name="null" vendor-id="0"/>
+    <AVP code="456" code-name="Multiple-Services-Credit-Control" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="1068" code-name="Service-Session-Id" mandatory="true" protected="false" value="23110:-:1" value-name="null" vendor-id="193"/>
+        <AVP code="268" code-name="Result-Code" mandatory="true" protected="false" value="4010" value-name="null" vendor-id="0"/>
+    </AVP>
+</ResponseData>
+
+2014-08-26 10:28:41.686;M1_G0_R3;R3;M1_G0_R3_3;M#0;EXCEPTION;0;118;Unable to create Diameter Request from XML.;outgoingData
+
+exception
+java.lang.RuntimeException: Could not load Diameter AVPs from XML document.
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.loadAVPfromXML(DiameterRequestModelBuilder.java:103)
+	at cmg.tools.ffs.plugins.diameter.Diameter.exec(Diameter.java:1147)
+	at cmg.tools.ffs.engine.request.Request.process(Request.java:137)
+	at cmg.tools.ffs.engine.sender.ItemProcessor.run(ItemProcessor.java:36)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.RuntimeException: Unable to build grouped AVP for xml node: Node[AVP, type=1, value=null]
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.buildGroupedAvp(DiameterRequestModelBuilder.java:324)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.loadAVPs(DiameterRequestModelBuilder.java:160)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.loadAVPfromXML(DiameterRequestModelBuilder.java:99)
+	... 6 more
+Caused by: java.lang.RuntimeException: Unable to create AVP, code: '1066', vendorId: '193', with value: '0x(nothing ...!)'
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.createAVP(DiameterRequestModelBuilder.java:242)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.buildGroupedAvp(DiameterRequestModelBuilder.java:320)
+	... 8 more
+Caused by: java.lang.NumberFormatException: Malformed hexadecimal string. Contains illegal digit "(" [nothing ...!)]
+	at cmg.tools.ffs.util.charset.HexCharset$Encoder.encodeLoop(HexCharset.java:75)
+	at java.nio.charset.CharsetEncoder.encode(CharsetEncoder.java:561)
+	at java.lang.StringCoding.encode(StringCoding.java:370)
+	at java.lang.String.getBytes(String.java:939)
+	at cmg.tools.ffs.util.charset.HexCharset.hexToBytes(HexCharset.java:182)
+	at cmg.tools.ffs.util.ByteHelper.hexToBytes(ByteHelper.java:37)
+	at cmg.tools.ffs.plugins.diameter.datatypes.DatatypeOctetString.createAvp(DatatypeOctetString.java:57)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.createAVP(DiameterRequestModelBuilder.java:238)
+	... 9 more
+
+2014-08-26 10:28:41.687;M1_G0_R3;R3;M1_G0_R3_3;M#0;incommingData
+

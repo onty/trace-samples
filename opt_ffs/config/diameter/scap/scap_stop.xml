@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- Session-Id -->
+	<AVP code="263" value="${Local.sessionID}"/>
+	
+	<!-- Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}"/>
+	<!-- Accounting-Record-Type -->
+	<AVP code="480" value="4"/>
+	<!-- Accounting-Record-Number -->
+	<AVP code="485" value="${Local.recordNumber}"/>
+	
+	<!-- Subscription -Id -->
+	<AVP code="553" value="">
+		<AVP code="554" value="${Global.Subscription-Id-Data}"/>
+		<!-- Auth-Application-Id -->
+		<AVP code="555" value="${Global.Subscription-Id-Type}"/>
+	</AVP>
+	
+	<!-- Used Unit-->
+	<AVP code="613" value="">
+		<!-- Unit Type -->
+		<AVP code="611" value="${Global.Unit-Type}"/>
+		<!-- Unit-Value -->
+		<AVP code="612" value="">
+			<!-- Value Digits -->
+			<AVP code="617" value="${Global.Used-Unit-Digits}"/>
+			<!-- Exponent -->
+			<AVP code="616" value="${Global.Used-Unit-Exponent}"/>
+		</AVP>
+		<!-- Currency-Code-->
+		<AVP code="544" value="${Global.Currency-Code}"/>
+	</AVP>
+	
+	<!-- Service Parameter Info -->
+	<AVP code="607" value="">
+		<!-- Time Zone -->
+		<AVP code="13" value="${Global.TimeZone}"/>
+	</AVP>
+</RequestData>

@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="true" statistics="false" logDataInOut="FINE" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+<!--		Agent number series: 100000000-100009999
+Customer number series: 100010000-100019999 -->
+
+			<Variable name="sendingAgentExternalId" type="Step" start="46100000010" stepsize="1" datatype="Integer" max="46100009999"/>
+			<Variable name="sendingUserExternalId" type="Step" start="46100010000" stepsize="1" datatype="Integer" max="46100019999"/>
+			<Variable name="allExternalId" type="Step" start="100000001" stepsize="1" datatype="Integer" max="100100999"/>
+			<Variable name="provisionExternalId" type="Step" start="40000000" stepsize="1" datatype="Integer" max="40500000"/>
+		</Global>
+		<Local>
+			<Variable name="sender" type="Fixed" value="46100000009" datatype="String" />
+			<Variable name="cred" value="SSN;201005281234" />
+			<Variable name="tmp" value="n0ll" />
+			<Variable name="msgid" value="(null)" />
+			<Variable name="accounttype" value="0" />
+		</Local> 
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.mobilemoney.STKSimulator">
+		<!--
+		<Argument name="host" value="136.225.39.134" />
+		-->
+		<Argument name="sendack" value="false" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="Balance enquiry">
+		<!--
+		-->
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${Local.sender}.set(${Global.sendingAgentExternalId})" datatype="String"/>
+				<Data name="request" value="ServiceActivation;actCode;eng" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+				<Out variable="${msgid}" src="recivedmsgid" pattern="" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${Local.sender}" datatype="String"/>
+				<Data name="request" value="Acknowledgment;0;${msgid}" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync"> 
+				<Data name="sender" value="${Local.sender}" datatype="String"/>
+				<Data name="request" value="RegisterUser;Greger;Olsson;+${Local.sender};20100528;SSN;201005281234;AdditionalInformation" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${Local.sender}" datatype="String"/>
+				<Data name="request" value="BlockUser;+${Local.sender};Bad user" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${Local.sender}" datatype="String"/>
+				<Data name="request" value="ReactivateUser;+${sender};${cred}" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="SetLanguageCode;swe" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String" />
+				<Data name="request" value="GetLastTransactions;${accounttype}" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${Local.sender}" datatype="String"/>
+				<Data name="request" value="GetCurrentBalance;${accounttype}" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${Local.sender}" datatype="String"/>
+				<Data name="request" value="MobileMoneyCashIn;${sender};0;120" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="MobileMoneyCashOut;${sender};0;120" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="MobileMoneyTransfer;${sender};0;${tmp}.math(${sender}+1000);0;0;120" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="TransferToNonMobileMoneyUser;${sender};0;${tmp}.math(${sender}+100);Herr;Icke-Nyttja-MobileMoney;17000101;0;120" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="RedeemToken;TOKEN;${sender};Fru;MobileMoneyUser;20091213;SSN;200912131234" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="ViewToken;TOKEN" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="ListActiveTokens;${accounttype}" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="PurchaseAirtime;${sender};0;120" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${Local.sender}" datatype="String"/>
+				<Data name="request" value="AcknowledgeUserCredentials;${sender};SSN;201005281234" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="SendUnlockSecret;VisibleString" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+			<Item repeat="1" delay="0" timeout="3000000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="request" value="GetSecondaryAuthenticationToken;aReason" datatype="String"/>
+				<Data name="expectedresponse" value="ResponseStatusCode: 0" datatype="String"/>
+			</Item>
+		</Model>
+	</Models>
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="Balance enquiry" weight="32" />
+		</Slot>
+	</TrafficModel>
+</FFS>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MTCallRecord>
+		<recordType>1</recordType>        
+        <recordingEntity>ff10</recordingEntity>
+        <callDuration>50</callDuration>
+        <causeForTerm>3</causeForTerm>
+        <callReference>a00f</callReference>
+        <servedMSISDN>ffffffffffffffffff</servedMSISDN>
+        <servedIMSI>ffffab</servedIMSI>
+        
+        <callingNumber>ffff</callingNumber>
+        <location>
+            <locationAreaCode>50aa</locationAreaCode>
+            <cellId>0ff0</cellId>
+            <mCC-MNC>bcadef</mCC-MNC>
+        </location>
+        <basicService>
+            <bearerService>3</bearerService>
+        </basicService>
+        <supplServicesUsed>
+            <SuppServiceUsed>
+                <ssCode>af</ssCode>
+                <ssTime>bfa56920014abcffaa</ssTime>
+            </SuppServiceUsed>
+        </supplServicesUsed>
+        <answerTime>bfa56920014abcffaa</answerTime>
+        <dataVolume>123456789</dataVolume>
+</MTCallRecord>

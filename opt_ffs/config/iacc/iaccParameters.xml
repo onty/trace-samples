@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/iaccParameters.xsd">
+	<Subscriber requestId="1">	
+		<Parameter level="0" name="AUDIT_INFO" value="Pp0BUgqDBgoAAFtkAAAAAgAAAAIAAAAA" valueType="PARAMETER_STRING" />
+		<Parameter level="0" name="RESERVATION_ID" value="Pp0BUgqDBgoAAFtkAAAAAgAAAAIAAAAA" valueType="PARAMETER_STRING" />
+	</Subscriber>	
+	<Subscriber requestId="2">	
+		<Parameter level="0" name="AUDIT_INFO" value="Pp0BUgqDBgoAAFtkAAAAAgAAAAIAAAAA" valueType="PARAMETER_STRING" />
+		<Parameter level="0" name="RESERVATION_ID" value="Pp0BUgqDBgoAAFtkAAAAAgAAAAIAAAAA" valueType="PARAMETER_STRING" />
+	</Subscriber>
+</RequestData>

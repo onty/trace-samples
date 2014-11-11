@@ -1,0 +1,108 @@
+
+---------------------------------------
+Time running:     00:00:00.119
+Done in (~):      --:--:--.---
+Requests sent:    0/0     (0 %) (planned 0)
+TPS (SLS):        0.00/0  (0 %)
+TPS (O):          0.00
+Task pool q:      0
+Outgoing Qs:      
+In analyz q:      0
+
+*** Response codes ***
+Ok:               0       (0 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      0       (0 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              0 ms
+max:              0 ms
+average:          0 ms
+
+
+---------------------------------------
+Time running:     00:00:02.161
+Done in (~):      --:--:--.---
+Requests sent:    0/1     (0 %) (planned 0)
+TPS (SLS):        0.00/0  (0 %)
+TPS (O):          0.00
+Task pool q:      0
+Outgoing Qs:      (100) M1(0:0), 
+In analyz q:      0
+
+*** Response codes ***
+Ok:               0       (0 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      0       (0 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              0 ms
+max:              0 ms
+average:          0 ms
+
+
+---------------------------------------
+Time running:     00:00:04.163
+Done in (~):      00:00:04.0
+Requests sent:    1/2     (50 %) (planned 0)
+TPS (SLS):        0.50/0  (0 %)
+TPS (O):          0.24
+Task pool q:      0
+Outgoing Qs:      (100) M1(0:0), 
+In analyz q:      0
+
+*** Response codes ***
+Ok:               1       (100 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      1       (100 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              2837 ms
+max:              2837 ms
+average:          2837 ms
+
+
+---------------------------------------
+Time running:     00:00:05.774
+Done in (~):      00:00:00
+Requests sent:    2/2     (100 %) (planned 0)
+TPS (SLS):        0.62/0  (0 %)
+TPS (O):          0.35
+Task pool q:      0
+Outgoing Qs:      
+In analyz q:      0
+
+*** Response codes ***
+Ok:               2       (100 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      2       (100 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              557 ms
+max:              557 ms
+average:          1697 ms
+

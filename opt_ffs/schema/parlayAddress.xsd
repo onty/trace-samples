@@ -1,0 +1,44 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--ROOT element-->
+	<xsd:element name="RequestData">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Address" type="Address_Type" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!--Types-->
+	<xsd:complexType name="Address_Type">
+		<xsd:attribute name="plan" type="plan_Type" use="optional" default="P_ADDRESS_PLAN_E164"/>
+		<xsd:attribute name="addrString" type="String_Type" use="required"/>
+		<xsd:attribute name="name" type="String_Type" use="optional" default="no_name"/>
+		<xsd:attribute name="presentation" type="presentation_Type" use="optional" default="P_ADDRESS_PRESENTATION_UNDEFINED"/>
+		<xsd:attribute name="screening" type="screening_Type" use="optional" default="P_ADDRESS_SCREENING_UNDEFINED"/>
+		<xsd:attribute name="subAddressString" type="xsd:string" use="optional" default=""/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="String_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="plan_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="P_ADDRESS_PLAN_IP|P_ADDRESS_PLAN_MULTICAST|P_ADDRESS_PLAN_UNICAST|P_ADDRESS_PLAN_E164|P_ADDRESS_PLAN_AESA|P_ADDRESS_PLAN_URL|P_ADDRESS_PLAN_NSAP|P_ADDRESS_PLAN_SMTP|P_ADDRESS_PLAN_X400|P_ADDRESS_PLAN_SIP"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="presentation_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="P_ADDRESS_PRESENTATION_UNDEFINED|P_ADDRESS_PRESENTATION_ALLOWED|P_ADDRESS_PRESENTATION_RESTRICTED|P_ADDRESS_PRESENTATION_ADDRESS_NOT_AVAILABLE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="screening_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="P_ADDRESS_SCREENING_UNDEFINED|P_ADDRESS_SCREENING_USER_VERIFIED_PASSED|P_ADDRESS_SCREENING_USER_NOT_VERIFIED|P_ADDRESS_SCREENING_USER_VERIFIED_FAILED|P_ADDRESS_SCREENING_NETWORK"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>        

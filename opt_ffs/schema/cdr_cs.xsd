@@ -1,0 +1,21 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation>
+            Configuration schema for CDR CS domain.
+        </xsd:documentation>
+    </xsd:annotation>
+        
+    <xsd:simpleType name="RecordType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="moCallRecord"/>
+            <xsd:enumeration value="mtCallRecord"/>
+            <xsd:enumeration value="roamingRecord"/>
+            <xsd:enumeration value="incGatewayRecord"/>
+            <xsd:enumeration value="outGatewayRecord"/>
+            <xsd:enumeration value="transitCallRecord"/>
+            <xsd:enumeration value="moSMSRecord"/>
+            <xsd:enumeration value="mtSMSRecord"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+</xsd:schema>

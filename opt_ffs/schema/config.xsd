@@ -1,0 +1,61 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation>
+            Framework configuration schema.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="Framework">
+		<xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Logging" type="Logging_Type" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="Repository" type="Repository_Type" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="TestSequence" type="Testsequence_Type" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+		</xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="Logging_Type">
+        <xsd:sequence>
+            <xsd:element name="Statistics" type="TrueFalse_Type" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="LogDataInOut" type="TrueFalse_Type" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="SnapshotTime" type="SnapshotTime_Type" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="DebugLogging" type="TrueFalse_Type" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+	<xsd:attribute name="path"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="TrueFalse_Type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="true"/>
+            <xsd:enumeration value="false"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Repository_Type">
+        <xsd:attribute name="file" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="SnapshotTime_Type">
+        <xsd:union>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="0"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="1000"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:union>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Testsequence_Type">
+        <xsd:sequence>
+            <xsd:element name="File" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

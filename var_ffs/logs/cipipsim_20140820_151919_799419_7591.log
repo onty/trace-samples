@@ -1,0 +1,17 @@
+-override A-Number=353850101129 B-Number=353877687281 ownIP=AIR1.ericsson.ie ownRealm=AIR1 ownPort=8732 destIP=occsdp1a.ericsson.ie destRealm=occsdp1.ericsson.ie destPort=3869
+Framework For Simulators (v3.0.356)
+Copyright 2005-2011 Ericsson AB, http://www.ericsson.com
+
+Creating manager
+Setting thread pool to: 8
+Setting task queue to: 64
+Unable to load configuration file. - Cause:
+cmg.tools.ffs.configuration.InvalidConfigurationException: Could not find the config file: '/var/opt/ffs/usecases/sms/cipip_sms.xml'.
+	at cmg.tools.ffs.configuration.Configuration.checkVersion(Unknown Source)
+	at cmg.tools.ffs.configuration.Configuration.getConfigurationParser(Unknown Source)
+	at cmg.tools.ffs.engine.ManagerV3.load(Unknown Source)
+	at cmg.tools.ffs.Start.runNormal(Unknown Source)
+	at cmg.tools.ffs.Start.main(Unknown Source)
+
+>>>>>>>>>>>>>>>>>>>>> VM is shutting down. <<<<<<<<<<<<<<<<<<<<<<<<<
+Session completed

@@ -1,0 +1,146 @@
+[2014-08-20 13:21:13.553] FINE : 1    : *** Created file: /var/opt/ffs/logs/tmp20140820142112790557/cipipsim_20140820_142112_790557_6125LATEST_runlog.log  (run log)
+[2014-08-20 13:21:13.643] FINE : 1    : *** Created file: /var/opt/ffs/logs/tmp20140820142112790557/cipipsim_20140820_142112_790557_6125LATEST_summary.log  (summary log)
+[2014-08-20 13:21:13.656] FINE : 1    : *** Created file: /var/opt/ffs/logs/tmp20140820142112790557/cipipsim_20140820_142112_790557_6125LATEST_data.log  (request/response data)
+[2014-08-20 13:21:13.657] INFO : 1    : Loading configuration file...
+[2014-08-20 13:21:13.657] INFO : 1    : Loading REPOSITORY...
+[2014-08-20 13:21:13.659] FINE : 1    : *** Loading GLOBAL repository...
+[2014-08-20 13:21:13.707] FINE : 1    : *** GLOBAL repository loaded!
+[2014-08-20 13:21:13.708] FINE : 1    : *** Loading LOCAL repository...
+[2014-08-20 13:21:13.726] FINE : 1    : *** LOCAL repository loaded!
+[2014-08-20 13:21:13.727] INFO : 1    : REPOSITORY loaded!
+[2014-08-20 13:21:13.727] INFO : 1    : Loading MODELS...
+[2014-08-20 13:21:13.742] FINE : 1    : *** Creating MODEL...
+[2014-08-20 13:21:13.743] FINEST : 1  : *** Linking Model with local repository...Repository (Local)@6a269856
+[2014-08-20 13:21:13.751] FINE : 1    : *** Loading file: /var/opt/ffs/usecases/sms/cipip_sms_request_01.xml
+[2014-08-20 13:21:13.780] FINE : 1    : *** Loading file: /var/opt/ffs/usecases/sms/cipip_sms_request_02.xml
+[2014-08-20 13:21:13.813] FINE : 1    : *** MODEL layout
+Name:                M1
+
+-~-~ ITEM begin -~-~
+ID:                  1
+Type:                OUT_SYNC
+Repeat (times):      1
+Delay (ms):          RepositoryData: [43]
+Timeout (ms):        30000
+Parent Request (ID): 0
+Parent Condition:    0
+-~-~ ITEM end -~-~
+
+-~-~ ITEM begin -~-~
+ID:                  2
+Type:                OUT_SYNC
+Repeat (times):      1
+Delay (ms):          RepositoryData: [43]
+Timeout (ms):        30000
+Parent Request (ID): 1
+Parent Condition:    1
+-~-~ ITEM end -~-~
+
+
+[2014-08-20 13:21:13.817] INFO : 1    : MODELS Loaded!
+[2014-08-20 13:21:13.817] INFO : 1    : Loading TRAFFIC MODELS...
+[2014-08-20 13:21:13.839] FINE : 1    : *** Creating SLOT...
+[2014-08-20 13:21:13.841] FINE : 1    : *** SLOT layout
+Name:                SLOT #1
+Times:               1
+Duration (ms):       0
+TPS:                 0
+
+-~-~ MODELS weight -~-~
+
+100% - M1
+
+[2014-08-20 13:21:13.842] INFO : 1    : TRAFFIC MODELS Loaded!
+[2014-08-20 13:21:13.842] INFO : 1    : Loading PLUG-IN...
+[2014-08-20 13:21:13.850] INFO : 1    : Creating default plugin. (cmg.tools.ffs.plugins.diameter.Diameter)
+[2014-08-20 13:21:13.893] INFO : 1    : PLUG-IN loaded and initialized!
+[2014-08-20 13:21:13.893] INFO : 1    : Configuration file loaded!
+[2014-08-20 13:21:13.894] INFO : 1    : Executing...
+[2014-08-20 13:21:13.895] INFO : 1    : Initializing default plugin.
+[2014-08-20 13:21:13.902] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Loading dictionary file: config/diameter/dictionary.xml
+[2014-08-20 13:21:13.902] FINE : 1    : *** Loading file: config/diameter/dictionary.xml
+[2014-08-20 13:21:14.740] FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > Loading <AVP_Def>...
+[2014-08-20 13:21:14.893] WARNING : 1 : > cmg.tools.ffs.plugins.diameter.Diameter > Can not parse argument 'answerResultCode' using: 2002
+[2014-08-20 13:21:15.172] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Parameter : tcTimer not found in configuration or is not a number. Leaving unset.
+[2014-08-20 13:21:15.173] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Parameter : requestTimeout not found in configuration or is not a number. Leaving unset.
+[2014-08-20 13:21:15.173] WARNING : 1 : > cmg.tools.ffs.plugins.diameter.Diameter > NOTE : If the timeout value in the request definitions are smaller than the DefaultMessageTimeout value, 
+       the FFS will time-out requests that may or may not be received by the stack later.
+       Another undesireable result of this may be that the FFS tries to send a new request in
+       the same session which will cause a session-aware receiver to reply with Session Busy.
+[2014-08-20 13:21:15.173] WARNING : 1 : > cmg.tools.ffs.plugins.diameter.Diameter > Parameter : TITimer (Timeout for request) not found in config or is not a number. Defaulting it to 45 seconds.
+[2014-08-20 13:21:15.176] FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > The vendor id is not 0, adding a 'default' application with the ID:{ Auth-Application-Id : 16777232, Acct-Application-Id : 0, Vendor-Id : 0 }
+[2014-08-20 13:21:15.178] FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > Request Listener for Application Id [{ Auth-Application-Id : 16777232, Acct-Application-Id : 0, Vendor-Id : 193 } already exists. Exception message: null
+[2014-08-20 13:21:15.178] FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > com.ericsson.pps.diameter.rfcapi.base.DiameterConfig@a6eaa3a
+[2014-08-20 13:21:15.179] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Starting the stack...
+[2014-08-20 13:21:15.205] FINE : 1    : [DiameterStack] T1, PeerListener-ServerSocket[addr=AIR1.ericsson.ie/10.232.5.9,port=0,localport=8967] : Started
+[2014-08-20 13:21:15.205] FINEST : 1  : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8967;transport=tcp] TCP listener started 'DiameterConnectionListener-AIR1.ericsson.ie:8967(TCP)'
+[2014-08-20 13:21:15.206] FINE : 1    : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8967;transport=tcp] : DiameterStack started.
+[2014-08-20 13:21:15.206] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > The stack started successfully!
+[2014-08-20 13:21:15.213] FINE : 12   : [DiameterStack] T12, PeerListener-ServerSocket[addr=AIR1.ericsson.ie/10.232.5.9,port=0,localport=8967] : Running 
+[2014-08-20 13:21:15.221] FINE : 1    : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8967;transport=tcp] : Using PrioBlockingQueue for peer: 
+Host : null
+Realm : null
+ConnectAddress : "occsdp1a.ericsson.ie"
+Host IP : null
+Product name : null
+Firmware rev : -1
+VendorId : -1
+Supported vendors : null
+Common applications : null
+Status : "DEFINED"
+
+[2014-08-20 13:21:15.234] FINEST : 1  : [DiameterStack] T1, Peer-null-null-null : Changing to new state: closed from closed
+[2014-08-20 13:21:15.235] FINEST : 1  : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8967;transport=tcp] : Peer added: aaa://occsdp1a.ericsson.ie:3869;transport=sctp. Is known: true
+[2014-08-20 13:21:15.240] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > No secondary peer defined.
+[2014-08-20 13:21:15.240] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Waiting for CEA from primary peer... 15000 ms.
+[2014-08-20 13:21:15.243] FINEST : 14 : [DiameterStack] T14, PeerManager-[aaa://AIR1.ericsson.ie:8967;transport=tcp] : Sending peer added for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-20 13:21:15.245] FINE : 13   : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-null-closed : Handling connect event
+[2014-08-20 13:21:15.244] INFO : 14   : > cmg.tools.ffs.plugins.diameter.Diameter > Primary peer added: aaa://occsdp1a.ericsson.ie:3869;transport=sctp isStatic=true
+[2014-08-20 13:21:15.264] FINEST : 15 : [DiameterStack] T15, Creating SCTP Connection instance for address: occsdp1a.ericsson.ie/10.232.5.6
+[2014-08-20 13:21:15.273] FINEST : 15 : [DiameterStack] T15, Loading native sctp library: erisctp_linux_amd64
+[2014-08-20 13:21:15.279] FINEST : 15 : [DiameterStack] T15, There isn't anything yet to unregister for: SCTPSocket[state=closed,nativeref=139730318555392]
+[2014-08-20 13:21:15.281] FINE : 15   : [DiameterStack] T15, Setting listener to Peer-occsdp1a.ericsson.ie-null-closed
+[2014-08-20 13:21:15.282] FINEST : 15 : [DiameterStack] T15, There isn't anything yet to unregister for: SctpConnection-[no socket]
+[2014-08-20 13:21:15.285] FINE : 15   : [DiameterStack] T15, SctpConnection created: SCTPSocket[state=closed,nativeref=139730318555392]
+[2014-08-20 13:21:15.294] FINEST : 15 : [DiameterStack] T15, Opening NativeSCTPSocket, state:CLOSED, nativeref: 139730318555392
+[2014-08-20 13:21:15.295] FINEST : 15 : [DiameterStack] T15, NativeSCTPSocket, state:OPEN, nativeref: 139730318555392, Receive Buffer Size: 124928
+[2014-08-20 13:21:15.295] FINEST : 15 : [DiameterStack] T15, NativeSCTPSocket, state:OPEN, nativeref: 139730318555392, Send Buffer Size: 124928
+[2014-08-20 13:21:15.354] FINE : 13   : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed connected
+[2014-08-20 13:21:15.355] FINEST : 13 : [DiameterStack] T13, There isn't anything yet to unregister for: SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-20 13:21:15.355] FINEST : 13 : [DiameterStack] T13, There isn't anything yet to unregister for: SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-20 13:21:15.356] FINEST : 13 : [DiameterStack] T13, There isn't anything yet to unregister for: SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-20 13:21:15.356] FINE : 13   : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed connected to occsdp1a.ericsson.ie
+[2014-08-20 13:21:15.357] FINE : 13   : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed sending CER
+[2014-08-20 13:21:15.362] FINE : 19   : [DiameterStack] T19, Running connection handler for SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869] threadName: Thread-3
+[2014-08-20 13:21:15.364] FINE : 17   : [DiameterStack] T17, Running send handler for (1415962997) SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-20 13:21:15.379] FINEST : 13 : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed timer set; value = 10000
+[2014-08-20 13:21:15.381] FINEST : 13 : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed : Changing to new state: wait-i-cea from closed
+[2014-08-20 13:21:15.382] FINEST : 13 : [DiameterStack] T13, State changed from closed to wait-i-cea for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-20 13:21:15.385] FINEST : 13 : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea timer set; value = 10000
+[2014-08-20 13:21:15.389] FINEST : 20 : [DiameterStack] T20, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to HostHandler
+[2014-08-20 13:21:15.389] FINEST : 20 : [DiameterStack] T20, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to PeerSelectorPrimary
+[2014-08-20 13:21:15.414] FINEST : 19 : [DiameterStack] T19, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea recieved msg: DiameterMessage (V=1, L=200, F=0x0, CC=257, AID=0, HID=237004552, EID=1348468737)
+[2014-08-20 13:21:15.415] FINE : 13   : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea : Handling RecCea event
+[2014-08-20 13:21:15.416] FINEST : 13 : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea clearing timer
+[2014-08-20 13:21:15.416] FINE : 13   : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea processing CEA
+[2014-08-20 13:21:15.427] FINEST : 13 : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea : Changing to new state: i-open from wait-i-cea
+[2014-08-20 13:21:15.428] FINEST : 13 : [DiameterStack] T13, State changed from wait-i-cea to i-open for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-20 13:21:15.429] FINEST : 20 : [DiameterStack] T20, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to HostHandler
+[2014-08-20 13:21:15.430] FINEST : 20 : [DiameterStack] T20, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to PeerSelectorPrimary
+[2014-08-20 13:21:15.431] FINEST : 13 : [DiameterStack] T13, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=139730318555392,localaddr=10.232.5.9,localport=34218,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-i-open clearing timer
+[2014-08-20 13:21:15.432] FINEST : 13 : [DiameterStack] T13, Connection status changed for aaa://occsdp1a.ericsson.ie:3869;transport=sctp. Connected: true. Reason: N/A; DPR Cause: N/A
+[2014-08-20 13:21:15.436] FINEST : 14 : [DiameterStack] T14, PeerManager-[aaa://AIR1.ericsson.ie:8967;transport=tcp] : Sending connection info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-20 13:21:15.436] INFO : 14   : > cmg.tools.ffs.plugins.diameter.Diameter > Primary peer connected: aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-20 13:21:15.437] FINE : 1    : *** Setting TPS to 0.0
+[2014-08-20 13:21:15.438] INFO : 1    : *** Slot changing to: SLOT #1
+[2014-08-20 13:21:15.438] FINE : 1    : *** Creating and starting the 'ResultManager'...
+[2014-08-20 13:21:15.439] FINE : 18   : [DiameterStack] T18, Start sending watchdogs.
+[2014-08-20 13:21:15.441] FINE : 1    : *** Creating and starting the 'Snapshot'...
+[2014-08-20 13:21:15.447] FINE : 1    : *** Creating and starting the 'AnalyzeHandler'...
+[2014-08-20 13:21:15.447] FINE : 1    : *** Creating and starting the 'CallbackHandler'...
+[2014-08-20 13:21:15.448] FINE : 1    : *** Creating and starting 'ModelHandler's...
+[2014-08-20 13:21:15.449] FINE : 1    : *** Creating and starting the 'SenderEngine'...
+[2014-08-20 13:21:44.509] FINE : 19   : [DiameterStack] T19, Sending DWA
+[2014-08-20 13:22:13.102] INFO : 11   : JVM should be warm now. Resetting overall TPS counter!
+[2014-08-20 13:22:15.154] FINE : 19   : [DiameterStack] T19, Sending DWA
+[2014-08-20 13:22:44.172] FINE : 19   : [DiameterStack] T19, Sending DWA

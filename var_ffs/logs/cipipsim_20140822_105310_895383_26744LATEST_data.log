@@ -1,0 +1,93 @@
+2014-08-22 09:53:13.881;M1_G0_R0;R0;M1_G0_R0_0;M#0;FAILED;5001;361;;outgoingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RequestData datestamp="2014-08-22 09:53:13.652">
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x414952312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1408701193-5384" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x41495231" value-name="null" vendor-id="0"/>
+    <AVP code="283" code-name="Destination-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    <AVP code="443" code-name="Subscription-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="444" code-name="Subscription-Id-Data" mandatory="true" protected="false" value="353850101129" value-name="null" vendor-id="0"/>
+        <AVP code="450" code-name="Subscription-Id-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="456" code-name="Multiple-Services-Credit-Control" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="437" code-name="Requested-Service-Unit" mandatory="true" protected="false" value="" vendor-id="0"/>
+        <AVP code="439" code-name="Service-Identifier" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+        <AVP code="1068" code-name="Service-Session-Id" mandatory="true" protected="false" value="1" value-name="null" vendor-id="193"/>
+        <AVP code="1075" code-name="Other-Party-Id" mandatory="true" protected="false" value="" vendor-id="193">
+            <AVP code="1076" code-name="Other-Party-Id-Nature" mandatory="true" protected="false" value="0" value-name="null" vendor-id="193"/>
+            <AVP code="1077" code-name="Other-Party-Id-Data" mandatory="true" protected="false" value="353850101139" value-name="null" vendor-id="193"/>
+            <AVP code="1078" code-name="Other-Party-Id-Type" mandatory="true" protected="false" value="0" value-name="null" vendor-id="193"/>
+        </AVP>
+        <AVP code="1103" code-name="UNKNOWN AVP" mandatory="true" protected="false" value="[0, 0, 4, 55, -64, 0, 0, 12, 0, 0, 0, -63, 0, 0, 4, 80, -64, 0, 0, 12, 0, 0, 0, -63]" vendor-id="193"/>
+        <AVP code="1121" code-name="Roaming-Position" mandatory="true" protected="false" value="0" value-name="null" vendor-id="193"/>
+        <AVP code="1122" code-name="Service-Scenario" mandatory="true" protected="false" value="0" value-name="null" vendor-id="193"/>
+    </AVP>
+    <AVP code="461" code-name="Service-Context-Id" mandatory="true" protected="false" value="Core_Context_R1A@ericsson.com" value-name="null" vendor-id="0"/>
+    <AVP code="1063" code-name="Access-Information" mandatory="true" protected="false" value="" vendor-id="193">
+        <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-22 10:53:13" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="1065" code-name="Charging-Context-Id" mandatory="true" protected="false" value="CAPv2_V.1.0@ericsson.com" value-name="null" vendor-id="193"/>
+    <AVP code="1074" code-name="Subscription-Id-Location" mandatory="true" protected="false" value="35362100001" value-name="null" vendor-id="193"/>
+    <AVP code="1083" code-name="CIP-IP-Version" mandatory="true" protected="false" value="R1A" value-name="null" vendor-id="193"/>
+    <AVP code="23" code-name="3GPP-MS-TimeZone" mandatory="true" protected="false" value="0x2300" value-name="null" vendor-id="10415"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-22 10:53:13" value-name="null" vendor-id="0"/>
+</RequestData>
+
+2014-08-22 09:53:13.882;M1_G0_R0;R0;M1_G0_R0_0;M#0;incommingData
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ResponseData datestamp="2014-08-22 09:53:13.840">
+    <AVP code="260" code-name="Vendor-Specific-Application-Id" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="258" code-name="Auth-Application-Id" mandatory="true" protected="false" value="16777232" value-name="null" vendor-id="0"/>
+        <AVP code="266" code-name="Vendor-Id" mandatory="true" protected="false" value="193" value-name="null" vendor-id="0"/>
+    </AVP>
+    <AVP code="263" code-name="Session-Id" mandatory="true" protected="false" value="ffs-1408701193-5384" value-name="null" vendor-id="0"/>
+    <AVP code="268" code-name="Result-Code" mandatory="true" protected="false" value="5001" value-name="null" vendor-id="0"/>
+    <AVP code="264" code-name="Origin-Host" mandatory="true" protected="false" value="0x6f636373647031612e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="296" code-name="Origin-Realm" mandatory="true" protected="false" value="0x6f6363736470312e6572696373736f6e2e6965" value-name="null" vendor-id="0"/>
+    <AVP code="415" code-name="CC-Request-Number" mandatory="true" protected="false" value="0" value-name="null" vendor-id="0"/>
+    <AVP code="416" code-name="CC-Request-Type" mandatory="true" protected="false" value="1" value-name="null" vendor-id="0"/>
+    <AVP code="55" code-name="Event-Timestamp" mandatory="true" protected="false" value="UTF: 2014-08-22 10:53:13" value-name="null" vendor-id="0"/>
+    <AVP code="279" code-name="Failed-AVP" mandatory="true" protected="false" value="" vendor-id="0">
+        <AVP code="1103" code-name="UNKNOWN AVP" mandatory="true" protected="false" value="[0, 0, 4, 55, -64, 0, 0, 12, 0, 0, 0, -63, 0, 0, 4, 80, -64, 0, 0, 12, 0, 0, 0, -63]" vendor-id="193"/>
+    </AVP>
+</ResponseData>
+
+2014-08-22 09:53:17.35;M1_G0_R1;R1;M1_G0_R1_1;M#0;EXCEPTION;0;73;Unable to create Diameter Request from XML.;outgoingData
+
+exception
+java.lang.RuntimeException: Could not load Diameter AVPs from XML document.
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.loadAVPfromXML(DiameterRequestModelBuilder.java:103)
+	at cmg.tools.ffs.plugins.diameter.Diameter.exec(Diameter.java:1147)
+	at cmg.tools.ffs.engine.request.Request.process(Request.java:137)
+	at cmg.tools.ffs.engine.sender.ItemProcessor.run(ItemProcessor.java:36)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.RuntimeException: Unable to build grouped AVP for xml node: Node[AVP, type=1, value=null]
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.buildGroupedAvp(DiameterRequestModelBuilder.java:324)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.loadAVPs(DiameterRequestModelBuilder.java:160)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.loadAVPfromXML(DiameterRequestModelBuilder.java:99)
+	... 6 more
+Caused by: java.lang.RuntimeException: Unable to create AVP, code: '1066', vendorId: '193', with value: '0x(nothing ...!)'
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.createAVP(DiameterRequestModelBuilder.java:242)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.buildGroupedAvp(DiameterRequestModelBuilder.java:320)
+	... 8 more
+Caused by: java.lang.NumberFormatException: Malformed hexadecimal string. Contains illegal digit "(" [nothing ...!)]
+	at cmg.tools.ffs.util.charset.HexCharset$Encoder.encodeLoop(HexCharset.java:75)
+	at java.nio.charset.CharsetEncoder.encode(CharsetEncoder.java:561)
+	at java.lang.StringCoding.encode(StringCoding.java:370)
+	at java.lang.String.getBytes(String.java:939)
+	at cmg.tools.ffs.util.charset.HexCharset.hexToBytes(HexCharset.java:182)
+	at cmg.tools.ffs.util.ByteHelper.hexToBytes(ByteHelper.java:37)
+	at cmg.tools.ffs.plugins.diameter.datatypes.DatatypeOctetString.createAvp(DatatypeOctetString.java:57)
+	at cmg.tools.ffs.plugins.diameter.DiameterRequestModelBuilder.createAVP(DiameterRequestModelBuilder.java:238)
+	... 9 more
+
+2014-08-22 09:53:17.38;M1_G0_R1;R1;M1_G0_R1_1;M#0;incommingData
+

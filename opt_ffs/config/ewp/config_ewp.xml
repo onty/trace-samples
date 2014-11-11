@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="5000" snapshotInConsole="true" statistics="false" logDataInOut="true" debugLogging="true" />
+	
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="destIP" type="Fixed" value="localhost" datatype="String" />
+			<Variable name="destPortXmlHttp" type="Fixed" value="8080" datatype="String" />
+			<Variable name="destPortIso8583" type="Fixed" value="8081" datatype="String" />
+									
+			<!-- user defines the MSISDN of the end users in the test -->
+			<Variable name="user" type="Step" start="20200000000" stepsize="1" datatype="Integer" max="20200000999"/>
+						
+			<!-- amount holds the amount that will used in all money transactions -->			
+			<Variable name="amount" type="Fixed" value="1" datatype="String" />
+			
+			<!-- currency holds the currency in ISO format that will used in all money transactions -->
+            <Variable name="currency" type="Fixed" value="978" datatype="String" />
+						
+			<!-- user_pin holds the pincode used by all endusers.  -->			
+			<Variable name="user_pin" type="Fixed" value="123456" datatype="String" />
+			
+			<!-- user_pwd holds the password used by all endusers.  -->			
+			<Variable name="user_pwd" type="Fixed" value="ABc123456!" datatype="String" />
+									
+			<!-- rid defines the rids used for the session/connection. One rid represents one ATM system. -->
+			<Variable name="rid" type="Step" start="12345678912" stepsize="1" datatype="Integer" max="12345678913"/>
+			
+			<!-- otp defines the OTP to be used during cashouts. -->
+			<Variable name="pin" type="Fixed" value="0000" datatype="String" />
+			
+			<!-- secret defines the secret to be used for vouchers. -->
+			<Variable name="secret" type="Fixed" value="654321" datatype="String" />
+									
+		</Global>
+		<Local>		
+			 <!-- The local respository should never be  modified -->			 
+			 <Variable name="user" type="Fixed" value="${Global.user}" datatype="String" />
+			 <Variable name="token" type="Fixed" value="null" datatype="String" />			 
+			 <Variable name="rid" type="Fixed" value="${Global.rid}" datatype="String" />
+			 <Variable name="token" type="Fixed" value="" datatype="String" />
+			 
+		</Local>
+	</Repository>
+	
+	
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.ewp.Ewp">
+		<Argument name="iso8583.host" value="${Global.destIP}" />	
+		<Argument name="iso8583.port" value="${Global.destPortIso8583}" />	
+		<Argument name="iso8583.keystore" value="/tmp/keystore.jks" />
+		<Argument name="iso8583.password" value="qwerty" />
+		<Argument name="iso8583.workingKeyAliasPrefix" value="iso8583WK" />
+		<Argument name="iso8583.zoneMasterKeyAliasPrefix" value="iso8583ZMK" />
+		<Argument name="iso8583.TLS" value="false" />
+		<Argument name="iso8583.ClientAuthentication" value="false" />
+		<Argument name="http.port" value="${Global.destPortXmlHttp}" />	
+		<Argument name="http.maxTotalConnections" value="400" />
+		<Argument name="http.host" value="${Global.destIP}" />
+		<Argument name="http.maxConnectionsPerHost" value="400" />
+		<Argument name="http.TLS" value="false" />
+		<Argument name="http.cookiepolicy" value="ignoreCookies"/>
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		
+		
+		<!-- Sign on -->
+		<Model name="Signon">
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" >			
+				<Data name="Plugin" value="iso8583" datatype="String" />
+				<Data name="Rid" value="${Local.rid}" datatype="String" />
+				<Data name="Data" value="./iso8583/signon.xml" datatype="FileContent"/>
+				<Data name="VERDICT.field39" value="00" datatype="String"/>
+				<Data name="VERDICT.field100" value="/REQUEST.field100" datatype="String"/>
+			</Item>
+		</Model>
+		
+		<!-- Voucher -->
+		<Model name="Voucher">
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" >			
+				<Data name="Plugin" value="http" datatype="String" />
+				<Data name="Method" value="POST" datatype="String" />
+				<Data name="Content-Type" value="text/xml" datatype="String" />
+				<Data name="URI" value="${Global.destIP}:${Global.destPortXmlHttp}/xml/createvoucher" datatype="String" />
+				<Data name="data" value="./http/createvoucher.xml" datatype="FileContent"/>
+				<Data name="Basic Authentication" value="${Local.user}:${Global.user_pin}" datatype="String" />
+				<Out variable="${token}" src="XML_RESPONSE.//token[1]" pattern="" />
+			</Item>
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" prevCondition="ok">			
+				<Data name="Plugin" value="iso8583" datatype="String" />
+				<Data name="Rid" value="${Local.rid}" datatype="String" />
+				<Data name="Data" value="./iso8583/redeemvoucher.xml" datatype="FileContent"/>
+				<Data name="VERDICT.field39" value="00" datatype="String"/>
+				<Data name="VERDICT.field100" value="/REQUEST.field100" datatype="String"/>
+			</Item>
+		</Model>
+
+		<!-- Cashout -->
+		<Model name="Cashout">		
+		<Item repeat="1" delay="100" timeout="30000" type="out_sync" >			
+				<Data name="Plugin" value="http" datatype="String" />
+				<Data name="Method" value="POST" datatype="String" />
+				<Data name="Content-Type" value="text/xml" datatype="String" />
+				<Data name="URI" value="${Global.destIP}:${Global.destPortXmlHttp}/atm/atmgenerateotp" datatype="String" />
+				<Data name="Basic Authentication" value="${Local.user}:${Global.user_pwd}" datatype="String" />
+				<Data name="data" value="./http/atmgenerateotp.xml" datatype="FileContent"/>				
+			</Item>			
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" prevCondition="ok" >			
+				<Data name="Plugin" value="iso8583" datatype="String" />
+				<Data name="Rid" value="${Local.rid}" datatype="String" />
+				<Data name="Data" value="./iso8583/cashout.xml" datatype="FileContent"/>
+				<Data name="VERDICT.field39" value="00" datatype="String"/>
+				<Data name="VERDICT.field100" value="/REQUEST.field100" datatype="String"/>
+			</Item>
+		</Model>	
+
+		<!-- Signoff  -->
+		<Model name="Signoff">
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" >			
+				<Data name="Plugin" value="iso8583" datatype="String" />
+				<Data name="Rid" value="${Local.rid}" datatype="String" />
+				<Data name="Data" value="./iso8583/signoff.xml" datatype="FileContent"/>
+				<Data name="VERDICT.field39" value="00" datatype="String"/>
+				<Data name="VERDICT.field100" value="/REQUEST.field100" datatype="String"/>
+			</Item>
+		</Model>	
+		
+	</Models>
+	
+	
+ 	<TrafficModel>		 
+ 		<Slot times="2" duration="0" tps="0" activeModels="0"> 
+ 			<Model name="Signon" weight="100" /> 
+ 		</Slot> 
+ 		<Slot times="4" duration="0" tps="1" activeModels="0">			 
+ 			<Model name="Cashout" weight="50" />
+			<Model name="Voucher" weight="50" />
+		</Slot>		
+
+		<Slot times="2" duration="0" tps="0" activeModels="0"> 
+ 			<Model name="Signoff" weight="100" /> 
+ 		</Slot>
+	</TrafficModel>
+</FFS>

@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="destIP" type="Fixed" value="localhost" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="1212" datatype="String" />
+		</Global>
+		<Local>
+			<Variable name="aVariable" type="Fixed" value="Hello World!" datatype="String" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.rmi.Rmi">
+		<Argument name="name" value="Name1" />
+		<Argument name="url" value="rmi://${Global.destIP}:${Global.destPort}/Pips" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="action" value="check" datatype="String" />
+				<Data name="machineID" value="kmx001" datatype="String" />
+				<Data name="units" value="1.0" datatype="String" />
+				<Data name="transactionID" value="2" datatype="String" />
+				<Data name="msisdn" value="00001000" datatype="String" />
+				<Data name="integerexample" value="123" datatype="Integer" />
+				<Data name="stringexample" value="${Local.aVariable}" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

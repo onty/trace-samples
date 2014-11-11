@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="5000" snapshotInConsole="true" statistics="false" logDataInOut="fine" debugLogging="fine" />
+
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="destIP" type="Fixed" value="localhost" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="8081" datatype="String" />
+
+			<!-- rid defines the rids used for the session/connection. -->
+			<Variable name="rid" type="Step" start="12345678912" stepsize="1" datatype="Integer" max="12345678912"/>
+
+		</Global>
+		<Local>		
+			<!-- The local respository should never be  modified -->			 
+			<Variable name="rid" type="Fixed" value="${Global.rid}" datatype="String" />
+
+		</Local>
+	</Repository>
+
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.iso8583.Iso8583">
+		<Argument name="host" value="${Global.destIP}" />	
+		<Argument name="port" value="${Global.destPort}" />	
+		<Argument name="keystore" value="/tmp/keystore.jks" />
+		<Argument name="password" value="qwerty" />
+		<Argument name="workingKeyAliasPrefix" value="iso8583WK" />
+		<Argument name="zoneMasterKeyAliasPrefix" value="iso8583ZMK" />
+		<Argument name="TLS" value="false" />
+		<Argument name="ClientAuthentication" value="false" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+
+
+		<!-- Sign on -->
+		<Model name="Sign on">
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" >			
+				<Data name="Rid" value="${Local.rid}" datatype="String" />
+				<Data name="Data" value="./signon.xml" datatype="FileContent"/>
+				<Data name="VERDICT.field39" value="00" datatype="String"/>
+				<Data name="VERDICT.field100" value="/REQUEST.field100" datatype="String"/>
+			</Item>		
+		</Model>
+
+		<!-- echo -->
+		<Model name="echo">
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" >
+				<Data name="Rid" value="${Local.rid}" datatype="String" />
+				<Data name="Data" value="./echo.xml" datatype="FileContent"/>
+				<Data name="VERDICT.field39" value="00" datatype="String"/>
+				<Data name="VERDICT.field100" value="/REQUEST.field100" datatype="String"/>
+			</Item>
+		</Model>
+
+
+		<!-- Sign off -->
+		<Model name="Sign off">
+			<Item repeat="1" delay="100" timeout="30000" type="out_sync" >
+				<Data name="Rid" value="${Local.rid}" datatype="String" />
+				<Data name="Data" value="./signoff.xml" datatype="FileContent"/>
+				<Data name="VERDICT.field39" value="00" datatype="String"/>
+				<Data name="VERDICT.field100" value="/REQUEST.field100" datatype="String"/>
+			</Item>
+		</Model>
+
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>		 
+		<Slot times="1" duration="0" tps="0" activeModels="0"> 
+			<Model name="Sign on" weight="100" /> 
+		</Slot> 
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="echo" weight="100" />
+		</Slot>
+		<Slot times="1" duration="0" tps="0" activeModels="0"> 
+			<Model name="Sign off" weight="100" /> 
+		</Slot>
+	</TrafficModel>
+</FFS>

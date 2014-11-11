@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- Session-Id -->
+	<AVP code="263" value="${Local.sessionID}" />
+	<!-- Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" />
+	<!-- Accounting-Record-Type -->
+	<AVP code="480" value="4" />
+	<!-- Accounting-Record-Number -->
+	<AVP code="485" value="${Local.recordNumber}" />
+	<!-- Acct-Interim-Interval -->
+	<AVP code="85" value="10" />
+	<!-- Destination-Host -->
+	<AVP code="293" value="${Global.destIP}" />
+	<!-- Acct-Application-Id -->
+	<AVP code="259" value="${Global.AcctAppID}" />
+	
+	<!-- Vendor-Specific-Application-Id -->	
+	<AVP code="260" value="">
+		<!-- Acct-Application-Id -->
+		<AVP code="259" value="${Global.AcctAppID}" />
+		<!-- Auth-Application-Id -->
+		<AVP code="258" value="${Global.AuthAppID}" />
+		<!-- Vendor-Id -->
+		<AVP code="266" value="${Global.destVendorID}" />
+	</AVP> 
+
+</RequestData>

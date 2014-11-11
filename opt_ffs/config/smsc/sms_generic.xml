@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="10000" snapshotInConsole="true" statistics="false" logDataInOut="true" debugLogging="false" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="sender" type="Step" start="100000000" stepsize="1" datatype="Integer" max="100000999"/>
+		</Global>
+		<Local>
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.mobilemoney.SmscSimulator">
+		<!-- Mandatory plugin arguments -->
+		<Argument name="target.systemid" value="receiver" /><!-- Online F/E -->
+		<Argument name="target.password" value="receiver" />
+		<Argument name="callback.systemid" value="callback" /><!-- Online B/E -->
+		<Argument name="callback.password" value="callback" />
+		<Argument name="bind.timeout" value="6" />
+		<Argument name="bind.port" value="1982" />
+		<!-- Optional plugin arguments -->
+		<Argument name="request.timeout" value="30000" />
+		
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="modelA">
+			<!-- Cash in -->
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sender}" datatype="String"/>
+				<Data name="shortmessage" value="SMS to send" datatype="String"/>
+				<!-- Optional regular expression to match the response message towards -->
+				<Data name="expectedresponse" value="regularexpression to look for in response, remove to ignore.*" datatype="String"/>
+				
+				<!-- The following arguments are optional and can be omitted. These can also be put in plugin section abowe in order to set them for all items. -->
+				<Data name="encoding" value="ISO-8859-6" datatype="String" /><!-- Supported encodings are std java plus GSM7BIT see: http://java.sun.com/javase/6/docs/technotes/guides/intl/encoding.doc.html -->
+				<Data name="dcs" value="0x22" datatype="String" /><!-- DCS flag to put on message -->
+				<Data name="payload" value="-1" datatype="String" /><!-- Use message_payload? -1=auto, 0=no, 1=yes -->
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="modelA" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

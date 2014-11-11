@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="schema/netflowFlowset.xsd">
+	<Packet id="1" sourceId="12345">		
+		<Data name="Template" 			id="1"/>
+		<Data name="Template" 			id="2"/>
+		<Data name="DataFlowset" 		id="1"/>
+		<Data name="DataFlowset" 		id="2"/>
+		<Data name="DataFlowset"  		id="3"/>
+		<Data name="Template" 			id="4"/>
+		<Data name="Template" 			id="3"/>
+	</Packet>
+	<Packet id="2"  sourceId="123456">			
+		<Data name="DataFlowset" 		id="1"/>
+		<Data name="DataFlowset" 		id="2"/>
+		<Data name="DataFlowset"  		id="3"/>
+	</Packet>
+	<Packet id="3"  sourceId="123645">	
+		<Data name="OptionsTemplate" 	id="1"/>
+		<Data name="Template" 			id="2"/>
+		<Data name="OptionsDataFlowset" id="1"/>
+		<Data name="DataFlowset" 		id="2"/>
+		<Data name="DataFlowset"  		id="3"/>
+		<Data name="Template" 			id="4"/>
+		<Data name="Template" 			id="3"/>
+	</Packet>
+	<Packet id="4"  sourceId="612345">	
+		<Data name="OptionsTemplate" 	id="1"/>	
+		<Data name="OptionsTemplate" 	id="2"/>	
+		<Data name="OptionsTemplate" 	id="3"/>	
+		<Data name="OptionsTemplate" 	id="4"/>
+	</Packet>
+	<Packet id="5"  sourceId="123845">	
+		<Data name="OptionsTemplate" 	id="1"/>
+		<Data name="OptionsTemplate" 	id="2"/>
+		<Data name="OptionsDataFlowset" id="1"/>
+		<Data name="OptionsDataFlowset" id="1"/>
+		<Data name="OptionsDataFlowset" id="1"/>
+	</Packet>	
+</RequestData>

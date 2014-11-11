@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Protocol version="1.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="schema/dictionaryOnline.xsd">
+	
+<!-- Diameter Base Protocol RFC3588 -->
+	<AVP_Def name="Accounting-Record-Number" code="485" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Accounting-Record-Type" code="480" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1" comment="EVENT_RECORD" />
+		<EnumValue value="2" comment="START_RECORD" />
+		<EnumValue value="3" comment="INTERIM_RECORD" />
+		<EnumValue value="4" comment="STOP_RECORD" />
+	</AVP_Def>
+	<AVP_Def name="Accounting-Realtime-Required" code="483" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1" comment="DELIVER_AND_GRANT" />
+		<EnumValue value="2" comment="GRANT_AND_STORE" />
+		<EnumValue value="3" comment="GRANT_AND_LOSE" />
+	</AVP_Def>
+	<AVP_Def name="Accounting-Session-Id" code="44" type="OctetString" mandatoryFlag="true" />
+	<AVP_Def name="Accounting-Sub-Session-Id" code="287" type="Unsigned64" mandatoryFlag="true" />
+	<AVP_Def name="Acct-Application-Id" code="259" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="Diameter Common Messages" />
+		<EnumValue value="1" comment="Diameter NASREQ Application" />
+		<EnumValue value="2" comment="Diameter Mobile IPv4 Application" />
+		<EnumValue value="3" comment="Diameter Base Accounting" />
+		<EnumValue value="16777216" comment="3GPP CX/DX" />
+		<EnumValue value="16777217" comment="3GPP Sh" />
+		<EnumValue value="16777218" comment="3GPP Re/Rf" />
+		<EnumValue value="16777219" comment="3GPP Wx" />
+		<EnumValue value="16777220" comment="3GPP Zn" />
+		<EnumValue value="16777221" comment="3GPP Zh" />
+		<EnumValue value="16777222" comment="3GPP Gq" />
+		<EnumValue value="16777223" comment="3GPP Gmb" />
+		<EnumValue value="16777302" comment="3GPP Sy" />
+		<EnumValue value="16777303" comment="3GPP Sd" />
+		<EnumValue value="16777304" comment="Ericsson Sy"/>
+	</AVP_Def>
+	<AVP_Def name="Acct-Interim-Interval" code="85" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Acct-Multi-Session-Id" code="50" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Authorization-Lifetime" code="291" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Auth-Application-Id" code="258" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Auth-Grace-Period" code="276" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Auth-Request-Type" code="274" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1" comment="AUTHENTICATE_ONLY" />
+		<EnumValue value="2" comment="AUTHORIZE_ONLY" />
+		<EnumValue value="3" comment="AUTHORIZE_AUTHENTICATE" />
+	</AVP_Def>
+	<AVP_Def name="Auth-Session-State" code="277" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="STATE_MAINTAINED" />
+		<EnumValue value="1" comment="NO_STATE_MAINTAINED" />
+	</AVP_Def>
+	<AVP_Def name="Class" code="25" type="OctetString" mandatoryFlag="true" />
+	<AVP_Def name="Destination-Host" code="293" type="DiameterIdentity" mandatoryFlag="true" />
+	<AVP_Def name="Destination-Realm" code="283" type="DiameterIdentity" mandatoryFlag="true" />
+	<AVP_Def name="Disconnect-Cause" code="273" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="REBOOTING" />
+		<EnumValue value="1" comment="BUSY" />
+		<EnumValue value="2" comment="DO_NOT_WANT_TO_TALK_TO_YOU" />
+	</AVP_Def>
+	<AVP_Def name="E2E-Sequence" code="300" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Error-Message" code="281" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Error-Reporting-Host" code="294" type="DiameterIdentity" mandatoryFlag="false" />
+	<AVP_Def name="Event-Timestamp" code="55" type="Time" mandatoryFlag="true" />
+	<AVP_Def name="Experimental-Result" code="297" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Experimental-Result-Code" code="298" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Failed-AVP" code="279" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Firmware-Revision" code="267" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Host-IP-Address" code="257" type="Address" mandatoryFlag="true" />
+	<AVP_Def name="Inband-Security-Id" code="299" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Multi-Round-Time-Out" code="272" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Origin-Host" code="264" type="DiameterIdentity" mandatoryFlag="true" />
+	<AVP_Def name="Origin-Realm" code="296" type="DiameterIdentity" mandatoryFlag="true" />
+	<AVP_Def name="Origin-State-Id" code="278" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Product-Name" code="269" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Proxy-Host" code="280" type="DiameterIdentity" mandatoryFlag="true" />
+	<AVP_Def name="Proxy-Info" code="284" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Proxy-State" code="33" type="OctetString" mandatoryFlag="true" />
+	<AVP_Def name="Redirect-Host" code="292" type="DiameterURI" mandatoryFlag="true" />
+	<AVP_Def name="Redirect-Host-Usage" code="261" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="DONT_CACHE" />
+		<EnumValue value="1" comment="ALL_SESSION" />
+		<EnumValue value="2" comment="ALL_REALM" />
+		<EnumValue value="3" comment="REALM_AND_APPLICATION" />
+		<EnumValue value="4" comment="ALL_APPLICATION" />
+		<EnumValue value="5" comment="ALL_HOST" />
+		<EnumValue value="6" comment="ALL_USER" />
+	</AVP_Def>
+	<AVP_Def name="Redirect-Max-Cache-Time" code="262" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Result-Code" code="268" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1001" comment="DIAMETER_MULTI_ROUND_AUTH" />
+		<EnumValue value="2001" comment="DIAMETER_SUCCESS" />
+		<EnumValue value="2002" comment="DIAMETER_LIMITED_SUCCESS" />
+		<EnumValue value="3001" comment="DIAMETER_COMMAND_UNSUPPORTED" />
+		<EnumValue value="3002" comment="DIAMETER_UNABLE_TO_DELIVER" />
+		<EnumValue value="3003" comment="DIAMETER_REALM_NOT_SERVED" />
+		<EnumValue value="3004" comment="DIAMETER_TOO_BUSY" />
+		<EnumValue value="3005" comment="DIAMETER_LOOP_DETECTED" />
+		<EnumValue value="3006" comment="DIAMETER_REDIRECT_INDICATION" />
+		<EnumValue value="3007" comment="DIAMETER_APPLICATION_UNSUPPORTED" />
+		<EnumValue value="3008" comment="DIAMETER_INVALID_HDR_BITS" />
+		<EnumValue value="3009" comment="DIAMETER_INVALID_AVP_BITS" />
+		<EnumValue value="3010" comment="DIAMETER_UNKNOWN_PEER" />
+		<EnumValue value="4001" comment="DIAMETER_AUTHENTICATION_REJECTED" />
+		<EnumValue value="4002" comment="DIAMETER_OUT_OF_SPACE" />
+		<EnumValue value="4003" comment="DIAMETER_ELECTION_LOST" />
+		<EnumValue value="4005" comment="DIAMETER_ERROR_MIP_REPLY_FAILURE" />
+		<EnumValue value="4006" comment="DIAMETER_ERROR_HA_NOT_AVAILABLE" />
+		<EnumValue value="4007" comment="DIAMETER_ERROR_BAD_KEY" />
+		<EnumValue value="4008" comment="DIAMETER_ERROR_MIP_FILTER_NOT_SUPPORTED" />
+		<EnumValue value="4010" comment="DIAMETER_END_USER_SERVICE_DENIED" />
+		<EnumValue value="4011" comment="DIAMETER_CREDIT_CONTROL_NOT_APPLICABLE" />
+		<EnumValue value="4012" comment="DIAMETER_CREDIT_LIMIT_REACHED" />
+		<EnumValue value="5001" comment="DIAMETER_AVP_UNSUPPORTED" />
+		<EnumValue value="5002" comment="DIAMETER_UNKNOWN_SESSION_ID" />
+		<EnumValue value="5003" comment="DIAMETER_AUTHORIZATION_REJECTED" />
+		<EnumValue value="5004" comment="DIAMETER_INVALID_AVP_VALUE" />
+		<EnumValue value="5005" comment="DIAMETER_MISSING_AVP" />
+		<EnumValue value="5006" comment="DIAMETER_RESOURCES_EXCEEDED" />
+		<EnumValue value="5007" comment="DIAMETER_CONTRADICTING_AVPS" />
+		<EnumValue value="5008" comment="DIAMETER_AVP_NOT_ALLOWED" />
+		<EnumValue value="5009" comment="DIAMETER_AVP_OCCURS_TOO_MANY_TIMES" />
+		<EnumValue value="5010" comment="DIAMETER_NO_COMMON_APPLICATION" />
+		<EnumValue value="5011" comment="DIAMETER_UNSUPPORTED_VERSION" />
+		<EnumValue value="5012" comment="DIAMETER_UNABLE_TO_COMPLY" />
+		<EnumValue value="5013" comment="DIAMETER_INVALID_BIT_IN_HEADER" />
+		<EnumValue value="5014" comment="DIAMETER_INVALID_AVP_LENGTH" />
+		<EnumValue value="5015" comment="DIAMETER_INVALID_MESSAGE_LENGTH" />
+		<EnumValue value="5016" comment="DIAMETER_INVALID_AVP_BIT_COMBO" />
+		<EnumValue value="5017" comment="DIAMETER_NO_COMMON_SECURITY" />
+		<EnumValue value="5024" comment="DIAMETER_ERROR_NO_FOREIGN_HA_SERVICE" />
+		<EnumValue value="5025" comment="DIAMETER_ERROR_END_TO_END_MIP_KEY_ENCRYPTION" />
+		<EnumValue value="5030" comment="DIAMETER_USER_UNKNOWN" />
+		<EnumValue value="5031" comment="DIAMETER_RATING_FAILED" />
+	</AVP_Def>
+	<AVP_Def name="Re-Auth-Request-Type" code="285" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="AUTHORIZE_ONLY" />
+		<EnumValue value="1" comment="AUTHORIZE_AUTHENTICATE" />
+	</AVP_Def>
+	<AVP_Def name="Route-Record" code="282" type="DiameterIdentity" mandatoryFlag="true" />
+	<AVP_Def name="Session-Id" code="263" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Session-Timeout" code="27" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Session-Binding" code="270" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Session-Server-Failover" code="271" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="REFUSE_SERVICE" />
+		<EnumValue value="1" comment="TRY_AGAIN" />
+		<EnumValue value="2" comment="ALLOW_SERVICE" />
+		<EnumValue value="3" comment="TRY_AGAIN_ALLOW_SERVICE" />
+	</AVP_Def>
+	<AVP_Def name="Supported-Vendor-Id" code="265" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Termination-Cause" code="295" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1" comment="DIAMETER_LOGOUT" />
+		<EnumValue value="2" comment="DIAMETER_SERVICE_NOT_PROVIDED" />
+		<EnumValue value="3" comment="DIAMETER_BAD_ANSWER" />
+		<EnumValue value="4" comment="DIAMETER_ADMINISTRATIVE" />
+		<EnumValue value="5" comment="DIAMETER_LINK_BROKEN" />
+		<EnumValue value="6" comment="DIAMETER_AUTH_EXPIRED" />
+		<EnumValue value="7" comment="DIAMETER_USER_MOVED" />
+		<EnumValue value="8" comment="DIAMETER_SESSION_TIMEOUT" />
+	</AVP_Def>
+	<AVP_Def name="User-Name" code="1" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Vendor-Id" code="266" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Vendor-Specific-Application-Id" code="260" type="Grouped" mandatoryFlag="true" />
+<!-- End of Diameter Base Protocol RFC3588 -->
+
+<!-- Diameter Credit-Control Application RFC4006 -->
+	<AVP_Def name="CC-Correlation-Id" code="411" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="CC-Input-Octets" code="412" type="Unsigned64" mandatoryFlag="true" />
+	<AVP_Def name="CC-Money" code="413" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="CC-Output-Octets" code="414" type="Unsigned64" mandatoryFlag="true" />
+	<AVP_Def name="CC-Request-Number" code="415" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="CC-Request-Type" code="416" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1" comment="INITIAL_REQUEST" />
+		<EnumValue value="2" comment="UPDATE_REQUEST" />
+		<EnumValue value="3" comment="TERMINATION_REQUEST" />
+		<EnumValue value="4" comment="EVENT_REQUEST" />
+	</AVP_Def>
+	<AVP_Def name="CC-Service-Specific-Units" code="417" type="Unsigned64" mandatoryFlag="true" />
+	<AVP_Def name="CC-Session-Failover" code="418" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="FAILOVER_NOT_SUPPORTED" />
+		<EnumValue value="1" comment="FAILOVER_SUPPORTED" />
+	</AVP_Def>
+	<AVP_Def name="CC-Sub-Session-Id" code="419" type="Unsigned64" mandatoryFlag="true" />
+	<AVP_Def name="CC-Time" code="420" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="CC-Total-Octets" code="421" type="Unsigned64" mandatoryFlag="true" />
+	<AVP_Def name="CC-Unit-Type" code="454" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="TIME" />
+		<EnumValue value="1" comment="MONEY" />
+		<EnumValue value="2" comment="TOTAL-OCTETS" />
+		<EnumValue value="3" comment="INPUT-OCTETS" />
+		<EnumValue value="4" comment="OUTPUT-OCTETS" />
+		<EnumValue value="5" comment="SERVICE-SPECIFIC-UNITS" />
+	</AVP_Def>
+	<AVP_Def name="Check-Balance-Result" code="422" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="ENOUGH_CREDIT" />
+		<EnumValue value="1" comment="NO_CREDIT" />
+	</AVP_Def>
+	<AVP_Def name="Cost-Information" code="423" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Cost-Unit" code="424" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Credit-Control" code="426" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="CREDIT_AUTHORIZATION" />
+		<EnumValue value="1" comment="RE_AUTHORIZATION" />
+	</AVP_Def>
+	<AVP_Def name="Credit-Control-Failure-Handling" code="427" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="TERMINATE" />
+		<EnumValue value="1" comment="CONTINUE" />
+		<EnumValue value="2" comment="RETRY_AND_TERMINATE" />
+	</AVP_Def>
+	<AVP_Def name="Currency-Code" code="425" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Direct-Debiting-Failure-Handling" code="428" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="TERMINATE_OR_BUFFER" />
+		<EnumValue value="1" comment="CONTINUE" />
+	</AVP_Def>
+	<AVP_Def name="Exponent" code="429" type="Integer32" mandatoryFlag="true" />
+	<AVP_Def name="Final-Unit-Action" code="449" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="TERMINATE" />
+		<EnumValue value="1" comment="REDIRECT" />
+		<EnumValue value="2" comment="RESTRICT_ACCESS" />
+	</AVP_Def>
+	<AVP_Def name="Final-Unit-Indication" code="430" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Granted-Service-Unit" code="431" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="G-S-U-Pool-Identifier" code="453" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="G-S-U-Pool-Reference" code="457" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Multiple-Services-Credit-Control" code="456" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Multiple-Services-Indicator" code="455" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="MULTIPLE_SERVICES_NOT_SUPPORTED" />
+		<EnumValue value="1" comment="MULTIPLE_SERVICES_SUPPORTED" />
+	</AVP_Def>
+	<AVP_Def name="Rating-Group" code="432" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Redirect-Address-Type" code="433" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="IPv4" />
+		<EnumValue value="1" comment="IPv6" />
+		<EnumValue value="2" comment="URL" />
+		<EnumValue value="3" comment="SIP_URL" />
+	</AVP_Def>
+	<AVP_Def name="Redirect-Server" code="434" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Redirect-Server-Address" code="435" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Requested-Action" code="436" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="DIRECT_DEBITING" />
+		<EnumValue value="1" comment="REFUND_ACCOUNT" />
+		<EnumValue value="2" comment="CHECK_BALANCE" />
+		<EnumValue value="3" comment="PRICE_ENQUIRY" />
+	</AVP_Def>
+	<AVP_Def name="Other-Party-Id-MNP" code="1103" type="Grouped" mandatoryFlag="false" vendorId="193"/>
+	<AVP_Def name="Other-Party-Id-MNP-IMSI" code="1104" type="UTF8String" mandatoryFlag="false" vendorId="193"/>
+	<AVP_Def name="Other-Party-Id-MNP-RN" code="1079" type="UTF8String" mandatoryFlag="false" vendorId="193"/>
+	<AVP_Def name="Other-Party-Id-MNP-Result" code="1105" type="Unsigned32" mandatoryFlag="false" vendorId="193"/>
+
+	<AVP_Def name="Requested-Service-Unit" code="437" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Restriction-Filter-Rule" code="438" type="IPFilterRule" mandatoryFlag="true" />
+	<AVP_Def name="Service-Context-Id" code="461" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Service-Identifier" code="439" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Service-Parameter-Info" code="440" type="Grouped" mandatoryFlag="false" />
+	<AVP_Def name="Service-Parameter-Type" code="441" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Service-Parameter-Value" code="442" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Subscription-Id" code="443" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Subscription-Id-Data" code="444" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Subscription-Id-Type" code="450" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="END_USER_E164" />
+		<EnumValue value="1" comment="END_USER_IMSI" />
+		<EnumValue value="2" comment="END_USER_SIP_URI" />
+		<EnumValue value="3" comment="END_USER_NAI" />
+		<EnumValue value="4" comment="END_USER_PRIVATE" />
+	</AVP_Def>
+	<AVP_Def name="Tariff-Change-Usage" code="452" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="UNIT_BEFORE_TARIFF_CHANGE" />
+		<EnumValue value="1" comment="UNIT_AFTER_TARIFF_CHANGE" />
+		<EnumValue value="2" comment="UNIT_INDETERMINATE" />
+	</AVP_Def>
+	<AVP_Def name="Tariff-Time-Change" code="451" type="Time" mandatoryFlag="true" />
+	<AVP_Def name="Unit-Value" code="445" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="Used-Service-Unit" code="446" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="User-Equipment-Info" code="458" type="Grouped" mandatoryFlag="false" />
+	<AVP_Def name="User-Equipment-Info-Type" code="459" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="0" comment="IMEISV" />
+		<EnumValue value="1" comment="MAC" />
+		<EnumValue value="2" comment="EUI64" />
+		<EnumValue value="3" comment="MODIFIED_EUI64" />
+	</AVP_Def>
+	<AVP_Def name="User-Equipment-Info-Value" code="460" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Value-Digits" code="447" type="Integer64" mandatoryFlag="true" />
+	<AVP_Def name="Validity-Time" code="448" type="Unsigned32" mandatoryFlag="true" />
+	
+	
+<!-- End of Diameter Credit-Control Application RFC4006 -->
+
+<!-- AVPs specific to CIP/IP -->
+	<AVP_Def name="Pre-emption-Capability" code="1047" type="Enumerated" mandatoryFlag="true" vendorId="10415">
+		<EnumValue value="0" comment="Not Set" />
+		<EnumValue value="1" comment="Set" />
+	</AVP_Def>
+	<AVP_Def name="Pre-emption-Vulnerability" code="1048" type="Enumerated" mandatoryFlag="true" vendorId="10415">
+		<EnumValue value="0" comment="Not Set" />
+		<EnumValue value="1" comment="Set" />
+	</AVP_Def>
+	<AVP_Def name="Access-Information" code="1063" type="Grouped" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="CDR-Information" code="1064" type="OctetString" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Charging-Context-Id" code="1065" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Charging-State-Information" code="1066" type="OctetString" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Result-Code-Extension" code="1067" type="Unsigned32" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Service-Session-Id" code="1068" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+
+	<AVP_Def name="Subscription-Id-Location" code="1074" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Other-Party-Id" code="1075" type="Grouped" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Other-Party-Id-Nature" code="1076" type="Enumerated" mandatoryFlag="true" vendorId="193">
+		<EnumValue value="0" comment="Unknown" />
+		<EnumValue value="1" comment="International" />
+		<EnumValue value="2" comment="National" />
+	</AVP_Def>
+	<AVP_Def name="Other-Party-Id-Data" code="1077" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Other-Party-Id-Type" code="1078" type="Enumerated" mandatoryFlag="true" vendorId="193">
+		<EnumValue value="0" comment="END_USER_E164" />
+		<EnumValue value="1" comment="END_USER_IMSI" />
+		<EnumValue value="2" comment="END_USER_SIP_URI" />
+		<EnumValue value="3" comment="END_USER_NAI" />
+	</AVP_Def>
+	<AVP_Def name="CIP-IP-Version" code="1083" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Roaming-Position" code="1121" type="Enumerated" mandatoryFlag="true" vendorId="193">
+		<EnumValue value="0" comment="inside HPLMN" />
+		<EnumValue value="1" comment="outside HPLMN" />
+	</AVP_Def>
+	<AVP_Def name="Service-Scenario" code="1122" type="Enumerated" mandatoryFlag="true" vendorId="193">
+		<EnumValue value="0" comment="Mobile Originating" />
+		<EnumValue value="1" comment="Mobile Forwarding" />
+		<EnumValue value="2" comment="Mobile Terminating" />
+	</AVP_Def>
+  <AVP_Def name="Start-Of-Call" code="1125" type="Time" mandatoryFlag="false" vendorId="193" />
+	<AVP_Def name="Service-Setup-Result" code="1135" type="Enumerated" mandatoryFlag="true" vendorId="193">
+		<EnumValue value="0" comment="Successful - Released by service" />
+		<EnumValue value="1" comment="Successful - Disconnected by calling party" />
+		<EnumValue value="2" comment="Successful - Disconnect by called party" />
+		<EnumValue value="3" comment="Successful - Ongoing (toll free)" />
+		<EnumValue value="4" comment="Non-Successful - Called party route select failure" />
+		<EnumValue value="5" comment="Non-Successful - Called party busy" />
+		<EnumValue value="6" comment="Successful - Called party not reachable" />
+		<EnumValue value="7" comment="Non-Successful - Called party no answer" />
+		<EnumValue value="8" comment="Non-Successful - Calling party abandon" />
+		<EnumValue value="14" comment="Non-Successful - Other-Reason" />
+		<EnumValue value="15" comment="Call Forwarding bas been invoked - Charging cancelled" />
+	</AVP_Def>
+	<AVP_Def name="Service-Setup-Result-Requested" code="1136" type="Enumerated" mandatoryFlag="true" vendorId="193">
+		<EnumValue value="0" comment="RESULT_NOT_NEEDED" />
+		<EnumValue value="1" comment="RESULT_REQUESTED" />
+	</AVP_Def>
+	<AVP_Def name="Ericsson-QoS-Profile" code="1164" type="Grouped" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Traffic-Class" code="1165" type="Enumerated" mandatoryFlag="true" vendorId="193">
+	</AVP_Def>
+	<AVP_Def name="Guaranteed-Bit-Rate-For-Uplink" code="1166" type="Unsigned32" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Guaranteed-Bit-Rate-For-Downlink" code="1168" type="Unsigned32" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Ericsson-Geographical-Location" code="1170" type="Grouped" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Ericsson-Location-MCC-MNC" code="1171" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Ericsson-Location-Area-Code" code="1172" type="OctetString" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Ericsson-Geo-Location-Cell-Identity" code="1174" type="OctetString" mandatoryFlag="true" vendorId="193" />
+<!-- End of AVPs specific to CIP/IP -->
+
+<!-- AVPs specific to NASREQ -->
+	<AVP_Def name="ARAP-Password" code="70" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="ARAP-Security" code="73" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="ARAP-Challenge-Response" code="84" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="ARAP-Features" code="71" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="ARAP-Security-Data" code="74" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="ARAP-Zone-Access" code="72" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="1" comment="Only allow access to default zone" />
+		<EnumValue value="2" comment="Use zone filter inclusively" />
+		<EnumValue value="3" comment="(not used)" />
+		<EnumValue value="4" comment="Use zone filter exclusively" />
+	</AVP_Def>
+	<AVP_Def name="Callback-Id" code="20" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Callback-Number"  code="19" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Called-Station-Id" code="30" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Calling-Station-Id" code="31" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="CHAP-Auth" code="402" type="Grouped" mandatoryFlag="false" />
+	<AVP_Def name="CHAP-Algorithm" code="403" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="5" comment="CHAP with MD5" />
+	</AVP_Def>
+	<AVP_Def name="CHAP-Ident" code="404" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="CHAP-Response" code="405" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="CHAP-Challenge" code="60" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Configuration-Token" code="78" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Connect-Info" code="77" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Filter-Id" code="11" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Framed-Appletalk-Link" code="37" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Framed-Appletalk-Network" code="38" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Framed-Appletalk-Zone" code="39" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Framed-Compression" code="13" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="0" comment="None" />
+		<EnumValue value="1" comment="VJ TCP/IP header compression" />
+		<EnumValue value="2" comment="IPX header compression" />
+		<EnumValue value="3" comment="Stac-LZS compression" />
+	</AVP_Def>
+	<AVP_Def name="Framed-Interface-Id" code="96" type="Unsigned64" mandatoryFlag="false" />
+	<AVP_Def name="Framed-IP-Address" code="8" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Framed-IP-Netmask" code="9" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Framed-IPv6-Prefix" code="97" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Framed-IPv6-Pool" code="100" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Framed-IPv6-Route" code="99" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Framed-IPX-Network" code="23" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Framed-MTU" code="12" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Framed-Protocol" code="7" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="1" comment="PPP" />
+		<EnumValue value="2" comment="SLIP" />
+		<EnumValue value="3" comment="AppleTalk Remote Access Protocol (ARAP)" />
+		<EnumValue value="4" comment="Gandalf proprietary SingleLink/MultiLink protocol" />
+		<EnumValue value="5" comment="Xylogics proprietary IPX/SLIP" />
+		<EnumValue value="6" comment="X.75 Synchronous" />
+	</AVP_Def>
+	<AVP_Def name="Framed-Pool" code="88" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Framed-Route" code="22" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Framed-Routing" code="10" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="0" comment="None" />		
+		<EnumValue value="1" comment="Send routing packets" />
+		<EnumValue value="2" comment="Listen for routing packets" />
+		<EnumValue value="3" comment="Send and Listen" />
+	</AVP_Def>
+	<AVP_Def name="Idle-Timeout" code="28" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Login-IP-Host" code="14" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Login-IPv6-Host" code="98" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Login-LAT-Group" code="36" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Login-LAT-Node" code="35" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Login-LAT-Service" code="34" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Login-Service" code="15" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="0" comment="Telnet" />		
+		<EnumValue value="1" comment="Rlogin" />
+		<EnumValue value="2" comment="TCP Clear" />
+		<EnumValue value="3" comment="PortMaster" />
+		<EnumValue value="4" comment="LAT" />
+		<EnumValue value="5" comment="X25-PAD" />
+		<EnumValue value="6" comment="X25-T3POS" />
+		<EnumValue value="8" comment="TCP Clear Quiet" />
+	</AVP_Def>
+	<AVP_Def name="Login-TCP-Port" code="16" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="NAS-Filter-Rule" code="400" type="IPFilterRule" mandatoryFlag="false" />
+	<AVP_Def name="NAS-Identifier" code="32" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="NAS-IP-Address" code="4" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="NAS-IPv6-Address" code="95" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="NAS-Port" code="5" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="NAS-Port-Id" code="87" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="NAS-Port-Type" code="61" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="0" comment="Async" />
+		<EnumValue value="1" comment="Sync" />
+		<EnumValue value="2" comment="ISDN Sync" />
+		<EnumValue value="3" comment="ISDN Async V.120" />
+		<EnumValue value="4" comment="ISDN Async V.110" />
+		<EnumValue value="5" comment="Virtual" />
+		<EnumValue value="6" comment="PIAFS" />
+		<EnumValue value="7" comment="HDLC Clear Channel" />
+		<EnumValue value="8" comment="X.25" />
+		<EnumValue value="9" comment="X.75" />
+		<EnumValue value="10" comment="G.3 Fax" />
+		<EnumValue value="11" comment="SDSL - Symmetric DSL" />
+		<EnumValue value="12" comment="ADSL-CAP - Asymmetric DSL, Carrierless Amplitude Phase Modulation" />
+		<EnumValue value="13" comment="ADSL-DMT - Asymmetric DSL, Discrete Multi-Tone" />
+		<EnumValue value="14" comment="IDSL - ISDN Digital Subscriber Line" />
+		<EnumValue value="15" comment="Ethernet" />
+		<EnumValue value="16" comment="xDSL - Digital Subscriber Line of unknown type" />
+		<EnumValue value="17" comment="Cable" />
+		<EnumValue value="18" comment="Wireless - Other" />
+		<EnumValue value="19" comment="Wireless - IEEE 802.11" />
+		<EnumValue value="20" comment="Token-Ring   [RAD802.1X]" />
+		<EnumValue value="21" comment="FDDI         [RAD802.1X]" />
+		<EnumValue value="22" comment="Wireless - CDMA2000" />
+		<EnumValue value="23" comment="Wireless - UMTS" />
+		<EnumValue value="24" comment="Wireless - 1X-EV" />
+		<EnumValue value="25" comment="IAPP    [IEEE 802.11f]" />
+	</AVP_Def>
+	<AVP_Def name="Originating-Line-Info"  code="94" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="00" comment="Plain Old Telephone Service (POTS)" />
+		<EnumValue value="01" comment="Multiparty Line (more than 2)" />
+		<EnumValue value="02" comment="ANI Failure" />
+		<EnumValue value="03" comment="ANI Observed" />
+		<EnumValue value="04" comment="ONI Observed" />
+		<EnumValue value="05" comment="ANI Failure Observed" />
+		<EnumValue value="06" comment="Station Level Rating" />
+		<EnumValue value="07" comment="Special Operator Handling Required" />
+		<EnumValue value="08" comment="InterLATA Restricted" />
+		<EnumValue value="10" comment="Test Call" />
+		<EnumValue value="20" comment="Automatic Identified Outward Dialing (AIOD)" />
+		<EnumValue value="23" comment="Coin or Non-Coin" />
+		<EnumValue value="24" comment="Toll Free Service (Non-Pay Origination)" />
+		<EnumValue value="25" comment="Toll Free Service (Pay Origination)" />
+		<EnumValue value="27" comment="Toll Free Service (Coin Control Origination)" />
+		<EnumValue value="29" comment="Prison/Inmate Service" />
+		<EnumValue value="30" comment="Intercept (Blank)" />
+		<EnumValue value="31" comment="Intercept (Trouble)" />
+		<EnumValue value="32" comment="Intercept (Regular)" />
+		<EnumValue value="34" comment="Telco Operator Handled Call" />
+		<EnumValue value="40" comment="Unrestricted Use" />
+		<EnumValue value="41" comment="Unrestricted Use" />
+		<EnumValue value="42" comment="Unrestricted Use" />
+		<EnumValue value="43" comment="Unrestricted Use" />
+		<EnumValue value="44" comment="Unrestricted Use" />
+		<EnumValue value="45" comment="Unrestricted Use" />
+		<EnumValue value="46" comment="Unrestricted Use" />
+		<EnumValue value="47" comment="Unrestricted Use" />
+		<EnumValue value="48" comment="Unrestricted Use" />
+		<EnumValue value="49" comment="Unrestricted Use" />
+		<EnumValue value="52" comment="Outward Wide Area Telecommunications Service (OUTWATS)" />
+		<EnumValue value="60" comment="Telecommunications Relay Service (TRS)(Unrestricted)" />
+		<EnumValue value="61" comment="Cellular/Wireless PCS (Type 1)" />
+		<EnumValue value="62" comment="Cellular/Wireless PCS (Type 2)" />
+		<EnumValue value="63" comment="Cellular/Wireless PCS (Roaming)" />
+		<EnumValue value="66" comment="TRS (Hotel)" />
+		<EnumValue value="67" comment="TRS (Restricted)" />
+		<EnumValue value="70" comment="Pay Station, No Coin Control" />
+		<EnumValue value="93" comment="Access for Private Virtual Network Service" />
+	</AVP_Def>
+	<AVP_Def name="Origin-AAA-Protocol" code="408" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="1" comment="RADIUS" />
+	</AVP_Def>
+	<AVP_Def name="Password-Retry" code="75" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Port-Limit" code="62" type="Unsigned32" mandatoryFlag="false" />	
+	<AVP_Def name="Prompt" code="76" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="0" comment="No Echo" />
+		<EnumValue value="1" comment="Echo" />
+	</AVP_Def>
+	<AVP_Def name="QoS-Filter-Rule" code="407" type="QoSFilterRule" mandatoryFlag="false" />
+	<AVP_Def name="Reply-Message" code="18" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Service-Type" code="6" type="Enumerated" mandatoryFlag="false">
+		<EnumValue value="1" comment="Login" />
+		<EnumValue value="2" comment="Framed" />
+		<EnumValue value="3" comment="Callback Login" />
+		<EnumValue value="4" comment="Callback Framed" />
+		<EnumValue value="5" comment="Outbound" />
+		<EnumValue value="6" comment="Administrative" />
+		<EnumValue value="7" comment="NAS Prompt" />
+		<EnumValue value="8" comment="Authenticate Only" />
+		<EnumValue value="9" comment="Callback NAS Prompt" />
+		<EnumValue value="10" comment="Call Check" />
+		<EnumValue value="11" comment="Callback Administrative" />
+		<EnumValue value="12" comment="Voice" />
+		<EnumValue value="13" comment="Fax" />
+		<EnumValue value="14" comment="Modem Relay" />
+		<EnumValue value="15" comment="IAPP-Register   [IEEE 802.11f]" />
+		<EnumValue value="16" comment="IAPP-AP-Check   [IEEE 802.11f]" />
+		<EnumValue value="17" comment="Authorize Only  [RADDynAuth]" />
+	</AVP_Def>
+	<AVP_Def name="State"  code="24" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Tunneling" code="401"  type="Grouped" mandatoryFlag="false" />
+	<AVP_Def name="Tunnel-Assignment-Id" code="82" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Tunnel-Client-Auth-Id" code="90" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Tunnel-Client-Endpoint" code="66" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Tunnel-Type" code="64" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1" comment="PPTP" />
+		<EnumValue value="2" comment="L2F" />
+		<EnumValue value="3" comment="L2TP" />
+		<EnumValue value="4" comment="ATMP" />
+		<EnumValue value="5" comment="VTP" />
+		<EnumValue value="6" comment="AH" />
+		<EnumValue value="7" comment="IP-IP" />
+		<EnumValue value="8" comment="MIN-IP-IP" />
+		<EnumValue value="9" comment="ESP" />
+		<EnumValue value="10" comment="GRE" />
+		<EnumValue value="11" comment="DVS" />
+		<EnumValue value="12" comment="IP-in-IP Tunneling" />
+		<EnumValue value="13" comment="VLAN" />
+	</AVP_Def>
+	<AVP_Def name="Tunnel-Medium-Type" code="65" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="1" comment="IPv4" />
+		<EnumValue value="2" comment="IPv6" />
+		<EnumValue value="3" comment="NSAP" />
+		<EnumValue value="4" comment="HDLC" />	
+		<EnumValue value="5" comment="BBN 1822" />
+		<EnumValue value="6" comment="802" />
+		<EnumValue value="7" comment="E.163 (POTS)" />
+		<EnumValue value="8" comment="E.164 (SMDS, Frame Relay, ATM)" />
+		<EnumValue value="9" comment="F.69 (Telex)" />
+		<EnumValue value="10" comment="X.121 (X.25, Frame Relay)" />
+		<EnumValue value="11" comment="IPX" />
+		<EnumValue value="12" comment="Appletalk" />
+		<EnumValue value="13" comment="Decnet IV" />
+		<EnumValue value="14" comment="Banyan Vines" />
+		<EnumValue value="15" comment="E.164 with NSAP format subaddress" />
+	</AVP_Def>
+	<AVP_Def name="Tunnel-Password" code="69" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="Tunnel-Preference" code="83" type="Unsigned32" mandatoryFlag="false" />
+	<AVP_Def name="Tunnel-Private-Group-Id" code="81" type="OctetString" mandatoryFlag="false" />
+	<AVP_Def name="Tunnel-Server-Endpoint" code="67" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Tunnel-Server-Auth-Id" code="91" type="UTF8String" mandatoryFlag="false" />
+	<AVP_Def name="User-Password" code="2" type="OctetString" mandatoryFlag="false" />
+<!-- End of AVPs specific to NASREQ -->
+
+<!-- SCAP Diameter -->
+	<AVP_Def name="SCAP-Abnormal-Termination-Reason" code="600" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="SERVING_ELEMENT_TERMINATION" />
+		<EnumValue value="1" comment="CONNECTION_TO_USER_BROKEN" />
+	</AVP_Def>
+	<AVP_Def name="SCAP-Accounting-Correlation-Id" code="605" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Cost" code="603" type="Float64" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Cost-Information" code="604" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Currency-Code" code="544" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Deducted-Amount" code="807" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Event-Timestamp" code="610" type="Time" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Exponent" code="616" type="Integer32" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Granted-Service-Unit" code="602" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Original-Subscription-Id" code="559" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Requested-Action" code="615" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="DIRECT_DEBITING" />
+		<EnumValue value="1" comment="REFUND_ACCOUNT" />
+	</AVP_Def>
+	<AVP_Def name="SCAP-Requested-Service-Unit" code="606" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Service-Parameter-Info" code="607" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Service-Parameter-Type" code="608" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Service-Parameter-Value" code="609" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Subscription-Id" code="553" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Subscription-Id-Data" code="554" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Subscription-Id-Type" code="555" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="END_USER_MSISDN" />
+		<EnumValue value="1" comment="END_USER_IMSI" />
+		<EnumValue value="2" comment="END_USER_SIP_URL" />
+		<EnumValue value="3" comment="END_USER_NAI" />
+		<EnumValue value="4" comment="END_USER_PRIVATE" />
+	</AVP_Def>
+	<AVP_Def name="SCAP-Unit-Type" code="611" type="Enumerated" mandatoryFlag="true">
+		<EnumValue value="0" comment="SERVICE_CREDIT_TIME" />
+		<EnumValue value="1" comment="SERVICE_CREDIT_VOLUME" />
+		<EnumValue value="2" comment="SERVICE_CREDIT_EVENT" />
+		<EnumValue value="3" comment="SERVICE_CREDIT_MONEY" />
+	</AVP_Def>
+	<AVP_Def name="SCAP-Unit-Value" code="612" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Used-Amount" code="806" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Used-Service-Unit" code="613" type="Grouped" mandatoryFlag="true" />
+	<AVP_Def name="SCAP-Value-Digits" code="617" type="Unsigned64" mandatoryFlag="true" />
+	<AVP_Def name="Accounting-Interim-Interval" code="482" type="Unsigned32" mandatoryFlag="true" />
+<!-- End of SCAP Diameter -->
+
+<!-- Mixed AVPs, 3GPP Gy  -->
+
+	<AVP_Def name="URL-Modifier" code="332" type="Enumerated" mandatoryFlag="false" vendorId="193">
+		<EnumValue value="1" comment="APPEND_URL "/>
+	</AVP_Def>
+	<AVP_Def name="AdditionalSubscription-Id" code="1009" type="OctetString" mandatoryFlag="true"/>
+	<AVP_Def name="Command-Code" code="999" type="Unsigned32" mandatoryFlag="true"/> 
+	<AVP_Def name="ChargingCharacteristics" code="1007" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="Gn-GGSN-IPAddress" code="1016" type="UTF8String" mandatoryFlag="true" />	
+	<AVP_Def name="Final-Unit-Indication" code="601" type="Unsigned32" mandatoryFlag="true" />
+	<AVP_Def name="ServiceClassUsedVolume" code="1013" type="OctetString" mandatoryFlag="true" />
+	<AVP_Def name="ServiceProvider" code="1002" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="ServiceProviderId" code="1003" type="UTF8String" mandatoryFlag="true" />
+	<AVP_Def name="Service-IdentifierUsedVolume" code="1101" type="OctetString" mandatoryFlag="true" />
+	<AVP_Def name="TeleServiceCode" code="18" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="TimeZone" code="13" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="TrafficCase" code="14" type="UTF8String" mandatoryFlag="true" vendorId="193" />
+	<AVP_Def name="Unused-credit" code="1110" type="OctetString" mandatoryFlag="true" />
+	
+	<!--<AVP_Def name="Service-Information-PS-Information-SGSN-Address" code="1228" type="Address" mandatoryFlag="true" vendorId="10415"/>-->
+	<!--<AVP_Def name="Service-Information-PS-Information-3GPP-IMSI-MCC-MNC" code="8" type="UTF8String" mandatoryFlag="true" vendorId="10415" />-->
+	<!--<AVP_Def name="Service-Information-PS-Information-3GPP-SGSN-MCC-MNC" code="18" type="UTF8String" mandatoryFlag="true" vendorId="10415" />-->
+	<!--<AVP_Def name="Service-Information-PS-Information-3GPP-RAT-Type" code="21" type="OctetString" mandatoryFlag="true" vendorId="10415" />-->
+	<AVP_Def name="Trigger-Type" code="870" type="Enumerated" mandatoryFlag="true" vendorId="10415">
+		<EnumValue value="1" comment="CHANGE_IN_SGSN_IP_ADDRESS" />
+		<EnumValue value="2" comment="CHANGE_IN_QOS" />
+		<EnumValue value="4" comment="CHANGE_IN_RAT" />
+		<EnumValue value="30" comment="CHANGEINLOCATION_MCC" />
+		<EnumValue value="31" comment="CHANGEINLOCATION_MNC" />
+	</AVP_Def>	
+	<AVP_Def name="Reporting-Reason" code="872" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Service-Information" code="873" type="Grouped" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="PS-Information" code="874" type="Grouped" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="PS-Furnish-Charging-Information" code="865" type="Grouped" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="PS-Append-Free-Format-Data" code="867" type="Enumerated" mandatoryFlag="true" vendorId="10415">
+		<EnumValue value="0" comment="APPEND" />
+		<EnumValue value="1" comment="OVERWRITE" />
+	</AVP_Def>	
+	<AVP_Def name="3GPP-Charging-Id" code="2" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="PS-Free-Format-Data" code="866" type="OctetString" mandatoryFlag="true" vendorId="10415" />	
+	<AVP_Def name="Time-Quota-Treshold" code="868" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Volume-Quota-Treshold" code="869" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+    <AVP_Def name="Unit-Quota-Threshold" code="1226" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Quota-Holding-Time" code="871" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />	
+	<AVP_Def name="Quota-Consumption-Time" code="881" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="3GPP-Session-Stop-Indicator" code="11" type="OctetString" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Event-Charging-TimeStamp" code="1258" type="Time" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="3GPP-MS-TimeZone" code="23" type="OctetString" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Trigger" code="1264" type="Grouped" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="PDP-Address" code="1227" type="Address" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="3GPP-PDP-Type" code="3" type="Unsigned32" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="3GPP-GPRS-Negotiated-QoS-Profile" code="5" type="UTF8String" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="SGSN-Address" code="1228" type="Address" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="GGSN-Address" code="847" type="Address" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="CG-Address" code="846" type="Address" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="3GPP-IMSI-MCC-MNC" code="8" type="UTF8String" mandatoryFlag="false" vendorId="10415"/>
+	<AVP_Def name="3GPP-GGSN-MCC-MNC" code="9" type="UTF8String" mandatoryFlag="false" vendorId="10415"/>
+	<AVP_Def name="3GPP-NSAPI" code="10" type="UTF8String" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="3GPP-Selection-Mode" code="12" type="UTF8String" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="3GPP-Charging-Characteristics" code="13" type="UTF8String" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="3GPP-SGSN-MCC-MNC" code="18" type="UTF8String" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="Charging-Rule-Base-Name" code="1004" type="UTF8String" mandatoryFlag="false" vendorId="10415"/> 
+	<AVP_Def name="3GPP-User-Location-Info" code="22" type="OctetString" mandatoryFlag="false" vendorId="10415"/>
+	<AVP_Def name="3GPP-RAT-Type" code="21" type="OctetString" mandatoryFlag="false" vendorId="10415"/>
+	<AVP_Def name="PDP-Context-Type" code="1247" type="Enumerated" mandatoryFlag="true" vendorId="10415">
+		<EnumValue value="0" comment="PRIMARY"/>
+     	<EnumValue value="1" comment="SECONDARY"/>
+    </AVP_Def>
+	<AVP_Def name="Offline-Charging" code="1278" type="Grouped" mandatoryFlag="false" vendorId="10415"/>
+	<AVP_Def name="3GPP-CG-Address" code="4" type="OctetString" mandatoryFlag="true" vendorId="10415"/>
+	<!--<AVP_Def name="Framed-IPv6-Prefix" code="97" type="OctetString" mandatoryFlag="false"/>-->
+    <!--<AVP_Def name="Framed-IP-Address" code="8" type="OctetString" mandatoryFlag="false"/>-->
+	<AVP_Def name="3GPP-GGSN-Address" code="7" type="OctetString" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="3GPP-SGSN-Address" code="6" type="OctetString" mandatoryFlag="true" vendorId="10415"/>
+	
+	<!-- CLCI -->
+	<AVP_Def name="Volume-Quota-Treshold" code="268" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Unit-Quota-Treshold" code="273" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Time-Quota-Treshold" code="259" type="Unsigned32" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Reporting-Reason" code="261" type="Enumerated" mandatoryFlag="false" vendorId="10415">
+		<EnumValue value="0" comment="THRESHOLD" />
+		<EnumValue value="1" comment="QHT" />
+		<EnumValue value="2" comment="FINAL" />
+		<EnumValue value="3" comment="QUOTA_EXHAUSTED" />
+		<EnumValue value="4" comment="VALIDITY_TIME" />
+		<EnumValue value="5" comment="OTHER_QUOTA_TYPE" />
+		<EnumValue value="6" comment="RATING_CONDITION_CHANGE" />
+		<EnumValue value="7" comment="FORCED_REAUTHORISATION" />
+	</AVP_Def>	
+	<AVP_Def name="Time-Of-First-Usage" code="263" type="Time" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="Time-Of-Last-Usage" code="264" type="Time" mandatoryFlag="true" vendorId="10415" />		
+	<AVP_Def name="Rulebase-Id" code="262" type="UTF8String" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="Traffic-Redirected" code="278" type="Grouped" mandatoryFlag="true" vendorId="10415" />
+	<AVP_Def name="User-Agent" code="279" type="UTF8String" mandatoryFlag="true" vendorId="10415"/>	
+	
+		<!-- CLCIv2 -->
+			<!--<AVP_Def name="VF-User-Agent" code="279" type="UTF8String" mandatoryFlag="false" vendorId="10415"/>-->
+			<AVP_Def name="User-URL" code="280" type="UTF8String" mandatoryFlag="false" vendorId="10415"/>
+			<AVP_Def name="URL-Append" code="281" type="Enumerated" mandatoryFlag="false" vendorId="10415">
+				<EnumValue value="0" comment="DO_NOT_APPEND_URL"/>
+				<EnumValue value="1" comment="APPEND_URL"/>
+			</AVP_Def>
+		<!-- END CLCIv2 -->
+	<!-- END CLCI -->
+<!-- End of Mixed AVPs -->
+
+<!-- 3GPP Gx TS 29.214 v8.8.0 -->
+	<AVP_Def name="Access-Network-Charging-Address" code="501" type="Address" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="Access-Network-Charging-Identifier-Value" code="503" type="OctetString" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="AF-Charging-Identifier" code="505" type="OctetString" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="Flow-Description" code="507" type="IPFilterRule" mandatoryFlag="true" vendorId="10415"/>
+	<AVP_Def name="Flow-Number" code="509" type="Unsigned32" mandatoryFlag="true"  vendorId="10415"/>
+	<AVP_Def name="Flows" code="510" type="Grouped" mandatoryFlag="true"  vendorId="10415"/>
+	<AVP_Def name="Flow-Status" code="511" type="Enumerated" mandatoryFlag="true"  vendorId="10415">
+		<EnumValue value="0" comment="ENABLED-UPLINK"/>
+		<EnumValue value="1" comment="ENABLED-DOWNLINk"/>
+		<EnumValue value="2" comment="ENABLED"/>
+		<EnumValue value="3" comment="DISABLED"/>
+		<EnumValue value="4" comment="REMOVED"/>
+	</AVP_Def>
+        <AVP_Def name="Max-Requested-Bandwidth-DL" code="515" type="Unsigned32" mandatoryFlag="true" vendorId="10415"/>
+        <AVP_Def name="Max-Requested-Bandwidth-UL" code="516" type="Unsigned32" mandatoryFlag="true" vendorId="10415"/>
+        <AVP_Def name="Media-Component-Number" code="518" type="Unsigned32" mandatoryFlag="true" vendorId="10415"/>
+<!-- END_OF 3GPP Gx TS 29.214 v8.8.0 -->
+<!-- From 3GPP Gx TS 29.229 v8.9.0 -->
+    <AVP_Def name="Charging-Information" code="618" type="Grouped" mandatoryFlag="true" vendorId="10415"/> <!-- japp-->
+	<AVP_Def name="Primary-Event-Charging-Function-Name" code="619" type="DiameterURI" mandatoryFlag="true" vendorId="10415"/>  <!-- japp-->
+  	<AVP_Def name="Supported-Features" code="628" type="Grouped" mandatoryFlag="true" vendorId="10415"/> <!-- japp-->
+	<AVP_Def name="Feature-List-ID" code="629" type="Unsigned32" mandatoryFlag="false" vendorId="10415"/> <!-- japp-->
+	<AVP_Def name="Feature-List" code="630" type="Unsigned32" mandatoryFlag="false" vendorId="10415"/> <!-- japp-->
+<!-- END_OF From 3GPP Gx TS 29.229 v8.9.0 -->
+
+<!-- From 3GPP Gx TS 29.061 v8.5.0, flag rules according to Gmb definition -->
+    <AVP_Def name="RAI" code="909" type="UTF8String" mandatoryFlag="true" vendorId="10415"/> <!-- japp-->
+<!-- END_OF From 3GPP Gx TS 29.061 v8.5.0 -->
+<!-- Mix from 3GPP Gx TS 29.212 v8.7.0 -->
+	<AVP_Def name="Access-Network-Charging-Identifier-Gx" code="1022"  type="Grouped" mandatoryFlag="true" vendorId="10415"/><!-- japp-->
+	<AVP_Def name="Allocation-Retention-Priority" code="1034" type="Grouped" mandatoryFlag="true" vendorId="10415"/> <!-- japp-->
+		<AVP_Def name="Bearer-Control-Mode" code="1023"  type="Enumerated" mandatoryFlag="true" vendorId="10415"> <!-- japp-->
+		<EnumValue value="0" comment="UE_ONLY"/>
+		<EnumValue value="1" comment="RESERVED"/>
+		<EnumValue value="2" comment="UE_NW"/>
+	</AVP_Def>
+	<AVP_Def name="Bearer-Identifier" code="1020"  type="OctetString" mandatoryFlag="true" vendorId="10415"/><!-- japp-->
+	<AVP_Def name="Bearer-Operation" code="1021"  type="Enumerated" mandatoryFlag="true" vendorId="10415"><!-- japp-->
+		<EnumValue value="0" comment="TERMINATION"/>
+		<EnumValue value="1" comment="ESTABLISHMENT"/>
+		<EnumValue value="2" comment="MODIFICATION"/>
+	</AVP_Def>
+	<AVP_Def name="Bearer-Usage" code="1000" type="Enumerated" mandatoryFlag="true" vendorId="10415"><!-- japp-->
+		<EnumValue value="0" comment="GENERAL"/>
+		<EnumValue value="1" comment="IMS_SIGNALLING"/>
+	</AVP_Def>
+		<AVP_Def name="Event-Trigger" code="1006" type="Enumerated" mandatoryFlag="true" vendorId="10415"> <!-- japp-->
+		<EnumValue value="0" comment="SGSN_CHANGE"/>
+		<EnumValue value="1" comment="QOS_CHANGE"/>
+		<EnumValue value="2" comment="RAT_CHANGE"/>
+		<EnumValue value="3" comment="TFT_CHANGE"/>
+		<EnumValue value="4" comment="PLMN_CHANGE"/>
+		<EnumValue value="5" comment="LOSS_OF_BEARER"/>
+		<EnumValue value="6" comment="RECOVERY_OF_BEARER"/>
+		<EnumValue value="7" comment="IP-CAN_CHANGE"/>
+		<EnumValue value="11" comment="QOS_CHANGE_EXCEEDING_AUTHORIZATION"/>
+		<EnumValue value="12" comment="RAI_CHANGE"/>
+		<EnumValue value="13" comment="USER_LOCATION_CHANGE"/>
+		<EnumValue value="14" comment="NO_EVENT_TRIGGERS"/>
+		<EnumValue value="15" comment="OUT_OF_CREDIT"/>
+		<EnumValue value="16" comment="REALLOCATION_OF_CREDIT"/>
+		<EnumValue value="17" comment="REVALIDATION_TIMEOUT"/>
+		<EnumValue value="18" comment="UE_IP_ADDRESS_ALLOCATE"/>
+		<EnumValue value="19" comment="UE_IP_ADDRESS_RELEASE"/>
+		<EnumValue value="20" comment="DEFAULT_EPS_BEARER_QOS_CHANGE"/>
+		<EnumValue value="21" comment="AN_GW_CHANGE"/>
+		<EnumValue value="22" comment="SUCCESSFUL_RESOURCE_ALLOCATION"/>
+		<EnumValue value="23" comment="RESOURCE_MODIFICATION_REQUEST"/>
+		<EnumValue value="24" comment="PGW_TRACE_CONTROL"/>
+		<EnumValue value="25" comment="UE_TIME_ZONE_CHANGE"/>
+		<EnumValue value="26" comment="TAI_CHANGE"/>
+		<EnumValue value="27" comment="ECGI_CHANGE"/>
+	</AVP_Def>
+		<AVP_Def name="IP-CAN-Type" code="1027"  type="Enumerated" mandatoryFlag="true" vendorId="10415"><!-- japp-->
+		<EnumValue value="0" comment="3GPP-GPRS"/>
+		<EnumValue value="1" comment="DOCSIS"/>
+		<EnumValue value="2" comment="xDSL"/>
+		<EnumValue value="3" comment="WiMAX"/>
+		<EnumValue value="4" comment="3GPP2"/>
+		<EnumValue value="5" comment="3GPP-EPS"/>
+		<EnumValue value="6" comment="Non-3GPP-EPS"/>
+	</AVP_Def>
+	<AVP_Def name="Priority-Level" code="1046"  type="Unsigned32" mandatoryFlag="true" vendorId="10415" /><!-- japp-->
+		<AVP_Def name="QoS-Class-Identifier" code="1028"  type="Enumerated" mandatoryFlag="true" vendorId="10415"><!-- japp-->
+		<EnumValue value="1" comment="QCI_1"/>
+		<EnumValue value="2" comment="QCI_2"/>
+		<EnumValue value="3" comment="QCI_3"/>
+		<EnumValue value="4" comment="QCI_4"/>
+		<EnumValue value="5" comment="QCI_5"/>
+		<EnumValue value="6" comment="QCI_6"/>
+		<EnumValue value="7" comment="QCI_7"/>
+		<EnumValue value="8" comment="QCI_8"/>
+		<EnumValue value="9" comment="QCI_9"/>
+	</AVP_Def>
+	<AVP_Def name="QoS-Information" code="1016" type="Grouped" mandatoryFlag="true" vendorId="10415" /><!-- japp-->
+	<AVP_Def name="QoS-Negotiation" code="1029" type="Enumerated" mandatoryFlag="true" vendorId="10415"><!-- japp-->
+		<EnumValue value="0" comment="NO_QoS_NEGOTIATION"/>
+		<EnumValue value="1" comment="QoS_NEGOTIATION_SUPPORTED"/>
+	</AVP_Def>
+	<AVP_Def name="QoS-Upgrade" code="1030" type="Enumerated" mandatoryFlag="true" vendorId="10415"><!-- japp-->
+		<EnumValue value="0" comment="QoS_UPGRADE_NOT_SUPPORTED"/>
+		<EnumValue value="1" comment="QoS_UPGRADE_SUPPORTED"/>
+	</AVP_Def>
+		<AVP_Def name="RAT-Type" code="1032" type="Enumerated" mandatoryFlag="false" vendorId="10415"> <!-- japp-->
+		<EnumValue value="0" comment="WLAN"/>
+		<EnumValue value="1000" comment="UTRAN"/>
+		<EnumValue value="1001" comment="GERAN"/>
+		<EnumValue value="1002" comment="GAN"/>
+		<EnumValue value="1003" comment="HSPA_EVOLUTION"/>
+		<EnumValue value="1004" comment="EUTRAN"/>
+		<EnumValue value="2000" comment="CDMA2000_1X"/>
+		<EnumValue value="2001" comment="HRPD"/>
+		<EnumValue value="2002" comment="UMB"/>
+	</AVP_Def>
+<!-- END of Mix from 3GPP Gx TS 29.212 v8.7.0 -->
+	<AVP_Def name="Gx-Capability-List" code="1060" type="Unsigned32" mandatoryFlag="false" vendorId="193"/><!-- eperhak -->
+<!-- Ericsson Sy -->
+<!--
+Policy-Group ::= < AVP Header: 1347 >
+	{ Policy-Group-Name }
+	[ Policy-Group-Priority ]
+	[ Policy-Group-Activation-Time ]
+	[ Policy-Group-Deactivation-Time ]
+	*[ AVP ]
+-->
+   <AVP_Def name="Policy-Group" code="1347" type="Grouped" mandatoryFlag="false" vendorId="193"/>
+        <AVP_Def name="Policy-Group-Name" code="1348" type="UTF8String" mandatoryFlag="false" vendorId="193"/>
+        <AVP_Def name="Policy-Group-Priority" code="1349" type="Unsigned32" mandatoryFlag="false" vendorId="193"/>
+        <AVP_Def name="Policy-Group-Activation-Time" code="1350" type="Time" mandatoryFlag="false" vendorId="193"/>
+        <AVP_Def name="Policy-Group-Deactivation-Time" code="1351" type="Time" mandatoryFlag="false" vendorId="193"/>
+
+
+    <!--
+    The Ericsson-Policy-Counter-Status -Report AVP contains the following parameters
+
+Ericsson-Policy-Counter-Status-Report ::= < AVP Header: 1355 >
+	[ Policy-Counter-Policy-Group-Name ]
+	{ Ericsson-Policy-Counter-Identifier }
+	{ Ericsson-Policy-Counter-Status }
+	*[ AVP ]
+
+-->
+    <AVP_Def name="Ericsson-Policy-Counter-Status-Report" type="Grouped" code="1355" mandatoryFlag="false" vendorId="193"/>
+    <AVP_Def name="Policy-Counter-Policy-Group-Name" type="UTF8String" code="1353" mandatoryFlag="false" vendorId="193"/>
+    <AVP_Def name="Ericsson-Policy-Counter-Identifier"  type="UTF8String" code="1354" mandatoryFlag="false" vendorId="193"/>
+    <AVP_Def name="Ericsson-Policy-Counter-Status" type="UTF8String" code="1352" mandatoryFlag="false" vendorId="193"/>
+
+    <!--
+Ericsson-SL-Request-Type
+The Ericsson-SL-Request-Type (AVP Code 1356) is of type Enumerated and has the following values defined
+"	INITIAL_REQUEST (0) - This value indicates that this is the first request in the Diameter session.
+"	INTERMEDIATE_REQUEST (1) - This value indicates that this is the second or subsequent request in the Diameter session.
+-->
+
+    <AVP_Def name="Ericsson-SL-Request-Typ" code="1356" type="Enumerated" mandatoryFlag="true" vendorId="193">
+      <EnumValue value="0" comment="INITIAL_REQUEST"/>
+      <EnumValue value="1" comment="INTERMEDIATE_REQUEST" />
+    </AVP_Def>
+
+    <AVP_Def name="Party-To-Charge" code="1357" type="Unsigned32" mandatoryFlag="false" vendorId="193"/>
+<!--End Ericsson Sy -->
+
+
+</Protocol>

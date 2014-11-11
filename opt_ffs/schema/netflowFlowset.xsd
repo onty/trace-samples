@@ -1,0 +1,120 @@
+<!--
+XML Schema for Diameter base protocol addon.
+The following schema validates the XML syntax that defines the Diameter AVP's.
+
+Author: Henrik Pettersson <henrik.a.pettersson@ericsson.com>
+Updated: Anders Olander <anders.olander@ericsson.com>
+Copyright Ericsson AB, Sweden 2005
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!-- Top Tag -->
+	
+	<xs:element name="RequestData" type="RequestData_Type">		
+	</xs:element>
+	
+	<xs:complexType name="RequestData_Type">
+		<xs:choice>
+			<xs:element name="TemplateFlowset" type="TemplateFlowset_type"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DataFlowsets" type="DataFlowsets_Type"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="OptionsTemplateFlowset" type="OptionsTemplateFlowset_type"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="OptionsDataFlowsets" type="OptionsDataFlowsets_type"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Packet" type="Packet_type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:choice>
+	</xs:complexType>		
+	
+	<xs:complexType name="TemplateFlowset_type">
+		<xs:sequence>
+			<xs:element name="Template" type="Template_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+		
+	<!-- The AVP Tag Definition type. -->
+	<xs:complexType name="Template_type">
+		<xs:sequence>
+			<xs:element name="Field" type="Field_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="templateId" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	<!-- The AVP Tag Definition type. -->
+	<xs:complexType name="DataFlowsets_Type">
+		<xs:sequence>
+			<xs:element name="DataFlowset" type="DataFlowset_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="DataFlowset_type">
+		<xs:sequence>
+			<xs:element name="Field" type="Field_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="templateId" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="OptionsTemplateFlowset_type">	
+		<xs:sequence>
+			<xs:element name="OptionsTemplate" type="OptionsTemplate_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+		
+	<!-- The AVP Tag Definition type. -->
+	<xs:complexType name="OptionsTemplate_type">
+		<xs:sequence>
+			<xs:element name="Scope" type="Scope_type"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Field" type="Field_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="templateId" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	
+	<!-- The AVP Tag Definition type. -->
+	<xs:complexType name="OptionsDataFlowsets_type">
+		<xs:sequence>
+			<xs:element name="OptionsDataFlowset" type="OptionsDataFlowset_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="OptionsDataFlowset_type">
+		<xs:sequence>
+			<xs:element name="Scope" type="Data_Scope_type"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Field" type="Field_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="templateId" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Field_type">		
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="length" type="xs:integer" use="optional"></xs:attribute>
+		<xs:attribute name="value" type="xs:string" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Scope_type">		
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="length" type="xs:integer" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="Data_Scope_type">		
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="value" type="xs:string" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Packet_type">	
+		<xs:sequence>
+			<xs:element name="Data" type="Data_type"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="sourceId" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+	</xs:complexType>
+		
+	
+	<xs:complexType name="Data_type">		
+		<xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="id" type="xs:integer" use="required"></xs:attribute>
+	</xs:complexType>
+</xs:schema>

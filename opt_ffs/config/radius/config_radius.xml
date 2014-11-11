@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="aIncreasingValue" type="Step" start="0" stepsize="1" datatype="Integer" />
+			<Variable name="ownIP" type="Fixed" value="127.0.0.1" datatype="String" />
+			<Variable name="ownPort" type="Fixed" value="3868" datatype="String" />
+			<Variable name="radius_AccessServerPort" type="Fixed" value="1812" datatype="Integer" />
+			<Variable name="radius_AccountingServerPort" type="Fixed" value="1813" datatype="Integer" />
+			<Variable name="radius_NumberOfPorts" type="Fixed" value="5" datatype="Integer" />
+			<Variable name="radius_SimulatorStartPort" type="Fixed" value="5000" datatype="Integer" />
+			<Variable name="radius_TimeOut" type="Fixed" value="5000" datatype="String" />
+			<Variable name="radius_destIP" type="Fixed" value="127.0.0.1" datatype="String" />
+			<Variable name="radius_raValidation" type="Fixed" value="true" datatype="String" />
+			<Variable name="radius_secret" type="Fixed" value="secret" datatype="String" />
+		</Global>
+		<Local>
+			<Variable name="recordNumber" type="Step" start="1" stepsize="1" datatype="Integer" />
+			<Variable name="sessionID" type="Fixed" value="nothing" datatype="String" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.radius.Radius">
+		<Argument name="AccessServerPort" value="${Global.radius_AccessServerPort}" />
+		<Argument name="NumberOfPorts" value="${Global.radius_NumberOfPorts}" />
+		<Argument name="SimulateType" value="ACCOUNTING" />
+		<Argument name="IPAddress" value="${Global.radius_destIP}" />
+		<Argument name="SimulatorStartPort" value="${Global.radius_SimulatorStartPort}" />
+		<Argument name="secret" value="${Global.radius_secret}" />
+		<Argument name="RaValidation" value="${Global.radius_raValidation}" />
+		<Argument name="TimeOut" value="${Global.radius_TimeOut}" />
+		<Argument name="AccountingServerPort" value="${Global.radius_AccountingServerPort}" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="ACCOUNTING" datatype="String" />
+				<Data name="RadiusRequest" value="config/radius/RADIUS_Accounting_Request_SessionStart.xml" datatype="XMLDocument" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="ACCOUNTING" datatype="String" />
+				<Data name="RadiusRequest" value="config/radius/RADIUS_Accounting_Request_InterimUpdate.xml" datatype="XMLDocument" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="RequestType" value="ACCOUNTING" datatype="String" />
+				<Data name="RadiusRequest" value="config/radius/RADIUS_Accounting_Request_SessionStop.xml" datatype="XMLDocument" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

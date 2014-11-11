@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SGSNSMTRecord>
+		<recordType>22</recordType>        
+        <recordingEntity>ff10</recordingEntity>
+        <localSequenceNumber>123456</localSequenceNumber>
+        <servedIMSI>abcdff</servedIMSI>
+        <servedMSISDN>${servedMSISDN}</servedMSISDN>
+        <eventTimeStamp>aabbccddffaabbcccc</eventTimeStamp>
+        <chargingCharacteristics>ddcc</chargingCharacteristics>
+        <servingNodeType>sGSN</servingNodeType>
+</SGSNSMTRecord>

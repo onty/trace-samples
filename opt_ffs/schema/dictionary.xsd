@@ -1,0 +1,92 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--ROOT element-->
+	<xsd:element name="dictionary">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="base" type="typeBase" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="typeBase">
+        <xsd:sequence>
+            <xsd:element name="command" type="typeCommand" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="vendor" type="typeVendor" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="typedefn" type="typeTypedefn" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="avp" type="typeAvp" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="uri" type="xsd:string"/>
+    </xsd:complexType>
+
+    <!-- command -->
+    <xsd:complexType name="typeCommand">
+        <xsd:sequence>
+            <xsd:any minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="code" type="xsd:integer" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="vendor-id" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <!-- vendor -->
+    <xsd:complexType name="typeVendor">
+        <xsd:attribute name="code" type="xsd:integer" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="vendor-id" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <!-- typedefn -->
+    <xsd:complexType name="typeTypedefn">
+        <xsd:attribute name="type-name" type="xsd:string" use="required"/>
+        <xsd:attribute name="type-parent" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+
+    <!-- avp -->
+    <xsd:complexType name="typeAvp">
+        <xsd:choice>
+            <xsd:group ref="typeType"/>
+            <xsd:element name="grouped" type="typeGrouped" minOccurs="0" maxOccurs="1"/>
+        </xsd:choice>
+        <xsd:attribute name="code" type="xsd:integer" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="mandatory" type="typeChoise" use="required" />
+        <xsd:attribute name="vendor-bit" type="typeChoise" use="required" />
+        <xsd:attribute name="may-encrypt" type="typeYesNo" use="optional" />
+        <xsd:attribute name="protected" type="typeChoise" use="optional" />
+        <xsd:attribute name="vendor-id" type="xsd:string" use="optional" />
+    </xsd:complexType>
+
+    <xsd:group name="typeType">
+        <xsd:sequence>
+            <xsd:element name="type" type="typeTypedefn" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="enum" type="typeEnum" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:complexType name="typeEnum">
+        <xsd:attribute name="code" type="xsd:integer" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="typeGrouped">
+        <xsd:sequence>
+            <xsd:element name="gavp" type="typeGavp" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="typeGavp">
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="typeChoise">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="must|mustnot|may"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="typeYesNo">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="yes|no"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

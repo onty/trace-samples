@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="false" statistics="false" logDataInOut="false" debugLogging="false" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<!-- 
+				format is like: http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html
+				2 reserved formats exists 'UNIX' and 'NTP' which are for unix time and ntp time (Diameter uses NTP)				
+			-->
+			<Variable name="now" type="Date" format="yy-MM-dd HH:mm:ss.SSS z" timezone="" value="" datatype="String" />
+			<!-- timezone is according to: http://java.sun.com/javase/6/docs/api/java/util/TimeZone.html#getTimeZone%28java.lang.String%29 -->
+			<Variable name="nowin+6" type="Date" format="yy-MM-dd HH:mm:ss.SSS z" timezone="GMT+6" value="" datatype="String" />
+			<!-- parseformat is like: http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html -->
+			<Variable name="then" type="Date" format="UNIX" timezone="" parseformat="yy-MM-dd HH:mm:ss.SSS" value="10-03-22 10:55:30.238" datatype="String" />
+		</Global>
+		<Local>
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.dummyplugin.DummyPlugin">
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="Mdatetest">
+			<Item repeat="1" delay="0" timeout="30000000" type="out_sync">
+				<Data name="print" value="now: ${Global.now} nowin+6: ${Global.nowin+6} then: ${Global.then}" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="Mdatetest" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

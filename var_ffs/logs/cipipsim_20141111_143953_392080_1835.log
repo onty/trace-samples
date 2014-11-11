@@ -1,0 +1,60 @@
+-override A-Number=353850101100 B-Number=353850101101 Duration-FI=10 ownIP=AIR1.ericsson.ie ownRealm=AIR1 ownPort=8732 destIP=occsdp1a.ericsson.ie destRealm=occsdp1.ericsson.ie destPort=3869
+Framework For Simulator (FFS) (v3.3.1-87972_1_b174)
+Copyright 2005-2012 Ericsson AB (http://www.ericsson.com)
+
+Creating manager
+Setting thread pool to: 8
+Setting task queue to: 64
+Checking configuration file '/var/opt/ffs/usecases/voice_short/cipip_voice_short.xml'...(v3.1.dev-build)
+Loading configuration file...
+Loading REPOSITORY...
+REPOSITORY loaded!
+Loading MODELS...
+MODELS Loaded!
+Loading TRAFFIC MODELS...
+TRAFFIC MODELS Loaded!
+Loading PLUG-IN...
+Creating default plugin. (cmg.tools.ffs.plugins.diameter.Diameter)
+PLUG-IN loaded and initialized!
+Loading ANALYZERS...
+ANALYZERS loaded and initialized!
+Configuration file loaded!
+Executing...
+Initializing default plugin.
+Loading dictionary file: config/diameter/dictionary.xml
+> cmg.tools.ffs.plugins.diameter.Diameter > Can not parse argument 'answerResultCode' using: 2002
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : tcTimer not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : requestTimeout not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > NOTE : If the timeout value in the request definitions are smaller than the DefaultMessageTimeout value, 
+       the FFS will time-out requests that may or may not be received by the stack later.
+       Another undesireable result of this may be that the FFS tries to send a new request in
+       the same session which will cause a session-aware receiver to reply with Session Busy.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : TITimer (Timeout for request) not found in config or is not a number. Defaulting it to 45 seconds.
+> cmg.tools.ffs.plugins.diameter.Diameter > Starting the stack...
+> cmg.tools.ffs.plugins.diameter.Diameter > The stack started successfully!
+> cmg.tools.ffs.plugins.diameter.Diameter > No secondary peer defined.
+> cmg.tools.ffs.plugins.diameter.Diameter > Waiting for CEA from primary peer... 15000 ms.
+> cmg.tools.ffs.plugins.diameter.Diameter > Primary peer added: aaa://occsdp1a.ericsson.ie:3869;transport=sctp isStatic=true
+[DiameterStack] T20, IO Exception on SctpConnection-SCTPSocket[state=connect,nativeref=19401952,localaddr=10.232.5.9,localport=41592,[java.io.IOException: Got error: '22,Invalid argument' when 'getting remote addresses' (nativeref=19401952)]] : Got error: '104,Connection reset by peer' when 'receiving' (nativeref=19401952)
+[DiameterStack] T20, SctpConnection-SCTPSocket[state=connect,nativeref=19401952,localaddr=10.232.5.9,localport=41592,[java.io.IOException: Got error: '22,Invalid argument' when 'getting remote addresses' (nativeref=19401952)]] : Broken pipe.
+All slots consumed, waiting for shutdown...
+All items processed, shutting down...
+Kill timer set to: 0ms. I won't kill anyone, okey?
+All done! Have a nice day!
+Caught exception while executing FFS Config, will now shutdown FFS. - Cause:
+cmg.tools.ffs.plugins.diameter.DiameterException: Did not get any CEA from primary peer within 15000 ms and no secondary peer available. Stopped the stack.
+	at cmg.tools.ffs.plugins.diameter.Diameter.init(Diameter.java:819)
+	at cmg.tools.ffs.engine.ManagerV3.initPlugins(ManagerV3.java:692)
+	at cmg.tools.ffs.engine.ManagerV3._exec(ManagerV3.java:639)
+	at cmg.tools.ffs.engine.ManagerV3.exec(ManagerV3.java:625)
+	at cmg.tools.ffs.Start.runNormal(Start.java:239)
+	at cmg.tools.ffs.Start.main0(Start.java:499)
+	at cmg.tools.ffs.Start.main(Start.java:418)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at cmg.tools.ffs.StartUp.main(StartUp.java:36)
+
+>>>>>>>>>>>>>>>>>>>>> VM is shutting down. <<<<<<<<<<<<<<<<<<<<<<<<<
+Session completed

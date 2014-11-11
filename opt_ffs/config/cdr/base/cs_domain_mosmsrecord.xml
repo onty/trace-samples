@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MOSMSRecord>
+		<recordType>6</recordType>        
+        <recordingEntity>ff10</recordingEntity>
+        <messageReference>abcd</messageReference>
+        <servedMSISDN>ffffffffffffffffff</servedMSISDN>
+        <servedIMSI>ffffab</servedIMSI>
+        <location>
+            <locationAreaCode>50aa</locationAreaCode>
+            <cellId>0ff0</cellId>
+            <mCC-MNC>bcadef</mCC-MNC>
+        </location>
+        <msClassmark>abcd</msClassmark>
+        <serviceCentre>ffff</serviceCentre>
+        <originationTime>ffacadafef551798ad</originationTime>
+</MOSMSRecord>

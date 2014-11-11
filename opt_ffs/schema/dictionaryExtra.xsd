@@ -1,0 +1,295 @@
+<!--
+XML Schema for Diameter base protocol addon.
+The following schema validates the XML syntax that defines the Diameter AVP's.
+
+Author: Henrik Pettersson <henrik.a.pettersson@ericsson.com>
+Updated: Anders Olander <anders.olander@ericsson.com>
+Copyright Ericsson AB, Sweden 2005
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!-- Top Tag -->
+	<xs:element name="Protocol">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SupportedVendorId" type="Svi_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="AVP_Def" type="AVP_Def_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+				
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="Request" type="Message_Type">
+						<xs:unique name="Request_Avp_Uniquename">
+							<xs:selector xpath="AVP"></xs:selector>
+							<!-- <xs:field xpath="@name"/> -->
+							<xs:field xpath="@alias"></xs:field>
+						</xs:unique>
+					</xs:element>
+				</xs:choice>
+				
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="Response" type="Message_Type">
+						<xs:unique name="Response_Avp_Uniquename">
+							<xs:selector xpath="AVP"></xs:selector>
+							<!-- <xs:field xpath="@name"/> -->
+							<xs:field xpath="@alias"></xs:field>
+						</xs:unique>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			
+			<xs:attribute name="id" type="id_type" use="optional"></xs:attribute>
+			<xs:attribute name="version" type="xs:decimal" use="optional"></xs:attribute>
+			<xs:attribute name="name" type="name_type" use="optional"></xs:attribute>
+			<xs:attribute name="spec" type="xs:string" use="optional"></xs:attribute>
+			<xs:attribute name="isHeaderInformationRequired" type="xs:boolean" use="optional" default="false"></xs:attribute>
+			<xs:attribute name="comment" type="xs:string" use="optional"></xs:attribute>
+		</xs:complexType>
+		
+		<xs:unique name="UniqueVendorId">
+			<xs:selector xpath="SupportedVendorId"></xs:selector>
+			<xs:field xpath="@vendorId"></xs:field>
+		</xs:unique>
+		
+		<xs:unique name="AVP_DefUniqueCode">
+			<xs:selector xpath="AVP_Def"></xs:selector>
+			<xs:field xpath="@code"></xs:field>
+			<xs:field xpath="@vendorId"></xs:field>
+		</xs:unique>
+		
+		<!--
+		<xs:keyref name="AVPMatchingAVP_Def" refer="AVP_defKey">
+			<xs:selector xpath=".//AVP"></xs:selector>
+			<xs:field xpath="@name"></xs:field>
+		</xs:keyref>
+		
+		<xs:key name="AVP_defKey">
+			<xs:selector xpath="AVP_Def"></xs:selector>
+			<xs:field xpath="@name"></xs:field>
+		</xs:key>
+		-->
+		
+		<xs:unique name="Request_condition_unique">
+			<xs:selector xpath="Request/Condition"></xs:selector>
+			<xs:field xpath="@key"></xs:field>
+			<xs:field xpath="@value"></xs:field>
+		</xs:unique>
+		
+		<xs:unique name="Response_condition_unique">
+			<xs:selector xpath="Response/Condition"></xs:selector>
+			<xs:field xpath="@key"></xs:field>
+			<xs:field xpath="@value"></xs:field>
+		</xs:unique>
+	</xs:element>
+	
+	<xs:complexType name="Svi_Type">
+		<xs:attribute name="vendorId" type="xs:positiveInteger" use="required"></xs:attribute>
+		<xs:attribute name="comment" type="comment_type" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Message_Type">
+		<xs:sequence>
+			<xs:element name="Condition" type="Condition_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="AVP" type="AVP_Type" minOccurs="1" maxOccurs="unbounded"></xs:element>
+			<xs:element name="AVP_Any" type="AVP_Any_Type" minOccurs="0" maxOccurs="1"></xs:element>
+		</xs:sequence>
+		
+		<xs:attribute name="name" type="name_type" use="required"></xs:attribute>
+		<xs:attribute name="ignoreMandatoryFlag" type="xs:boolean" use="optional" default="false"></xs:attribute>
+		<xs:attribute name="comment" type="comment_type" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Condition_Type">
+		<xs:attribute name="key" type="key_type" use="required"></xs:attribute>
+		<xs:attribute name="value" type="condition_value_type" use="required"></xs:attribute>
+		<xs:attribute name="comment" type="comment_type" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<!-- The AVP Tag Definition type. -->
+	<xs:complexType name="AVP_Def_Type">
+		<xs:sequence>
+			<xs:element name="EnumValue" type="EnumValue_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		
+		<xs:attribute name="name" type="name_type" use="required"></xs:attribute>
+		<xs:attribute name="code" type="xs:positiveInteger" use="required"></xs:attribute>
+		<xs:attribute name="vendorId" type="VendorIdType" use="optional" default="0"></xs:attribute>
+		<xs:attribute name="type" type="AVP_Datatype" use="required"></xs:attribute>
+		<xs:attribute name="mandatoryFlag" type="AVP_Mandatoryflag_Datatype" use="optional"></xs:attribute>
+		<xs:attribute name="format" type="format_type" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="AVP_Type">
+		<xs:choice>
+			<xs:element name="EnumValue" type="EnumValue_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="Index" type="Index_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:sequence>
+				<xs:element name="AVP" type="AVP_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="AVP_Any" type="AVP_Any_Type" minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:sequence>
+		</xs:choice>
+		
+		<xs:attribute name="name" type="name_type" use="required"></xs:attribute>
+		<xs:attribute name="defaultValue" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="occurrence" type="AVP_Occurrence" use="optional"></xs:attribute>
+		<xs:attribute name="avpSep" type="sepChar" use="optional" default="-"></xs:attribute>
+		<xs:attribute name="code" type="xs:positiveInteger" use="optional"></xs:attribute>
+		<xs:attribute name="vendorId" type="xs:positiveInteger" use="optional"></xs:attribute>
+		<xs:attribute name="type" type="AVP_Datatype" use="optional"></xs:attribute>
+		<xs:attribute name="mandatoryFlag" type="xs:boolean" use="optional"></xs:attribute>
+		<xs:attribute name="alias" type="alias_type" use="optional"></xs:attribute>
+		<xs:attribute name="mapping" type="Mappings" use="optional" default="normal"></xs:attribute>
+		<xs:attribute name="listSep" type="sepChar" use="optional" default=";"></xs:attribute>
+		<xs:attribute name="counter" type="counter_type" use="optional"></xs:attribute>
+		<xs:attribute name="indexSep" type="sepChar" use="optional" default="-"></xs:attribute>
+		<xs:attribute name="comment" type="comment_type" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="AVP_Any_Type">
+		<xs:attribute name="name" type="name_type" use="optional"></xs:attribute>
+		<xs:attribute name="counter" type="counter_type" use="optional"></xs:attribute>
+		<xs:attribute name="comment" type="comment_type" use="optional"></xs:attribute>
+		<xs:attribute name="defaultValue" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="occurrence" type="AVP_Occurrence" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<!-- The possible AVP datatypes values. -->
+	<xs:simpleType name="AVP_Datatype">
+		<xs:restriction base="xs:NMTOKEN">
+			<!-- Base types -->
+			<xs:enumeration value="OctetString"></xs:enumeration>
+			<xs:enumeration value="Integer32"></xs:enumeration>
+			<xs:enumeration value="Integer64"></xs:enumeration>
+			<xs:enumeration value="Float32"></xs:enumeration>
+			<xs:enumeration value="Float64"></xs:enumeration>
+			<xs:enumeration value="Unsigned32"></xs:enumeration>
+			<xs:enumeration value="Unsigned64"></xs:enumeration>
+			<xs:enumeration value="Grouped"></xs:enumeration>
+			<!-- Derived types -->
+			<xs:enumeration value="Address"></xs:enumeration>
+			<xs:enumeration value="Enumerated"></xs:enumeration>
+			<xs:enumeration value="Time"></xs:enumeration>
+			<xs:enumeration value="UTF8String"></xs:enumeration>
+			<xs:enumeration value="IPFilterRule"></xs:enumeration>
+			<xs:enumeration value="DiameterIdentity"></xs:enumeration>
+			<xs:enumeration value="DiameterURI"></xs:enumeration>
+			<xs:enumeration value="IPFilterRule"></xs:enumeration>
+			<xs:enumeration value="QoSFilterRule"></xs:enumeration>
+			<!-- Special Types -->
+			<xs:enumeration value="OctetString:str"></xs:enumeration>
+			<xs:enumeration value="Opaque"></xs:enumeration>
+			<xs:enumeration value="Address32"></xs:enumeration>
+			<xs:enumeration value="Date"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- The possible AVP madatory flag values. -->
+	<xs:simpleType name="AVP_Mandatoryflag_Datatype">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="yes"></xs:enumeration>
+			<xs:enumeration value="no"></xs:enumeration>
+			<xs:enumeration value="true"></xs:enumeration>
+			<xs:enumeration value="false"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- The possible AVP occurrence flag values . -->
+	<xs:simpleType name="AVP_Occurrence">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0"></xs:enumeration>
+			<xs:enumeration value="0+"></xs:enumeration>
+			<xs:enumeration value="0-1"></xs:enumeration>
+			<xs:enumeration value="1"></xs:enumeration>
+			<xs:enumeration value="1+"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="EnumValue_Type">
+		<xs:attribute name="value" type="xs:integer" use="optional"></xs:attribute>
+		<xs:attribute name="alias" type="alias_type" use="optional"></xs:attribute>
+		<xs:attribute name="comment" type="comment_type" use="optional"></xs:attribute>
+		<xs:attribute name="min" type="xs:nonNegativeInteger" use="optional"></xs:attribute>
+		<xs:attribute name="max" type="xs:nonNegativeInteger" use="optional"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Index_Type">
+		<xs:attribute name="value" type="value_type" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:simpleType name="Mappings">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="normal"></xs:enumeration>
+			<xs:enumeration value="none"></xs:enumeration>
+			<xs:enumeration value="array"></xs:enumeration>
+			<xs:enumeration value="index"></xs:enumeration>
+			<xs:enumeration value="list"></xs:enumeration>
+			<xs:enumeration value="group"></xs:enumeration>
+			<xs:enumeration value="sum"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="sepChar">
+		<xs:restriction base="xs:string">
+			<xs:length value="1" fixed="true"></xs:length>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- VendorId boundries -->
+	<xs:simpleType name="VendorIdType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"></xs:minInclusive>
+			<xs:maxInclusive value="2147483647"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="value_type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-z]|[A-Z]|[0-9]|-|_)+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="key_type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-z]|[A-Z]|[0-9]|-|_)+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="name_type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="( )*([a-z]|[A-Z]|[0-9]|-|_|:)+([a-z]|[A-Z]|[0-9]|-|_|:| )*"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="counter_type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-z]|[A-Z]|[0-9]|-|_)+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- HI62242: Removed restriction from format type to include special symbols in date text -->
+	<xs:simpleType name="format_type">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="condition_value_type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-z]|[A-Z]|[0-9]|-|_|.)+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="alias_type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-z]|[A-Z]|[0-9]|-|_|.)+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"></xs:minLength>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="comment_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"></xs:minLength>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

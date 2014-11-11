@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://www.csapi.org/schema/parlayx/payment/volume_charging/v2_1/local">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getAmount>
+         <loc:endUserIdentifier>http://some.one</loc:endUserIdentifier>
+         <loc:volume>1340</loc:volume>
+         <!--Optional, used names are: unit, contract, service, operation-->
+         <loc:parameters>
+	    <name>service</name>
+            <value>aService</value>
+         </loc:parameters>
+  	 <loc:parameters>
+            <name>unit</name>
+            <value>SEK</value>
+         </loc:parameters>
+      </loc:getAmount>
+   </soapenv:Body>
+</soapenv:Envelope>

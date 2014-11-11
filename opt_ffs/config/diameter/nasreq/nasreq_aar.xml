@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- Session-Id -->
+	<!-- An AAR is an event type request with an exception that it can initiate a sesion -->
+	<!-- To initiate a session through AAR, uncomment the line below and comment the line following it-->
+	<!-- <AVP code="263" value="${Local.sessionID}.set(${Global.aIncreasingValue})" /> -->
+	<AVP code="263" value="${Local.sessionID}"/>
+	
+	<!-- Auth-Application-Id -->
+	<AVP code="258" value="${Global.AuthAppID}" />
+	
+	<!-- Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" />
+	
+	<!-- Auth-Request-Type -->
+	<AVP code="274" value="1" />
+	
+	<!-- NAS-Identifier -->
+	<AVP code="32" value="abc" />
+	
+	<!-- NAS-IP-Address -->
+	<AVP code="4" value="067" />
+	
+	<!-- NAS-IPv6-Address -->
+	<AVP code="95" value="067" />
+	
+	<!-- NAS-Port -->
+	<AVP code="5" value="3872" />
+	
+	<!-- NAS-Port-Id -->
+	<AVP code="87" value="portNAS" />
+	
+	<!-- Following values are supported for NAS-Port-Type -->
+	<!-- 0   Async  -->
+	<!-- 1   Sync -->
+	<!-- 2   ISDN Sync -->
+	<!-- 3   ISDN Async V.120 -->
+	<!-- 4   ISDN Async V.110 -->
+	<!-- 5   Virtual -->
+	<!-- 6   PIAFS -->
+	<!-- 7   HDLC Clear Channel -->
+	<!-- 8   X.25 -->
+	<!-- 9   X.75 -->
+	<!-- 10   G.3 Fax -->
+	<!-- 11   SDSL - Symmetric DSL -->
+	<!-- 12   ADSL-CAP - Asymmetric DSL, Carrierless Amplitude Phase Modulation -->
+	<!-- 13   ADSL-DMT - Asymmetric DSL, Discrete Multi-Tone -->
+	<!-- 14   IDSL - ISDN Digital Subscriber Line -->
+	<!-- 15   Ethernet -->
+	<!-- 16   xDSL - Digital Subscriber Line of unknown type -->
+	<!-- 17   Cable -->
+	<!-- 18   Wireless - Other -->
+	<!-- 19   Wireless - IEEE 802.11 -->
+	<!-- 20   Token-Ring   [RAD802.1X] -->
+	<!-- 21   FDDI         [RAD802.1X] -->
+	<!-- 22   Wireless - CDMA2000 -->
+	<!-- 23   Wireless - UMTS -->
+	<!-- 24   Wireless - 1X-EV -->
+	<!-- 25   IAPP    [IEEE 802.11f] -->
+
+	<!-- NAS-Port-Type -->
+	<AVP code="61" value="0" />
+	
+	<!-- Origin-AAA-Protocol -->
+	<AVP code="408" value="1" />
+	
+	<!-- Origin-State-Id -->
+	<AVP code="278" value="2" />
+		
+	<!-- Port-Limit -->
+	<AVP code="62" value="10" />
+	
+	<!-- User-Name -->
+	<AVP code="1" value="abc" />
+	
+	<!-- User-Password -->
+	<AVP code="2" value="abc" />
+	
+	<!-- Following values are supported for Service-Type -->
+       <!-- 1  Login -->
+       <!-- 2  Framed -->
+       <!-- 3  Callback Login -->
+       <!-- 4  Callback Framed -->
+       <!-- 5  Outbound -->
+       <!-- 6  Administrative -->
+       <!-- 7  NAS Prompt -->
+       <!-- 8  Authenticate Only -->
+       <!-- 9  Callback NAS Prompt -->
+       <!-- 10  Call Check -->
+       <!-- 11  Callback Administrative -->
+       <!-- 12  Voice -->
+       <!-- 13  Fax -->
+       <!-- 14  Modem Relay -->
+       <!-- 15  IAPP-Register   [IEEE 802.11f] -->
+       <!-- 16  IAPP-AP-Check   [IEEE 802.11f] -->
+       <!-- 17  Authorize Only  [RADDynAuth] -->	
+	<!-- Service-Type -->
+	<AVP code="6" value="1" />
+	
+	<!-- State -->
+	<AVP code="24" value="xyz" />
+	
+	<!-- Authorization-Lifetime -->
+	<AVP code="291" value="0" />
+	
+	<!-- Auth-Grace-Period -->
+	<AVP code="276" value="100" />
+	
+	<!-- Auth-Session-State -->
+	<AVP code="277" value="0" />
+	
+	<!-- Callback-Number -->
+	<AVP code="19" value="221133" />
+	
+	<!--  Called-Station-Id -->
+	<AVP code="30" value="221133" />
+	
+	<!--  Calling-Station-Id -->
+	<AVP code="31" value="112244" />
+	
+		<!-- Supported values for Originating Line Info -->
+		<!--  Value   Description -->
+
+		<!--   00    Plain Old Telephone Service (POTS) -->
+		<!--   01    Multiparty Line (more than 2) -->
+      	<!--   02    ANI Failure -->
+      	<!--   03    ANI Observed -->
+      	<!--   04    ONI Observed -->
+      	<!--   05    ANI Failure Observed -->
+      	<!--   06    Station Level Rating -->
+      	<!--   07    Special Operator Handling Required -->
+      	<!--   08    InterLATA Restricted -->
+      	<!--   10    Test Call -->
+      	<!--   20    Automatic Identified Outward Dialing (AIOD) -->
+      	<!--   23    Coin or Non-Coin -->
+      	<!--   24    Toll Free Service (Non-Pay Origination) -->
+      	<!--   25    Toll Free Service (Pay Origination) -->
+      	<!--   27    Toll Free Service (Coin Control Origination) -->
+      	<!--   29    Prison/Inmate Service -->
+      	<!--   30-32 Intercept -->
+      	<!--   30    Intercept (Blank) -->
+      	<!--   31    Intercept (Trouble) -->
+      	<!--   32    Intercept (Regular) -->
+      	<!--   34    Telco Operator Handled Call -->
+      	<!--   40-49 Unrestricted Use -->
+      	<!--   52    Outward Wide Area Telecommunications Service (OUTWATS) -->
+      	<!--   60    Telecommunications Relay Service (TRS)(Unrestricted) -->
+      	<!--   61    Cellular/Wireless PCS (Type 1) -->
+      	<!--   62    Cellular/Wireless PCS (Type 2) -->
+      	<!--   63    Cellular/Wireless PCS (Roaming) -->
+      	<!--   66    TRS (Hotel) -->
+      	<!--   67    TRS (Restricted) -->
+      	<!--   70    Pay Station, No Coin Control -->
+      	<!--   93    Access for Private Virtual Network Service -->
+	
+	<!--  Originating-Line-Info -->
+	<AVP code="94" value="00" />
+	
+	
+	
+	<!--  Connect-Info -->
+	<AVP code="77" value="28800 V42BIS/LAPM" />
+	
+	<!--  CHAP-Auth -->
+	<AVP code="402" value="">	
+		<!-- Chap Algorithm -->
+		<AVP code="403" value="5" />
+		
+		<!-- CHAP-Ident -->
+		<AVP code="404" value="0" />
+		
+		<!-- Chap response -->
+		<AVP code="405" value="01234" />
+	</AVP>		
+	
+	<!--  CHAP-Challenge -->
+	<AVP code="60" value="0101" />
+	
+	<!-- Supported values for Framed-Compression -->
+	<!-- 0  None -->
+	<!-- 1  VJ TCP/IP header compression -->
+	<!-- 2  IPX header compression -->
+    <!-- 3  Stac-LZS compression -->
+        
+	<!--  Framed-Compression -->
+	<AVP code="13" value="0" />
+	
+	<!--  Framed-Interface-Id -->
+	<AVP code="96" value="1121" />
+	
+	<!--  Framed-IP-Address -->
+	<AVP code="8" value="0xFFFFFFFF" />
+	
+	<!--  Framed-IPv6-Prefix -->
+	<AVP code="97" value="001" />
+	
+	<!--  Framed-IP-Netmask -->
+	<AVP code="9" value="0xFFFFFFFF" />
+	
+	<!--  Framed-MTU -->
+	<AVP code="12" value="64" />
+	
+	<!-- Supported values for Framed Protocol -->
+	<!-- 1  PPP -->
+	<!-- 2  SLIP -->
+	<!-- 3  AppleTalk Remote Access Protocol (ARAP) -->
+	<!-- 4  Gandalf proprietary SingleLink/MultiLink protocol -->
+	<!-- 5  Xylogics proprietary IPX/SLIP -->
+	<!-- 6  X.75 Synchronous -->
+
+	<!-- Framed-Protocol -->
+	<AVP code="7" value="1" />
+	
+	<!-- This AVP MUST NOT be present if either the User-Password or the CHAP-Auth AVP is present -->
+	<!--  ARAP-Password -->
+	<!-- <AVP code="70" value="" /> -->
+	
+	<!--  ARAP-Security -->
+	<AVP code="73" value="111" />
+
+	<!-- Actually for running either Authentciation _id should be non zero 
+	or Accounting and application-Id both need to be defined otherwise the stack will give a no route defined mmessage 
+	-->
+	<AVP code="260" value="">
+		<!-- Acct-Application-Id -->
+		<AVP code="259" value="${Global.AcctAppID}" />
+		<!-- Auth-Application-Id -->
+		<AVP code="258" value="${Global.AuthAppID}" />
+		<!-- Vendor-Id -->
+		<AVP code="266" value="${Global.destVendorID}" />
+	</AVP>
+	
+</RequestData>
+

@@ -1,0 +1,8 @@
+<?php
+# rename/copy this file to config.inc.php and change default values to configure the application
+
+$ffsdir="/opt/ffs";
+$ffscfgdir="/var/opt/ffs";
+$ffslogdir="/var/opt/ffs/logs";
+
+?>

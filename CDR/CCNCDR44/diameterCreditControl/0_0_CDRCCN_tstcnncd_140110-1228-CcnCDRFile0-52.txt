@@ -1,0 +1,30 @@
+-- message 1 --
+ChargingDataOutputRecord {
+    diameterCreditControlRecord {
+        cdrReason = serviceClassRequested        
+        nodeID = 7465737420435335        
+        recordSequenceNumber = 00        
+        lastPartialOutput = TRUE        
+        trafficCase = originatingServiceCharging        
+        teleServiceCode = content        
+        subscriberID = a158916527f4        
+        callingPartyNumber = a158916527f4        
+        triggerTime = 413021718533300000        
+        chargedDuration = 00        
+        dataVolume = 00        
+        finalCharge = +0.000000        
+        accountValueBefore = +0.830000        
+        accountValueAfter = +0.830000        
+        sessionID = 6161613a2f2f6c696e74616e672e746573743a313930303b7472616e73706f72743d7463703b2d313231363434323934333b31        
+        numberOfSDPInterrogations = 2        
+        originRealm = 6c696e74616e672e74657374        
+        originHost = 6161613a2f2f6c696e74616e672e746573743a313930303b7472616e73706f72743d746370        
+        serviceClass = 14        
+        localSequenceNumber = 03a2        
+        currencyType = eURO        
+        serviceProviderID = 4657        
+        extInt1 = 200        
+        extInt4 = 1        
+        networkID = 1        
+    }
+}

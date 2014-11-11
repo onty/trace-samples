@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="2000" snapshotInConsole="true" statistics="false" logDataInOut="false" debugLogging="false" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+
+		</Global>
+		<Local>
+
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.dummyplugin.DummyPlugin">
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+			</Item>
+		</Model>
+		<Model name="M2">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+			</Item>
+		</Model>
+		<Model name="M3">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="0" duration="600000" tps="0" activeModels="0">
+			<Model name="M1" weight="1" />
+			<Model name="M2" weight="1" />
+			<Model name="M3" weight="1" />
+		</Slot>
+	</TrafficModel>
+</FFS>

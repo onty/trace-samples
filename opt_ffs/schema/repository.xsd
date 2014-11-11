@@ -1,0 +1,66 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation>
+			The repository definition schema.
+		</xsd:documentation>
+	</xsd:annotation>
+		
+	<!--ROOT element-->
+	<xsd:element name="Repository">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Variable" type="typeVariable" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!--Types-->
+	<xsd:complexType name="typeVariable">
+		<xsd:sequence>
+			<xsd:element name="Item" type="typeModel"/>
+		</xsd:sequence>
+		
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="typeModel">
+		<xsd:choice>
+			<xsd:element name="Step" type="typeStep"/>
+			
+			<xsd:element name="Fixed">
+				<xsd:complexType>
+					<xsd:attribute name="value" type="xsd:string" use="required"/>
+					<xsd:attribute name="datatype" type="typeDatatype" use="optional" default="String"/>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element name="List">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Item" type="typeModel" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element name="RandomRange">
+				<xsd:complexType>
+					<xsd:attribute name="from" type="xsd:integer" use="required"/>
+					<xsd:attribute name="to" type="xsd:integer" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	
+	<xsd:complexType name="typeStep">
+		<xsd:attribute name="start" type="xsd:string" use="required"/>
+		<xsd:attribute name="stepsize" type="xsd:string" use="required"/>
+		<xsd:attribute name="datatype" type="typeDatatype" use="required"/>
+		<xsd:attribute name="max" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="typeDatatype">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="String|Integer|Double"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

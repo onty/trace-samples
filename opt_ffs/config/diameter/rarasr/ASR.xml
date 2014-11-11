@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a sample request template for the Abort Session request. Some of the AVP values provided here are the dummy values.-->
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- Session-Id -->
+	<AVP code="263" value="${Local.sessionID}.set(${Global.aIncreasingValue})" />	  
+	<!-- Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" />
+	<!-- Destination-Host -->
+	<AVP code="293" value="${Global.destIP}" />
+	<!-- Auth-Application-Id -->
+	<AVP code="258" value="${Global.AuthAppID}" />
+	<!-- Proxy-Info -->
+	<AVP code="284" value="" >
+		<!-- Proxy-Host -->
+		<AVP code="280" value="berarlistener"/>
+		<!-- Proxy-State -->
+		<AVP code="33" value="running"/>
+	</AVP>
+	<!-- Route-Record -->
+	<AVP code="282" value="berarrouter"/>
+
+</RequestData>

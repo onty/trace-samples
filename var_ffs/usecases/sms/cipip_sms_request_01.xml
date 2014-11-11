@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- AVP Code: 263 Session-Id -->
+	<!--AVP code="263" value="${Global.sessionID}${Local.session}.set(${Global.step})" vendor-id="0" /-->
+	<AVP code="263" value="${Global.sessionID}" vendor-id="0" />
+	<!-- AVP Code: 260 Vendor-Specific-Application-Id -->
+	<!-- Grouped data: 000001024000000c01000010 -->
+	<AVP code="260" value="" vendor-id="0">
+		<!-- AVP Code: 258 Auth-Application-Id -->
+		<AVP code="258" value="16777232" vendor-id="0" />
+		<!-- AVP Code: 266 Vendor-Id -->
+		<AVP code="266" value="193" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 283 Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" vendor-id="0" />
+	<!-- AVP Code: 415 CC-Request-Number -->
+	<AVP code="415" value="0" vendor-id="0" />
+	<!-- AVP Code: 416 CC-Request-Type -->
+	<AVP code="416" value="1" vendor-id="0" />
+	<!-- AVP Code: 436 Requested-Action -->
+	<!-- <AVP code="436" value="2" vendor-id="0" /> -->
+	<!-- MSCC -->
+	<AVP code="456" vendor-id="0">
+	<!-- AVP Code: 437 Requested-Service-Unit -->
+	<!-- Grouped data: 000001a1400000100000000000000001 -->
+	<AVP code="437" value="" vendor-id="0">
+		<!-- AVP Code: 417 CC-Service-Specific-Units -->
+		<AVP code="417" value="1" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 439 Service-Identifier -->
+	<AVP code="439" value="4" vendor-id="0" />
+	<!-- AVP Code: 1068 Service-Session-Id -->
+	<AVP code="1068" value="-:6:1" vendor-id="193" />
+	</AVP>
+	<!-- AVP Code: 443 Subscription-Id -->
+	<!-- Grouped data: 000001bc4000001234393437313132323433 -->
+	<AVP code="443" value="" vendor-id="0">
+		<!-- AVP Code: 444 Subscription-Id-Data -->
+		<AVP code="444" value="${Global.A-Number}" vendor-id="0" />
+		<!-- AVP Code: 450 Subscription-Id-Type -->
+		<AVP code="450" value="0" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 461 Service-Context-Id -->
+	<AVP code="461" value="SCAP_V.2.0@ericsson.com" vendor-id="0" />
+	<!-- AVP Code: 1063 Access-Information -->
+	<!-- Grouped data: 000000374000000cd1582da1 -->
+	<AVP code="1063" value="" vendor-id="193">
+		<!-- AVP Code: 55 Event-Timestamp -->
+		<AVP code="55" value="${Global.nowunix}" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 1065 Charging-Context-Id -->
+	<AVP code="1065" value="SCAP_V.2.0@ericsson.com" vendor-id="193" />
+	<!-- AVP Code: 1074 Subscription-Id-Location -->
+	<AVP code="1074" value="958161009090" vendor-id="193" />
+	<!-- AVP Code: 1075 Other-Party-Id -->
+	<!-- Grouped data: 00000434c0000010000000c100000000 -->
+	<AVP code="1075" value="" vendor-id="193">
+		<!-- AVP Code: 1076 Other-Party-Id-Nature -->
+		<AVP code="1076" value="0" vendor-id="193" />
+		<!-- AVP Code: 1077 Other-Party-Id-Data -->
+		<AVP code="1077" value="${Global.B-Number}" vendor-id="193" />
+		<!-- AVP Code: 1078 Other-Party-Id-Type -->
+		<AVP code="1078" value="0" vendor-id="193" />
+	</AVP>
+	<!-- AVP Code: 1083 CIP-IP-Version -->
+	<AVP code="1083" value="R1A" vendor-id="193" />
+	<!-- AVP Code: 23 3GPP-MSTimeZone -->
+	<AVP code="23" value="0x4001" vendor-id="10415" />
+	<!-- AVP Code: 55 Event-Timestamp -->
+	<AVP code="55" value="${Global.nowunix}" vendor-id="0" />
+</RequestData>

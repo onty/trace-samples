@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<settings>
+	<properties>
+		<property name="ReportFilePath" value="C:\EclipseWorkspaceGit\"/>
+		<property name="Delimiter" value=";"/>
+		<property name="Warm-up" value="10"/> <!-- Time in seconds after start during no calculations will be performed and no reports generated. Only supported in FFS plug-in mode. --> 
+		<property name="ReportFormat" value="html"/> <!--html and txt supported -->
+		<property name="ReportInterval" value="300"/> <!--Only supported in FFS plug-in mode -->
+		<property name="InputFile" value="C:\EclipseWorkspaceGit\LATEST_statistics2.log" /> <!-- Only supported in stand alone mode -->
+	</properties>	
+	
+	<!--
+	Supported calculations:
+	
+	Calculation of transaction per second
+	===============================
+	class = ext.cmg.tools.ffs.report.calculators.TransactionsPerSecond
+	argument = ColumnIndexCondition (Optional) - The index of the column to put a condition on.
+	argument = ColumnValueCondition (Optional) - The value of the column to put a condition on.
+	argument = DateFormat (Optional) -  The format of the date. Default  yyyy-MM-dd HH:mm:ss.SSS.
+	Note! Only records fulfilling the condition will be included in the calculation. Both condition arguments are  required if condition should be used.
+	
+	Calculation of average value e.g. Response time
+	==========================================
+	class = ext.cmg.tools.ffs.report.calculators.Average
+	argument = ColumnIndexCondition (Optional) - The index of the column to put a condition on.
+	argument = ColumnValueCondition (Optional) - The value of the column to put a condition on.
+	argument = GroupByColumn (Optional) - The index of the column on which the average values should be group upon.
+	Note! Only records fulfilling the condition will be included in the calculation. Both condition arguments are  required if condition should be used.
+	
+	Calculation of number of ocuurencies, e.g number of successful or failed transactions
+	===========================================================================
+	class = ext.cmg.tools.ffs.report.calculators.NumberOccurence
+	argument = ColumnIndexCondition (Optional) - The index of the column to put a condition on.
+	argument = ColumnValueCondition (Optional) - The value of the column to put a condition on.
+	Note! Only records fulfilling the condition will be included in the calculation. Both condition arguments are  required if condition should be used.
+	
+	Calculation of x number of highest values e.g. the 20 highest response times
+	=================================================================
+	class = ext.cmg.tools.ffs.report.calculators.MaxValues
+	argument = Number (Optional) - The number of max values to report. Default = 10.
+	argument = ColumnIndexCondition (Optional) - The index of the column to put a condition on.
+	argument = ColumnValueCondition (Optional) - The value of the column to put a condition on.
+	argument = GroupByColumn (Optional) - The index of the column on which the average values should be group upon.
+	Note! Only records fulfilling the condition will be included in the calculation. Both condition arguments are  required if condition should be used.
+	
+	Calculation of interval distribution e.g. how many percentage of the requested had a response time between A and B
+	==================================================================================================
+	class = ext.cmg.tools.ffs.report.calculators.IntervalDistribution
+	argument = ColumnIndexCondition (Optional) - The index of the column to put a condition on
+	argument = ColumnValueCondition (Optional) - The value of the column to put a condition on.
+	argument = IntervalSize (Optional) - The size of the intervals. Default 500.
+	Note! Only records fulfilling the condition will be included in the calculation. Both condition arguments are  required if condition should be used.
+	
+	Calculation of TPS and average value over time e.g. TPS and latency over time
+	==================================================================================================
+	class = ext.cmg.tools.ffs.report.calculators.TPSandAverageOverTime
+	argument = ResponseTimeColumnIndex (Mandatory) - The index of the column holding the response time.
+	argument = Outfile (Mandatory) - The file to which the result should be written.
+	argument = ColumnIndexCondition (Optional) - The index of the column to put a condition on
+	argument = ColumnValueCondition (Optional) - The value of the column to put a condition on.
+	argument = IntervalSize (Optional) - The size of the intervals. Default 500.
+	argument = DateFormat (Optional) -  The format of the date. Default  yyyy-MM-dd HH:mm:ss.SSS.	
+	argument = StartDate (Optional) - The start date for the timeperiod that should be examined.
+	argument = EndDate (Optional) - TThe end date for the timeperiod that should be examined.
+	Note! Only records fulfilling the condition will be included in the calculation. Both condition arguments are  required if condition should be used.
+	
+	-->
+ 
+	<columns>
+		<column description="Request status" index="6">
+			<calculation description="Request status" class="ext.cmg.tools.ffs.report.calculators.NumberOccurence" />	
+		</column>
+		<column description="Timestamp" index="1">
+			<calculation description="Transaction per second" class="ext.cmg.tools.ffs.report.calculators.TransactionsPerSecond">
+				<argument name="ColumnIndexCondition" value="6" />
+                <argument name="ColumnValueCondition" value="OK" />
+				<argument name="DateFormat" value="yyyy-MM-dd HH:mm:ss.SSS"/>
+            </calculation>
+			<calculation description="TPS and Latency over time" class="ext.cmg.tools.ffs.report.calculators.TPSandAverageOverTime">	
+				<argument name="ResponseTimeColumnIndex" value="8" />
+				<argument name="Outfile" value="Tps-Latency-OverTime"/>
+				<argument name="ColumnIndexCondition" value="6" />
+				<argument name="ColumnValueCondition" value="OK" />				
+				<argument name="DateFormat" value="yyyy-MM-dd HH:mm:ss.SSS"/>
+				<argument name="IntervalSize" value="60"/>
+				<!--<argument name="StartDate" value="2011-06-28 22:00:00.000"/>
+				<argument name="EndDate" value="2011-06-29 03:00:00.000"/>-->
+			</calculation>
+		</column>
+		<column description="Response time" index="8">
+			<calculation description="Average latency for successful request" class="ext.cmg.tools.ffs.report.calculators.Average">
+				<argument name="ColumnIndexCondition" value="6" />
+                <argument name="ColumnValueCondition" value="OK" />
+            </calculation>
+			<calculation description="Average latency for successful request, grouped on request type" class="ext.cmg.tools.ffs.report.calculators.Average">	
+				<argument name="ColumnIndexCondition" value="6" />
+				<argument name="ColumnValueCondition" value="OK" />
+				<argument name="GroupByColumn" value="3" />
+			</calculation>
+			<calculation description= "Max response times, grouped on request type" class="ext.cmg.tools.ffs.report.calculators.MaxValues">	
+				<argument name="Number" value="5"/>
+				<argument name="ColumnIndexCondition" value="6"/>
+				<argument name="ColumnValueCondition" value="OK"/>
+				<argument name="GroupByColumn" value="3" />
+			</calculation>
+			<calculation description= "Response interval distribution" class="ext.cmg.tools.ffs.report.calculators.IntervalDistribution">	
+				<argument name="IntervalSize" value="250"/>
+				<argument name="ColumnIndexCondition" value="6"/>
+				<argument name="ColumnValueCondition" value="OK"/>
+			</calculation>
+		</column>
+	</columns>
+</settings>

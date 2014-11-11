@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<operation msgtype="0800">
+	<field7 name="Transmission Date and Time" value="DEFAULT" />
+	<field11 name="Systems Trace Audit Number" value="DEFAULT" />
+	<field37 name="Retrievel Reference Number" value="DEFAULT" />
+	<field96 name="Keyexchange" value="DEFAULT" />
+	<field70 name="Network Management Information Code" value="001" />
+	<field100 name="Receiving Institute ID code" value="${Local.rid}" />
+</operation>

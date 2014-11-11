@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="true" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+<!--		Agent number series: 100000000-100009999
+Customer number series: 100010000-100019999 -->
+
+			<Variable name="sender" type="Step" start="46100000000" stepsize="1" datatype="Integer" max="46100009999"/>
+			<Variable name="sendingUserExternalId" type="Step" start="46100010000" stepsize="1" datatype="Integer" max="46100019999"/>
+			<Variable name="allExternalId" type="Step" start="100000001" stepsize="1" datatype="Integer" max="100100999"/>
+			<Variable name="provisionExternalId" type="Step" start="40000000" stepsize="1" datatype="Integer" max="40500000"/>
+		</Global>
+		<Local>
+		</Local> 
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.mobilemoney.SmscSimulator">
+		<!-- Mandatory plugin arguments -->
+		<Argument name="target.systemid" value="receiver" />
+		<Argument name="target.password" value="receiver" />
+		<Argument name="callback.systemid" value="callback" />
+		<Argument name="callback.password" value="callback" />
+		<Argument name="bind.timeout" value="6" />
+		<Argument name="bind.port" value="1983" />
+		<!-- Optional plugin arguments -->
+		<Argument name="request.timeout" value="3000000" />
+		<Argument name="datalogging.onlyfailed" value="false" />	
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="A">
+			<!-- This will send a fragmented sms by specifying each fragment individually -->
+			<Item repeat="1" delay="0" timeout="300000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="esm" value="0x40" datatype="String"/>
+				<Data name="responses" value="2" datatype="String"/>
+				<Data name="encoding" value="HEX" datatype="String"/>
+				<Data name="shortmessage1" value="0500030102013031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233" datatype="String"/>
+				<Data name="shortmessage2" value="05000301020234353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839" datatype="String"/>
+				<Data name="expectedresponse1" value="050003\\p{XDigit}{2}02013031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233" datatype="String"/>
+				<Data name="expectedresponse2" value="050003\\p{XDigit}{2}020234353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839" datatype="String"/>
+			</Item>
+			<!-- This will send a sms that will be fragmented by the smsc simulator -->
+			<Item repeat="1" delay="0" timeout="300000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="payload" value="0" datatype="String"/>
+				<Data name="encoding" value="ISO-8859-1" datatype="String"/>
+				<Data name="shortmessage" value="012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" datatype="String"/>
+				<Data name="expectedresponse" value=".*" datatype="String"/>
+			</Item>
+			<!-- This will send a sms won't be fragmented, but sent as message_payload -->
+			<Item repeat="1" delay="0" timeout="300000" type="out_sync">
+				<Data name="sender" value="${sender}" datatype="String"/>
+				<Data name="payload" value="1" datatype="String"/>
+				<Data name="encoding" value="ISO-8859-1" datatype="String"/>
+				<Data name="shortmessage" value="012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" datatype="String"/>
+				<Data name="expectedresponse" value=".*" datatype="String"/>
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="A" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

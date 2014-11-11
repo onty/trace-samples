@@ -1,0 +1,422 @@
+[2014-08-21 15:13:07.594] FINE : 1    : *** Created file: /opt/ffs/logs/logpref.txtLATEST_runlog.log  (run log)
+[2014-08-21 15:13:07.628] FINE : 1    : *** Created file: /opt/ffs/logs/logpref.txtLATEST_summary.log  (summary log)
+[2014-08-21 15:13:07.636] FINE : 1    : *** Created file: /opt/ffs/logs/logpref.txtLATEST_data.log  (request/response data)
+[2014-08-21 15:13:07.636] INFO : 1    : Loading configuration file...
+[2014-08-21 15:13:07.636] INFO : 1    : Loading REPOSITORY...
+[2014-08-21 15:13:07.641] FINE : 1    : *** Loading GLOBAL repository...
+[2014-08-21 15:13:07.719] FINE : 1    : *** GLOBAL repository loaded!
+[2014-08-21 15:13:07.720] FINE : 1    : *** Loading LOCAL repository...
+[2014-08-21 15:13:07.756] FINE : 1    : *** LOCAL repository loaded!
+[2014-08-21 15:13:07.757] INFO : 1    : REPOSITORY loaded!
+[2014-08-21 15:13:07.759] INFO : 1    : Loading MODELS...
+[2014-08-21 15:13:07.805] FINE : 1    : *** Creating MODEL...
+[2014-08-21 15:13:07.810] FINEST : 1  : *** Linking Model with local repository...Repository (Local)@3b59a690
+[2014-08-21 15:13:07.815] FINEST : 1  : Creating a new RequestGroup for Ungrouped Items.
+[2014-08-21 15:13:07.837] FINE : 1    : *** Loading file: /var/opt/ffs/usecases/sms/cipip_sms_request_01.xml
+[2014-08-21 15:13:07.870] FINE : 1    : *** Loading file: /var/opt/ffs/usecases/sms/cipip_sms_request_02.xml
+[2014-08-21 15:13:07.888] FINE : 1    : *** MODEL layout
+Name:                M1
+
+-~-~ GROUP begin -~-~
+  -~-~ ITEM begin -~-~
+  ID:                  0
+  Type:                OUT_SYNC
+  Repeat (times):      RepositoryData[1]
+  Delay (ms):          RepositoryData[1000]
+  Timeout (ms):        30000
+  Parent Request (ID): 0
+  Parent Condition:    0
+  -~-~ ITEM end -~-~
+
+  -~-~ ITEM begin -~-~
+  ID:                  1
+  Type:                OUT_SYNC
+  Repeat (times):      RepositoryData[1]
+  Delay (ms):          RepositoryData[1000]
+  Timeout (ms):        30000
+  Parent Request (ID): 1
+  Parent Condition:    1
+  -~-~ ITEM end -~-~
+
+-~-~ GROUP end -~-~
+
+[2014-08-21 15:13:07.889] INFO : 1    : MODELS Loaded!
+[2014-08-21 15:13:07.889] INFO : 1    : Loading TRAFFIC MODELS...
+[2014-08-21 15:13:07.899] FINE : 1    : *** Creating SLOT...
+[2014-08-21 15:13:07.902] FINE : 1    : *** SLOT layout
+Name:                SLOT #1
+Times:               1
+Duration (ms):       0
+TPS:                 0
+
+-~-~ MODELS weight -~-~
+
+100% - M1
+
+[2014-08-21 15:13:07.902] INFO : 1    : TRAFFIC MODELS Loaded!
+[2014-08-21 15:13:07.903] INFO : 1    : Loading PLUG-IN...
+[2014-08-21 15:13:07.910] INFO : 1    : Creating default plugin. (cmg.tools.ffs.plugins.diameter.Diameter)
+[2014-08-21 15:13:07.938] INFO : 1    : PLUG-IN loaded and initialized!
+[2014-08-21 15:13:07.939] INFO : 1    : Loading ANALYZERS...
+[2014-08-21 15:13:07.946] INFO : 1    : ANALYZERS loaded and initialized!
+[2014-08-21 15:13:07.946] INFO : 1    : Configuration file loaded!
+[2014-08-21 15:13:07.948] FINER : 1   : Adding shutdown hook.
+[2014-08-21 15:13:07.949] INFO : 1    : Executing...
+[2014-08-21 15:13:07.951] INFO : 1    : Initializing default plugin.
+[2014-08-21 15:13:07.954] INFO : 1    : Loading dictionary file: config/diameter/dictionary.xml
+[2014-08-21 15:13:07.954] FINE : 1    : *** Loading file: config/diameter/dictionary.xml
+[2014-08-21 15:13:08.817] FINEST : 1  : Loading <AVP_Def>...
+[2014-08-21 15:13:08.917] WARNING : 1 : > cmg.tools.ffs.plugins.diameter.Diameter > Can not parse argument 'answerResultCode' using: 2002
+[2014-08-21 15:13:08.978] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Parameter : tcTimer not found in configuration or is not a number. Leaving unset.
+[2014-08-21 15:13:08.978] INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Parameter : requestTimeout not found in configuration or is not a number. Leaving unset.
+[2014-08-21 15:13:08.985] WARNING : 1 : > cmg.tools.ffs.plugins.diameter.Diameter > NOTE : If the timeout value in the request definitions are smaller than the DefaultMessageTimeout value, 
+       the FFS will time-out requests that may or may not be received by the stack later.
+       Another undesireable result of this may be that the FFS tries to send a new request in
+       the same session which will cause a session-aware receiver to reply with Session Busy.
+[2014-08-21 15:13:08.988] WARNING : 1 : > cmg.tools.ffs.plugins.diameter.Diameter > Parameter : TITimer (Timeout for request) not found in config or is not a number. Defaulting it to 45 seconds.
+[2014-08-21 15:13:09.19]  FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > The vendor id is not 0, adding a 'default' application with the ID:{ Auth-Application-Id : 16777232, Acct-Application-Id : 0, Vendor-Id : 0 }
+[2014-08-21 15:13:09.23]  FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > Request Listener for Application Id [{ Auth-Application-Id : 16777232, Acct-Application-Id : 0, Vendor-Id : 193 } already exists. Exception message: null
+[2014-08-21 15:13:09.25]  FINER : 1   : *** cmg.tools.ffs.plugins.diameter.Diameter > com.ericsson.pps.diameter.rfcapi.base.DiameterConfig@15ea1c90
+[2014-08-21 15:13:09.25]  INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Starting the stack...
+[2014-08-21 15:13:09.56]  FINE : 1    : [DiameterStack] T1, PeerListener-ServerSocket[addr=AIR1.ericsson.ie/10.232.5.9,port=0,localport=8965] : Started
+[2014-08-21 15:13:09.57]  FINEST : 1  : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] TCP listener started 'DiameterConnectionListener-AIR1.ericsson.ie:8965(TCP)'
+[2014-08-21 15:13:09.57]  FINE : 1    : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] : DiameterStack started.
+[2014-08-21 15:13:09.58]  INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > The stack started successfully!
+[2014-08-21 15:13:09.63]  FINE : 13   : [DiameterStack] T13, PeerListener-ServerSocket[addr=AIR1.ericsson.ie/10.232.5.9,port=0,localport=8965] : Running 
+[2014-08-21 15:13:09.70]  FINE : 1    : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] : Using PrioBlockingQueue for peer: 
+Host : null
+Realm : null
+ConnectAddress : "occsdp1a.ericsson.ie"
+Host IP : null
+Product name : null
+Firmware rev : -1
+VendorId : -1
+Supported vendors : null
+Common applications : null
+Status : "DEFINED"
+
+[2014-08-21 15:13:09.85]  FINEST : 1  : [DiameterStack] T1, Peer-null-null-null : Changing to new state: closed from closed
+[2014-08-21 15:13:09.86]  FINEST : 1  : [DiameterStack] T1, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] : Peer added: aaa://occsdp1a.ericsson.ie:3869;transport=sctp. Is known: true
+[2014-08-21 15:13:09.90]  INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > No secondary peer defined.
+[2014-08-21 15:13:09.91]  INFO : 1    : > cmg.tools.ffs.plugins.diameter.Diameter > Waiting for CEA from primary peer... 15000 ms.
+[2014-08-21 15:13:09.98]  FINEST : 15 : [DiameterStack] T15, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] : Sending peer added for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-21 15:13:09.99]  INFO : 15   : > cmg.tools.ffs.plugins.diameter.Diameter > Primary peer added: aaa://occsdp1a.ericsson.ie:3869;transport=sctp isStatic=true
+[2014-08-21 15:13:09.99]  FINE : 14   : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-null-closed : Handling connect event
+[2014-08-21 15:13:09.111] FINEST : 16 : [DiameterStack] T16, Creating SCTP Connection instance for address: occsdp1a.ericsson.ie/10.232.5.6
+[2014-08-21 15:13:09.119] FINEST : 16 : [DiameterStack] T16, Loading native sctp library: erisctp_linux_amd64
+[2014-08-21 15:13:09.128] FINEST : 16 : [DiameterStack] T16, There isn't anything yet to unregister for: SCTPSocket[state=closed,nativeref=140731784230336]
+[2014-08-21 15:13:09.136] FINE : 16   : [DiameterStack] T16, Setting listener to Peer-occsdp1a.ericsson.ie-null-closed
+[2014-08-21 15:13:09.143] FINEST : 16 : [DiameterStack] T16, There isn't anything yet to unregister for: SctpConnection-[no socket]
+[2014-08-21 15:13:09.145] FINE : 16   : [DiameterStack] T16, SctpConnection created: SCTPSocket[state=closed,nativeref=140731784230336]
+[2014-08-21 15:13:09.145] FINEST : 16 : [DiameterStack] T16, Opening NativeSCTPSocket, state:CLOSED, nativeref: 140731784230336
+[2014-08-21 15:13:09.152] FINEST : 16 : [DiameterStack] T16, NativeSCTPSocket, state:OPEN, nativeref: 140731784230336, Receive Buffer Size: 124928
+[2014-08-21 15:13:09.157] FINEST : 16 : [DiameterStack] T16, NativeSCTPSocket, state:OPEN, nativeref: 140731784230336, Send Buffer Size: 124928
+[2014-08-21 15:13:09.166] FINE : 14   : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed connected
+[2014-08-21 15:13:09.166] FINEST : 14 : [DiameterStack] T14, There isn't anything yet to unregister for: SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-21 15:13:09.167] FINEST : 14 : [DiameterStack] T14, There isn't anything yet to unregister for: SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-21 15:13:09.167] FINEST : 14 : [DiameterStack] T14, There isn't anything yet to unregister for: SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-21 15:13:09.176] FINE : 14   : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed connected to occsdp1a.ericsson.ie
+[2014-08-21 15:13:09.177] FINE : 14   : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed sending CER
+[2014-08-21 15:13:09.191] FINE : 20   : [DiameterStack] T20, Running connection handler for SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869] threadName: Thread-3
+[2014-08-21 15:13:09.198] FINE : 18   : [DiameterStack] T18, Running send handler for (550559674) SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]
+[2014-08-21 15:13:09.229] FINEST : 14 : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed timer set; value = 10000
+[2014-08-21 15:13:09.231] FINEST : 14 : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-closed : Changing to new state: wait-i-cea from closed
+[2014-08-21 15:13:09.231] FINEST : 14 : [DiameterStack] T14, State changed from closed to wait-i-cea for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-21 15:13:09.233] FINEST : 14 : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea timer set; value = 10000
+[2014-08-21 15:13:09.236] FINEST : 21 : [DiameterStack] T21, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to HostHandler
+[2014-08-21 15:13:09.236] FINEST : 21 : [DiameterStack] T21, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to PeerSelectorPrimary
+[2014-08-21 15:13:09.250] FINEST : 20 : [DiameterStack] T20, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea recieved msg: DiameterMessage (V=1, L=200, F=0x0, CC=257, AID=0, HID=9499559, EID=-2086666239)
+[2014-08-21 15:13:09.254] FINE : 14   : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea : Handling RecCea event
+[2014-08-21 15:13:09.254] FINEST : 14 : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea clearing timer
+[2014-08-21 15:13:09.257] FINE : 14   : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea processing CEA
+[2014-08-21 15:13:09.268] FINEST : 14 : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-wait-i-cea : Changing to new state: i-open from wait-i-cea
+[2014-08-21 15:13:09.269] FINEST : 14 : [DiameterStack] T14, State changed from wait-i-cea to i-open for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-21 15:13:09.269] FINEST : 21 : [DiameterStack] T21, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to HostHandler
+[2014-08-21 15:13:09.269] FINEST : 21 : [DiameterStack] T21, Sending state change info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp to PeerSelectorPrimary
+[2014-08-21 15:13:09.270] FINEST : 14 : [DiameterStack] T14, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-i-open clearing timer
+[2014-08-21 15:13:09.271] FINEST : 14 : [DiameterStack] T14, Connection status changed for aaa://occsdp1a.ericsson.ie:3869;transport=sctp. Connected: true. Reason: N/A; DPR Cause: N/A
+[2014-08-21 15:13:09.273] FINEST : 15 : [DiameterStack] T15, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] : Sending connection info for aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-21 15:13:09.273] INFO : 15   : > cmg.tools.ffs.plugins.diameter.Diameter > Primary peer connected: aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+[2014-08-21 15:13:09.274] INFO : 1    : Initializing complete of default plugin.
+[2014-08-21 15:13:09.277] FINE : 1    : *** Setting TPS to 0.0
+[2014-08-21 15:13:09.278] INFO : 1    : *** Slot changing to: SLOT #1
+[2014-08-21 15:13:09.278] FINE : 1    : *** Creating and starting the 'ResultManager'...
+[2014-08-21 15:13:09.283] FINE : 19   : [DiameterStack] T19, Start sending watchdogs.
+[2014-08-21 15:13:09.284] FINE : 1    : *** Creating and starting the 'Snapshot'...
+[2014-08-21 15:13:09.289] FINE : 1    : *** Creating and starting the 'AnalyzeHandler'...
+[2014-08-21 15:13:09.290] FINE : 1    : *** Creating and starting the 'CallbackHandler'...
+[2014-08-21 15:13:09.290] FINE : 1    : *** Creating and starting 'ModelHandler's...
+[2014-08-21 15:13:09.291] FINE : 1    : *** Creating and starting the 'SenderEngine'...
+[2014-08-21 15:13:09.448] FINEST : 27 : OutgoingQueueManager> I'm finished with Model:M1@1077570377
+	times: 1
+	commontimes: 1
+	createdWork: 1
+	duration: 0
+	now - starttime: 21
+[2014-08-21 15:13:09.496] FINE : 29   : 0_M1_0_0:M1_G0_R0_Result{M1_G0_R0_0, } -  Request sent
+[2014-08-21 15:13:09.505] FINER : 29  : *** cmg.tools.ffs.plugins.diameter.Diameter > Created diameter request:com.ericsson.pps.diameter.rfcapi.base.message.DiameterRequest@58d48756
+[2014-08-21 15:13:09.695] FINEST : 29 : <?xml version="1.0" encoding="UTF-16"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- AVP Code: 263 Session-Id -->
+	<!--AVP code="263" value="${Global.sessionID}${Local.session}.set(${Global.step})" vendor-id="0" /-->
+	<AVP code="263" value="ffs-1408633989-8270" vendor-id="0"/>
+	<!-- AVP Code: 260 Vendor-Specific-Application-Id -->
+	<!-- Grouped data: 000001024000000c01000010 -->
+	<AVP code="260" value="" vendor-id="0">
+		<!-- AVP Code: 258 Auth-Application-Id -->
+		<AVP code="258" value="16777232" vendor-id="0"/>
+		<!-- AVP Code: 266 Vendor-Id -->
+		<AVP code="266" value="193" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 283 Destination-Realm -->
+	<AVP code="283" value="occsdp1.ericsson.ie" vendor-id="0"/>
+	<!-- AVP Code: 415 CC-Request-Number -->
+	<AVP code="415" value="0" vendor-id="0"/>
+	<!-- AVP Code: 416 CC-Request-Type -->
+	<AVP code="416" value="1" vendor-id="0"/>
+	<!-- AVP Code: 436 Requested-Action -->
+	<!-- <AVP code="436" value="2" vendor-id="0" /> -->
+	<!-- MSCC -->
+	<AVP code="456" vendor-id="0">
+	<!-- AVP Code: 437 Requested-Service-Unit -->
+	<!-- Grouped data: 000001a1400000100000000000000001 -->
+	<AVP code="437" value="" vendor-id="0">
+		<!-- AVP Code: 417 CC-Service-Specific-Units -->
+		<AVP code="417" value="1" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 439 Service-Identifier -->
+	<AVP code="439" value="1000" vendor-id="0"/>
+	<!-- AVP Code: 1068 Service-Session-Id -->
+	<AVP code="1068" value="-:6:1" vendor-id="193"/>
+	</AVP>
+	<!-- AVP Code: 443 Subscription-Id -->
+	<!-- Grouped data: 000001bc4000001234393437313132323433 -->
+	<AVP code="443" value="" vendor-id="0">
+		<!-- AVP Code: 444 Subscription-Id-Data -->
+		<AVP code="444" value="353850101129" vendor-id="0"/>
+		<!-- AVP Code: 450 Subscription-Id-Type -->
+		<AVP code="450" value="0" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 461 Service-Context-Id -->
+	<AVP code="461" value="SCAP_V.2.0@ericsson.com" vendor-id="0"/>
+	<!-- AVP Code: 1063 Access-Information -->
+	<!-- Grouped data: 000000374000000cd1582da1 -->
+	<AVP code="1063" value="" vendor-id="193">
+		<!-- AVP Code: 55 Event-Timestamp -->
+		<AVP code="55" value="1408633989" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 1065 Charging-Context-Id -->
+	<AVP code="1065" value="SCAP_V.2.0@ericsson.com" vendor-id="193"/>
+	<!-- AVP Code: 1074 Subscription-Id-Location -->
+	<AVP code="1074" value="958161009090" vendor-id="193"/>
+	<!-- AVP Code: 1075 Other-Party-Id -->
+	<!-- Grouped data: 00000434c0000010000000c100000000 -->
+	<AVP code="1075" value="" vendor-id="193">
+		<!-- AVP Code: 1076 Other-Party-Id-Nature -->
+		<AVP code="1076" value="0" vendor-id="193"/>
+		<!-- AVP Code: 1077 Other-Party-Id-Data -->
+		<AVP code="1077" value="47000000" vendor-id="193"/>
+		<!-- AVP Code: 1078 Other-Party-Id-Type -->
+		<AVP code="1078" value="0" vendor-id="193"/>
+	</AVP>
+	<!-- AVP Code: 1083 CIP-IP-Version -->
+	<AVP code="1083" value="R1A" vendor-id="193"/>
+	<!-- AVP Code: 23 3GPP-MSTimeZone -->
+	<AVP code="23" value="0x4001" vendor-id="10415"/>
+	<!-- AVP Code: 55 Event-Timestamp -->
+	<AVP code="55" value="1408633989" vendor-id="0"/>
+</RequestData>
+[2014-08-21 15:13:09.766] FINEST : 29 : AVP (code: 263, vendor-id: 0, mandatory: true, value: ffs-1408633989-8270) created.
+[2014-08-21 15:13:09.767] FINEST : 29 : AVP (code: 263) added to the request.
+[2014-08-21 15:13:09.767] FINEST : 29 : AVP (code: 260, vendor-id: 0, mandatory: true, value: ) created.
+[2014-08-21 15:13:09.768] FINEST : 29 : AVP (code: 258, vendor-id: 0, mandatory: true, value: 16777232) created.
+[2014-08-21 15:13:09.768] FINEST : 29 : AVP (code: 266, vendor-id: 0, mandatory: true, value: 193) created.
+[2014-08-21 15:13:09.768] FINEST : 29 : AVP (code: 260) added to the request.
+[2014-08-21 15:13:09.769] FINEST : 29 : AVP (code: 283, vendor-id: 0, mandatory: true, value: occsdp1.ericsson.ie) created.
+[2014-08-21 15:13:09.769] FINEST : 29 : AVP (code: 283) added to the request.
+[2014-08-21 15:13:09.769] FINEST : 29 : AVP (code: 415, vendor-id: 0, mandatory: true, value: 0) created.
+[2014-08-21 15:13:09.770] FINEST : 29 : AVP (code: 415) added to the request.
+[2014-08-21 15:13:09.770] FINEST : 29 : AVP (code: 416, vendor-id: 0, mandatory: true, value: 1) created.
+[2014-08-21 15:13:09.770] FINEST : 29 : AVP (code: 416) added to the request.
+[2014-08-21 15:13:09.771] FINEST : 29 : AVP (code: 456, vendor-id: 0, mandatory: true, value: (null)) created.
+[2014-08-21 15:13:09.776] FINEST : 29 : AVP (code: 437, vendor-id: 0, mandatory: true, value: ) created.
+[2014-08-21 15:13:09.787] FINEST : 29 : AVP (code: 417, vendor-id: 0, mandatory: true, value: 1) created.
+[2014-08-21 15:13:09.788] FINEST : 29 : AVP (code: 439, vendor-id: 0, mandatory: true, value: 1000) created.
+[2014-08-21 15:13:09.788] FINEST : 29 : AVP (code: 1068, vendor-id: 193, mandatory: true, value: -:6:1) created.
+[2014-08-21 15:13:09.789] FINEST : 29 : AVP (code: 456) added to the request.
+[2014-08-21 15:13:09.794] FINEST : 29 : AVP (code: 443, vendor-id: 0, mandatory: true, value: ) created.
+[2014-08-21 15:13:09.794] FINEST : 29 : AVP (code: 444, vendor-id: 0, mandatory: true, value: 353850101129) created.
+[2014-08-21 15:13:09.794] FINEST : 29 : AVP (code: 450, vendor-id: 0, mandatory: true, value: 0) created.
+[2014-08-21 15:13:09.800] FINEST : 29 : AVP (code: 443) added to the request.
+[2014-08-21 15:13:09.801] FINEST : 29 : AVP (code: 461, vendor-id: 0, mandatory: true, value: SCAP_V.2.0@ericsson.com) created.
+[2014-08-21 15:13:09.805] FINEST : 29 : AVP (code: 461) added to the request.
+[2014-08-21 15:13:09.805] FINEST : 29 : AVP (code: 1063, vendor-id: 193, mandatory: true, value: ) created.
+[2014-08-21 15:13:09.851] FINEST : 29 : AVP (code: 55, vendor-id: 0, mandatory: true, value: 1408633989) created.
+[2014-08-21 15:13:09.851] FINEST : 29 : AVP (code: 1063) added to the request.
+[2014-08-21 15:13:09.852] FINEST : 29 : AVP (code: 1065, vendor-id: 193, mandatory: true, value: SCAP_V.2.0@ericsson.com) created.
+[2014-08-21 15:13:09.852] FINEST : 29 : AVP (code: 1065) added to the request.
+[2014-08-21 15:13:09.852] WARNING : 29 : AVP (code: 1074) is missing in the dictionary.
+[2014-08-21 15:13:09.852] FINEST : 29 : AVP (code: 1074, vendor-id: 193, mandatory: true, value: 958161009090) created.
+[2014-08-21 15:13:09.853] FINEST : 29 : AVP (code: 1074) added to the request.
+[2014-08-21 15:13:09.853] FINEST : 29 : AVP (code: 1075, vendor-id: 193, mandatory: true, value: ) created.
+[2014-08-21 15:13:09.854] FINEST : 29 : AVP (code: 1076, vendor-id: 193, mandatory: true, value: 0) created.
+[2014-08-21 15:13:09.854] FINEST : 29 : AVP (code: 1077, vendor-id: 193, mandatory: true, value: 47000000) created.
+[2014-08-21 15:13:09.855] FINEST : 29 : AVP (code: 1078, vendor-id: 193, mandatory: true, value: 0) created.
+[2014-08-21 15:13:09.859] FINEST : 29 : AVP (code: 1075) added to the request.
+[2014-08-21 15:13:09.860] FINEST : 29 : AVP (code: 1083, vendor-id: 193, mandatory: true, value: R1A) created.
+[2014-08-21 15:13:09.860] FINEST : 29 : AVP (code: 1083) added to the request.
+[2014-08-21 15:13:09.908] FINEST : 29 : AVP (code: 23, vendor-id: 10415, mandatory: true, value: 0x4001) created.
+[2014-08-21 15:13:09.908] FINEST : 29 : AVP (code: 23) added to the request.
+[2014-08-21 15:13:09.908] FINEST : 29 : AVP (code: 55, vendor-id: 0, mandatory: true, value: 1408633989) created.
+[2014-08-21 15:13:09.909] FINEST : 29 : AVP (code: 55) added to the request.
+[2014-08-21 15:13:09.915] FINER : 29  : *** cmg.tools.ffs.plugins.diameter.Diameter > Added request (Session-Id: ffs-1408633989-8270) to the queue.
+[2014-08-21 15:13:09.915] FINER : 29  : *** cmg.tools.ffs.plugins.diameter.Diameter > Sending diameter request...
+[2014-08-21 15:13:10.133] FINEST : 29 : [DiameterStack] T29, Trying to route directly to the Destination Host
+[2014-08-21 15:13:12.311] FINEST : 20 : [DiameterStack] T20, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-i-open recieved msg: DiameterMessage (V=1, L=260, F=0x40, CC=16777214, AID=16777232, HID=9499560, EID=-2086666238)
+[2014-08-21 15:13:12.311] FINEST : 14 : [DiameterStack] T14, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] : Received message is an answer
+[2014-08-21 15:13:12.328] FINER : 14  : *** cmg.tools.ffs.plugins.diameter.Diameter > Processing response...
+[2014-08-21 15:13:12.330] FINER : 29  : *** cmg.tools.ffs.plugins.diameter.Diameter > Request (Session-Id: ffs-1408633989-8270) removed from the queue.
+[2014-08-21 15:13:12.333] FINE : 29   : No Output Values found.
+[2014-08-21 15:13:12.335] FINE : 29   : 0_M1_0_0:M1_G0_R0_Result{M1_G0_R0_0, } -  Response analyzed
+[2014-08-21 15:13:13.378] FINE : 32   : 0_M1_0_0:M1_G0_R1_Result{M1_G0_R1_1, } -  Request sent
+[2014-08-21 15:13:13.379] FINER : 32  : *** cmg.tools.ffs.plugins.diameter.Diameter > Created diameter request:com.ericsson.pps.diameter.rfcapi.base.message.DiameterRequest@2761df2a
+[2014-08-21 15:13:13.394] FINEST : 32 : <?xml version="1.0" encoding="UTF-16"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- AVP Code: 263 Session-Id -->
+	<!--AVP code="263" value="${Global.sessionID}${Local.session}.set(${Global.step})" vendor-id="0" /-->
+	<AVP code="263" value="ffs-1408633989-8270" vendor-id="0"/>
+	<!-- AVP Code: 260 Vendor-Specific-Application-Id -->
+	<!-- Grouped data: 000001024000000c01000010 -->
+	<AVP code="260" value="" vendor-id="0">
+		<!-- AVP Code: 258 Auth-Application-Id -->
+		<AVP code="258" value="16777232" vendor-id="0"/>
+		<!-- AVP Code: 266 Vendor-Id -->
+		<AVP code="266" value="193" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 283 Destination-Realm -->
+	<AVP code="283" value="occsdp1.ericsson.ie" vendor-id="0"/>
+	<!-- AVP Code: 415 CC-Request-Number -->
+	<AVP code="415" value="0" vendor-id="0"/>
+	<!-- AVP Code: 416 CC-Request-Type -->
+	<AVP code="416" value="3" vendor-id="0"/>
+	<!-- AVP Code: 436 Requested-Action -->
+	<!-- <AVP code="436" value="0" vendor-id="0" /> -->
+	<!-- MSCC -->	
+	<AVP code="456" value="" vendor-id="0">
+	<!-- AVP Code: 446 Used-Service-Unit -->
+	<!-- Grouped data: 000001a1400000100000000000000001 -->
+	<AVP code="446" value="" vendor-id="0">
+		<!-- AVP Code: 417 CC-Service-Specific-Units -->
+		<AVP code="417" value="1" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 439 Service-Identifier -->
+	<AVP code="439" value="1000" vendor-id="0"/>
+	 <!-- AVP Code: 1068 Service-Session-Id -->
+        <AVP code="1068" value="-:6:1" vendor-id="193"/>
+	</AVP>
+	<!-- AVP Code: 443 Subscription-Id -->
+	<!-- Grouped data: 000001bc4000001234393437313132323433 -->
+	<AVP code="443" value="" vendor-id="0">
+		<!-- AVP Code: 444 Subscription-Id-Data -->
+		<AVP code="444" value="353850101129" vendor-id="0"/>
+		<!-- AVP Code: 450 Subscription-Id-Type -->
+		<AVP code="450" value="0" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 461 Service-Context-Id -->
+	<AVP code="461" value="SCAP_V.2.0@ericsson.com" vendor-id="0"/>
+	<!-- AVP Code: 1063 Access-Information -->
+	<!-- Grouped data: 000000374000000cd1582da1 -->
+	<AVP code="1063" value="" vendor-id="193">
+		<!-- AVP Code: 55 Event-Timestamp -->
+		<AVP code="55" value="1408633993" vendor-id="0"/>
+	</AVP>
+	<!-- AVP Code: 1065 Charging-Context-Id -->
+	<AVP code="1065" value="SCAP_V.2.0@ericsson.com" vendor-id="193"/>
+	<!-- AVP Code: 1074 Subscription-Id-Location -->
+	<AVP code="1074" value="958161009090" vendor-id="193"/>
+	<!-- AVP Code: 1075 Other-Party-Id -->
+	<!-- Grouped data: 00000434c0000010000000c100000000 -->
+	<AVP code="1075" value="" vendor-id="193">
+		<!-- AVP Code: 1076 Other-Party-Id-Nature -->
+		<AVP code="1076" value="0" vendor-id="193"/>
+		<!-- AVP Code: 1077 Other-Party-Id-Data -->
+		<AVP code="1077" value="47000000" vendor-id="193"/>
+		<!-- AVP Code: 1078 Other-Party-Id-Type -->
+		<AVP code="1078" value="0" vendor-id="193"/>
+	</AVP>
+	<!-- AVP Code: 1083 CIP-IP-Version -->
+	<AVP code="1083" value="R1A" vendor-id="193"/>
+	<!-- AVP Code: 23 3GPP-MSTimeZone -->
+	<AVP code="23" value="0x4001" vendor-id="10415"/>
+	<!-- AVP Code: 55 Event-Timestamp -->
+	<AVP code="55" value="1408633993" vendor-id="0"/>
+</RequestData>
+[2014-08-21 15:13:13.395] FINEST : 32 : AVP (code: 263, vendor-id: 0, mandatory: true, value: ffs-1408633989-8270) created.
+[2014-08-21 15:13:13.395] FINEST : 32 : AVP (code: 263) added to the request.
+[2014-08-21 15:13:13.395] FINEST : 32 : AVP (code: 260, vendor-id: 0, mandatory: true, value: ) created.
+[2014-08-21 15:13:13.396] FINEST : 32 : AVP (code: 258, vendor-id: 0, mandatory: true, value: 16777232) created.
+[2014-08-21 15:13:13.400] FINEST : 32 : AVP (code: 266, vendor-id: 0, mandatory: true, value: 193) created.
+[2014-08-21 15:13:13.400] FINEST : 32 : AVP (code: 260) added to the request.
+[2014-08-21 15:13:13.408] FINEST : 32 : AVP (code: 283, vendor-id: 0, mandatory: true, value: occsdp1.ericsson.ie) created.
+[2014-08-21 15:13:13.408] FINEST : 32 : AVP (code: 283) added to the request.
+[2014-08-21 15:13:13.409] FINEST : 32 : AVP (code: 415, vendor-id: 0, mandatory: true, value: 0) created.
+[2014-08-21 15:13:13.409] FINEST : 32 : AVP (code: 415) added to the request.
+[2014-08-21 15:13:13.409] FINEST : 32 : AVP (code: 416, vendor-id: 0, mandatory: true, value: 3) created.
+[2014-08-21 15:13:13.409] FINEST : 32 : AVP (code: 416) added to the request.
+[2014-08-21 15:13:13.414] FINEST : 32 : AVP (code: 456, vendor-id: 0, mandatory: true, value: ) created.
+[2014-08-21 15:13:13.415] FINEST : 32 : AVP (code: 446, vendor-id: 0, mandatory: true, value: ) created.
+[2014-08-21 15:13:13.415] FINEST : 32 : AVP (code: 417, vendor-id: 0, mandatory: true, value: 1) created.
+[2014-08-21 15:13:13.415] FINEST : 32 : AVP (code: 439, vendor-id: 0, mandatory: true, value: 1000) created.
+[2014-08-21 15:13:13.421] FINEST : 32 : AVP (code: 1068, vendor-id: 193, mandatory: true, value: -:6:1) created.
+[2014-08-21 15:13:13.422] FINEST : 32 : AVP (code: 456) added to the request.
+[2014-08-21 15:13:13.422] FINEST : 32 : AVP (code: 443, vendor-id: 0, mandatory: true, value: ) created.
+[2014-08-21 15:13:13.422] FINEST : 32 : AVP (code: 444, vendor-id: 0, mandatory: true, value: 353850101129) created.
+[2014-08-21 15:13:13.423] FINEST : 32 : AVP (code: 450, vendor-id: 0, mandatory: true, value: 0) created.
+[2014-08-21 15:13:13.428] FINEST : 32 : AVP (code: 443) added to the request.
+[2014-08-21 15:13:13.428] FINEST : 32 : AVP (code: 461, vendor-id: 0, mandatory: true, value: SCAP_V.2.0@ericsson.com) created.
+[2014-08-21 15:13:13.428] FINEST : 32 : AVP (code: 461) added to the request.
+[2014-08-21 15:13:13.428] FINEST : 32 : AVP (code: 1063, vendor-id: 193, mandatory: true, value: ) created.
+[2014-08-21 15:13:13.434] FINEST : 32 : AVP (code: 55, vendor-id: 0, mandatory: true, value: 1408633993) created.
+[2014-08-21 15:13:13.434] FINEST : 32 : AVP (code: 1063) added to the request.
+[2014-08-21 15:13:13.434] FINEST : 32 : AVP (code: 1065, vendor-id: 193, mandatory: true, value: SCAP_V.2.0@ericsson.com) created.
+[2014-08-21 15:13:13.435] FINEST : 32 : AVP (code: 1065) added to the request.
+[2014-08-21 15:13:13.440] WARNING : 32 : AVP (code: 1074) is missing in the dictionary.
+[2014-08-21 15:13:13.441] FINEST : 32 : AVP (code: 1074, vendor-id: 193, mandatory: true, value: 958161009090) created.
+[2014-08-21 15:13:13.446] FINEST : 32 : AVP (code: 1074) added to the request.
+[2014-08-21 15:13:13.447] FINEST : 32 : AVP (code: 1075, vendor-id: 193, mandatory: true, value: ) created.
+[2014-08-21 15:13:13.447] FINEST : 32 : AVP (code: 1076, vendor-id: 193, mandatory: true, value: 0) created.
+[2014-08-21 15:13:13.447] FINEST : 32 : AVP (code: 1077, vendor-id: 193, mandatory: true, value: 47000000) created.
+[2014-08-21 15:13:13.448] FINEST : 32 : AVP (code: 1078, vendor-id: 193, mandatory: true, value: 0) created.
+[2014-08-21 15:13:13.453] FINEST : 32 : AVP (code: 1075) added to the request.
+[2014-08-21 15:13:13.453] FINEST : 32 : AVP (code: 1083, vendor-id: 193, mandatory: true, value: R1A) created.
+[2014-08-21 15:13:13.456] FINEST : 32 : AVP (code: 1083) added to the request.
+[2014-08-21 15:13:13.457] FINEST : 32 : AVP (code: 23, vendor-id: 10415, mandatory: true, value: 0x4001) created.
+[2014-08-21 15:13:13.457] FINEST : 32 : AVP (code: 23) added to the request.
+[2014-08-21 15:13:13.458] FINEST : 32 : AVP (code: 55, vendor-id: 0, mandatory: true, value: 1408633993) created.
+[2014-08-21 15:13:13.462] FINEST : 32 : AVP (code: 55) added to the request.
+[2014-08-21 15:13:13.463] FINER : 32  : *** cmg.tools.ffs.plugins.diameter.Diameter > Added request (Session-Id: ffs-1408633989-8270) to the queue.
+[2014-08-21 15:13:13.463] FINER : 32  : *** cmg.tools.ffs.plugins.diameter.Diameter > Sending diameter request...
+[2014-08-21 15:13:13.525] FINEST : 32 : [DiameterStack] T32, Trying to route directly to the Destination Host
+[2014-08-21 15:13:13.918] FINEST : 20 : [DiameterStack] T20, Peer-occsdp1a.ericsson.ie-SctpConnection-SCTPSocket[state=connect,nativeref=140731784230336,localaddr=10.232.5.9,localport=34854,remoteaddr=10.232.5.6;10.232.6.6,remoteport=3869]-i-open recieved msg: DiameterMessage (V=1, L=260, F=0x40, CC=16777214, AID=16777232, HID=9499561, EID=-2086666237)
+[2014-08-21 15:13:13.919] FINEST : 14 : [DiameterStack] T14, PeerManager-[aaa://AIR1.ericsson.ie:8965;transport=tcp] : Received message is an answer
+[2014-08-21 15:13:13.931] FINER : 14  : *** cmg.tools.ffs.plugins.diameter.Diameter > Processing response...
+[2014-08-21 15:13:13.934] FINER : 32  : *** cmg.tools.ffs.plugins.diameter.Diameter > Request (Session-Id: ffs-1408633989-8270) removed from the queue.
+[2014-08-21 15:13:13.935] FINE : 32   : No Output Values found.
+[2014-08-21 15:13:13.936] FINE : 32   : 0_M1_0_0:M1_G0_R1_Result{M1_G0_R1_1, } -  Response analyzed
+[2014-08-21 15:13:14.939] INFO : 1    : All slots consumed, waiting for shutdown...
+[2014-08-21 15:13:14.940] FINE : 1    : *** Items to be executed: 0, items analyzed: 2
+[2014-08-21 15:13:14.940] INFO : 1    : All items processed, shutting down...
+[2014-08-21 15:13:14.940] FINE : 1    : *** Shutting down the 'SenderEngine'...
+[2014-08-21 15:13:14.944] FINE : 27   : *** Shutting down working threads, will wait maximum 10 seconds...
+[2014-08-21 15:13:14.944] FINE : 1    : *** 'SenderEngine' shut down!
+[2014-08-21 15:13:14.944] FINE : 1    : *** Waiting for all items to be processed (maximum 30 seconds)...
+[2014-08-21 15:13:14.945] FINE : 1    : *** Items to be processed: 0
+[2014-08-21 15:13:14.945] INFO : 34   : Kill timer set to: 0ms. I won't kill anyone, okey?
+[2014-08-21 15:13:15.51]  FINE : 1    : *** Shutting down the 'Snapshot'...
+[2014-08-21 15:13:15.55]  FINE : 1    : *** 'Snapshot' shut down!
+[2014-08-21 15:13:15.55]  FINE : 1    : *** Shutting down the 'CallbackHandler'...
+[2014-08-21 15:13:15.84]  FINE : 1    : *** 'CallbackHandler' shut down!
+[2014-08-21 15:13:15.85]  FINE : 1    : *** Shutting down the 'AnalyzeHandler'...
+[2014-08-21 15:13:15.135] FINE : 24   : *** Shutting down working threads, will wait maximum 10 seconds...
+[2014-08-21 15:13:15.136] FINE : 1    : *** 'AnalyzeHandler' shut down!
+[2014-08-21 15:13:15.137] FINE : 1    : *** Shutting down the 'ResultManager'...

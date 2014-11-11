@@ -1,0 +1,193 @@
+-override A-Number=353850101129 B-Number=353850101130 ownIP=AIR1.ericsson.ie ownRealm=AIR1 ownPort=8732 destIP=occsdp1a.ericsson.ie destRealm=occsdp1.ericsson.ie destPort=3869
+Framework For Simulator (FFS) (v3.3.1-87972_1_b174)
+Copyright 2005-2012 Ericsson AB (http://www.ericsson.com)
+
+Creating manager
+Setting thread pool to: 8
+Setting task queue to: 64
+Checking configuration file '/var/opt/ffs/usecases/sms/cipip_sms.xml'...(v3.1.dev-build)
+Loading configuration file...
+Loading REPOSITORY...
+REPOSITORY loaded!
+Loading MODELS...
+MODELS Loaded!
+Loading TRAFFIC MODELS...
+TRAFFIC MODELS Loaded!
+Loading PLUG-IN...
+Creating default plugin. (cmg.tools.ffs.plugins.diameter.Diameter)
+PLUG-IN loaded and initialized!
+Loading ANALYZERS...
+ANALYZERS loaded and initialized!
+Configuration file loaded!
+Executing...
+Initializing default plugin.
+Loading dictionary file: config/diameter/dictionary.xml
+> cmg.tools.ffs.plugins.diameter.Diameter > Can not parse argument 'answerResultCode' using: 2002
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : tcTimer not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : requestTimeout not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > NOTE : If the timeout value in the request definitions are smaller than the DefaultMessageTimeout value, 
+       the FFS will time-out requests that may or may not be received by the stack later.
+       Another undesireable result of this may be that the FFS tries to send a new request in
+       the same session which will cause a session-aware receiver to reply with Session Busy.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : TITimer (Timeout for request) not found in config or is not a number. Defaulting it to 45 seconds.
+> cmg.tools.ffs.plugins.diameter.Diameter > Starting the stack...
+> cmg.tools.ffs.plugins.diameter.Diameter > The stack started successfully!
+> cmg.tools.ffs.plugins.diameter.Diameter > No secondary peer defined.
+> cmg.tools.ffs.plugins.diameter.Diameter > Waiting for CEA from primary peer... 15000 ms.
+> cmg.tools.ffs.plugins.diameter.Diameter > Primary peer added: aaa://occsdp1a.ericsson.ie:3869;transport=sctp isStatic=true
+> cmg.tools.ffs.plugins.diameter.Diameter > Primary peer connected: aaa://occsdp1a.ericsson.ie:3869;transport=sctp
+Initializing complete of default plugin.
+*** Slot changing to: SLOT #1
+Aug 21, 2014 4:24:04 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:     00:00:00.114
+Done in (~):      --:--:--.---
+Requests sent:    0/0     (0 %) (planned 0)
+TPS (SLS):        0.00/0  (0 %)
+TPS (O):          0.00
+Task pool q:      0
+Outgoing Qs:      
+In analyz q:      0
+
+*** Response codes ***
+Ok:               0       (0 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      0       (0 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              0 ms
+max:              0 ms
+average:          0 ms
+
+Aug 21, 2014 4:24:06 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:     00:00:02.198
+Done in (~):      --:--:--.---
+Requests sent:    0/1     (0 %) (planned 0)
+TPS (SLS):        0.00/0  (0 %)
+TPS (O):          0.00
+Task pool q:      0
+Outgoing Qs:      (100) M1(0:0), 
+In analyz q:      0
+
+*** Response codes ***
+Ok:               0       (0 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      0       (0 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              0 ms
+max:              0 ms
+average:          0 ms
+
+Aug 21, 2014 4:24:08 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:     00:00:04.201
+Done in (~):      00:00:00
+Requests sent:    1/1     (100 %) (planned 0)
+TPS (SLS):        0.50/0  (0 %)
+TPS (O):          0.24
+Task pool q:      0
+Outgoing Qs:      (100) M1(0:0), 
+In analyz q:      0
+
+*** Response codes ***
+Ok:               1       (100 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      1       (100 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              3048 ms
+max:              3048 ms
+average:          3048 ms
+
+Aug 21, 2014 4:24:10 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:     00:00:06.203
+Done in (~):      00:00:00
+Requests sent:    2/2     (100 %) (planned 0)
+TPS (SLS):        0.50/0  (0 %)
+TPS (O):          0.32
+Task pool q:      0
+Outgoing Qs:      (100) M1(0:0), 
+In analyz q:      0
+
+*** Response codes ***
+Ok:               2       (100 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      2       (100 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              619 ms
+max:              619 ms
+average:          1834 ms
+
+All slots consumed, waiting for shutdown...
+All items processed, shutting down...
+Kill timer set to: 0ms. I won't kill anyone, okey?
+Aug 21, 2014 4:24:10 PM cmg.tools.ffs.engine.result.ResultManager logSummary
+INFO: 
+---------------------------------------
+Time running:     00:00:06.564
+Done in (~):      00:00:00
+Requests sent:    2/2     (100 %) (planned 0)
+TPS (SLS):        0.00/0  (0 %)
+TPS (O):          0.30
+Task pool q:      0
+Outgoing Qs:      
+In analyz q:      0
+
+*** Response codes ***
+Ok:               2       (100 %)
+Failed:           0       (0 %)
+Exception:        0       (0 %)
+Timeout:          0       (0 %)
+Other:            0       (0 %)
+None:             0       (0 %)
+
+Expected Ok:      2       (100 %)
+Expected Failed:  0       (0 %)
+
+*** Response times (SLS) ***
+min:              0 ms
+max:              0 ms
+average:          1834 ms
+
+> cmg.tools.ffs.plugins.diameter.Diameter > Primary peer [aaa://occsdp1a.ericsson.ie:3869;transport=sctp] disconnected. Reason: 0 Cause: 0
+All done! Have a nice day!
+*** Tearing down loggers (4) ***
+Closing the "Data" logger...done!
+Closing the "Statistics" logger...done!
+Closing the "Run" logger...done!
+Closing the "Summary" logger...done!
+>>>>>>>>>>>>>>>>>>>>> VM is shutting down. <<<<<<<<<<<<<<<<<<<<<<<<<
+Failed to open temporary CDR file "/tsim/CDR/SDPCCR_20140821_162357_570690_2127.CDR.tmp": Permission denied
+Session completed

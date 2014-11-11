@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MMO1SRecord>
+		<recordType>30</recordType>
+        <originatorMmsRSAddress>
+            <domainName>ffaaccdd</domainName>
+            <iPAddress>
+                <iPTextRepresentedAddress>
+                    <iPTextV4Address>127.0.0.1</iPTextV4Address>
+                </iPTextRepresentedAddress>
+            </iPAddress>
+        </originatorMmsRSAddress>
+
+        <messageID>123456789</messageID>
+
+        <originatorAddress>
+            <mMSAgentAddressData>
+                <eMail_address>aabbccdd</eMail_address>
+            </mMSAgentAddressData>
+            <mMSRecipientType>tO</mMSRecipientType>
+        </originatorAddress>
+
+        <recipientAddresses>
+            <MMSAgentAddress>
+                <mMSAgentAddressData>
+                    <eMail_address>ddccbbaa</eMail_address>
+                </mMSAgentAddressData>
+                <mMSRecipientType>tO</mMSRecipientType>
+            </MMSAgentAddress>
+        </recipientAddresses>
+
+        <contentType>aabbccffeeff</contentType>
+        <messageSize>1024</messageSize>
+        <messageClass>personal</messageClass>
+
+        <chargeInformation>
+            <chargedparty>recipient</chargedparty>
+            <chargetype>postpaid</chargetype>
+        </chargeInformation>
+
+        <submissionTime>aabbccddffaabbcccc</submissionTime>
+        <mSTimeZone>aabb</mSTimeZone>
+        <statusText>ccddff</statusText>
+        <recordTimeStamp>aabbccddffaabbcccc</recordTimeStamp>
+        <localSequenceNumber>123456789</localSequenceNumber>
+</MMO1SRecord>

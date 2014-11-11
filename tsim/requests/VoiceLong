@@ -1,0 +1,7 @@
+description,Long voice call, first interrogation, 5 intermediate interrogations and final report.<br/>
+description,Originating protocol is CAPv2
+H,trafficcase,voice_long/voice-long-cs1-cipip.xml
+M,A-Number
+M,B-Number
+M,Duration-II
+M,Duration-FI

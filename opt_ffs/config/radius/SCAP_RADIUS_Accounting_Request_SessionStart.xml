@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/Radius.xsd">
+
+    <!--
+      This attribute indicates whether this Accounting-Request marks the
+      beginning of the user service (Start) or the end (Stop).
+       Type
+          40 for Acct-Status-Type.
+
+       Length
+          6
+
+       Value
+          The Value field is four octets.
+
+           1      Start
+           2      Stop
+           3      Interim-Update
+           7      Accounting-On
+           8      Accounting-Off
+           9-14   Reserved for Tunnel Accounting
+          15      Reserved for Failed
+    -->
+    <Attribute name="Acct-Status-Type" type="40" datatype="integer" value="1" />
+
+    <!--
+      This attribute is a unique Accounting ID to make it easy to match
+      start and stop records in a log file.  The start and stop records
+      for a given session MUST have the same Acct-Session-Id.  An
+      Accounting-Request packet MUST have an Acct-Session-Id.  An
+      Access-Request packet MAY have an Acct-Session-Id; if it does,
+      then the NAS MUST use the same Acct-Session-Id in the Accounting-
+      Request packets for that session.
+
+      The Acct-Session-Id SHOULD contain UTF-8 encoded 10646
+      characters.
+    -->
+    <Attribute name="Acct-Session-Id" type="44" datatype="string" value="${Local.sessionID}.set(${Global.aIncreasingValue})" />
+
+    <Attribute name="NAS-IP-address" type="4" datatype="address32" value="127.0.0.1" />
+
+    <Attribute name="Called-Station-Id" type="30" datatype="string" value="Ericsson-India" />
+
+    <Attribute vendor-id="10923" name="Origin-State-Id" type="17" datatype="integer" value="1" />
+
+    <Attribute vendor-id="10923" name="Accounting-Record-Number" type="14" datatype="integer" value="1" />
+
+    <Attribute vendor-id="10923" name="Accounting-Interim-Interval" type="16" datatype="integer" value="3600" />
+
+    <Attribute vendor-id="10923" name="Subscription-id" type="9" datatype="grouped" value="" >
+        <Attribute name="Subscription-id-type" type="11" datatype="integer" value="0" />
+        <Attribute name="Subscription-id-data" type="12" datatype="string" value="subscription-data-value" />
+    </Attribute>
+
+    <Attribute vendor-id="10923" name="Additional-Subscription-id" type="10" datatype="grouped" value="" >
+        <Attribute name="Subscription-id-type" type="11" datatype="integer" value="1" />
+        <Attribute name="Subscription-id-data" type="12" datatype="string" value="additional-data-value" />
+    </Attribute>
+
+    <Attribute vendor-id="10923" name="Event-Timestamp" type="13" datatype="integer" value="3600" />
+
+    <Attribute vendor-id="10923" name="Requested-service-unit" type="1" datatype="grouped" value="" >
+        <Attribute name="Unit-type" type="4" datatype="integer" value="3" />
+        <Attribute vendor-id="10923"  name="Unit-value" type="5" datatype="grouped" value="" >
+            <Attribute name="Value-digits" type="6" datatype="integer" value="1" />
+            <Attribute name="Exponent" type="7" datatype="integer" value="0" />
+        </Attribute>
+        <Attribute name="Currency-code" type="8" datatype="integer" value="5678" />
+    </Attribute>
+
+</RequestData>

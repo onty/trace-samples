@@ -1,0 +1,168 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation>FFS version 2.0 schema</xsd:documentation>
+	</xsd:annotation>
+	
+	<xsd:element name="FFS">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Logging" type="Logging_Type" minOccurs="1" maxOccurs="1" />
+				<xsd:element name="Repository" type="Repository_Type" minOccurs="1" maxOccurs="1" />
+				<xsd:element name="Plugin" type="Plugin_Type" minOccurs="1" maxOccurs="1" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:complexType name="Logging_Type">
+		<xsd:attribute name="path" />
+		<xsd:attribute name="snapshotTime" />
+		<xsd:attribute name="statistics" />
+		<xsd:attribute name="logDataInOut" />
+		<xsd:attribute name="debugLogging" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="Repository_Type">
+		<xsd:sequence>
+			<xsd:element name="Global" type="Repository_Type_Scope" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Local" type="Repository_Type_Scope" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Repository_Type_Scope">
+		<xsd:sequence>
+			<xsd:element name="Variable" type="Variable_Type" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="import" use="optional" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="Variable_Type">
+		<xsd:attribute name="name" type="xsd:string" />
+		<xsd:attribute name="type">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Fixed"/>
+					<xsd:enumeration value="Step"/>
+					<xsd:enumeration value="RandomRange"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="value" />
+		<xsd:attribute name="datatype">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="String"/>
+					<xsd:enumeration value="Integer"/>
+					<xsd:enumeration value="Double"/>
+					<xsd:enumeration value="Long"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		
+		<xsd:attribute name="start" use="optional" />
+		<xsd:attribute name="stepsize" use="optional" />
+		<xsd:attribute name="max" use="optional" />
+
+		<xsd:attribute name="to" use="optional" />
+		<xsd:attribute name="from" use="optional" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="Plugin_Type">
+		<xsd:sequence>
+			<xsd:element name="Argument" type="Argument_Type" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="ThreadGroup" type="ThreadGroup_Type" minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="class" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="Argument_Type">
+		<xsd:attribute name="name" />
+		<xsd:attribute name="value" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="ThreadGroup_Type">
+		<xsd:sequence>
+			<xsd:element name="Request" type="Request_Type" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="repeat">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="threads">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="delay">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Request_Type">
+		<xsd:sequence>
+			<xsd:element name="Data" type="Data_Type" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="repeat">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="delay">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="parent_request" use="optional" default="0">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="parent_condition" use="optional" default="0">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="63"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="timeout" use="optional" default="100">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Data_Type">
+		<xsd:attribute name="name" type="xsd:string" />
+		<xsd:attribute name="datatype">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="String"/>
+					<xsd:enumeration value="Integer"/>
+					<xsd:enumeration value="Double"/>
+					<xsd:enumeration value="Long"/>
+					<xsd:enumeration value="FileContent"/>
+					<xsd:enumeration value="XMLDocument"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="value" type="xsd:string" />
+	</xsd:complexType>
+
+</xsd:schema>

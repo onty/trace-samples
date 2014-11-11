@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="10000" snapshotInConsole="true" statistics="false" logDataInOut="true" debugLogging="false" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="sendingAgentExternalId" type="Step" start="100000000" stepsize="1" datatype="Integer" max="100000999"/>
+			<Variable name="sendingUserExternalId" type="Step" start="100001000" stepsize="1" datatype="Integer" max="100100999"/>
+			<Variable name="allExternalId" type="Step" start="100000001" stepsize="1" datatype="Integer" max="100100999"/>
+			<Variable name="provisionExternalId" type="Step" start="30000000" stepsize="1" datatype="Integer" max="30500000"/>
+		</Global>
+		<Local>
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.mobilemoney.SmscSimulator">
+		<!-- Mandatory plugin arguments -->
+		<Argument name="target.systemid" value="receiver" />
+		<Argument name="target.password" value="receiver" />
+		<Argument name="callback.systemid" value="callback" />
+		<Argument name="callback.password" value="callback" />
+		<Argument name="bind.timeout" value="6" />
+		<Argument name="bind.port" value="1982" />
+		<!-- Optional plugin arguments -->
+		<Argument name="request.timeout" value="30000" />
+		<Argument name="datalogging.onlyfailed" value="true" />	
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="Cash in/out/transfer">
+			<!-- Cash in -->
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sendingAgentExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="USRCASHIN;${Global.sendingUserExternalId};1;123456" datatype="String"/>
+				<!-- Optional regular expression to match the response message towards -->
+				<Data name="expectedresponse" value=".*transferred.*" datatype="String"/>
+			</Item>
+			<!-- Transfer A -> B -->
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="MTRANSFER;${Global.sendingUserExternalId};1;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*transferred.*" datatype="String"/>
+			</Item>
+			<!-- Cash out -->
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="USRCASHOUT;${Global.sendingAgentExternalId};1;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*Cash out.*" datatype="String"/>
+			</Item>
+		</Model>
+		<Model name="Token generate/redeem">
+			<!-- Generate token -->
+			<Item repeat="1" delay="0" timeout="3000" type="out_sync">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="MTRANSFERNMU;Mother;Lastname;46709419333;19700101;1;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*EUR transferred to.*Token.*" datatype="String"/>
+			</Item>
+			<!-- Redeem token --> 
+			<Item repeat="1" delay="0" timeout="3000" type="out_sync">
+				<Data name="sender" value="${Global.sendingAgentExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="REDTOK;;;;;;#TOKEN#;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*redeemed.*" datatype="String"/>
+			</Item>
+		</Model>
+		<Model name="Airtime purchase">
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="UTOPUP;${Global.sendingUserExternalId};1;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*airtime.*" datatype="String"/>
+			</Item>
+		</Model>
+		<Model name="Balance enquiry">
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="GETCURBAL;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*balance.*" datatype="String"/>
+			</Item>
+		</Model>
+		<Model name="Mini statement (Get last transactions)">
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="GETLTRANS;123456" datatype="String"/>
+			</Item>
+		</Model>
+		<Model name="View token">
+			<!-- Generate token -->
+			<Item repeat="1" delay="0" timeout="3000" type="out_sync">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="MTRANSFERNMU;Mother;Lastname;46709419333;19700101;1;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*EUR transferred to.*Token.*" datatype="String"/>
+			</Item>
+			<!-- View token -->
+			<Item repeat="1" delay="0" timeout="3000" type="out_sync">
+				<Data name="sender" value="${Global.sendingUserExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="VIEWTOK;#TOKEN#;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*Voucher status.*" datatype="String"/>
+			</Item>
+		</Model>
+		<Model name="Register user">
+			<Item repeat="1" delay="0" timeout="3000" type="out_async">
+				<Data name="sender" value="${Global.sendingAgentExternalId}" datatype="String"/>
+				<Data name="shortmessage" value="AREGUSRMM;Arne;Anka;${Global.provisionExternalId};19900101;11111111;123456" datatype="String"/>
+				<Data name="expectedresponse" value=".*successfully registered.*" datatype="String"/>
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="0" duration="0" tps="100" activeModels="0">
+			<Model name="Cash in/out/transfer" weight="20" />
+			<Model name="Token generate/redeem" weight="5" />
+			<Model name="Airtime purchase" weight="32" />
+			<Model name="Balance enquiry" weight="32" />
+			<Model name="Mini statement (Get last transactions)" weight="7" />
+			<Model name="View token" weight="2" />
+			<Model name="Register user" weight="2" />			
+		</Slot>
+	</TrafficModel>
+</FFS>

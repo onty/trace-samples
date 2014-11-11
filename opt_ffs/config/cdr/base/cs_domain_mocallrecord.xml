@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MOCallRecord>
+		<recordType>0</recordType>
+        <recordingEntity>81006402000010</recordingEntity>
+        <callDuration>60</callDuration>
+        <causeForTerm>8</causeForTerm>
+        <callReference>343536</callReference>
+        <servedMSISDN>81641111f1</servedMSISDN>
+        <servedIMSI>64111101</servedIMSI>
+        <calledNumber>000000222f</calledNumber>
+<!--         <location> -->
+<!--             <locationAreaCode>50aa</locationAreaCode> -->
+<!--             <cellId>0ff0</cellId> -->
+<!--             <mCC-MNC>bcadef</mCC-MNC> -->
+<!--         </location> -->
+        <basicService>
+            <bearerService>3</bearerService>
+        </basicService>
+<!--         <supplServicesUsed> -->
+<!--             <SuppServiceUsed> -->
+<!--                 <ssCode>af</ssCode> -->
+<!--                 <ssTime>bfa56920014abcffaa</ssTime> -->
+<!--             </SuppServiceUsed> -->
+<!--         </supplServicesUsed> -->
+<!--         <answerTime>bfa56920014abcffaa</answerTime> -->
+        <answerTime>1312180945212b0100</answerTime>
+<!--         <dataVolume>123456789</dataVolume> -->
+</MOCallRecord>

@@ -1,0 +1,174 @@
+-override
+execve("/usr/bin/java", ["/usr/bin/java", "-Dfile.encoding=ISO-8859-1", "-Djava.library.path=lib/", "-Djava.endorsed.dirs=lib/endorse"..., "-Xms384m", "-Xmx1024m", "-XX:MaxNewSize=224m", "-XX:NewSize=224m", "-XX:+UseConcMarkSweepGC", "-XX:CMSInitiatingOccupancyFracti"..., "-XX:+UseCMSInitiatingOccupancyOn"..., "-XX:SurvivorRatio=8", "-XX:MaxTenuringThreshold=6", "-XX:+PrintGCTimeStamps", "-Dffs.threads=8", "-Dffs.logpath=/var/opt/ffs/logs/"..., ...], [/* 34 vars */]) = 0
+brk(0)                                  = 0x2420000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0e60620000
+readlink("/proc/self/exe", "/usr/java/jdk1.7.0_17/bin/java", 4096) = 30
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli/tls/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli/tls/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli/tls/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli/tls", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../lib/amd64/jli", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/tls/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/tls/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/tls/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/tls", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/opt/EABfds/lib/tls/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfds/lib/tls/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/opt/EABfds/lib/tls/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfds/lib/tls", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/opt/EABfds/lib/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfds/lib/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/opt/EABfds/lib/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfds/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/opt/EABfdslic/lib/tls/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfdslic/lib/tls/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/opt/EABfdslic/lib/tls/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfdslic/lib/tls", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/opt/EABfdslic/lib/x86_64/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfdslic/lib/x86_64", 0x7fffa27d41a0) = -1 ENOENT (No such file or directory)
+open("/opt/EABfdslic/lib/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/opt/EABfdslic/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=29920, ...}) = 0
+mmap(NULL, 29920, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0e60618000
+close(3)                                = 0
+open("/lib64/libpthread.so.0", O_RDONLY) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \\\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=138328, ...}) = 0
+mmap(NULL, 2208672, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0e601e6000
+mprotect(0x7f0e601fd000, 2093056, PROT_NONE) = 0
+mmap(0x7f0e603fc000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7f0e603fc000
+mmap(0x7f0e603fe000, 13216, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0e603fe000
+close(3)                                = 0
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/libjli.so", O_RDONLY) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0#\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=105728, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0e60617000
+mmap(NULL, 2188968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0e5ffcf000
+mprotect(0x7f0e5ffe5000, 2097152, PROT_NONE) = 0
+mmap(0x7f0e601e5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7f0e601e5000
+close(3)                                = 0
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/libdl.so.2", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/opt/EABfds/lib/libdl.so.2", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/opt/EABfdslic/lib/libdl.so.2", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/lib64/libdl.so.2", O_RDONLY)     = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\r\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=19536, ...}) = 0
+mmap(NULL, 2109696, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0e5fdcb000
+mprotect(0x7f0e5fdcd000, 2097152, PROT_NONE) = 0
+mmap(0x7f0e5ffcd000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f0e5ffcd000
+close(3)                                = 0
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/opt/EABfds/lib/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/opt/EABfdslic/lib/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/lib64/libc.so.6", O_RDONLY)      = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360\355\1\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1903208, ...}) = 0
+mmap(NULL, 3733672, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0e5fa3b000
+mprotect(0x7f0e5fbc1000, 2097152, PROT_NONE) = 0
+mmap(0x7f0e5fdc1000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x186000) = 0x7f0e5fdc1000
+mmap(0x7f0e5fdc6000, 18600, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0e5fdc6000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0e60616000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0e60615000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0e60614000
+arch_prctl(ARCH_SET_FS, 0x7f0e60615700) = 0
+mprotect(0x7f0e5fdc1000, 16384, PROT_READ) = 0
+mprotect(0x7f0e5ffcd000, 4096, PROT_READ) = 0
+mprotect(0x7f0e603fc000, 4096, PROT_READ) = 0
+mprotect(0x7f0e60621000, 4096, PROT_READ) = 0
+munmap(0x7f0e60618000, 29920)           = 0
+set_tid_address(0x7f0e606159d0)         = 7372
+set_robust_list(0x7f0e606159e0, 0x18)   = 0
+futex(0x7fffa27d4aac, FUTEX_WAKE_PRIVATE, 1) = 0
+futex(0x7fffa27d4aac, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 1, NULL, 7f0e60615700) = -1 EAGAIN (Resource temporarily unavailable)
+rt_sigaction(SIGRTMIN, {0x7f0e601ebaa0, [], SA_RESTORER|SA_SIGINFO, 0x7f0e601f54a0}, NULL, 8) = 0
+rt_sigaction(SIGRT_1, {0x7f0e601ebb30, [], SA_RESTORER|SA_RESTART|SA_SIGINFO, 0x7f0e601f54a0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+getrlimit(RLIMIT_STACK, {rlim_cur=10240*1024, rlim_max=RLIM_INFINITY}) = 0
+brk(0)                                  = 0x2420000
+brk(0x2441000)                          = 0x2441000
+open("ffs.jar", O_RDONLY)               = 3
+mmap(NULL, 200704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0e605e3000
+lseek(3, -22, SEEK_END)                 = 831310
+read(3, "PK\5\6\0\0\0\0\215\2\215\2\177\367\0\0\317\267\v\0\0\0", 22) = 22
+lseek(3, 767951, SEEK_SET)              = 767951
+read(3, "PK\1\2\24\3\n\0\0\10\0\0VI)@\0\0\0\0\0\0\0\0\0\0\0\0\t\0\4\0"..., 1024) = 1024
+lseek(3, 43, SEEK_SET)                  = 43
+read(3, "PK\3\4\n\0\0\10\10\0UI)@\n\32N\34\32\2\0\0\204\4\0\0\24\0\0\0", 30) = 30
+munmap(0x7f0e605e3000, 200704)          = 0
+lseek(3, 93, SEEK_SET)                  = 93
+read(3, "m\224\301\216\3320\20\206\357\221\362\16>\356\36\354M\302\2Kn\1\204TU\254VB\355\241\227\325"..., 538) = 538
+close(3)                                = 0
+readlink("/proc/self/exe", "/usr/java/jdk1.7.0_17/bin/java", 4096) = 30
+access("/usr/java/jdk1.7.0_17/lib/amd64/libjava.so", F_OK) = -1 ENOENT (No such file or directory)
+access("/usr/java/jdk1.7.0_17/jre/lib/amd64/libjava.so", F_OK) = 0
+open("/usr/java/jdk1.7.0_17/jre/lib/amd64/jvm.cfg", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=677, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0e6061f000
+read(3, "# Copyright (c) 2003, Oracle and"..., 4096) = 677
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+munmap(0x7f0e6061f000, 4096)            = 0
+stat("/usr/java/jdk1.7.0_17/jre/lib/amd64/server/libjvm.so", {st_mode=S_IFREG|0755, st_size=13528638, ...}) = 0
+getgid()                                = 0
+getegid()                               = 0
+getuid()                                = 0
+geteuid()                               = 0
+futex(0x7f0e5ffce0ec, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+open("/usr/java/jdk1.7.0_17/jre/lib/amd64/server/libjvm.so", O_RDONLY) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\225\31\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=13528638, ...}) = 0
+mmap(NULL, 13784904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0e5ed15000
+mprotect(0x7f0e5f75c000, 2097152, PROT_NONE) = 0
+mmap(0x7f0e5f95c000, 667648, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa47000) = 0x7f0e5f95c000
+mmap(0x7f0e5f9ff000, 243528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0e5f9ff000
+close(3)                                = 0
+open("/usr/java/jdk1.7.0_17/bin/../jre/lib/amd64/jli/libm.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/opt/EABfds/lib/libm.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/opt/EABfdslic/lib/libm.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=29920, ...}) = 0
+mmap(NULL, 29920, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0e60618000
+close(3)                                = 0
+open("/lib64/libm.so.6", O_RDONLY)      = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240>\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=595800, ...}) = 0
+mmap(NULL, 2633944, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0e5ea91000
+mprotect(0x7f0e5eb14000, 2093056, PROT_NONE) = 0
+mmap(0x7f0e5ed13000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x82000) = 0x7f0e5ed13000
+close(3)                                = 0
+mprotect(0x7f0e5ed13000, 4096, PROT_READ) = 0
+munmap(0x7f0e60618000, 29920)           = 0
+mmap(NULL, 1052672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f0e60513000
+mprotect(0x7f0e60513000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7f0e60612ff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0e606139d0, tls=0x7f0e60613700, child_tidptr=0x7f0e606139d0) = 7373
+futex(0x7f0e606139d0, FUTEX_WAIT, 7373, NULLFramework For Simulators (v3.0.356)
+Copyright 2005-2011 Ericsson AB, http://www.ericsson.com
+
+Creating manager
+Setting thread pool to: 8
+Setting task queue to: 64
+Exception in thread "main" java.lang.RuntimeException: Could not read properties from: '-o'
+	at cmg.tools.ffs.engine.ManagerV3.setOverrideVariablesWithProperties(Unknown Source)
+	at cmg.tools.ffs.engine.ManagerV3.setOverrideVariables(Unknown Source)
+	at cmg.tools.ffs.Start.runNormal(Unknown Source)
+	at cmg.tools.ffs.Start.main(Unknown Source)
+Caused by: java.io.FileNotFoundException: -o (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:97)
+	at java.io.FileReader.<init>(FileReader.java:58)
+	... 4 more
+>>>>>>>>>>>>>>>>>>>>> VM is shutting down. <<<<<<<<<<<<<<<<<<<<<<<<<
+) = 0
+exit_group(1)                           = ?
+Session completed

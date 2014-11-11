@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="2000" snapshotInConsole="true" statistics="false" logDataInOut="false" debugLogging="false" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="destIP" type="Fixed" value="127.0.0.1" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="15500" datatype="String" />
+			<!--Variable name="serviceNameParlay" type="Fixed" value="IpChargingManager" datatype="String" /-->
+			<Variable name="serviceNameParlay" type="Fixed" value="InitialContactName" datatype="String" />
+			<Variable name="nameServiceNameParlay" type="Fixed" value="NameService" datatype="String" />
+		</Global>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.parlay.Parlay">
+		<Argument name="port" value="${Global.destPort}" />
+		<Argument name="host" value="${Global.destIP}" />
+		<Argument name="serviceName" value="${Global.serviceNameParlay}" />
+		<Argument name="NameServiceName" value="${Global.nameServiceNameParlay}" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="action" value="createChargingSession" datatype="String" />
+				<Data name="address" value="config/parlay/parlayAddress.xml" datatype="XMLDocument" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="action" value="reserveAmountReq" datatype="String" />
+				<Data name="applicationDescriptionText" value="A reservation example" datatype="String" />
+				<Data name="preferredAmount" value="10.0" datatype="Double" />
+				<Data name="preferredCurrency" value="XEU" datatype="String" />
+				<Data name="minimumAmount" value="5.0" datatype="Double" />
+				<Data name="minimumCurrency" value="XEU" datatype="String" />
+				<Data name="chargingParameterSet" value="config/parlay/parlayChargingParameter.xml" datatype="XMLDocument" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="action" value="debitAmountReq" datatype="String" />
+				<Data name="applicationDescriptionText" value="A debit amount example" datatype="String" />
+				<Data name="amount" value="1.0" datatype="Double" />
+				<Data name="currency" value="XEU" datatype="String" />
+				<Data name="closeReservation" value="false" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="action" value="getAmountLeft" datatype="String" />
+			</Item>
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="action" value="release" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

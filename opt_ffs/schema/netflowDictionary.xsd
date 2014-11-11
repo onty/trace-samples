@@ -1,0 +1,37 @@
+<!--
+XML Schema for Diameter base protocol addon.
+The following schema validates the XML syntax that defines the Diameter AVP's.
+
+Author: Henrik Pettersson <henrik.a.pettersson@ericsson.com>
+Updated: Anders Olander <anders.olander@ericsson.com>
+Copyright Ericsson AB, Sweden 2005
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!-- Top Tag -->
+	<xs:element name="Protocol">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Field_Def" type="Field_Def_Type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+			
+			<xs:attribute name="version" type="xs:decimal" use="optional"></xs:attribute>
+		</xs:complexType>
+		
+	</xs:element>
+	
+	<!-- The AVP Tag Definition type. -->
+	<xs:complexType name="Field_Def_Type">
+		<xs:attribute name="name" type="name_type" use="required"></xs:attribute>
+		<xs:attribute name="code" type="xs:nonNegativeInteger" use="required"></xs:attribute>
+		<xs:attribute name="length" type="xs:integer" use="optional" default="-1"></xs:attribute>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="name_type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="( )*([a-z]|[A-Z]|[0-9]|-|_|:)+([a-z]|[A-Z]|[0-9]|-|_|:| )*"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+</xs:schema>

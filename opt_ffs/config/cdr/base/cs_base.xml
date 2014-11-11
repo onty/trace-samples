@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="5000" snapshotInConsole="true" statistics="false" logDataInOut="fine" debugLogging="fine" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="DestinationType" type="Fixed" value="File" datatype="String" />
+		</Global>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.cdr.Cdr">
+        <Argument name="cdrFilePrintedAfterCreation" value="YES" /> <!-- YES/NO -->
+        <Argument name="cdrFileTargetFolder" value="" />
+        <Argument name="cdrFileNameNodeID" value="FFS" />
+        <Argument name="cdrFileNamePrivateInformation" value="FFSGenerated" />
+        <Argument name="cdrFileNameExtension" value="cdr" />
+        <Argument name="cdrMaxFileSize" value="1000000" />
+        <Argument name="cdrFileMaxNumberOfRecordsPerFile" value="100000" />
+        <Argument name="cdrFileIncludeHeader" value="YES" /> <!-- YES/NO, flag for both record and file header-->
+        
+        <!-- Valid NAI values: NAI_UNKNOWN, NAI_INTERNATIONAL_NUMBER, NAI_NATIONAL_SIGNIFICANT_NUMBER, NAI_NETWORK_SPECIFIC_NUMBER,
+         NAI_SUBSCRIBER_NUMBER, NAI_RESERVED, NAI_ABBREVIATED_NUMBER, NAI_RESERVED_FOR_EXTENSION -->
+        
+        <!-- Valid NPI values: NPI_UNKNOWN, NPI_ISDN, NPI_SPARE_ONE, NPI_DATA_NUMBERING, NPI_TELEX, NPI_SPARE_TWO, NPI_LAND_MOBILE,
+         NPI_SPARE_THREE, NPI_NATIONAL_NUMBERING, NPI_PRIVATE_NUMBERING -->
+        
+        <!--MSISDN -->
+        <Argument name="servedMSISDNprefix" value="46" />  
+        <Argument name="servedMSISDNStartValue" value="10" /> 
+        <Argument name="servedMSISDNStopValue"   value="100" />
+        <Argument name="servedMSISDNRandomNumberInRange" value="NO" /> <!-- YES/NO, YES=Random, NO=Sequence -->
+        <Argument name="servedMSISDNnai" value="NAI_INTERNATIONAL_NUMBER"/>
+        <Argument name="servedMSISDNnpi" value="NPI_ISDN" />
+        <!-- END MSISDN -->
+        
+        <!-- IMSI -->
+        <Argument name="servedIMSIStartValue" value="100000" />
+        <Argument name="servedIMSIStopValue" value="200000" />
+        <Argument name="servedIMSIRandomNumberInRange" value="NO" /> <!-- YES/NO, YES=Random, NO=Sequence -->
+        <!-- END IMSI -->
+        
+        <!-- CalledNumber -->
+        <Argument name="calledNumberprefix" value="46" />  
+        <Argument name="calledNumberStartValue" value="60" /> 
+        <Argument name="calledNumberStopValue"   value="600" />
+        <Argument name="calledNumberRandomNumberInRange" value="NO" /> <!-- YES/NO, YES=Random, NO=Sequence -->
+        <Argument name="calledNumbernai" value="NAI_INTERNATIONAL_NUMBER"/>
+        <Argument name="calledNumbernpi" value="NPI_ISDN" />
+        <!-- END CalledNumber -->
+        
+        <!-- CallingNumber -->
+        <Argument name="callingNumberprefix" value="46" />  
+        <Argument name="callingNumberStartValue" value="50" /> 
+        <Argument name="callingNumberStopValue"   value="500" />
+        <Argument name="callingNumberRandomNumberInRange" value="NO" /> <!-- YES/NO, YES=Random, NO=Sequence -->
+        <Argument name="callingNumbernai" value="NAI_INTERNATIONAL_NUMBER"/>
+        <Argument name="callingNumbernpi" value="NPI_ISDN" />
+        <!-- END CallingNumber -->
+        
+        <Argument name="callReferenceNumberStartValue" value="10" />
+        <Argument name="callReferenceNumberStopValue" value="100" />
+       
+        <Argument name="releaseTime" value="20141203121314+0100"/>
+        <Argument name="answerTime" value="now" />
+        <Argument name="originationTime" value="now" />
+        <Argument name="deliveryTime" value="now" />
+  	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="MOCallRecord">
+			<Item repeat="1" delay="0" timeout="30000" type="out_sync">
+				<Data name="Asn1Choice" value="CSRecord" datatype="String" />
+
+                <!-- Values: MOCALLRECORD = 1, MTCALLRECORD = 2, MOSMSRECORD = 3, MTSMSRECORD = 4 -->
+                <Data name="Asn1ChoiceType" value="1" datatype="String" />
+
+                <Data name="Asn1Type" value="MOCallRecord" datatype="String" />
+				<Data name="CDRRequest" value="./cs_domain_mocallrecord.xml" datatype="FileContent" />
+			</Item>
+        </Model>
+        <Model name="MTCallRecord">
+            <Item repeat="1" delay="0" timeout="30000" type="out_sync">
+                <Data name="Asn1Choice" value="CSRecord" datatype="String" />
+
+                <!-- Values: MOCALLRECORD = 1, MTCALLRECORD = 2, MOSMSRECORD = 3, MTSMSRECORD = 4 -->
+                <Data name="Asn1ChoiceType" value="2" datatype="String" />
+
+                <Data name="Asn1Type" value="MTCallRecord" datatype="String" />
+                <Data name="CDRRequest" value="./cs_domain_mtcallrecord.xml" datatype="FileContent" />
+            </Item>
+        </Model>
+        <Model name="MOSMSRecord">
+            <Item repeat="1" delay="0" timeout="30000" type="out_sync">
+                <Data name="Asn1Choice" value="CSRecord" datatype="String" />
+
+                <!--  Values: MOCALLRECORD = 1, MTCALLRECORD = 2, MOSMSRECORD = 3, MTSMSRECORD = 4  -->
+                <Data name="Asn1ChoiceType" value="3" datatype="String" />
+
+                <Data name="Asn1Type" value="MOSMSRecord" datatype="String" />
+                <Data name="CDRRequest" value="./cs_domain_mosmsrecord.xml" datatype="FileContent" />
+            </Item>
+        </Model>
+        <Model name="MTSMSRecord">
+            <Item repeat="1" delay="0" timeout="30000" type="out_sync">
+                <Data name="Asn1Choice" value="CSRecord" datatype="String" />
+
+                <!-- Values: MOCALLRECORD = 1, MTCALLRECORD = 2, MOSMSRECORD = 3, MTSMSRECORD = 4 -->
+                <Data name="Asn1ChoiceType" value="4" datatype="String" />
+
+                <Data name="Asn1Type" value="MTSMSRecord" datatype="String" />
+                <Data name="CDRRequest" value="./cs_domain_mtsmsrecord.xml" datatype="FileContent" />
+            </Item>
+        </Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="5" duration="0" tps="0" activeModels="0">
+			<Model name="MOCallRecord" weight="100" />
+		</Slot>
+        <Slot times="5" duration="0" tps="0" activeModels="0">
+            <Model name="MTCallRecord" weight="100" />
+        </Slot>
+        <Slot times="5" duration="0" tps="0" activeModels="0">
+            <Model name="MOSMSRecord" weight="100" />
+        </Slot>
+        <Slot times="5" duration="0" tps="0" activeModels="0">
+            <Model name="MTSMSRecord" weight="100" />
+        </Slot>
+	</TrafficModel>
+</FFS>

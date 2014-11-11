@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+
+    <!-- Origin-Host -->
+    <AVP code="264" value="${Global.ownIP}" />
+    
+    <!-- Destination-Realm -->    
+    <AVP code="283" value="${Global.destRealm}" />
+    
+    <!--  Origin Realm -->
+    <AVP code="296" value="${Global.ownRealm}" />
+
+    <!--  Session Id -->
+    <AVP code="263" value="${Local.sessionID}.set(${Global.aIncreasingValue})" />
+    
+    <!-- Vendor-Specific-Application-Id -->
+    <AVP code="260" value="">
+        <!-- Auth-Application-Id -->
+        <AVP code="258" value="${Global.AuthAppID}" />
+        <!-- Vendor-Id -->
+        <AVP code="266" value="${Global.destVendorID}" />
+    </AVP>
+
+    <!-- CC Request Number -->
+    <AVP code="415" value="${Local.recordNumber}" />
+
+    <!-- CC Request Type -->
+    <AVP code="416" value="4" />
+
+    <!--  Requested Action -->
+    <AVP code="436" value="2" />
+    
+    <!-- Subscription Id -->
+    <AVP code="443" value="">
+        <!-- Subscription Id data -->
+        <AVP code="444" value="1555666490002" />
+        <!-- Subscription Id Type -->
+        <AVP code="450" value="0" />
+    </AVP>
+
+    <!-- Charging Context Id -->
+    <AVP code="1065" vendor-id="193" value="InternalRequest"/>
+
+    <AVP code="1345" vendor-id="193"
+                value="ServiceProviderId=CdrProcessingService;
+                       SegmentId=cha1;          
+                       TransactionId=TransactionId;                                                                       
+                       CommunicationId=aCommunicationId;
+                       CustomerId=11111;
+                       ContractId=111110;
+                       
+                       TriggerTime=2014-05-13T09:12:16+02:00;                                                                                               
+                       UnitType=Time;
+                       UnitValue=100;
+                       ChargingContextId=CdrProcessing;
+                       PayloadDuplicateDetectionId=PayloadDuplicateDetectionId;
+                       CdrInformation.FileName=BxRecord1234.cdr;
+                       CdrInformation.RecordType=0;
+                       CdrInformation.OriginatingNode=CdrGenerator5;           
+                       CdrInformation.SequenceNumber=21;
+                       CdrInformation.TimeStamp=20140203T091400000+0100;     
+                       DynamicData.RecordType=DYNAMIC_INTEGER:0;
+                       DynamicData.ServedMSISDN=DYNAMIC_ADDRESS_STRING:{MSISDN_INTERNATIONAL,4644123456};
+     "/>
+                                            
+    <!-- Remote-Charging-Data-Version -->
+        <AVP code="1346" vendor-id="193" value="0_1_0" />
+
+</RequestData>

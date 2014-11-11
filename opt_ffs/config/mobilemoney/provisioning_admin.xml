@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="0" snapshotInConsole="true" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<!-- This must be an Integer so cannot start with 0 (will be removed), add 0 in the model instead. -->
+			<Variable name="aIncreasingValue" type="Step" start="709926820" stepsize="1" datatype="Integer" />
+			<Variable name="destIP" type="Fixed" value="127.0.0.1" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="1077" datatype="String" />
+		</Global>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.mobilemoney.ProvisioningAdmin">
+		<Argument name="port" value="${Global.destPort}" />
+		<Argument name="host" value="${Global.destIP}" />
+		<Argument name="threads" value="100" /> <!-- Should be equal to the number of threads FFS uses concurrently -->
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="0" timeout="300" type="out_sync">
+				<Data name="doActivation" value="true" datatype="String" />		 	<!-- optional, defaults to false -->
+				<Data name="externalId" value="0${Global.aIncreasingValue}" datatype="String" /> <!-- optional, defaults to "46733495865" NOTE: add 0 here if number should start with 0 -->
+				<Data name="pinCode" value="111111" datatype="String" />			<!-- optional, defaults to "123456" -->
+				<!--<Data name="parent" value="1" datatype="String" /> -->			<!-- optional, parent account holder external id, defaults to "1" -->
+				<!--<Data name="profile" value="Mobile Money Agent Profile" datatype="String" /> -->	<!-- optional, defaults to "Mobile Money Agent Profile" -->			
+				<!--<Data name="bankId" value="id" datatype="String" />	-->				<!-- optional, defaults to null -->
+				<!--<Data name="bankAccount" value="12345678" datatype="String" /> -->	<!-- optional, defaults to null -->
+
+				<!-- THESE PARAMETERS ARE CURRENTLY NOT USED -->
+				<!--<Data name="name" value="Svampbob" datatype="String" /> -->				<!-- optional, defaults to "FFS" -->
+				<!-- <Data name="surName" value="Fyrkant" datatype="String" /> -->			<!-- optional, defaults to "Default" -->
+				<!-- <Data name="idNumber" value="12345678" datatype="String" /> -->			<!-- optional, defaults to "12345678" -->
+				<!--<Data name="identificationType" value="Passport" datatype="String" /> -->	<!-- optional, defaults to null -->
+				<!--<Data name="homePhoneNumber" value="555123456" datatype="String" />	--><!-- optional, defaults to null -->
+				<!--<Data name="email" value="user@mmi.se" datatype="String" />	-->		<!-- optional, defaults to null -->
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="10" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

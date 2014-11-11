@@ -1,0 +1,50 @@
+-override
+Framework For Simulators (v3.0.356)
+Copyright 2005-2011 Ericsson AB, http://www.ericsson.com
+
+Creating manager
+Setting thread pool to: 8
+Setting task queue to: 64
+Checking configuration file '/var/opt/ffs/usecases/sms/cipip_sms.xml'...(v3.0.356)
+Loading configuration file...
+Loading REPOSITORY...
+REPOSITORY loaded!
+Loading MODELS...
+MODELS Loaded!
+Loading TRAFFIC MODELS...
+TRAFFIC MODELS Loaded!
+Loading PLUG-IN...
+Creating default plugin. (cmg.tools.ffs.plugins.diameter.Diameter)
+PLUG-IN loaded and initialized!
+Configuration file loaded!
+Executing...
+Initializing default plugin.
+> cmg.tools.ffs.plugins.diameter.Diameter > Loading dictionary file: config/diameter/dictionary.xml
+> cmg.tools.ffs.plugins.diameter.Diameter > Can not parse argument 'answerResultCode' using: 2002
+[DiameterStack] T1, Could not resolve IP address from supplied DiameterURI
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : tcTimer not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : requestTimeout not found in configuration or is not a number. Leaving unset.
+> cmg.tools.ffs.plugins.diameter.Diameter > NOTE : If the timeout value in the request definitions are smaller than the DefaultMessageTimeout value, 
+       the FFS will time-out requests that may or may not be received by the stack later.
+       Another undesireable result of this may be that the FFS tries to send a new request in
+       the same session which will cause a session-aware receiver to reply with Session Busy.
+> cmg.tools.ffs.plugins.diameter.Diameter > Parameter : TITimer (Timeout for request) not found in config or is not a number. Defaulting it to 45 seconds.
+> cmg.tools.ffs.plugins.diameter.Diameter > Starting the stack...
+All slots consumed, waiting for shutdown...
+All items processed, shutting down...
+Will exit in: 30000ms if not done.
+All done! Have a nice day!
+### Error ###
+Exception: The own IP address is not set (class com.ericsson.pps.diameter.rfcapi.base.DiameterConfigException)  at
+cmg.tools.ffs.Start main
+cmg.tools.ffs.Start runNormal
+cmg.tools.ffs.engine.ManagerV3 exec
+cmg.tools.ffs.engine.ManagerV3 _exec
+cmg.tools.ffs.engine.ManagerV3 initPlugins
+cmg.tools.ffs.plugins.diameter.Diameter init
+com.ericsson.pps.diameter.rfcapi.base.DiameterStack start
+com.ericsson.pps.diameter.rfcapi.base.impl.stack.PeerManager startPeerHandling
+com.ericsson.pps.diameter.rfcapi.base.impl.OwnPeerInfo checkConfig
+
+>>>>>>>>>>>>>>>>>>>>> VM is shutting down. <<<<<<<<<<<<<<<<<<<<<<<<<
+Session completed

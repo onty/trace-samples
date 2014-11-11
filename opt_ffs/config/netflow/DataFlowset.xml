@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="schema/netflowFlowset.xsd">
+	<DataFlowsets>
+		<DataFlowset id="1" templateId="1">		
+			<Field id="1"  value="100" />
+			<Field id="2"  value="50" />
+			<Field id="3"  value="3" />
+			<Field id="4"  value="34" />
+			<Field id="5"  value="2" />
+			<Field id="12" value="33.89.67.100" />
+			<Field id="15" value ="127.23.44.55" />
+			<Field id="34" value="60"/>
+		</DataFlowset>
+		<DataFlowset id="2" templateId="2">
+			<Field id="1"   value="180" />
+			<Field id="2"   value="45" />
+			<Field id="3"   value="66"/>
+			<Field id="4"   value="48"/>
+			<Field id="6"   value="78"/>
+			<Field id="27"  value="7890:1200:ABCD:EF34:99:0:0:1"/>
+			<Field id="28"  value="10:19:10:33:45:56:1900:850"/>
+			<Field id="62"  value="100:149:150:3883:445:526:1900:821"/>
+		</DataFlowset>
+		<DataFlowset id="3" templateId="3">
+			<Field id="70"   value="83" />
+			<Field id="71"   value="12228" />
+			<Field id="56"   value="5.9.78.90.56.120"/>
+			<Field id="57"   value="01:23:45:67:89:255"/>
+			<Field id="7"    value="7777"/>
+			<Field id="8"    value="90.90.77.56"/>
+			<Field id="32"   value="4"/>
+			<Field id="33"   value="9"/>
+		</DataFlowset>
+		<DataFlowset id="4" templateId="4">
+			<Field id="14"   value="67" length="2"/>
+			<Field id="16"   value="90" length="2"/>
+			<Field id="80"   value="900" />
+		</DataFlowset>
+		<DataFlowset id="5" templateId="4">
+			<Field id="14"  value="898"  length="2"/>
+			<Field id="16"   value="4" length="4"/>
+			<Field id="80"   value="955600" />
+		</DataFlowset>
+		<DataFlowset id="6" templateId="4">
+			<Field id="14"   value="666"  length="2"/>
+			<Field id="16"   value="1" length="2"/>
+			<Field id="80"   value="1900" />
+		</DataFlowset>
+	</DataFlowsets>
+</RequestData>

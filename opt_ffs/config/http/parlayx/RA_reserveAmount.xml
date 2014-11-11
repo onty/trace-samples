@@ -1,0 +1,11 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m0="http://www.csapi.org/schema/parlayx/common/v1_0">
+	<SOAP-ENV:Body>
+		<m:reserveAmount xmlns:m="http://www.csapi.org/wsdl/parlayx/payment" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+			<endUserIdentifier xsi:type="m0:EndUserIdentifier">
+				<value xsi:type="xsd:anyURI">http://www.example.com</value>
+			</endUserIdentifier>
+			<amount xsi:type="xsd:decimal">3.1415926535897932384626433832795</amount>
+			<billingText xsi:type="xsd:string">myString</billingText>
+		</m:reserveAmount>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

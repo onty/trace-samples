@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://www.csapi.org/schema/parlayx/payment/reserve_volume_charging/v2_2/local">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:reserveAdditionalVolume>
+         <loc:reservationIdentifier>reservationID</loc:reservationIdentifier>
+         <loc:volume>1200</loc:volume>
+         <loc:billingText>billingText</loc:billingText>
+      </loc:reserveAdditionalVolume>
+   </soapenv:Body>
+</soapenv:Envelope>

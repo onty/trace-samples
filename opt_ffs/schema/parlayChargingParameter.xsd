@@ -1,0 +1,29 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--ROOT element-->
+	<xsd:element name="RequestData">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ChargingParameter" type="ChargingParameter_Type" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!--Types-->
+	<xsd:complexType name="ChargingParameter_Type">
+		<xsd:attribute name="id" type="String_Type" use="required"/>
+		<xsd:attribute name="value" type="String_Type" use="required"/>
+		<xsd:attribute name="valueType" type="valueType_type" use="optional" default="P_CHS_PARAMETER_STRING"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="String_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="valueType_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="P_CHS_PARAMETER_INT32|P_CHS_PARAMETER_FLOAT|P_CHS_PARAMETER_STRING|P_CHS_PARAMETER_BOOLEAN|P_CHS_PARAMETER_OCTETSET"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

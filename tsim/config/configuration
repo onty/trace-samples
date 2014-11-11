@@ -1,0 +1,8 @@
+sim_ip=
+cdrpath=/tsim/CDR
+ownIP=AIR1.ericsson.ie
+ownRealm=AIR1
+ownPort=8732
+destIP=occsdp1a.ericsson.ie
+destRealm=occsdp1.ericsson.ie
+destPort=3869

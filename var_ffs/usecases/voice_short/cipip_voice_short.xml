@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<FFS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/config3.xsd">
+	<!-- Logging section -->
+	<Logging path="logs/" snapshotTime="2000" snapshotInConsole="true" statistics="false" logDataInOut="true" debugLogging="true" />
+
+	<!-- Repository section -->
+	<Repository>
+		<Global>
+			<Variable name="AcctAppID" type="Fixed" value="0" datatype="Long" />
+			<Variable name="AuthAppID" type="Fixed" value="16777232" datatype="Long" />
+			<Variable name="Subscription-Id-IMSI" type="Fixed" value="262471115009020" datatype="Long" />
+			<Variable name="destIP" type="Fixed" value="sdphostname.domain" datatype="String" />
+			<Variable name="destPort" type="Fixed" value="8732" datatype="String" />
+			<Variable name="destRealm" type="Fixed" value="domain" datatype="String" />
+			<Variable name="destVendorID" type="Fixed" value="193" datatype="Long" />
+			<Variable name="ownIP" type="Fixed" value="simulatorhostname.domain" datatype="String" />
+			<Variable name="ownPort" type="RandomRange" from="8732" to="9000" datatype="String" />
+			<Variable name="ownRealm" type="Fixed" value="domain" datatype="String" />
+			<Variable name="ownVendorID" type="Fixed" value="193" datatype="Long" />
+			<Variable name="randomRange" type="RandomRange" from="70500192" to="70500192" datatype="Long" />
+			<Variable name="recordNumber" type="Fixed" value="0" datatype="Long" />
+			<!-- DATA Variable name="serviceContextID" type="Fixed" value="6.32251@3gpp.org" datatype="String" /-->
+			<Variable name="serviceContextID" type="Fixed" value="Core_Context_R1A@ericsson.com" datatype="String" />
+			<Variable name="nowunix" type="Date" format="UNIX" timezone="" value="" datatype="String" />
+			<Variable name="randomSession" type="RandomRange" from="0000" to="9999" datatype="Long" />
+			<!--Variable name="sessionID" type="Fixed" value="ffs-8-971698181-05f0ea39" datatype="String" /-->
+			<Variable name="sessionID" type="Fixed" value="ffs-${Global.nowunix}-${Global.randomSession}" datatype="String" />
+			<Variable name="step" type="Step" start="0" stepsize="1" datatype="Long" />
+			<Variable name="subCons" type="Fixed" value="389" datatype="String" />
+			<Variable name="startOfCall" type="Fixed" value="${Global.nowunix}" datatype="String" />
+			<Variable name="nowin" type="Date" format="yy-MM-dd HH:mm:ss.SSS z" timezone="GMT+1" value="" datatype="String" />
+			<Variable name="then" type="Date" format="NTP" timezone="GMT+1" value="" datatype="String" />
+			<Variable name="A-Number" type="Fixed" value="4647000000" datatype="String" />
+			<Variable name="B-Number" type="Fixed" value="47000000" datatype="String" />
+			<Variable name="Duration-FI" type="Fixed" value="60" datatype="String" />
+			<Variable name="MNP-ID" type="Fixed" value="17685" datatype="String" />
+		</Global>
+		<Local>
+			<Variable name="nowunix" type="Date" format="UNIX" timezone="" value="" datatype="String" />
+			<Variable name="recordNumber" type="Fixed" value="0" datatype="Long" />
+			<Variable name="reqNum" type="Step" start="0" stepsize="1" datatype="Long" />
+			<Variable name="session" type="Fixed" value="nothing" datatype="String" />
+			<Variable name="subID" type="Fixed" value="nothing" datatype="String" />
+			<Variable name="CDRData" type="Fixed" value="(nothing ...!)" datatype="String" />
+		</Local>
+	</Repository>
+
+	<!-- Simulator plug-in section -->
+	<Plugin class="cmg.tools.ffs.plugins.diameter.Diameter">
+		<Argument name="ownRealm" value="${Global.ownRealm}" />
+		<Argument name="serviceContextID" value="${Global.serviceContextID}" />
+		<Argument name="destURI" value="aaa://${Global.destIP}:${Global.destPort};transport=sctp" />
+		<Argument name="dictionaryPath" value="config/diameter/dictionary.xml" />
+		<Argument name="destRealm" value="${Global.destRealm}" />
+		<Argument name="ownProductID" value="CCN" />
+		<Argument name="waitForCEATimeout" value="15000" />
+		<Argument name="ownVendorID" value="${Global.ownVendorID}" />
+		<Argument name="destVendorID" value="${Global.destVendorID}" />
+		<Argument name="AcctAppID" value="${Global.AcctAppID}" />
+		<Argument name="ownURI" value="aaa://${Global.ownIP}:${Global.ownPort};transport=tcp" />
+		<Argument name="AuthAppID" value="${Global.AuthAppID}" />
+	</Plugin>
+
+	<!-- Models section -->
+	<Models>
+		<Model name="M1">
+			<Item repeat="1" delay="3000" timeout="3000" type="out_sync">
+				<Data name="RequestType" value="CIR" datatype="String" />
+				<Data name="DiameterRequest" value="./cipip_voice_short_request_01.xml" datatype="XMLDocument" />
+				<Data name="PBit" value="true" datatype="String" />
+				<Out variable="${CDRData}" src="456.1066" pattern="" />
+			</Item>
+			<Item repeat="1" delay="3000" timeout="3000" parent_request="1" parent_condition="1" type="out_sync">
+				<Data name="RequestType" value="CIR" datatype="String" />
+				<Data name="DiameterRequest" value="./cipip_voice_short_request_02.xml" datatype="XMLDocument" />
+				<Data name="PBit" value="true" datatype="String" />
+			</Item>
+		</Model>
+	</Models>
+
+	<!-- TrafficModels section -->
+	<TrafficModel>
+		<Slot times="1" duration="0" tps="0" activeModels="0">
+			<Model name="M1" weight="100" />
+		</Slot>
+	</TrafficModel>
+</FFS>

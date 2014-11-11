@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--ROOT element-->
+	<xsd:element name="RequestData">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Volume" type="Volume_Type" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!--Types-->
+	<xsd:complexType name="Volume_Type">
+		<xsd:attribute name="amount" type="String_Type" use="required"/>
+		<xsd:attribute name="unit" type="unit_type" use="required"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="String_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="unit_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="P_CHS_UNIT_UNDEFINED|P_CHS_UNIT_NUMBER|P_CHS_UNIT_OCTETS|P_CHS_UNIT_SECONDS|P_CHS_UNIT_MINUTES|P_CHS_UNIT_HOURS|P_CHS_UNIT_DAYS"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

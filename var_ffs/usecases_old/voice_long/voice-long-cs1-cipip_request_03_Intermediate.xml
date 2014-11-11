@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/diameterRequest.xsd">
+	<!-- AVP Code: 263 Session-Id -->
+	<!--AVP code="263" value="8-1426194950-06020255" vendor-id="0" /-->
+	<AVP code="263" value="${Global.sessionID}" vendor-id="0" />
+	<!-- AVP Code: 260 Vendor-Specific-Application-Id -->
+	<!-- Grouped data: 000001024000000c01000010 -->
+	<AVP code="260" value="" vendor-id="0">
+		<!-- AVP Code: 258 Auth-Application-Id -->
+		<AVP code="258" value="16777232" vendor-id="0" />
+		<!-- AVP Code: 266 Vendor-Id -->
+		<AVP code="266" value="193" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 264 Origin-Host -->
+	<!-- AVP Code: 296 Origin-Realm -->
+	<!-- FFS adds Origin-Host and Origin-Realm automatically-->
+	<!-- AVP Code: 283 Destination-Realm -->
+	<AVP code="283" value="${Global.destRealm}" vendor-id="0" />
+	<!-- AVP Code: 415 CC-Request-Number -->
+	<!--AVP code="415" value="2" vendor-id="0" /-->
+	<AVP code="415" value="${Local.reqNum}" vendor-id="0" />
+	<!-- AVP Code: 416 CC-Request-Type -->
+	<AVP code="416" value="2" vendor-id="0" />
+	<!-- AVP Code: 443 Subscription-Id -->
+	<!-- Grouped data: 000001bc4000001234393437313132323437 -->
+	<AVP code="443" value="" vendor-id="0">
+		<!-- AVP Code: 444 Subscription-Id-Data -->
+		<AVP code="444" value="${Global.A-Number}" vendor-id="0" />
+		<!-- AVP Code: 450 Subscription-Id-Type -->
+		<AVP code="450" value="0" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 456 Multiple-Services-Credit-Control -->
+	<!-- Grouped data: 000001b540000008 -->
+	<AVP code="456" value="" vendor-id="0">
+		<!-- AVP Code: 437 Requested-Service-Unit -->
+		<AVP code="437" value="" vendor-id="0" />
+		<!-- AVP Code: 439 Service-Identifier -->
+		<AVP code="439" value="0" vendor-id="0" />
+		<!-- AVP Code: 446 Used-Service-Unit -->
+		<!-- Grouped data: 000001a44000000c0000000a -->
+		<AVP code="446" value="" vendor-id="0">
+			<!-- AVP Code: 420 CC-Time -->
+			<AVP code="420" value="${Duration-II}" vendor-id="0" />
+		</AVP>
+		<!-- AVP Code: 1066 Charging-State-Information -->
+		<!--AVP code="1066" value="0x01:01:81:02:81:03:01:02:01:03:00:04:01:ff:ff:82:13:01:00:00:00:00:ff:83:14:81:15:81:41:00:00:00:00:00:82:41:00:00:00:00:00:03:ff:ff:ff:ff:04:00:00:00:00:85:41:00:00:00:00:00:ff:02:01:03:01:04:00:ff:84:16:01:02:01:03:00:04:01:ff:85:18:01:00:00:00:00:82:19:81:1a:81:1b:01:00:00:00:00:00:00:00:0a:ff:02:01:03:01:04:00:ff:82:1c:01:02:01:03:00:04:01:ff:83:1e:01:02:01:03:00:04:01:ff:84:20:01:02:01:03:00:04:01:ff:ff:ff:86:22:81:23:01:00:82:41:00:00:00:00:00:83:41:00:00:00:00:00:04:01:ff:02:01:03:01:04:00:ff:87:24:81:1d:01:00:00:02:f0:02:00:00:00:00:00:00:00:00:03:ff:ff:ff:fa:ff:02:01:03:01:04:00:ff:88:25:81:26:01:ff:ff:ff:ff:82:1d:01:00:00:02:f0:02:00:00:00:00:00:00:00:00:03:ff:ff:ff:fa:ff:03:00:00:00:00:00:00:00:00:04:29:8a:ed:e0:85:1d:01:00:00:02:f0:02:00:00:00:00:00:02:8b:0b:03:ff:ff:ff:fa:ff:06:00:00:00:00:00:00:00:00:ff:02:01:03:01:04:00:ff:89:27:81:34:00:00:00:00:00:02:01:03:01:04:00:ff:8a:28:81:29:81:35:00:00:00:00:11:01:00:00:00:00:00:00:00:0a:00:00:00:00:00:00:00:3c:82:2a:81:1b:01:00:00:00:00:00:00:00:0a:ff:82:1d:01:ff:ff:ff:ff:02:00:00:00:00:00:00:00:00:03:00:00:00:00:ff:83:1f:01:00:00:00:00:00:00:00:00:02:00:00:00:00:00:00:00:00:03:00:00:00:00:00:00:00:00:ff:84:21:01:00:00:00:00:00:00:00:00:ff:ff:03:00:00:00:00:4f:32:4e:41:04:00:05:00:00:00:00:00:00:00:00:86:41:00:00:00:00:01:00:00:00:42:07:00:00:00:00:4f:32:4e:49:88:41:00:00:00:00:01:00:00:00:42:09:00:ff:02:01:03:01:04:00:ff:8b:2b:01:02:01:03:00:04:01:ff:8c:39:81:35:00:00:00:00:00:ff:8d:3a:01:02:01:03:00:04:01:ff:8e:3c:81:3d:01:00:00:02:00:01:03:00:00:01:35:5c:81:ad:e8:ff:02:01:03:01:04:00:ff:8f:3e:01:02:01:03:00:04:01:ff:90:43:81:44:00:45:00:00:00:02:45:01:00:00:00:3c:82:35:00:00:00:00:11:01:00:00:00:00:00:00:00:0a:00:00:00:00:00:00:00:3c:03:00:00:00:00:00:02:8b:0b:04:00:00:00:00:ff:45:01:00:00:00:3d:82:35:00:00:00:00:11:01:00:00:00:00:00:00:00:0a:00:00:00:00:00:00:00:3c:03:00:00:00:00:00:02:8b:0b:04:00:00:00:00:ff:02:29:8a:ed:df:03:29:8a:ed:e1:ff:91:47:01:02:01:03:00:04:01:ff:ff" vendor-id="193" /-->
+		<AVP code="1066" value="0x${Local.CDRData}" vendor-id="193" />
+		<!-- AVP Code: 1068 Service-Session-Id -->
+		<AVP code="1068" value="1" vendor-id="193" />
+		<!-- AVP Code: 1075 Other-Party-Id -->
+		<!-- Grouped data: 00000434c0000010000000c100000000 -->
+		<AVP code="1075" value="" vendor-id="193">
+			<!-- AVP Code: 1076 Default-Handling -->
+			<AVP code="1076" value="0" vendor-id="193" />
+			<!-- AVP Code: 1077 Other-Party-Id-Data -->
+			<AVP code="1077" value="${Global.B-Number}" vendor-id="193" />
+			<!-- AVP Code: 1078 Other-Party-Id-Type -->
+			<AVP code="1078" value="0" vendor-id="193" />
+		</AVP>
+		<!-- AVP Code: 1121 Roaming-Position -->
+		<AVP code="1121" value="0" vendor-id="193" />
+		<!-- AVP Code: 1122 Service-Scenario -->
+		<AVP code="1122" value="0" vendor-id="193" />
+	</AVP>
+	<!-- AVP Code: 461 Service-Context-Id -->
+	<AVP code="461" value="Core_Context_R1A@ericsson.com" vendor-id="0" />
+	<!-- AVP Code: 1063 Access-Information -->
+	<!-- Grouped data: 000000374000000cd2dcccbb -->
+	<AVP code="1063" value="" vendor-id="193">
+		<!-- AVP Code: 55 Event-Timestamp -->
+		<!--AVP code="55" value="Feb  8, 2012 11:28:11.000000000" vendor-id="0" /-->
+		<AVP code="55" value="${Global.accessTime}" vendor-id="0" />
+	</AVP>
+	<!-- AVP Code: 1065 Charging-Context-Id -->
+	<AVP code="1065" value="CS1plus_V.1.0@ericsson.com" vendor-id="193" />
+	<!-- AVP Code: 1074 Subscription-Id-Location -->
+	<AVP code="1074" value="4947101002" vendor-id="193" />
+	<!-- AVP Code: 1083 CIP-IP-Version -->
+	<AVP code="1083" value="R1A" vendor-id="193" />
+	<!-- AVP Code: 23 3GPP-MS-TimeZone -->
+	<AVP code="23" value="0x40:00" vendor-id="10415" />
+</RequestData>
